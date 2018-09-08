@@ -6,11 +6,12 @@
 
  * * *
  
- # 其他页面
+ # 其他页面   
  
  [RenPy 中文文档](./RenPy)   
  
- ## Mayx 的网站
+ ## Mayx 的网站   
+ 
 [Mayx的博客](http://mayx.my-board.org/)   
 
 [Mayx的Wiki](http://mayxwiki.my-style.in/)   
