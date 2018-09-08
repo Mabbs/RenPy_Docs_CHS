@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>可视组件 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="变换" href="transforms.html" />
+    <link rel="prev" title="多语言支持" href="translation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">可视组件</a><ul>
+<li><a class="reference internal" href="#images">图像</a></li>
+<li><a class="reference internal" href="#image-like-displayables">类图像的可视组件</a></li>
+<li><a class="reference internal" href="#gui-text-displayables">文本组件</a></li>
+<li><a class="reference internal" href="#dynamic-displayables">动态可视组件</a></li>
+<li><a class="reference internal" href="#transform">应用于可视组件的变换(transform)</a></li>
+<li><a class="reference internal" href="#layout-boxes-and-grids">布局框和坐标系</a></li>
+<li><a class="reference internal" href="#effects">特效</a></li>
+<li><a class="reference internal" href="#image-manipulators">图像操纵器</a></li>
+<li><a class="reference internal" href="#im-matrixcolor">im.MatrixColor</a></li>
+<li><a class="reference internal" href="#placeholders">占位组件</a></li>
+<li><a class="reference internal" href="#displayable-prefix">可视组件前缀</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="displayables">
+<span id="id1"></span><h1>可视组件<a class="headerlink" href="#displayables" title="Permalink to this headline"> link</a></h1>
+<p>可视组件是一类可以向用户显示的对象。Ren’Py可视组件具有多种用途。</p>
+<ul class="simple">
+<li>使用image语句声明一个图像名。</li>
+<li>使用screen language add语句添加至界面(screen)。</li>
+<li>声明某个配置变量。</li>
+<li>声明某个样式特性。</li>
+</ul>
+<p>当Ren’Py函数或者变量需要一个可视组件时，总共可用的东西有5种：</p>
+<ul class="simple">
+<li>典型的可视组件(displayable)对象，通过调用本章后面提到的某些函数创建。</li>
+<li>一个带英文句号(.)的字符串。该字符串在传入 <a class="reference internal" href="#Image" title="Image"><code class="xref py py-func docutils literal notranslate"><span class="pre">Image()</span></code></a> 函数后被作为一个文件名处理。</li>
+<li>一种颜色。可能是十六进制表示的颜色字符串格式——比如 “#rgb”、“#rgba”、“#rrggbb”或“#rrggbbaa”，可能是一个 <a class="reference internal" href="color_class.html#Color" title="Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>，也可能是一个(r, g, b, a)格式的元组，元组中每个元素的值都位于0到255的闭区间内。颜色会被传入 <a class="reference internal" href="#Solid" title="Solid"><code class="xref py py-func docutils literal notranslate"><span class="pre">Solid()</span></code></a> 函数。</li>
+<li>一个图像名。使用image语句定的图像名可以插入任意其他字符串作为该图像的引用(reference)。</li>
+<li>一个列表。如果提供的是一个列表，列表中的物件(item)会按后面描述的方式展开，并逐个检查是否能匹配到某个文件名或图像名。如果匹配成功，列表物件展开会停止，匹配到的内容会按照刚才提到的几种方式处理。</li>
+</ul>
+<p>字符串中允许存在一个或多个用方括号包含的带替换内容，比如“eileen [mood]”和“eileen_[outfit]_[mood].png”这样形式的。一旦出现了类似的字符串，引擎就会创建出动态图像。动态图像在每次互动行为(比如say语句和菜单)开始阶段，具有
+<a class="reference internal" href="text.html#text-interpolation"><span class="std std-ref">文本插入</span></a> 的行为表现。最终生成的字符串会按照上文提到的规则处理。</p>
+<div class="section" id="images">
+<span id="id2"></span><h2>图像<a class="headerlink" href="#images" title="Permalink to this headline"> link</a></h2>
+<p>最常见的可视组件是通过加载硬盘上的一个文件并显示的图像(image)。由于图像是如此常用，所以每当某个上下文中某字符串给出了一个文件名，并需要将这个文件用作可视组件时，引擎就会自动创建一个图像(image)对象。唯一需要直接使用图像(image)对象的情况是，你想创建一个带样式特性的图像。</p>
+<dl class="function">
+<dt id="Image">
+<code class="descname">Image</code><span class="sig-paren">(</span><em>filename</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Image" title="Permalink to this definition"> link</a></dt>
+<dd><p>从文件中加载一个图像。 <em>filename</em> 是文件名的字符串。</p>
+<p><em>filename</em> 应该是一个JPEG或PNG文件。</p>
+</dd></dl>
+
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这两行等价。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="o">=</span> <span class="s2">&quot;logo.png&quot;</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># 使用Image()允许我们指定一个默认位置截取某个图像的一部分。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="n">right</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>以下三种是推荐使用的图片文件格式：</p>
+<ul class="simple">
+<li>Webp</li>
+<li>Png</li>
+<li>Jpg</li>
+</ul>
+<p>没有动画的Gif文件和Bmp文件也是支持的，但已经不推荐用在本世代游戏中。</p>
+<p>从硬盘加载文件，解码图像并将图像绘制到屏幕上，这一系列工作耗时比较长。因此加载过程需要几十甚至上百毫秒的话，就无法提供一个可接受的帧率，并会让用户觉得恼怒。</p>
+<p>因为图像是一个固定尺寸，在大多数情况下都不会更改图像的可视区域，所以可以在图像真正使用之前提前加载，并放入内存的图片缓存中。图片解码并放入缓存之后，就可以很高效地绘制在屏幕上了。</p>
+<p>Ren’Py会预测未来使用的图像，加载文件后先放入图像缓存备用。当图像缓存空间不足时，Ren’Py会先删除不会再被使用到的那些图像。</p>
+<p>默认情况下，Ren’Py会预先缓存相当于8个界面大小的图像数据。(如果你的界面分辨率是800×600，那一个界面大小相当于一张800×600的图像，两张400×600的图像，以此类推。)这个值可以通过 :var:config.image_cache_size 配置项修改。</p>
+<p>尽管精确的数值取决于规则细节，并且也存在一些明确的标准。一个最基础的规则是，图像缓存中的每一个像素，都占用4个字长的主内存和4个字长的显存。</p>
+</div>
+<div class="section" id="image-like-displayables">
+<span id="id3"></span><h2>类图像的可视组件<a class="headerlink" href="#image-like-displayables" title="Permalink to this headline"> link</a></h2>
+<p>我们将这些可视组件称作“类图像”，是因为他们占用界面中的一块矩形区域但不会对输入做任何反应。这有别于通常的图像，这些“类图像”可以调整尺寸填充某个区域(Frame、LiveTile、Solid)，或者允许用户指定尺寸(LiveComposite、LiveCrop、Null)。他们自身不能操作图像。</p>
+<p>类图像可视组件使用 <a class="reference internal" href="style_properties.html#position-style-properties"><span class="std std-ref">位置样式特性</span></a>。</p>
+<dl class="function">
+<dt id="AlphaMask">
+<code class="descname">AlphaMask</code><span class="sig-paren">(</span><em>child</em>, <em>mask</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaMask" title="Permalink to this definition"> link</a></dt>
+<dd><p>可视组件使用入参 <em>child</em> 作为自身的颜色，其alpha通道值使用 <em>child</em> 的alpha通道值与 <em>mask</em> 的乘积。因此，该可视组件具有 <em>child</em> 同样的颜色，当 <em>child</em> 或 <em>mask</em> 之一是透明的情况下该组件也是透明，当 <em>child</em> 和 <em>mask</em> 都不透明的情况下该组件才不透明。</p>
+<p><em>child</em> 和 <em>mask</em> 可以是任意可视组件。AlphaMask的尺寸是 <em>child</em> 和 <em>mask</em> 的重叠区域尺寸。</p>
+<p>需要注意，该函数与im.AlphaMask()使用不同的入参，im.AlphaMask()还使用入参mask的颜色通道。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Borders">
+<code class="descname">Borders</code><span class="sig-paren">(</span><em>left</em>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>pad_left=0</em>, <em>pad_top=0</em>, <em>pad_right=0</em>, <em>pad_bottom=0</em><span class="sig-paren">)</span><a class="headerlink" href="#Borders" title="Permalink to this definition"> link</a></dt>
+<dd><p>border对象提供边界(border)尺寸和码放(tile)给 <a class="reference internal" href="#Frame" title="Frame"><code class="xref py py-func docutils literal notranslate"><span class="pre">Frame()</span></code></a> 对象。其也可以提供填充( <a class="reference internal" href="#padding" title="padding"><code class="xref py py-func docutils literal notranslate"><span class="pre">padding()</span></code></a> )信息，用于带填充特性的窗口(window)或者框架(frame)。</p>
+<dl class="docutils">
+<dt><cite>left top right bottom</cite></dt>
+<dd>这些参数提供的某个框架(frame)需要使用的插入尺寸，以及各条边的填充(padding)边界。这些值应该是0或者正整数。</dd>
+<dt><cite>pad_left pad_top pad_right pad_bottom</cite></dt>
+<dd>这些参数会添加到各条边填充(padding)的值，可以是正整数或负整数。(例如，如果 <em>left</em> 是5， <em>pad_left</em> 是-3，那么最终的填充(padding)值就是2。)</dd>
+</dl>
+<p>填充(padding)信息是一个字段(field)：</p>
+<dl class="attribute">
+<dt id="padding">
+<code class="descname">padding</code><a class="headerlink" href="#padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个4元素的元组，包含了矩形4条边的填充(padding)信息。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="Composite">
+<code class="descname">Composite</code><span class="sig-paren">(</span><em>size</em>, <em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Composite" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数使用其他可视组件合成并创建一个新的可视组件。新可视组件的尺寸由 <em>size</em> 决定。 <em>size</em> 是一个(width, height)形式的元组，两个元素分别表示宽度和高度。</p>
+<p>保留的固定位置参数用于放置LiveComposite中的图像。保留的固定位置参数应该是由两个数据构成的组。组中的第一个元素是一个(x, y)形式的元组；第二个元素是合成用的可视组件，使用前一个元素表示的位置进行合成。</p>
+<p>可视组件的合成顺序为从后往前。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">composite</span> <span class="o">=</span> <span class="n">Composite</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;body.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;clothes.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="s2">&quot;expression.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Crop">
+<code class="descname">Crop</code><span class="sig-paren">(</span><em>rect</em>, <em>child</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Crop" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数使用 <em>rect</em> 剪裁 <em>child</em> 并创建一个新的可视组件。 <em>rect</em> 是一个(x, y, width, height)形式的元组。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">cropped</span> <span class="o">=</span> <span class="n">Crop</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="s2">&quot;eileen happy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="DynamicImage">
+<code class="descname">DynamicImage</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#DynamicImage" title="Permalink to this definition"> link</a></dt>
+<dd><p>动态图像是一种可视组件，这个组件包含文本插入(text interpolation)字符串。那些待插入的文本内容补完后就能生成一个新的可视组件对象。每一项互动行为开始后都会执行文本插入补完字符串。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Flatten">
+<code class="descname">Flatten</code><span class="sig-paren">(</span><em>child</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Flatten" title="Permalink to this definition"> link</a></dt>
+<dd><p>该对象将可能由多个纹理组成的入参 <em>child</em> ，压成单个纹理。</p>
+<p>某些操作，像alpha转换特性，会应用到最终构成可视组件的每一个纹理上。最终的可视组件会剔除错误结果，比如界面上的纹理有重叠。Flatten对象根据多个纹理创建单个纹理的时，能避免这些问题。</p>
+<p>Flatten是一个性能消耗高昂的操作，应该在必要的情况下才使用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Frame">
+<code class="descname">Frame</code><span class="sig-paren">(</span><em>image</em>, <em>left=0</em>, <em>top=0</em>, <em>right=None</em>, <em>bottom=None</em>, <em>tile=False</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Frame" title="Permalink to this definition"> link</a></dt>
+<dd><p>Frame是一个可视组件，可以调整图像尺寸使其匹配某个可用区域，同时也保存其边界(border)的宽度和高度。Frame通常用于窗口(window)或按钮(button)的背景。</p>
+<div class="figure" id="id12">
+<img alt="_images/frame_example.png" src="_images/frame_example.png" />
+<p class="caption"><span class="caption-text">使用框架(frame)将图像增大为原尺寸的两倍。</span></p>
+</div>
+<dl class="docutils">
+<dt><cite>image</cite></dt>
+<dd>一个可以被框架(frame)调整尺寸的图像操纵器。</dd>
+<dt><cite>left</cite></dt>
+<dd>左边框的边界(border)尺寸。此入参也可以是一个 <code class="xref py py-func docutils literal notranslate"><span class="pre">Border()</span></code> 对象，这种情况下其他几个参数也都被这个Border对象一块代替。</dd>
+<dt><cite>top</cite></dt>
+<dd>上边框的边界(border)尺寸。</dd>
+<dt><cite>right</cite></dt>
+<dd>右边框的边界(border)尺寸。如果为None，则默认与  <em>left</em> 一样。</dd>
+<dt><cite>bottom</cite></dt>
+<dd>下边框的边界(border)尺寸。如果为None，则默认与  <em>top</em> 一样。</dd>
+<dt><cite>tile</cite></dt>
+<dd>若该值为True，使用码放(tile)形式重新调整图像区域尺寸，否则使用缩放(scale)形式。</dd>
+</dl>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文本窗口过小时重新调整背景尺寸</span>
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">style</span><span class="o">.</span><span class="k">window</span><span class="o">.</span><span class="na">background</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="s2">&quot;frame.png&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="LiveComposite">
+<code class="descname">LiveComposite</code><span class="sig-paren">(</span><em>size</em>, <em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#LiveComposite" title="Permalink to this definition"> link</a></dt>
+<dd><p>(译者注：6.99.14.3版本后已经删除。)</p>
+<p>创建一个由其他可视组件合成，尺寸为 <em>size</em> 的可视组件。 <em>size</em> 是一个“宽度-高度”元组。</p>
+<p>其余的固定位置入参用于在LiveComposite里放置图片。其余的固定位置入参应该是一组两个的形式。每组第一个成员是一个(x, y)形式的元组，每组第二个成员是在那个位置上发生混合的一个可视组件。</p>
+<p>各种可视组件从后往前逐步合成。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">composite</span> <span class="o">=</span> <span class="n">LiveComposite</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;body.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;clothes.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="s2">&quot;expression.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="LiveCrop">
+<code class="descname">LiveCrop</code><span class="sig-paren">(</span><em>rect</em>, <em>child</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#LiveCrop" title="Permalink to this definition"> link</a></dt>
+<dd><p>(译者注：6.99.14.3版本后已经删除。)</p>
+<p>其会把 <em>child</em> 修剪为一个矩形。 <em>rect</em> 是几个(x, y, width, height)形式的元组。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">cropped</span> <span class="o">=</span> <span class="n">LiveCrop</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="s2">&quot;eileen happy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="LiveTile">
+<code class="descname">LiveTile</code><span class="sig-paren">(</span><em>child</em>, <em>style='tile'</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#LiveTile" title="Permalink to this definition"> link</a></dt>
+<dd><p>(译者注：6.99.14.3版本后已经删除。)</p>
+<p>将 <em>child</em> 码放(tile)至该可视组件所有可用区域。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">bg</span> <span class="n">tile</span> <span class="o">=</span> <span class="n">LiveTile</span><span class="p">(</span><span class="s2">&quot;bg.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Null">
+<code class="descname">Null</code><span class="sig-paren">(</span><em>width=0</em>, <em>height=0</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Null" title="Permalink to this definition"> link</a></dt>
+<dd><p>在界面上创建一个空框(box)的可视组件。框的尺寸由 <em>width</em> 和 <em>height</em> 控制。这个对象用在某个可视组件需要一个子组件且找不到合适的子组件时，或者在box里充当空白。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">logo</span> <span class="n">spaced</span> <span class="o">=</span> <span class="n">HBox</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="n">Null</span><span class="p">(</span><span class="na">width</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;logo.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Solid">
+<code class="descname">Solid</code><span class="sig-paren">(</span><em>color</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Solid" title="Permalink to this definition"> link</a></dt>
+<dd><p>将声明的颜色 <em>color</em> 填满自身所有区域的可视组件。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">white</span> <span class="o">=</span> <span class="n">Solid</span><span class="p">(</span><span class="s2">&quot;#fff&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Tile">
+<code class="descname">Tile</code><span class="sig-paren">(</span><em>child</em>, <em>style='tile'</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Tile" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>child</em> 以码放形式填充整个可视组件区域。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">bg</span> <span class="n">tile</span> <span class="o">=</span> <span class="n">Tile</span><span class="p">(</span><span class="s2">&quot;bg.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="gui-text-displayables">
+<span id="id4"></span><h2>文本组件<a class="headerlink" href="#gui-text-displayables" title="Permalink to this headline"> link</a></h2>
+<p>参见 <a class="reference internal" href="text.html#text-displayables"><span class="std std-ref">文本组件</span></a> 。</p>
+</div>
+<div class="section" id="dynamic-displayables">
+<span id="id5"></span><h2>动态可视组件<a class="headerlink" href="#dynamic-displayables" title="Permalink to this headline"> link</a></h2>
+<p>动态可视组件会基于游戏状态显示一个子组件。这些组件不使用任何特性，布局则由各子组件返回的特性所决定。</p>
+<p>需要注意，动态可视组件总是显示它们的当前状态。因此，动态可视组件参与转场(transition)。(准确的说，转场过程中动态可视组件总是显示同样的东西。)</p>
+<p>根据设计，动态可视组件用于从定义到离开界面都很少改变的要素，而不是用于经常变化的内容，比如角色表情。</p>
+<dl class="function">
+<dt id="ConditionSwitch">
+<code class="descname">ConditionSwitch</code><span class="sig-paren">(</span><em>*args</em>, <em>predict_all=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#ConditionSwitch" title="Permalink to this definition"> link</a></dt>
+<dd><p>基于Python条件表达式，改变自身显示内容的可视组件。固定位置入参应该是一组两个值的形式，每组分别包含：</p>
+<ul class="simple">
+<li>包含Python表达式语句的字符串。</li>
+<li>当条件表达式为True时显示的组件。</li>
+</ul>
+<p>第一条为True的条件表达式会显示自己的可视组件，所以需要保证至少一个条件表达式永远为True。</p>
+<p>这里使用的条件表达式不应该有明显的副作用。</p>
+<p><cite>predict_all</cite></p>
+<blockquote>
+<div>若为True，当显示可视组件时，所有可能的可视组件都会提前缓存。若为False，只加载当前条件表达式的可视组件。若为None，使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.conditionswitch_predict_all()</span></code> 的配置。</div></blockquote>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">jill</span> <span class="o">=</span> <span class="n">ConditionSwitch</span><span class="p">(</span>
+    <span class="s2">&quot;jill_beers &gt; 4&quot;</span><span class="p">,</span> <span class="s2">&quot;jill_drunk.png&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;jill_sober.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="DynamicDisplayable">
+<code class="descname">DynamicDisplayable</code><span class="sig-paren">(</span><em>function</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#DynamicDisplayable" title="Permalink to this definition"> link</a></dt>
+<dd><p>基于某个Python函数可以改变自身子组件的可视组件，作用范围贯穿于某次互动行为。</p>
+<dl class="docutils">
+<dt><cite>function</cite></dt>
+<dd><p class="first">使用入参调用的某个函数的名称：</p>
+<ul class="simple">
+<li>可视组件的显示时间。</li>
+<li>具有相同标签(tag)的任意可视组件的显示时间。</li>
+<li>任何固定位置的或关键字入参用于动态可视组件。</li>
+</ul>
+<p>并返回一个(d, redraw)元组。这个元组中：</p>
+<ul class="simple">
+<li><em>d</em> 是需要显示的可视组件。</li>
+<li><em>redraw</em> 是再次调用该函数的间隔等待时间，如果是空值(None)的话就不会再次调用函数直到下次互动行为。</li>
+</ul>
+<p class="last">每次互动后， <em>function</em> 函数都会被调用。</p>
+</dd>
+</dl>
+<p>有一个特殊情况， <em>function</em> 可能是一个Python字符串并可以等效为一个可视组件。在那种情况下，每个互动行为中function都只能运行一次。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 显示一个从5到0的倒计时，每十分之一秒更新直到计时结束。</span>
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">show_countdown</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="k">at</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">st</span> <span class="o">&gt;</span> <span class="mf">5.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;0.0&quot;</span><span class="p">),</span> <span class="bp">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;{:.1f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">5.0</span> <span class="o">-</span> <span class="n">st</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="mf">0.1</span>
+
+<span class="k">image</span> <span class="n">countdown</span> <span class="o">=</span> <span class="n">DynamicDisplayable</span><span class="p">(</span><span class="n">show_countdown</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="ShowingSwitch">
+<code class="descname">ShowingSwitch</code><span class="sig-paren">(</span><em>*args</em>, <em>predict_all=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#ShowingSwitch" title="Permalink to this definition"> link</a></dt>
+<dd><p>基于目前界面上正在显示图像，能更改自身显示内容的可视组件。固定位置入参应该是一组两个值的形式，每组分别包含：</p>
+<ul class="simple">
+<li>一个指定图像名的字符串，或者用None表示默认图像。</li>
+<li>在条件表达式为True时使用的可视组件。</li>
+</ul>
+<p>默认图像需要提前指定。</p>
+<dl class="docutils">
+<dt><cite>predict_all</cite></dt>
+<dd>若为True，当显示可视组件时，所有可能的可视组件都会提前缓存。若为False，只加载当前条件表达式的可视组件。若为None，使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.conditionswitch_predict_all()</span></code> 的配置。</dd>
+</dl>
+<p>ShowingSwitch的一个用途是，根据角色感情更改角色周围的图像。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;Eileen&quot;</span><span class="p">,</span>
+    <span class="n">show_side_image</span><span class="o">=</span><span class="n">ShowingSwitch</span><span class="p">(</span>
+        <span class="s2">&quot;eileen happy&quot;</span><span class="p">,</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;eileen_happy_side.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span>
+        <span class="s2">&quot;eileen vhappy&quot;</span><span class="p">,</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;eileen_vhappy_side.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span>
+        <span class="bp">None</span><span class="p">,</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;eileen_happy_default.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="transform">
+<span id="applying-transforms-to-displayables"></span><h2>应用于可视组件的变换(transform)<a class="headerlink" href="#transform" title="Permalink to this headline"> link</a></h2>
+<p>At函数使用某个可视组件和若干个 <a class="reference internal" href="transforms.html#transforms"><span class="std std-ref">变换(transform)</span></a> 产生一个新的可视组件。</p>
+<dl class="function">
+<dt id="At">
+<code class="descname">At</code><span class="sig-paren">(</span><em>d</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#At" title="Permalink to this definition"> link</a></dt>
+<dd><p>对给定的源可视组件 <em>d</em> ，将 <em>args</em> 中所有变换(transform)都应用于该组件。所有变换(transform)参数的应用顺序是从左到右，所以最外层的变换(transform)效果是最右边的入参。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">transform</span> <span class="n">birds_transform</span><span class="p">:</span>
+     <span class="na">xpos</span> <span class="o">-</span><span class="mi">200</span>
+     <span class="n">linear</span> <span class="mi">10</span> <span class="na">xpos</span> <span class="mi">800</span>
+     <span class="k">pause</span> <span class="mi">20</span>
+     <span class="k">repeat</span>
+
+<span class="k">image</span> <span class="n">birds</span> <span class="o">=</span> <span class="n">At</span><span class="p">(</span><span class="s2">&quot;birds.png&quot;</span><span class="p">,</span> <span class="n">birds_transform</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="layout-boxes-and-grids">
+<span id="id6"></span><h2>布局框和坐标系<a class="headerlink" href="#layout-boxes-and-grids" title="Permalink to this headline"> link</a></h2>
+<p>布局框是在界面上设置其子组件布局的可视组件。其可以使用水平布局或者垂直布局，也可以使用标准位置算法设置布局。</p>
+<p>框式可视组件可以使用任意数量的固定位置参数和关键词参数。固定位置参数会被以子组件的形式加入框体中。关键词参数则是应用于框体的各种样式特性。</p>
+<p>框体使用 <a class="reference internal" href="style_properties.html#position-style-properties"><span class="std std-ref">位置样式特性</span></a> 和 <a class="reference internal" href="style_properties.html#box-style-properties"><span class="std std-ref">方框(box)样式特性</span></a>。</p>
+<dl class="function">
+<dt id="Fixed">
+<code class="descname">Fixed</code><span class="sig-paren">(</span><em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Fixed" title="Permalink to this definition"> link</a></dt>
+<dd><p>充满整个界面的框体。该框体成员的布局顺序从后往前，使用自身的位置特性控制显示位置。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HBox">
+<code class="descname">HBox</code><span class="sig-paren">(</span><em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#HBox" title="Permalink to this definition"> link</a></dt>
+<dd><p>框体内成员布局顺序从左到右。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="VBox">
+<code class="descname">VBox</code><span class="sig-paren">(</span><em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#VBox" title="Permalink to this definition"> link</a></dt>
+<dd><p>框体内成员布局顺序从上到下。</p>
+</dd></dl>
+
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 显示两个logo，分别位于左边和右边。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="k">hbox</span> <span class="o">=</span> <span class="n">HBox</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="s2">&quot;logo.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># 显示两个logo, 一个在另一个上方。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="k">vbox</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="s2">&quot;logo.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># 显示两个logo。</span>
+<span class="c1"># 由于默认情况下，其他位置显示的图像与界面左上方显示的一致，</span>
+<span class="c1"># 我们需要使用其他图片替换那些不需要logo的地方。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="k">fixed</span> <span class="o">=</span> <span class="n">Fixed</span><span class="p">(</span>
+    <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">0.0</span><span class="p">),</span>
+    <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>坐标布局会在界面上建立一个坐标系，并显示其子组件。其使用
+<a class="reference internal" href="style_properties.html#position-style-properties"><span class="std std-ref">位置样式特性</span></a> 和 <a class="reference internal" href="style_properties.html#style-property-spacing"><code class="xref std std-propref docutils literal notranslate"><span class="pre">spacing</span></code></a> 样式特性。</p>
+<dl class="function">
+<dt id="Grid">
+<code class="descname">Grid</code><span class="sig-paren">(</span><em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Grid" title="Permalink to this definition"> link</a></dt>
+<dd><p>在一个坐标系中布局可视组件。前两个固定位置参数分别对应坐标中的列号和行号。固定位置参数的 <em>columns * rows</em> 给定了坐标系中所能容纳的可视组件总数。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="effects">
+<span id="id7"></span><h2>特效<a class="headerlink" href="#effects" title="Permalink to this headline"> link</a></h2>
+<p>这些可视组件通常用于创建某种视觉特效。</p>
+<dl class="function">
+<dt id="AlphaBlend">
+<code class="descname">AlphaBlend</code><span class="sig-paren">(</span><em>control</em>, <em>old</em>, <em>new</em>, <em>alpha=False</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaBlend" title="Permalink to this definition"> link</a></dt>
+<dd><p>这种过渡(transition)效果用于从一个可视组件(大多数使用某种动画变化)过渡到另一个。当变换(transform)完全不透明时，新的可视组件会被启用；当变化完全透明时，旧的可视组件会被启用。</p>
+<dl class="docutils">
+<dt><cite>alpha</cite></dt>
+<dd>若该值为True，前后图像会相互混合。若该值为False，也就是默认值，前面的图像会显示半透明，覆盖在后面的图像上。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="image-manipulators">
+<span id="id8"></span><h2>图像操纵器<a class="headerlink" href="#image-manipulators" title="Permalink to this headline"> link</a></h2>
+<p>图像操纵器本身是一个可视组件。它会接受一个图像或者另一个图像操纵器对象，对原有对象进行某些处理。图像操纵器只接受图像或其他图像操纵器作为输入。</p>
+<p>任何能放可视组件的地方也可以放图像操纵器，但反过来不一定可行。 <a class="reference internal" href="#Image" title="Image"><code class="xref py py-func docutils literal notranslate"><span class="pre">Image()</span></code></a> 对象是一种图像操纵器，所以任何需要使用图像操纵器的地方都可以使用image对象。</p>
+<p>除了下列的少数例外，图像操纵器的使用已经过时。过去文档中的一些图像操纵器不应该再使用，因为它们存在继承的问题。在很多情况下，<a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 使用更加通用的方法提供了相似的功能，还修复了原来的问题。</p>
+<dl class="function">
+<dt id="im.AlphaMask">
+<code class="descclassname">im.</code><code class="descname">AlphaMask</code><span class="sig-paren">(</span><em>base</em>, <em>mask</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.AlphaMask" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用两个图像操纵器 <em>base</em> 和 <em>mask</em> 作为入参，创建一个图像操纵器。其使用 <em>mask</em> 的红色通道值替换了 <em>base</em> 的alpha通道值。</p>
+<p>该函数用于向某个图像提供alpha通道值，来源是另一个图像。比如某个jpeg图片提供色彩数据，使用另一个jpeg图片提供alpha值。在某些情况下，两张jpeg图片的文件大小可能比一张png图文文件还要小。</p>
+<p>需要注意，该函数与 <a class="reference internal" href="#AlphaMask" title="AlphaMask"><code class="xref py py-func docutils literal notranslate"><span class="pre">AlphaMask()</span></code></a> 使用不同的入参，AlphaMask()使用的是mask参数的alpha通道值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Composite">
+<code class="descclassname">im.</code><code class="descname">Composite</code><span class="sig-paren">(</span><em>size</em>, <em>*args</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Composite" title="Permalink to this definition"> link</a></dt>
+<dd><p>(译者注：官方文档已删除这个函数。)</p>
+<p>这个图像管理器函数将多个图像合成为一张图像并输出。</p>
+<p><em>size</em> 参数是一个(width, height)元组，给定了混合后的图像尺寸。</p>
+<p>其余的固定位置参数是一组两项入参的形式。每组的第一项参数是(x, y)元组形式的坐标，第二项参数是某个图像操纵器。那个图像操纵器提供的图像会在指定的坐标位置做图像混合处理。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">girl</span> <span class="n">clothed</span> <span class="n">happy</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">Composite</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;girl_body.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;girl_clothes.png&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;girl_happy.png&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Crop">
+<code class="descclassname">im.</code><code class="descname">Crop</code><span class="sig-paren">(</span><em>im</em>, <em>rect</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Crop" title="Permalink to this definition"> link</a></dt>
+<dd><p>该图像操纵器实现了图像剪裁功能。对原图像 <em>im</em> ，剪裁其在 <em>rect</em> 范围内的图像。 <em>rect</em> 参数是一个(x, y, width, height)形式的元组。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">logo</span> <span class="na">crop</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">Crop</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">307</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Data">
+<code class="descclassname">im.</code><code class="descname">Data</code><span class="sig-paren">(</span><em>data</em>, <em>filename</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Data" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个图像操纵器从二进制文件加载图像。</p>
+<p><cite>data</cite></p>
+<p>由byte组成的字符串，表示标准文件格式下的压缩图片数据。</p>
+<p><cite>filename</cite></p>
+<p>与图像关联的 <em>filename</em> 文件名。这项用于向Ren’Py提供数据格式的提示。(图像并不是从磁盘加载的。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.FactorScale">
+<code class="descclassname">im.</code><code class="descname">FactorScale</code><span class="sig-paren">(</span><em>im</em>, <em>width</em>, <em>height=None</em>, <em>bilinear=True</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.FactorScale" title="Permalink to this definition"> link</a></dt>
+<dd><p>该图像操纵器实现图像(或图像操纵器) <em>im</em> 的按比例缩放。缩放后的图像宽高比不变。如果 <em>height</em> 入参为空，默认与 <em>width</em> 值相同。</p>
+<p>如果 <em>bilinear</em> 为True，缩放时使用双线性插值算法。否则，缩放时使用最近邻插值算法。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">logo</span> <span class="n">doubled</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">FactorScale</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Flip">
+<code class="descclassname">im.</code><code class="descname">Flip</code><span class="sig-paren">(</span><em>im</em>, <em>horizontal=False</em>, <em>vertical=False</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Flip" title="Permalink to this definition"> link</a></dt>
+<dd><p>该图像操纵器实现图像(或图像操纵器) <em>im</em> 在垂直或水平方向的晃动。 <em>vertical</em> 和 <em>horizontal</em> 参数控制具体的晃动方向。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">flip</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">Flip</span><span class="p">(</span><span class="s2">&quot;eileen_happy.png&quot;</span><span class="p">,</span> <span class="na">vertical</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Grayscale">
+<code class="descclassname">im.</code><code class="descname">Grayscale</code><span class="sig-paren">(</span><em>im</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Grayscale" title="Permalink to this definition"> link</a></dt>
+<dd><p>该图像操纵器创建了一个 <em>im</em> 的灰度版本(即不带色彩饱和度为0)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Scale">
+<code class="descclassname">im.</code><code class="descname">Scale</code><span class="sig-paren">(</span><em>im</em>, <em>width</em>, <em>height</em>, <em>bilinear=True</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Scale" title="Permalink to this definition"> link</a></dt>
+<dd><p>(译者注：官方文档已删除这个函数。)</p>
+<p>该图像操纵器直接把 <em>im</em> 的宽度和高度缩放至 <em>width</em> 和 <em>height</em> 的值。</p>
+<p>如果 <em>bilinear</em> 为True，缩放时使用双线性插值算法。否则，缩放时使用最近邻插值算法。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">logo</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Sepia">
+<code class="descclassname">im.</code><code class="descname">Sepia</code><span class="sig-paren">(</span><em>im</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Sepia" title="Permalink to this definition"> link</a></dt>
+<dd><p>该图像操纵器创建了一个 <em>im</em> 的旧化版本(即老照片样式)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.Tile">
+<code class="descclassname">im.</code><code class="descname">Tile</code><span class="sig-paren">(</span><em>im</em>, <em>size=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.Tile" title="Permalink to this definition"> link</a></dt>
+<dd><p>在 <em>size</em> 范围内以tile形式码放 <em>im</em> 。</p>
+<dl class="docutils">
+<dt><cite>size</cite></dt>
+<dd>如果不为None，该值是一个(width, height)元组。如果为空，默认值为(config.screen_width, config.screen_height)，即整个界面的尺寸。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="im-matrixcolor">
+<span id="id9"></span><h2>im.MatrixColor<a class="headerlink" href="#im-matrixcolor" title="Permalink to this headline"> link</a></h2>
+<p>im.MatrixColor图像操纵器是使用一个矩阵控制图像色彩变换的图像操纵器。使用的矩阵可以是一个im.matrix对象，使用一个支持矩阵乘法的5×5矩阵进行编码，通过一系列函数返回编码结果。im.matrix对象可以多重相乘并同时生效。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">city</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">MatrixColor</span><span class="p">(</span>
+    <span class="s2">&quot;city.jpg&quot;</span><span class="p">,</span>
+    <span class="n">im</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">desaturate</span><span class="p">()</span> <span class="o">*</span> <span class="n">im</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">tint</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>样例中，先将图像黑白化，然后提高图像中蓝色的纯度(实际降低了红色和绿色的纯度)。如果处理过程环节中的图片不需要存储，多个矩阵的使用是非常高效的，无论是在处理时间和缓存空间要求方面，都比单独使用两个im.MatrixColor矩阵好。</p>
+<dl class="function">
+<dt id="im.MatrixColor">
+<code class="descclassname">im.</code><code class="descname">MatrixColor</code><span class="sig-paren">(</span><em>im</em>, <em>matrix</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#im.MatrixColor" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用 <em>matrix</em> 线性化转换图像处理器 <em>im</em> 。</p>
+<p><em>matrix</em> 是一个列表元组或者 <a class="reference internal" href="#im.matrix" title="im.matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">im.matrix()</span></code></a> 对象，包含20或者25个元素。如果对象中包含25个元素，第20个元素之后的会被忽略。</p>
+<p>假设原图像的色彩值有4项，分别为R、G、B和A，值的范围为0.0至1.0；转换后的色彩值为R’、G’、B’和A’，值的范围为0.0至1.0；色彩转换矩阵的各项值如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span>
+  <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span>
+  <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span>
+  <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>转换后的颜色可以使用如下方程计算：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="sa">R</span><span class="s1">&#39; = (a * R) + (b * G) + (c * B) + (d * A) + e</span>
+<span class="n">G</span><span class="s1">&#39; = (f * R) + (g * G) + (h * B) + (i * A) + j</span>
+<span class="sa">B</span><span class="s1">&#39; = (k * R) + (l * G) + (m * B) + (n * A) + o</span>
+<span class="n">A</span><span class="s1">&#39; = (p * R) + (q * G) + (r * B) + (s * A) + t</span>
+</pre></div>
+</div>
+<p>转换后图像的各项颜色值会被限制在区间[0.0, 1.0]里。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix">
+<code class="descclassname">im.</code><code class="descname">matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix" title="Permalink to this definition"> link</a></dt>
+<dd><p>从 <em>matrix</em> 参数构造一个im.matrix对象。im.matrix对象支持矩阵乘法、标量乘法(scalar multiplication)、点位(element-wise)加法和点位(element-wise)减法。进行这些运算时，使用标准的数学符号(分别使用*、*、+和-)。两种乘法的使用取决于两个因子：如果两个im.matrix相乘就使用矩阵乘法，如果有一个因子不是矩阵则使用标量乘法。</p>
+<p><em>matrix</em> 是一个列表元组或者im.matrix对象，包含20或者25个元素。如果对象中包含20个元素，后面会加(0, 0, 0, 0, 1)填充成5×5矩阵，为了符合乘法运算的需求。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.brightness">
+<code class="descclassname">im.matrix.</code><code class="descname">brightness</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.brightness" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，可用于转换某个图像的明度。</p>
+<dl class="docutils">
+<dt><cite>b</cite></dt>
+<dd>图像明度的变化值。该值是一个介于-1和1之间的数值。-1表示最低明度，1表示最高明度。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.colorize">
+<code class="descclassname">im.matrix.</code><code class="descname">colorize</code><span class="sig-paren">(</span><em>black_color</em>, <em>white_color</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.colorize" title="Permalink to this definition"> link</a></dt>
+<dd><p>为黑白图像添加色调分离效果的im.matrix矩阵。 <em>black_color</em> 和 <em>white_color</em> 是Ren’Py中的样式色彩，所以可以表示为一个色彩字符串或者0-255范围内色彩值组成的元组。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这个矩阵能使图像阴影为红色，而高光部分为蓝色。</span>
+<span class="k">image</span> <span class="n">logo</span> <span class="n">colored</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">MatrixColor</span><span class="p">(</span>
+    <span class="s2">&quot;bwlogo.png&quot;</span><span class="p">,</span>
+    <span class="n">im</span><span class="o">.</span><span class="n">matrix</span><span class="o">.</span><span class="n">colorize</span><span class="p">(</span><span class="s2">&quot;#f00&quot;</span><span class="p">,</span> <span class="s2">&quot;#00f&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.contrast">
+<code class="descclassname">im.matrix.</code><code class="descname">contrast</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.contrast" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，可用于转换某个图像的对比度。 <em>c</em> 应是一个大于0.0的值，其值介于0.0和1.0之间时降低对比度，其值大于1.0时增加对比度。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.desaturate">
+<code class="descclassname">im.matrix.</code><code class="descname">desaturate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.desaturate" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，可以将某个图像转为黑白(变成灰度图像)。等效于调用im.matrix.saturation(0)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.hue">
+<code class="descclassname">im.matrix.</code><code class="descname">hue</code><span class="sig-paren">(</span><em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.hue" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，用于调整色相，保持亮度的情况下转动色相环 <em>h</em> 度。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.identity">
+<code class="descclassname">im.matrix.</code><code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.identity" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个标识符矩阵，标识某些色彩或者alpha值不会改变。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.invert">
+<code class="descclassname">im.matrix.</code><code class="descname">invert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.invert" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，在不改变alpha通道的情况下，反转图像的红、绿、蓝三色值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.opacity">
+<code class="descclassname">im.matrix.</code><code class="descname">opacity</code><span class="sig-paren">(</span><em>o</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.opacity" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，改变图像的透明度。 <em>o</em> 为0.0表示完全透明，为1.0表示完全不透明。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.saturation">
+<code class="descclassname">im.matrix.</code><code class="descname">saturation</code><span class="sig-paren">(</span><em>level</em>, <em>desat=(0.2126</em>, <em>0.7152</em>, <em>0.0722)</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.saturation" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，改变图像的饱和度。这种改变与alpha通道无关。</p>
+<dl class="docutils">
+<dt><cite>level</cite></dt>
+<dd>处理后图像的色彩饱和度相对值。1.0表示原图色彩饱和度，0.0表示灰度图。</dd>
+<dt><cite>desat</cite></dt>
+<dd>这是一个3元素元组，每个元素对应红、绿、蓝三个通道的饱和度相对值。默认值基于NTSC色彩空间亮度通道的值。由于人眼对绿色最敏感，所以绿色通道保留的信息通常比其他两个通道多。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.matrix.tint">
+<code class="descclassname">im.matrix.</code><code class="descname">tint</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#im.matrix.tint" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个im.matrix矩阵对象，图像增亮，但不改变alpha通道。 <em>r</em> 、 <em>g</em> 和 <em>b</em> 是介于0跟1之间的数值，各个通道原值与入参的乘积就是最终图像的值。(例如，若 <em>r</em> 是0.5，原图像红色通道的值是100，转换后的图像红色通道值就是50。)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="placeholders">
+<span id="id10"></span><h2>占位组件<a class="headerlink" href="#placeholders" title="Permalink to this headline"> link</a></h2>
+<p>占位组件(placeholder)用于正确显示背景图或者角色图像。在开发者模式下，使用某个未定义的图像时，占位组件会被自动使用。如果你觉得默认的显示有问题，也可以手动指定占位组件的使用。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 默认情况下，会使用girl占位组件。</span>
+<span class="k">image</span> <span class="n">sue</span> <span class="o">=</span> <span class="n">Placeholder</span><span class="p">(</span><span class="s2">&quot;boy&quot;</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+     <span class="k">show</span> <span class="n">sue</span> <span class="n">angry</span>
+     <span class="s2">&quot;苏&quot;</span> <span class="s2">&quot;你还好吗？现在，受死吧！&quot;</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="Placeholder">
+<code class="descname">Placeholder</code><span class="sig-paren">(</span><em>base=None</em>, <em>full=False</em>, <em>flip=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Placeholder" title="Permalink to this definition"> link</a></dt>
+<dd><p>该可视组件可以用于显示一个占位角色或背景。</p>
+<dl class="docutils">
+<dt><cite>base</cite></dt>
+<dd><p class="first">显示图像的类型。应该是以下类型之一：</p>
+<dl class="last docutils">
+<dt><strong>‘bg’</strong></dt>
+<dd>显示一个背景占位组件。这个组件会以浅灰填满整个界面，并在界面上方显示图像名。</dd>
+<dt><strong>‘boy’</strong></dt>
+<dd>显示一个“记为男性”的占位组件，胸口位置显示图片名。</dd>
+<dt><strong>‘girl’</strong></dt>
+<dd>显示一个“记为女性”的占位组件，胸口位置显示图片名。</dd>
+<dt><strong>None</strong></dt>
+<dd><p class="first">尝试自动确认图像用途。如果图像名以“bg”、“cg”或者“event”开头，则取值’bg’。</p>
+<p>否则，引擎会连接一个web服务器根据角色名字猜测性别并应用。(web服务器也无法判断的情况下，默认为’girl’占位组件。)</p>
+<p class="last">只有把config.developer设置为true时，才会连接web服务器。</p>
+</dd>
+</dl>
+</dd>
+<dt><cite>full</cite></dt>
+<dd>若该值为True，使用全身像的精灵(sprite)。否则，使用3/4像的精灵(sprite)。</dd>
+<dt><cite>flip</cite></dt>
+<dd>若该值为True，精灵(sprite)会水平晃动。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="displayable-prefix">
+<span id="id11"></span><h2>可视组件前缀<a class="headerlink" href="#displayable-prefix" title="Permalink to this headline"> link</a></h2>
+<p>可视组件可以使制作者定义他们自己的可视组件，并且涉及到所有Ren’Py可以用到可视组件的地方。一个前缀可视组件是一个带有英文冒号的字符串。前缀在冒号左边，参数在冒号右边。 <a class="reference internal" href="config.html#var-config.displayable_prefix"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.displayable_prefix</span></code></a> 变量将前缀对应到一个函数。函数接受此参数，并返回一个可视组件或None。</p>
+<p>比如说，这个例子创建一个big前缀，返回一个原来两倍大的图像。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="o">-</span><span class="mi">10</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">embiggen</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="na">zoom</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">config</span><span class="o">.</span><span class="n">displayable_prefix</span><span class="p">[</span><span class="s2">&quot;big&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">embiggen</span>
+</pre></div>
+</div>
+<p>init -10 确保前缀在任何图像使用它之前被定义。
+然后前缀可以用来定义图像：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">big</span> <span class="o">=</span> <span class="s2">&quot;big:eileen happy&quot;</span>
+</pre></div>
+</div>
+<p>或者其他需要显示可视组件的地方。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

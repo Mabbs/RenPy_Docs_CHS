@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>完整变更日志 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Incompatible Changes" href="incompatible.html" />
+    <link rel="prev" title="Ren’Py多语言支持" href="translating_renpy.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">完整变更日志</a><ul>
+<li><a class="reference internal" href="#renpy-7-0">7.0</a><ul>
+<li><a class="reference internal" href="#changelog-layered-images">层叠式图像</a></li>
+<li><a class="reference internal" href="#changelog-dict-transitions">字典转场</a></li>
+<li><a class="reference internal" href="#changes-1">变更</a></li>
+<li><a class="reference internal" href="#translations">多语言支持</a></li>
+<li><a class="reference internal" href="#fixes-1">修复</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#renpy-6-99-14-3">6.99.14.3</a><ul>
+<li><a class="reference internal" href="#changes-2">变更</a></li>
+<li><a class="reference internal" href="#fixes-2">修复</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#renpy-6-99-14-2">6.99.14.2</a><ul>
+<li><a class="reference internal" href="#features-and-changes">特性和变更</a></li>
+<li><a class="reference internal" href="#changelog-self-voicing">自动语音</a></li>
+<li><a class="reference internal" href="#fixes-3">修复</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#renpy-6-99-14-1">6.99.14.1</a><ul>
+<li><a class="reference internal" href="#id16">图像预加载和缓存</a></li>
+<li><a class="reference internal" href="#other-improvements">其他改进</a></li>
+<li><a class="reference internal" href="#other-fixes">其他修复</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ren-py-6-99-14">Ren’Py 6.99.14</a><ul>
+<li><a class="reference internal" href="#performance">性能表现</a></li>
+<li><a class="reference internal" href="#changelog-multiple-character-dialogue">多角色对话</a></li>
+<li><a class="reference internal" href="#gui">GUI环境设定</a></li>
+<li><a class="reference internal" href="#tooltips">Tooltips</a></li>
+<li><a class="reference internal" href="#changes-3">变更</a></li>
+<li><a class="reference internal" href="#fixes-4">修复</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ren-py-6-99-13">Ren’Py 6.99.13</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="full-changelog">
+<span id="id1"></span><h1>完整变更日志<a class="headerlink" href="#full-changelog" title="Permalink to this headline"> link</a></h1>
+<div class="section" id="renpy-7-0">
+<span id="id2"></span><h2>7.0<a class="headerlink" href="#renpy-7-0" title="Permalink to this headline"> link</a></h2>
+<p>自从Ren’Py 6带来ATL语言、界面语言、OpenGL和DirectX加速等特性后，到Ren’Py 7.0对安卓和iOS平台的支持、多语言支持、外部平台接入支持(Accessbility)等新功能，Ren’Py引擎的开发已经超过了10年。</p>
+<p>6.0版和7.0版之间的变化，可以参看变更日志的其他部分，或者在Ren’Py的网站上查看更老版本的变更日志。这一层的内容是7.0跟6.99.14.3两个版本间的差异。</p>
+<div class="section" id="changelog-layered-images">
+<span id="id3"></span><h3>层叠式图像<a class="headerlink" href="#changelog-layered-images" title="Permalink to this headline"> link</a></h3>
+<blockquote>
+<div><a class="reference internal" href="layeredimage.html#layered-images"><span class="std std-ref">层叠式图像</span></a> 是使用在Ren’Py中的新定义图像。它设计用于精灵(sprite)，该精灵是通过Photoshop等软件制作出的一系列图层。层叠式图像系统让图像根据属性(attribute)显示不同内容，由Python条件表达式决定显示哪个图层的图像。</div></blockquote>
+<p>层叠式图像用为 <code class="xref py py-func docutils literal notranslate"><span class="pre">composite()</span></code>
+和 <a class="reference internal" href="displayables.html#ConditionSwitch" title="ConditionSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConditionSwitch()</span></code></a> 的一种替代方案。它使用的语言让定义合成图像更方便。而且Ren’Py可以根据被合适命名的文件，生成对应部分的定义。相比Ren’Py的其他功能，层叠式图像也更优秀。比如属性(attribute)可以预加载，而ConditionSwith却不行。层叠式图像还可以在交互式指导器(interactive director)中使用。</p>
+</div>
+<div class="section" id="changelog-dict-transitions">
+<span id="id4"></span><h3>字典转场<a class="headerlink" href="#changelog-dict-transitions" title="Permalink to this headline"> link</a></h3>
+<p><a class="reference internal" href="transitions.html#dict-transitions"><span class="std std-ref">字典转场</span></a> 可以使用with语句和某些其他函数将转场应用于一个或多个图层。Ren’Py不会在使用这些转场时暂停。字典转场使精灵进行转场的时候也同时显示对话成为可能。</p>
+</div>
+<div class="section" id="changes-1">
+<span id="id5"></span><h3>变更<a class="headerlink" href="#changes-1" title="Permalink to this headline"> link</a></h3>
+<p>现在的Ren’Py中已经不包含旧的教程和模板。不过从旧版本的Ren’Py中复制过来也可以用。</p>
+<p>新 <code class="xref py py-func docutils literal notranslate"><span class="pre">Scroll()</span></code> 动作可以使按钮改变视口的位置或条(bar)的值。</p>
+<p><a class="reference internal" href="transitions.html#Dissolve" title="Dissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dissolve()</span></code></a>、 <a class="reference internal" href="transitions.html#ImageDissolve" title="ImageDissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">ImageDissolve()</span></code></a> 和 <a class="reference internal" href="transitions.html#AlphaDissolve" title="AlphaDissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">AlphaDissolve()</span></code></a> 转场现在可以承认源可视组件的alpha通道，就像设置了 alpha=True参数一样。由于忽略alpha通道不再是最优，这种改变允许在更多地方使用相同的转场。</p>
+<p>自动图像定义现在可以在init level 0级别运行，而不是原来的init level必须大于999。这个改动允许 <a class="reference internal" href="displaying_images.html#renpy.has_image" title="renpy.has_image"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.has_image()</span></code></a> 函数能在初始化语句块(block)中使用。</p>
+<p>交互式指导器(interactive director)现在多了一个按钮，允许创作者选择显示在界面的顶部还是底部。</p>
+<p><a class="reference internal" href="screens.html#sl-for"><span class="std std-ref">界面语言的for语句</span></a> 声明现在需要一个index子句:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">index</span> <span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="k">in</span> <span class="n">party</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>当被提供时，它应该返回一个唯一的值，该值可以像按钮地图信息和转换状态其来源的对象。</p>
+<p>现在有可选的上标文字，允许两种不同的上标文字同时显示。(比如翻译和注音。)</p>
+<p>新的 <a class="reference internal" href="displayables.html#displayable-prefix"><span class="std std-ref">可视组件前缀</span></a> 系统可以定义你自己的可视组件，组件可以用字符串访问，这与图像，图像文件和solid具有的字符串形式相同。</p>
+<p>Ren’Py现在支持创建具有单个文件的.zip文件(例如.rpa文件)大于2GB。这需要使用Zip64标准，在某些平台上可能不支持解压缩这种文件，最需要注意的是Windows XP。</p>
+<p>新的 <code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.get_hidden_tags()</span></code> 函数返回一组标签(tag)，包含隐藏属性，另一个 <a class="reference internal" href="displaying_images.html#renpy.get_showing_tags" title="renpy.get_showing_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.get_showing_tags()</span></code></a> 函数则返回一组排列好的标签(tag)。</p>
+<p>为了与ATL和其他动画保持一致，第二次显示视频精灵现在将重播视频。</p>
+</div>
+<div class="section" id="translations">
+<span id="id6"></span><h3>多语言支持<a class="headerlink" href="#translations" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py 教程和The Question示例现已支持法语，感谢 Alexandre Tranchant。</p>
+<p>对日语和俄语的支持更新。</p>
+</div>
+<div class="section" id="fixes-1">
+<span id="id7"></span><h3>修复<a class="headerlink" href="#fixes-1" title="Permalink to this headline"> link</a></h3>
+<p>当界面不显示时，处理hide和replace事件消息导致的界面无法恢复问题已经修复。(这种情况会在用户跳过游戏时出现。)</p>
+<p>在交互式指导器(interactive director)中使用默认语言(英语)时，偶尔会切换为俄语的问题已经修复。</p>
+<p>可视组件 <a class="reference internal" href="displayables.html#Composite" title="Composite"><code class="xref py py-func docutils literal notranslate"><span class="pre">Composite()</span></code></a>、 <a class="reference internal" href="displayables.html#Crop" title="Crop"><code class="xref py py-func docutils literal notranslate"><span class="pre">Crop()</span></code></a> 和 <a class="reference internal" href="displayables.html#Tile" title="Tile"><code class="xref py py-func docutils literal notranslate"><span class="pre">Tile()</span></code></a> 分别对应各自的新名称。</p>
+<p>接入控制台时，Ren’Py回滚位置不正确的问题已经修复。那个问题会导致控制台显示不正确的数据，不过仅限于控制台自身的数据。</p>
+</div>
+</div>
+<div class="section" id="renpy-6-99-14-3">
+<span id="id8"></span><h2>6.99.14.3<a class="headerlink" href="#renpy-6-99-14-3" title="Permalink to this headline"> link</a></h2>
+<div class="section" id="changes-2">
+<span id="id9"></span><h3>变更<a class="headerlink" href="#changes-2" title="Permalink to this headline"> link</a></h3>
+<p>可视组件 <a class="reference internal" href="displayables.html#AlphaMask" title="AlphaMask"><code class="xref py py-func docutils literal notranslate"><span class="pre">AlphaMask()</span></code></a> 将其遮罩(mask)放入其子可视组件，与AlphaDissolve的处理方式相同。
+这样改动后，允许mask参数通过使用ATL或其他变换(transform)创建。</p>
+<p>几个过时的图像操纵器已被弃用，并从文档中删除。这些是已被 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 完全取代的图像操纵器。</p>
+<p>重命名了一些函数，删除了“Live”前缀。</p>
+<ul class="simple">
+<li>LiveComposite现在是 <a class="reference internal" href="displayables.html#Composite" title="Composite"><code class="xref py py-func docutils literal notranslate"><span class="pre">Composite()</span></code></a></li>
+<li>LiveCrop现在是 <a class="reference internal" href="displayables.html#Crop" title="Crop"><code class="xref py py-func docutils literal notranslate"><span class="pre">Crop()</span></code></a></li>
+<li>LiveTile现在是 <a class="reference internal" href="displayables.html#Tile" title="Tile"><code class="xref py py-func docutils literal notranslate"><span class="pre">Tile()</span></code></a></li>
+</ul>
+<p>原有的函数名已保留作为兼容的别名。</p>
+</div>
+<div class="section" id="fixes-2">
+<span id="id10"></span><h3>修复<a class="headerlink" href="#fixes-2" title="Permalink to this headline"> link</a></h3>
+<p>这个版本修复了一个问题：界面内for语句的子组件不应该在界面更新循环中增加自身的数据。
+这个问题出现在比较复杂的场景中，比如循环的转场(transition)或慢速文本(slow text)无效的时候。</p>
+<p>该版本可以使用选择的颜色显示最新的存档槽位，如果有需要使用的话。
+这个功能直接会应用在新创建的游戏中。旧工程可以在gui.rpy底部添加如下代码实现更新：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="n">slot_button_text_selected_idle_color</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="na">selected_color</span>
+<span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="n">slot_button_text_selected_hover_color</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="na">hover_color</span>
+</pre></div>
+</div>
+<p>6.99.14.2引入的，在回滚之后default语句无法工作的故障，也已经修复。
+这个故障仅对首次存档后的游戏有影响。</p>
+</div>
+</div>
+<div class="section" id="renpy-6-99-14-2">
+<span id="id11"></span><h2>6.99.14.2<a class="headerlink" href="#renpy-6-99-14-2" title="Permalink to this headline"> link</a></h2>
+<div class="section" id="features-and-changes">
+<span id="id12"></span><h3>特性和变更<a class="headerlink" href="#features-and-changes" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py现在支持Atom文本编辑器。选择了Atom文本编辑器后，Ren’Py会下载Atom，安装language-renpy、renpy-dark-syntax和renpy-light-syntax的Atom插件，并创建一个新的profile文件。
+使用这些新的默认设置能让Ren’Py变成更轻松。</p>
+<p>现在还支持在对基于图片的字体使用下划线。</p>
+<p>当某个界面使用默认的GUI滚动设置时，PageUp和PageDown按键能直接滚动界面。(这个功能仅在新创建的工程上生效。)</p>
+<p>可视组件 <a class="reference internal" href="movie.html#Movie" title="Movie"><code class="xref py py-func docutils literal notranslate"><span class="pre">Movie()</span></code></a> 现在使用play_callback入参。这个入参指定了一个函数，调用这个函数就能播放一段影片。
+这个函数能处理的东西包括，在通常循环播放的视频前面加一个转场影片，让转场更平滑。</p>
+<p>新的 <a class="reference internal" href="displaying_images.html#renpy.get_say_image_tag" title="renpy.get_say_image_tag"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.get_say_image_tag()</span></code></a> 函数可以重新获取(retrieve)发言角色的名字。</p>
+<p>ATL的interpolation语句现在可以在多行的变换(transform)中同时执行，并且都不消耗时间。</p>
+<p>向call语句添加一条from语句不再修改多语言支持(translation)的标识符。(这个标识符也用于自动语音的编号。)
+由于这是一个重大改变，Ren’Py在遇到旧式的多语言支持标识符时会进行重新计算并使用。</p>
+<p>仅当可以定位到单个可视组件时，才调用_choose_attributes方法。这个方法支持AttributeImage beta(<a class="reference external" href="https://github.com/renpy/ai">https://github.com/renpy/ai</a>)。</p>
+<p>新的 <a class="reference internal" href="gui.html#var-gui.button_image_extension"><code class="xref std std-var docutils literal notranslate"><span class="pre">gui.button_image_extension</span></code></a> 配置项允许按钮(button)图片使用.webps文件。</p>
+</div>
+<div class="section" id="changelog-self-voicing">
+<span id="id13"></span><h3>自动语音<a class="headerlink" href="#changelog-self-voicing" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py的自动语音模式，针对视觉障碍用户的功能又进行了提升：</p>
+<ul class="simple">
+<li>选择按钮之后会在后面加上单词“selected”。</li>
+<li>选择条(bar)之后会在后面加上单词“bar”。</li>
+<li>一些拥有自身自动语音信息的动作在新版GUI中提升了效果。</li>
+<li>Ren’Py内建的ALT文本实现多语言支持(translation)。</li>
+</ul>
+<p>由于改变了自动语音的输出，这个变更应该不会对已存在的支持语言生效。</p>
+</div>
+<div class="section" id="fixes-3">
+<span id="id14"></span><h3>修复<a class="headerlink" href="#fixes-3" title="Permalink to this headline"> link</a></h3>
+<p>在无存档游戏中存档或自动存档导致的脏数据问题，已经被修复。</p>
+<p>Python的hide语句现在可以运行在python函数上下文(context)中。
+某个结构(像生成器表达式)编辑hide语句，并能正确运行。</p>
+<p>全局脚本标签(global label)的表现与文档描述一致。</p>
+<p>自定义鼠标归位导致的鼠标指针乱跳问题已经修复。</p>
+<p>显示菜单后依然显示头像的问题已经修复。</p>
+<p>某个界面被替换后，Ren’Py不再存储原界面内不显示的可视组件的状态。
+(如果第一个界面再次显示，那些可视组件会获取旧的状态，这可能会导致出现问题。)</p>
+<p>show和replay事件消息现在总是会传送到界面内的变换(transform)。界面显示时总是需要广播那两类事件消息。之前的缓存可以阻止某些show事件的广播。</p>
+<p>可以按住alt键输入字符了。(在某些欧洲语言中有些特殊字符必须要按住alt键才能输入。)</p>
+<p>当安卓包生成系统重命名文件或目录失败时，会在60秒内重试，才会放弃。这段时间主要用于处理Windows平台赛门铁克杀毒软件的问题。</p>
+</div>
+</div>
+<div class="section" id="renpy-6-99-14-1">
+<span id="id15"></span><h2>6.99.14.1<a class="headerlink" href="#renpy-6-99-14-1" title="Permalink to this headline"> link</a></h2>
+<div class="section" id="id16">
+<h3>图像预加载和缓存<a class="headerlink" href="#id16" title="Permalink to this headline"> link</a></h3>
+<p>将一个图像转换为纹理(texture)时，现在Ren’Py会搜索不透明像素的包围盒(bounding box)。
+当 <a class="reference internal" href="config.html#var-config.optimize_texture_bounds"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.optimize_texture_bounds</span></code></a>
+配置变量为True(也就是默认值)时，只有不透明像素会存储到图像缓存中。
+这样可以明显降低某些图像的内存消耗，比如大部分都透明的图层上的图像。</p>
+<p>现在 <a class="reference internal" href="config.html#var-config.cache_surfaces"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.cache_surfaces</span></code></a> 配置项默认值是False。这使得图像缓存对内存大小的要求减半，但让使用同一图像的多个图像操纵器(manipulator)运行速度下降。</p>
+<p>现在
+<a class="reference internal" href="config.html#var-config.image_cache_size_mb"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.image_cache_size_mb</span></code></a> 配置项控制图像缓存的大小，默认值为300MB。新的默认设置里，图像内的每个像素非透明边框占用4byte内存。</p>
+<p>以上三点的改变是图像占用的缓存更小，也意味着Ren’Py可以存储更多预加载图像。</p>
+<p>Ren’Py在缓存图片和界面时，现在拒绝调用那些从磁盘读取文件的函数(比如
+<a class="reference internal" href="file_python.html#renpy.image_size" title="renpy.image_size"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.image_size()</span></code></a>)。那些函数的响应慢，而会引发掉帧。</p>
+<p><a class="reference internal" href="displayables.html#ConditionSwitch" title="ConditionSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConditionSwitch()</span></code></a> 和 <a class="reference internal" href="displayables.html#ShowingSwitch" title="ShowingSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ShowingSwitch()</span></code></a> 可视组件有了一个新的“predict_all”参数。当这个参数为True时，预加载所有可视组件，而不仅仅是选中的那个。这个改动可以用于Ren’Py预加载某个精灵(sprite)的所有表情。</p>
+<p><a class="reference internal" href="displaying_images.html#renpy.start_predict" title="renpy.start_predict"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.start_predict()</span></code></a> 和 <a class="reference internal" href="displaying_images.html#renpy.stop_predict" title="renpy.stop_predict"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.stop_predict()</span></code></a> 函数现在是可以使用正则表达式通配符。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">start_predict</span><span class="p">(</span><span class="s2">&quot;eileen *&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>预加载所有开头为标签(tag)“eileen”的图像，出现如下语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">start_predict</span><span class="p">(</span><span class="s2">&quot;* beach*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>匹配所有带有“beach”属性的图像。</p>
+<p>现在F4键可以显示图像加载日志了。</p>
+</div>
+<div class="section" id="other-improvements">
+<span id="id17"></span><h3>其他改进<a class="headerlink" href="#other-improvements" title="Permalink to this headline"> link</a></h3>
+<p>变换(transform)现在有了一个新的 <a class="reference internal" href="atl.html#transform-property-maxsize"><code class="xref std std-tpref docutils literal notranslate"><span class="pre">maxsize</span></code></a> 特性，能够将图像缩小到某个范围的方框里。</p>
+<p>当Ren’Py重新加载(reload)时，会保留Python表达式缓存，相比原来每次重新加载都unmarshall缓存有明显的性能提升。</p>
+<p>track.txt和errors.txt文件现在底部会有一个日期，更容易判断这个文件是否过期失效。</p>
+<p>新的 <code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.list_images()</span></code> 函数返回所有定义过的图像列表。</p>
+<p>Drag组件现在新增了 <cite>mouse_drop</cite> 特性。若这项特性为True，使用鼠标指针坐标选择Drag组件落下的位置，而不是使用overlap最大的Drag组件。</p>
+<p>西班牙语版本更新。</p>
+</div>
+<div class="section" id="other-fixes">
+<span id="id18"></span><h3>其他修复<a class="headerlink" href="#other-fixes" title="Permalink to this headline"> link</a></h3>
+<p>修复ATL“on hide”分句无效的bug。</p>
+<p>等待某个界面跳动(flip)时释放GIL(解释器全局锁)，让一些任务(播放音乐、预加载图像、自动存档等)在后台线程运行得更快。</p>
+<p>(译者注：请不要纠结GIL是什么。相信我，没错的……)</p>
+</div>
+</div>
+<div class="section" id="ren-py-6-99-14">
+<span id="renpy-6-99-14"></span><h2>Ren’Py 6.99.14<a class="headerlink" href="#ren-py-6-99-14" title="Permalink to this headline"> link</a></h2>
+<div class="section" id="performance">
+<span id="id19"></span><h3>性能表现<a class="headerlink" href="#performance" title="Permalink to this headline"> link</a></h3>
+<p>为了提升性能，我们做了很多细碎的工作，包括在绝对性能和明显的帧率突刺方面。</p>
+<p>当设备接通电源时，Ren’Py会尝试使用固定帧率绘制界面。当设备使用电池时，切换到5fps的帧率前将绘制几帧，确保显示缓存区完成界面的更新。</p>
+<p>Ren’Py有一些选项控制显示性能，使用shift+G能进入选项菜单。除了上面提到的GL性能变更之外，这个设计允许用户锁定帧率并接受画面撕裂。
+使用运行比较慢设备的用户可能会选择锁定30fps而不是变动的帧率。如果开发者觉得大多数用户都会使用性能慢的设备，可以使用默认语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">default</span> <span class="n">preferences</span><span class="o">.</span><span class="n">gl_framerate</span> <span class="o">=</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p>当某一帧渲染时间过长(比如，由于一个未预加载的图像需要从硬盘读取)，Ren’Py会尝试根据设置的帧率展现转场(transition)和可视组件。
+这也表示Ren’Py不得不跳帧，并且会从序列中的第一帧之前开始跳帧，而不是从第一帧和第二帧之间开始跳帧。</p>
+<p>如果创建了足够数量的对象，Ren’Py自身会在绘制一帧后触发GC。触发GC的对象数量的值提高了。
+触发的数量阈值应该已经足够高，只要游戏中没有创建环状的对象引用，就不需要主动要求GC。
+(环状的对象引用是指，几个对象互相引用对方，形成一个循环。)我们修改了Ren’Py，可以排除常见的环状对象引用代码。</p>
+<p>Ren’Py的GC管理能减少或消除GC对大多数游戏的丢帧影响。不过，也可以把 <a class="reference internal" href="config.html#var-config.manage_gc"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.manage_gc</span></code></a> 设置为False，恢复为之前的调优方法(tune)。</p>
+<p>默认情况下，“hide”事件句柄会触发Ren’Py移除临时界面(比如say和choice界面)和可视组件。检查这类句柄的过程系统消耗很大，还好这类句柄很少使用。
+将 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.zap_transients</span></code> 设置为False可以把这个配置恢复为之前版本的状态。</p>
+<p>现在Ren’Py第一次遇到Python表达式后会编译并缓存起来，而不是原来那样每次遇到Python表达式都重新编译。
+这个改动提升了多次复用的根据条件选择显示的可视组件的运行速度。因为这个改动，所有在Ren’Py 6.99.14版本运行的游戏第一次打开时都会变慢，因为所有表达式都需要编译。</p>
+<p>这个版本提高了回滚时保留必要信息的速度，以及减少了保留必要信息的次数。用户能体会到的是，现在Ren’Py能回滚到前面更深的地方。</p>
+<p>此外当然还有很多性能方面的提升，实际效果都是提升了运行速度。这个版本还只是性能提升的第一战，新的性能分析框架允许Ren’Py开发者进一步提升性能。</p>
+</div>
+<div class="section" id="changelog-multiple-character-dialogue">
+<span id="id20"></span><h3>多角色对话<a class="headerlink" href="#changelog-multiple-character-dialogue" title="Permalink to this headline"> link</a></h3>
+<p>现在Ren’Py包含一个新系统，允许多个角色在同一时间发言。通过在say语句结尾添加multiple入参可以实现这点。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;Ren&#39;Py now supports multiple character dialogue.&quot;</span> <span class="p">(</span><span class="n">multiple</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">l</span> <span class="s2">&quot;About time! I&#39;ve been wanting this for years!&quot;</span> <span class="p">(</span><span class="n">multiple</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>由于显示多个角色的对话可以有好几种方式(并排？上下排列？一个还是两个文本框？)，Ren’Py尚不能提供现成的支持方案。
+请参考 <a class="reference internal" href="multiple.html#multiple-character-dialogue"><span class="std std-ref">多角色对话</span></a> 章节的内容，查看哪些样式需要创作者定义。</p>
+</div>
+<div class="section" id="gui">
+<span id="changelog-gui-preferences"></span><h3>GUI环境设定<a class="headerlink" href="#gui" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py提供了一套新的GUI环境设定系统，替换了原来的样式环境设定系统。新的系统允许从多个样式中引用变量并应用在新的GUI环境设定中。</p>
+<p>可以这样写脚本：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="na">text_font</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">preference</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="s2">&quot;DejaVuSans.ttf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>加载环境设定，并使用下列脚本：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">vbox</span><span class="p">:</span>
+    <span class="na">style_prefix</span> <span class="s2">&quot;radio&quot;</span>
+    <span class="k">label</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Font&quot;</span><span class="p">)</span>
+    <span class="k">textbutton</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;DejaVu&quot;</span><span class="p">)</span> <span class="na">action</span> <span class="n">gui</span><span class="o">.</span><span class="n">SetPreference</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="s2">&quot;DejaVuSans.ttf&quot;</span><span class="p">)</span>
+    <span class="k">textbutton</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Dyslexic&quot;</span><span class="p">)</span> <span class="na">action</span> <span class="n">gui</span><span class="o">.</span><span class="n">SetPreference</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="s2">&quot;OpenDyslexic-Regular.otf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>设置环境设定。详见 <a class="reference internal" href="gui_advanced.html#gui-preferences"><span class="std std-ref">GUI环境设定</span></a>。</p>
+</div>
+<div class="section" id="tooltips">
+<span id="changelog-tooltips"></span><h3>Tooltips<a class="headerlink" href="#tooltips" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py中增加了一个新的tooltip系统，替换了原来存在tooltip。在之前的系统中，我们需要这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">default</span> <span class="n">tt</span> <span class="o">=</span> <span class="n">Tooltip</span><span class="p">(</span><span class="s2">&quot;No button selected.&quot;</span><span class="p">)</span>
+
+<span class="k">textbutton</span> <span class="s2">&quot;One.&quot;</span><span class="p">:</span>
+    <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="na">hovered</span> <span class="n">tt</span><span class="o">.</span><span class="n">Action</span><span class="p">(</span><span class="s2">&quot;The loneliest number.&quot;</span><span class="p">)</span>
+
+<span class="k">text</span> <span class="n">tt</span><span class="o">.</span><span class="na">value</span>
+</pre></div>
+</div>
+<p>现在可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">textbutton</span> <span class="s2">&quot;One.&quot;</span><span class="p">:</span>
+    <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="na">tooltip</span> <span class="s2">&quot;The loneliest number.&quot;</span>
+
+<span class="k">text</span> <span class="n">GetTooltip</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>这个系统意在节省代码和让界面具有更高的可读性。 详见 <a class="reference internal" href="screen_actions.html#tooltips"><span class="std std-ref">Tooltips</span></a> 章节。</p>
+</div>
+<div class="section" id="changes-3">
+<span id="id21"></span><h3>变更<a class="headerlink" href="#changes-3" title="Permalink to this headline"> link</a></h3>
+<p>全平台支持SSL和TLS。现在允许Ren’Py游戏使用某个Python库的连接，向有安全要求的Web服务器发送请求。支持这点必须在初始化阶段导入(import)对应的Python库。</p>
+<p>新的图像操纵器(manipulator) <a class="reference internal" href="displayables.html#im.Data" title="im.Data"><code class="xref py py-func docutils literal notranslate"><span class="pre">im.Data()</span></code></a> 能根据压缩过的二进制数据创建一个图像(iamge)。原压缩二进制数据可能是从某个Web服务器下载的。</p>
+<p>配置项 <a class="reference internal" href="config.html#var-config.loadable_callback"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.loadable_callback</span></code></a> 允许脚本向Ren’Py提供需要额外加载文件的信息。</p>
+<p>遇到存档时pickle对象发生的故障，Ren’Py会尝试进行诊断，并报告引发pickle故障的对象。(性能表现不错，不过只能捕获一些常见故障。)</p>
+<p>如果某个视口(viewport)包含滚动条(scrollbar)，Ren’Py会向其子组件在指定方向上提供一个非常大的空间。这个改动防止在视口(viewport)的可视区域之外绘制可视组件可能导致的故障。</p>
+<p>Ren’Py现在解决了样式特性 <a class="reference internal" href="style_properties.html#style-property-xpos"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xpos</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-xalign"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xalign</span></code></a>
+之间的歧义，总是偏向于使用xpos。类似的，同一个样式有多个指定样式特性都起效的情况也都解决了。</p>
+<p>现在带有脚本标签(label)函数的自定义语句可以返回对应语句的一个自定义脚本标签(label)。这个改动语句自定义语句也可以被jump或者call。</p>
+<p>在屏幕使用letterbox和pillarbox显示模式时，新的 config.gl_clear_color 配置项允许创作者设置填充色。</p>
+<p>(译者注：letterbox和pillarbox是指原生画面比例与显示设备画面比例不同时，两种处理方法。letterbox指的是16:9的原生画面显示在在4:3的屏幕上，原生画面与屏幕同宽，上下添加黑边；pillarbox正好相反，为4:3的原生画面显示在16:9的设备屏幕上，左右添加黑边。)</p>
+<p>(拖放系统中的)drag组件现在支持bottom方法，可以将drag组件沉到drag group的最底层。</p>
+<p>最新发布版中新增的 <a class="reference internal" href="config.html#var-config.cache_surfaces"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.cache_surfaces</span></code></a> 配置项已经添加对应的文档说明。将这项配置为False可以降低Ren’Py的内存消耗，代价是多个图像操纵器(manipulator)处理同一图像的速度下降。(这个情况在现版本的Ren’Py中已经很少见。)</p>
+<p>变量和字段(filed)的munge功能(会将开头为“__”的部分改为文件指定的值)，现在可以在字符串替换(substitution)中运行了。</p>
+<p>视口(viewport)和vpgrid现在支持pagekeys特性，允许用户使用PageUp和PageDown按键滚动视口。arrowkey特性也包含在文档中。</p>
+<p>RAPT现在使用源代码和目标版本1.6来编译Java代码，这使得它可以构建在最新的JDK上。</p>
+</div>
+<div class="section" id="fixes-4">
+<span id="id22"></span><h3>修复<a class="headerlink" href="#fixes-4" title="Permalink to this headline"> link</a></h3>
+<p>编译次数不同导致的界面显示不正确问题已经修复。这个问题仅在同时满足下列条件时出现：</p>
+<ul class="simple">
+<li>工程中里的多个文件都定义了界面(screen)。</li>
+<li>文件在不同时间编译。(release版游戏不会存在这个问题，因为所有文件都会在生成分发版时同时编译。)</li>
+</ul>
+<p>升级到这个发布版的Ren’Py后，可以在启动器中选择“强制重新编译”修复这个问题。这个功能可以解决开发中的游戏的问题。Release版游戏没有必要这么做。</p>
+<p>交互式指导器(interactive director)也做了一些提升，可以在更多场景下使用。</p>
+<p>在安卓和iOS设备上的资源竞争可能导致Ren’Py锁定(显示空白屏幕)的问题已经修复。这个问题是在6.99.13版本中引入的。</p>
+<p>在6.99.13版中，资源竞争会让Ren’Py以小概率完全跳过一段影片的播放。</p>
+<p>Ren’Py现在支持AltGr按键。</p>
+<p>(译者注：AltGr是某些非美式键盘的按键，等效于Ctrl+Alt组合键。)</p>
+<p>Ren’Py现在限制了控制台输出日志大小，防止控制台不显示的情况下打印语句消耗过多内存。</p>
+</div>
+</div>
+<div class="section" id="ren-py-6-99-13">
+<span id="renpy-6-99-13"></span><h2>Ren’Py 6.99.13<a class="headerlink" href="#ren-py-6-99-13" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py 6.99.13 及更老版本的更新日志，请参考英文原网页：<a class="reference external" href="https://www.renpy.org/doc/html/changelog.html#ren-py-6-99-13">https://www.renpy.org/doc/html/changelog.html#ren-py-6-99-13</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

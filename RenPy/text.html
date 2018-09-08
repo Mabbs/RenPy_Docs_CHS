@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>文本 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="多语言支持" href="translation.html" />
+    <link rel="prev" title="语音" href="voice.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">文本</a><ul>
+<li><a class="reference internal" href="#escape-characters">转义字符</a></li>
+<li><a class="reference internal" href="#text-interpolation">插入数值</a></li>
+<li><a class="reference internal" href="#tag">样式化和文本标签(tag)</a><ul>
+<li><a class="reference internal" href="#general-text-tags">通用文本标签</a></li>
+<li><a class="reference internal" href="#dialogue-text-tags">对话文本标签</a></li>
+<li><a class="reference internal" href="#style-text-tags">样式文本标签</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#non-english-languages">非英语</a><ul>
+<li><a class="reference internal" href="#vertical-text">垂直文本</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ruby">Ruby文本</a></li>
+<li><a class="reference internal" href="#fonts">字体</a><ul>
+<li><a class="reference internal" href="#font-replacement">字体替换</a></li>
+<li><a class="reference internal" href="#image-based-fonts">基于图形的字体</a></li>
+<li><a class="reference internal" href="#font-groups">字体组</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-displayables">文本组件</a></li>
+<li><a class="reference internal" href="#text-utility-functions">文本功用函数</a></li>
+<li><a class="reference internal" href="#slow-text-concerns">慢速文本的顾虑</a><ul>
+<li><a class="reference internal" href="#text-overflow-logging">文本溢出日志</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="text">
+<span id="id1"></span><h1>文本<a class="headerlink" href="#text" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py内涵多种方式用于显示文本。 <a class="reference internal" href="dialogue.html#say-statement"><span class="std std-ref">say</span></a>
+和 <a class="reference internal" href="menus.html#menu-statement"><span class="std std-ref">menu</span></a> 语句就会用到文本显示。 用户接口通常都包含文本，显示时使用 <a class="reference internal" href="screens.html#sl-text"><span class="std std-ref">text</span></a>， <a class="reference internal" href="screens.html#sl-textbutton"><span class="std std-ref">textbutton</span></a>，
+和 <a class="reference internal" href="screens.html#sl-label"><span class="std std-ref">label</span></a> screen语言语句。这些screen语句加上其他的函数，可以创建 <a class="reference internal" href="#Text" title="Text"><code class="xref py py-func docutils literal notranslate"><span class="pre">Text()</span></code></a> 文本组件，并在界面上展示出来。</p>
+<p>文本组件用于管理显示给用户的文本内容。文本组件按以下顺序执行动作：</p>
+<ol class="arabic simple">
+<li>转化文本。</li>
+<li>在文本中插入数据</li>
+<li>使用样式和文本标签将文本样式化。</li>
+<li>给样式化后的文本布局。</li>
+<li>将文本内容绘制到界面上。</li>
+</ol>
+<p>本节内容讨论在Ren’Py中处理文本显示问题的过程。</p>
+<div class="section" id="escape-characters">
+<span id="id2"></span><h2>转义字符<a class="headerlink" href="#escape-characters" title="Permalink to this headline"> link</a></h2>
+<p>对Ren’Py来说，有3个特殊字符能控制文本显示。创作者需要注意，这3个字符的写法不要让引擎产生曲解。</p>
+<dl class="docutils">
+<dt>(反斜杠)</dt>
+<dd><p class="first">反斜杠用于Ren’Py字符串中的字符转义。一些常见的转义符号如下：</p>
+<dl class="last docutils">
+<dt>&quot; (反斜杠双引号)</dt>
+<dd>两端用双引号标识的字符串中含有一个双引号。</dd>
+<dt>' (反斜杠单引号)</dt>
+<dd>两端用单引号标识的字符串中含有一个单引号。</dd>
+<dt>\ (双引号空格)</dt>
+<dd>在Ren’Py字符串中含有一个额外的空格。默认情况下，Ren’Py脚本会将一段连续的空白转为一个空格字符。</dd>
+<dt>\n (反斜杠-字符n)</dt>
+<dd>文本含有一个换行符。</dd>
+<dt>\ (反斜杠-反斜杠)</dt>
+<dd>文本含有一个反斜杠字符。</dd>
+</dl>
+</dd>
+<dt>[ (左方括号)</dt>
+<dd>左方括号用于转义在文本中插入的值。如果要在文本中包含左方括号，需要写两个左方括号 —— <code class="docutils literal notranslate"><span class="pre">[[</span></code> 。</dd>
+<dt>{ (左花括号)</dt>
+<dd>左花括号用于转义文本标签(tag)。如果要在文本中包含左花括号，需要写两个左花括号 —— <code class="docutils literal notranslate"><span class="pre">{{</span></code> 。</dd>
+</dl>
+</div>
+<div class="section" id="text-interpolation">
+<span id="id3"></span><h2>插入数值<a class="headerlink" href="#text-interpolation" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py支持在文本字符串中插入数值。例如，假设用户名字存储在 <code class="docutils literal notranslate"><span class="pre">playername</span></code> 变量中，我们可以写这样一行对话：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;欢迎来到猫耳协会， [playername] ！&quot;</span>
+</pre></div>
+</div>
+<p>Ren’Py会在全局存储区寻找同名变量并插入到文本中。当我们在某个界面使用一个文本控件时，Ren’Py也会将预定义的界面本地变量值插入到控件中。(这个值也可以通过向文本控件传入一个explicit scope参数来覆盖。)</p>
+<p>Ren’Py并不限制只允许插入简单变量值，也支持插入字段(field)和元组元素值。以下写法也是可以的：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;我姓 [player.names[0]]。&quot;</span>
+</pre></div>
+</div>
+<p>显示数值之前可以先进行格式化。下面的例子显示的是一个保留小数点后两位的浮点数：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">percent</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">points</span> <span class="o">/</span> <span class="n">max_points</span>
+<span class="n">g</span> <span class="s2">&quot;我百分之 [percent:.2] 喜欢你！&quot;</span>
+</pre></div>
+</div>
+<p>Ren’Py字符串的数值插入符合 <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3101"><strong>PEP 3101</strong></a> 的字符串格式规范。 Ren’Py字符串插入使用  <code class="docutils literal notranslate"><span class="pre">[</span></code> ，因为 <code class="docutils literal notranslate"><span class="pre">{</span></code> 被用于文本标签(tag)了。</p>
+<p>还有，Ren’Py支持!s、!r、!q和!t等转换标记。!q转换标记表示文本标签(tag)内引号已经正确匹配和使用，显示字符串时不会转义为不希望出现的格式。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;Don&#39;t pull a fast one on me, [playername!q].&quot;</span>
+</pre></div>
+</div>
+<p>!t转换标记会转换或计算插入字符串的值：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">points</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">mood</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;高兴&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">mood</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;头大&quot;</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="s2">&quot;见到你我很 [mood!t] 。&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tag">
+<span id="styling-and-text-tags"></span><h2>样式化和文本标签(tag)<a class="headerlink" href="#tag" title="Permalink to this headline"> link</a></h2>
+<p>在Ren’Py中，文本有两种方式获取样式(style)信息。第一种是，根据整个文本段落(block)应用的样式获取。请详见 <a class="reference internal" href="style.html#styles"><span class="std std-ref">样式系统</span></a> 及 <a class="reference internal" href="style_properties.html#text-style-properties"><span class="std std-ref">文本样式特性</span></a> 部分的内容。</p>
+<p>第二种是，通过使用文本标签(tag)。文本标签(tag)可用于一个文本段落(block)中一部分的样式化，也可以用于程序中所有文本段落中一部分的样式化。如果你发现自己在文本的每一行里都应用了同样的文本标签，可以考虑使用样式代替这种做法。</p>
+<p>总共有两种文本标签。某些文本标签是自闭合的，而有些文本标签需要成对的闭合标签。当多个成对的闭合标签出现时，闭合顺序必须是后出现的标签先闭合——Ren’Py会拒绝不正确匹配。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这行是正确的</span>
+<span class="s2">&quot;Plain {b}Bold {i}Bold-Italic{/i} Bold{/b} Plain&quot;</span>
+
+<span class="c1"># 这行是不正确的，并会引起报错或不正确的画面表现</span>
+<span class="s2">&quot;Plain {b}Bold {i}Bold-Italic{/b} Italic{/i} Plain&quot;</span>
+</pre></div>
+</div>
+<p>某些文本标签可以带一个入参。带入参的文本标签后面会带一个等号(=)，后面跟参数值。入参不能含有右花括号(})。入参的含义根据不同的文本标签而不同。</p>
+<div class="section" id="general-text-tags">
+<span id="id4"></span><h3>通用文本标签<a class="headerlink" href="#general-text-tags" title="Permalink to this headline"> link</a></h3>
+<p>通用文本标签可以应用于如下文本：</p>
+<span class="target" id="a-tag"></span><dl class="text-tag">
+<dt id="text-tag-a">
+<code class="descname">a</code><a class="headerlink" href="#text-tag-a" title="Permalink to this definition"> link</a></dt>
+<dd><p>锚点标签在其自身和自己的闭合标签内，创建了一个超链接。超链接的行为表现由
+<a class="reference internal" href="style_properties.html#style-property-hyperlink_functions"><code class="xref std std-propref docutils literal notranslate"><span class="pre">hyperlink_functions</span></code></a> 样式特性控制。 默认的处理包含以下行为：</p>
+<ul class="simple">
+<li>当入参以“jump:”开头，入参的其余部分是要跳转的脚本标签(label)名。</li>
+<li>当入参以“call:”开头，入参的其余部分是要调用的脚本标签(label)名。通常来说，call执行完后会回到当前的Ren’Py语句。</li>
+<li>当入参以“call_in_new_context:”开头，入参的其余部分是某个新的上下文(使用 <a class="reference internal" href="label.html#renpy.call_in_new_context" title="renpy.call_in_new_context"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.call_in_new_context()</span></code></a> 函数)中需要调用的脚本标签名。</li>
+<li>除了以上情况，入参是一个URL，可以使用系统web浏览器打开。</li>
+</ul>
+<p>如果在入参中没有显式的协议头， <a class="reference internal" href="config.html#var-config.hyperlink_protocol"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.hyperlink_protocol</span></code></a>
+中配置的值会自动添加到入参头部。如果 <a class="reference internal" href="config.html#var-config.hyperlink_protocol"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.hyperlink_protocol</span></code></a> 已经被配置为“jump”，{a=label}跟{a=jump:label}就是等价的。创作者可以使用 <a class="reference internal" href="config.html#var-config.hyperlink_handlers"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.hyperlink_handlers</span></code></a> 配置一个新的协议名称。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">test</span><span class="p">:</span>
+
+    <span class="n">e</span> <span class="s2">&quot;你可以访问 {a=https://renpy.org}Ren&#39;Py&#39;s 主页{/a}。&quot;</span>
+
+    <span class="n">e</span> <span class="s2">&quot;或者 {a=jump:more_text}这里来得到更多信息{/a}.&quot;</span>
+
+    <span class="k">return</span>
+
+<span class="k">label</span> <span class="n">more_text</span><span class="p">:</span>
+
+    <span class="n">e</span> <span class="s2">&quot;在阿肯萨斯的温泉，有一座可以作为拍照景点的阿尔·卡彭雕像。&quot;</span>
+
+    <span class="n">e</span> <span class="s2">&quot;这就是更多信息，但不是你想要的那种对不？&quot;</span>
+
+    <span class="k">return</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-alpha">
+<code class="descname">alpha</code><a class="headerlink" href="#text-tag-alpha" title="Permalink to this definition"> link</a></dt>
+<dd><p>alpha文本标签(tag)指定一个透明度，渲染范围为自身及其闭合标签内的文本。透明度是一个介于0.0和1.0之间的数值，分别对应完全透明和完全不透明。若这个数值前缀带有+或者-，则表示是在原有透明度基础上做相应增减。若这个数值前缀带有 *, 该数值与原值相乘的积作为透明度。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{alpha=0.1}这字完全不能看！{/alpha}&quot;</span>
+<span class="s2">&quot;{alpha=-0.1}现在字的透明度少了10%{/alpha}&quot;</span>
+<span class="s2">&quot;{alpha=*0.5}字的透明度是默认的50%。{/alpha}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-b">
+<code class="descname">b</code><a class="headerlink" href="#text-tag-b" title="Permalink to this definition"> link</a></dt>
+<dd><p>粗体标签，将自身及其毕业标签内的文本渲染为粗体。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;一个 {b}粗体测试{/b}。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-color">
+<code class="descname">color</code><a class="headerlink" href="#text-tag-color" title="Permalink to this definition"> link</a></dt>
+<dd><p>颜色文本标签将自身及其闭合标签内的文本渲染为特定的颜色值。颜色值使用#rgb、#rgba、#rrggbb或#rrggbbaa格式。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{color=#f00}红色{/color}, {color=#00ff00}绿色{/color}, {color=#0000ffff}蓝色{/color}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-cps">
+<code class="descname">cps</code><a class="headerlink" href="#text-tag-cps" title="Permalink to this definition"> link</a></dt>
+<dd><p>“每秒钟字符数”标签设置了文本显示速度，作用范围为标签自身及其闭合标签范围内文本。若入参开头带有一个星号和数字n，表示使用文本n倍速显示。如果没有星号，则数字n表示每秒显示n个字符。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{cps=20}固定速度{/cps} {cps=*2}两倍速{/cps}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-font">
+<code class="descname">font</code><a class="headerlink" href="#text-tag-font" title="Permalink to this definition"> link</a></dt>
+<dd><p>字体标签将标签自身及其闭合区间之间的文本渲染为指定的字体。入参即使用的字体文件名。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;尝试使用字体 {font=mikachan.ttf}mikachan font{/font}。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-i">
+<code class="descname">i</code><a class="headerlink" href="#text-tag-i" title="Permalink to this definition"> link</a></dt>
+<dd><p>斜体标签将自身及其闭合标签之间的文本渲染为斜体。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;游览 {i}比萨斜塔{/i}。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-image">
+<code class="descname">image</code><a class="headerlink" href="#text-tag-image" title="Permalink to this definition"> link</a></dt>
+<dd><p>图片标签是一个自闭合标签，作用是在文本中插入一个图片。插入的图片高度应该和单行文本的高度一致。入参可以是图片文件名，或者使用image语句定义的图像名。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;见到你真好！ {image=heart.png}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-k">
+<code class="descname">k</code><a class="headerlink" href="#text-tag-k" title="Permalink to this definition"> link</a></dt>
+<dd><p>字偶距标签调整文本字偶距，作用范围为其自身及其闭合标签之间的文本。其使用一个浮点数值作为入参，该值给定了字符之间增加的距离，单位是像素(该值也可以是负值，表示字符之间缩小的距离)。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{k=-.5}Negative{/k} Normal {k=.5}Positive{/k}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-outlinecolor">
+<code class="descname">outlinecolor</code><a class="headerlink" href="#text-tag-outlinecolor" title="Permalink to this definition"> link</a></dt>
+<dd><p>outlinecolor将文本的所有描边（包括阴影）颜色改为指定颜色，颜色格式为 #rgb、#rgba、#rrggbb或#rrggbbaa。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;让我们加一个{outlinecolor=#00ff00}绿色{/outlinecolor} 描边。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-plain">
+<code class="descname">plain</code><a class="headerlink" href="#text-tag-plain" title="Permalink to this definition"> link</a></dt>
+<dd><p>纯文本标签保证文本没有任何加粗、斜体、下划线或删除线样式。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{b}加粗。{plain}没有效果。{/plain} 加粗。{/b}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-rb">
+<code class="descname">rb</code><a class="headerlink" href="#text-tag-rb" title="Permalink to this definition"> link</a></dt>
+<dd><p>可选的下标字符标识了标签自身及其闭合标签范围内文本。详情参考 <a class="reference internal" href="#ruby-text"><span class="std std-ref">Ruby Text</span></a> 。</p>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-rt">
+<code class="descname">rt</code><a class="headerlink" href="#text-tag-rt" title="Permalink to this definition"> link</a></dt>
+<dd><p>可选的上标字符标识了标签自身及其闭合标签范围内文本。详情参考 <a class="reference internal" href="#ruby-text"><span class="std std-ref">Ruby Text</span></a> 。</p>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-s">
+<code class="descname">s</code><a class="headerlink" href="#text-tag-s" title="Permalink to this definition"> link</a></dt>
+<dd><p>删除线标签在其自身及其闭合标签之间的文本上画一条删除线。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;很高兴 {s}见到你{/s}。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-size">
+<code class="descname">size</code><a class="headerlink" href="#text-tag-size" title="Permalink to this definition"> link</a></dt>
+<dd><p>字号标签改变了其自己及其闭合标签内的文本字号。入参应该是一个整数，可前缀+或者-。如果入参只是一个整数，那么字体高度就是那个整数的值，单位为像素。如果带有+或者-的话，字号在原值基础上进行增缩。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;{size=+10}变大{/size} {size=-10}变小{/size} {size=24}24 px{/size}.&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-space">
+<code class="descname">space</code><a class="headerlink" href="#text-tag-space" title="Permalink to this definition"> link</a></dt>
+<dd><p>空白标签是一个自闭合标签，在一行文本内插入一段水平的空白。入参是一个整数，表示插入的空白宽度，单位为像素。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;空白之前。{space=30}空白之后。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-u">
+<code class="descname">u</code><a class="headerlink" href="#text-tag-u" title="Permalink to this definition"> link</a></dt>
+<dd><p>下划线标签在其自身及其闭合标签之间的文本添加下划线。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;很高兴 {u}见到{/u} 你。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-vspace">
+<code class="descname">vspace</code><a class="headerlink" href="#text-tag-vspace" title="Permalink to this definition"> link</a></dt>
+<dd><p>垂直空白标签是一个自闭合标签，在文本的两行之间插入一段竖直的空白。入参是一个整数，表示插入的空白高度，单位为像素。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;第一行{vspace=30}第二行&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-#">
+<code class="descname">#</code><a class="headerlink" href="#text-tag-#" title="Permalink to this definition"> link</a></dt>
+<dd><p>以#符号开头的文本标签会被忽略，可以用于脚本调试。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;New{#playlist}&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="dialogue-text-tags">
+<span id="id5"></span><h3>对话文本标签<a class="headerlink" href="#dialogue-text-tags" title="Permalink to this headline"> link</a></h3>
+<p>只能应用于对话的文本标签如下：</p>
+<dl class="text-tag">
+<dt id="text-tag-fast">
+<code class="descname">fast</code><a class="headerlink" href="#text-tag-fast" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果一行文本中出现了fast标签，在该标签前面的文本内容会立即显示，即使文本显示速度被设置为低速模式。fast标签是一个自闭合的标签。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;看上去他们{nw}&quot;</span>
+<span class="k">show</span> <span class="n">trebuchet</span>
+<span class="n">g</span> <span class="s2">&quot;看上去他们{fast} 又在玩投石机。&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-nw">
+<code class="descname">nw</code><a class="headerlink" href="#text-tag-nw" title="Permalink to this definition"> link</a></dt>
+<dd><p>“不等待”标签是一个自闭合标签，该标签前的那行文本内容在显示一次后会立刻消失。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="s2">&quot;看上去他们{nw}&quot;</span>
+<span class="k">show</span> <span class="n">trebuchet</span>
+<span class="n">g</span> <span class="s2">&quot;看上去他们{fast} 又在玩投石机。&quot;</span>
+</pre></div>
+</div>
+<p>“不等待”标签依然会等待语音播放完再执行文本消失行为。</p>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-p">
+<code class="descname">p</code><a class="headerlink" href="#text-tag-p" title="Permalink to this definition"> link</a></dt>
+<dd><p>段落暂停标签是一个自闭合标签，在当前文本段落中插入一个终止标记，等待用户点击后继续显示后面的内容。如果标签中带有一个入参，入参是一个数值，代表等待用户点击的时间(单位为秒)。等待期间用户没有点击行为的话，等待时间结束后也会自动进入后续内容。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Line 1{p}Line 2{p=1.0}Line 3&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-w">
+<code class="descname">w</code><a class="headerlink" href="#text-tag-w" title="Permalink to this definition"> link</a></dt>
+<dd><p>等待标签是一个自闭合的标签，等待用户点击后继续显示后面的内容。如果标签中带有一个入参，入参是一个数值，代表等待用户点击的时间(单位为秒)。等待期间用户没有点击行为的话，等待时间结束后也会自动进入后续内容。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Line 1{w} Line 1{w=1.0} Line 1&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>也可以使用Python定义出 <a class="reference internal" href="custom_text_tags.html#custom-text-tags"><span class="std std-ref">custom text tags</span></a> 。</p>
+</div>
+<div class="section" id="style-text-tags">
+<span id="id6"></span><h3>样式文本标签<a class="headerlink" href="#style-text-tags" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py支持文本标签使用各种样式。需要使用的话，标签的入参被用作样式名称。例如，{=mystyle}标签就会使用 <code class="docutils literal notranslate"><span class="pre">mystyle</span></code> 样式。</p>
+<p>在标签和其对应的闭合标签之间的文本，将会拥有定义在样式中的以下特性(property)：</p>
+<ul class="simple">
+<li>antialias</li>
+<li>font</li>
+<li>size</li>
+<li>bold</li>
+<li>italic</li>
+<li>underline</li>
+<li>strikethrough</li>
+<li>color</li>
+<li>black_color</li>
+<li>kerning</li>
+</ul>
+</div>
+</div>
+<div class="section" id="non-english-languages">
+<span id="id7"></span><h2>非英语<a class="headerlink" href="#non-english-languages" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py包含英语和很多其他语言的默认字体。考虑到字体库大小问题，Ren’Py没有包含需要渲染的语种，包括中日韩语。如果需要支持那些语言，在项目开头就需要更改使用的字体。</p>
+<p>Ren’Py在之后的版本可能会支持世界上绝大多数的语言，而不需要做特别配置。韩语是在各个字之间不带空格书写的语言。Ren’Py有一个特殊模式可以支持带空格的韩语，可以做如下设置启用：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="s2">&quot;korean-with-spaces&quot;</span>
+</pre></div>
+</div>
+<p>这也可以通过修改gui.rpy文件中“unicode”项的默认值实现。</p>
+<p>日语在换行方面有许多规则。我们推荐开始先设置为“japanese-normal”，进阶使用“japanese-loose”或者“japanese-strict”，分别对应换行比较多或者比较少的情况。:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="s2">&quot;japanese-loose&quot;</span>
+</pre></div>
+</div>
+<p>表意文字语言经常含有大量换行。要启用更快但运算量更少的换行算法的话，使用如下配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">gui</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="s2">&quot;greedy&quot;</span>
+</pre></div>
+</div>
+<p>这种更快的换行算法并不一定要启用，除非游戏中需要一次显示海量文本，例如在NVL模式下。</p>
+<p>后续也可以使用
+<code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.language_tailor()</span></code> 函数配置换行算法。</p>
+<div class="section" id="vertical-text">
+<span id="id8"></span><h3>垂直文本<a class="headerlink" href="#vertical-text" title="Permalink to this headline"> link</a></h3>
+<p>当配置了 <a class="reference internal" href="style_properties.html#style-property-vertical"><code class="xref std std-propref docutils literal notranslate"><span class="pre">vertical</span></code></a> 样式特性，Ren’Py就能生成原生的垂直文本。垂直文本的书写顺序是从上到下，从右往左。</p>
+<p>这里有两个文本标签与垂直文本相关。</p>
+<dl class="text-tag">
+<dt id="text-tag-horiz">
+<code class="descname">horiz</code><a class="headerlink" href="#text-tag-horiz" title="Permalink to this definition"> link</a></dt>
+<dd><p>在垂直文本中包含原生水平文本。</p>
+</dd></dl>
+
+<dl class="text-tag">
+<dt id="text-tag-vert">
+<code class="descname">vert</code><a class="headerlink" href="#text-tag-vert" title="Permalink to this definition"> link</a></dt>
+<dd><p>在水平文本中包含原生的垂直文本。(该标签不会旋转原生垂直文本内容。)</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">如果字体中没有包含垂直文本的字符间隔信息，Ren’Py会尝试从水平文本信息自动计算出垂直文本的字符间隔。在不同的Ren’Py版本中，实际的字符间隔可能并不一致。</p>
+</div>
+</div>
+</div>
+<div class="section" id="ruby">
+<span id="ruby-text"></span><h2>Ruby文本<a class="headerlink" href="#ruby" title="Permalink to this headline"> link</a></h2>
+<p>Ruby文本(较常用来标明假名或者注音)是一种在某个字符或单词上方显示小号文本的文本。以下是几个步骤可以让你的游戏支持Ruby文本。</p>
+<p>首先，你必须配置Ruby文本的样式(style)。需要修改以下样式特性：</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="style_properties.html#style-property-line_leading"><code class="xref std std-propref docutils literal notranslate"><span class="pre">line_leading</span></code></a> 特性必须为Ruby文本预留足够的高度。</li>
+<li>创建一个新的自定义名的样式(style)。该样式的特性，比如 <a class="reference internal" href="style_properties.html#style-property-size"><code class="xref std std-propref docutils literal notranslate"><span class="pre">size</span></code></a> 需要适合Ruby文本。</li>
+<li>新样式的yoffset必须特别设置，这是为了将Ruby文本升到一般文本基线之上。</li>
+<li>文本样式的 <a class="reference internal" href="style_properties.html#style-property-ruby_style"><code class="xref std std-propref docutils literal notranslate"><span class="pre">ruby_style</span></code></a> 域应该被设置为上面新创建的样式。</li>
+</ol>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">style</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="na">line_leading</span> <span class="o">=</span> <span class="mi">12</span>
+
+    <span class="k">style</span><span class="o">.</span><span class="na">ruby_style</span> <span class="o">=</span> <span class="n">Style</span><span class="p">(</span><span class="k">style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
+    <span class="k">style</span><span class="o">.</span><span class="na">ruby_style</span><span class="o">.</span><span class="na">size</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="k">style</span><span class="o">.</span><span class="na">ruby_style</span><span class="o">.</span><span class="na">yoffset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+
+    <span class="k">style</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="na">ruby_style</span> <span class="o">=</span> <span class="k">style</span><span class="o">.</span><span class="na">ruby_style</span>
+</pre></div>
+</div>
+<p>完成Ren’Py的相关配置后，我们就可以使用rt和rb文本标签，在脚本中包含Ruby文本了。rt标签用于标识一些字符将被显示为Ruby文本。如果在Ruby文本前面出现了rb标签，Ruby文本会与rb标签内的所有文本中央对齐。如果没有rb标签，Ruby文本会与对应的字符左对齐。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;Ruby 可以用来标识假名(東{rt}とう{/rt} 京{rt}きょう{/rt})。&quot;</span>
+
+<span class="n">e</span> <span class="s2">&quot;也可以用来翻译 ({rb}東京{/rb}{rt}Tokyo{/rt}).&quot;</span>
+</pre></div>
+</div>
+<p>确保Ruby文本不会与其他文本内容重叠是创作者的职责。为了防止这种问题的出现，最好在文本上方多预留一些空间。</p>
+</div>
+<div class="section" id="fonts">
+<span id="id9"></span><h2>字体<a class="headerlink" href="#fonts" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py支持TrueType/OpenType字体和字体集，以及基于图形的字体。</p>
+<p>TrueType或OpenType字体会给定字体文件名。那个字体文件必须被放在game文件夹里，或者某个归档文件中。</p>
+<p>Ren’Py也支持TrueType/OpenType字体集。一个字体集中定义了多种字体。当我们接入一个字体集时，使用从0开始的字体下标，后面跟&#64;符号和文件名。例如，“<a class="reference external" href="mailto:0&#37;&#52;&#48;font&#46;ttc">0<span>&#64;</span>font<span>&#46;</span>ttc</a>”是字体集font的第一种字体，“<a class="reference external" href="mailto:1&#37;&#52;&#48;font&#46;ttc">1<span>&#64;</span>font<span>&#46;</span>ttc</a>”是字体集font的第二种字体，以此类推。</p>
+<div class="section" id="font-replacement">
+<span id="id10"></span><h3>字体替换<a class="headerlink" href="#font-replacement" title="Permalink to this headline"> link</a></h3>
+<p><a class="reference internal" href="config.html#var-config.font_replacement_map"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.font_replacement_map</span></code></a> 配置项用于字体map图。字体文件、加粗和斜体会使用map图捆绑为一个组合。这个组合就用指定的斜体效果代替系统自动生成的斜体。</p>
+<p>这种替换可以实现将“Deja Vu Sans”版本的斜体换成官方的“oblique”版本。(当然你需要先在网上下载“oblique”字体。)</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">font_replacement_map</span><span class="p">[</span><span class="s2">&quot;DejaVuSans.ttf&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;DejaVuSans-Oblique.ttf&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>完成替换后可以提升斜体文本的感官效果。</p>
+</div>
+<div class="section" id="image-based-fonts">
+<span id="id11"></span><h3>基于图形的字体<a class="headerlink" href="#image-based-fonts" title="Permalink to this headline"> link</a></h3>
+<p>通过调用以下字体注册函数之一，可以注册基于图形的字体。注册时，需要指定字体的名称、字号、粗体、斜体和下划线。当所有特性都匹配时，注册后的字体才可以使用。</p>
+<dl class="function">
+<dt id="renpy.register_bmfont">
+<code class="descclassname">renpy.</code><code class="descname">register_bmfont</code><span class="sig-paren">(</span><em>name=None</em>, <em>size=None</em>, <em>bold=False</em>, <em>italics=False</em>, <em>underline=False</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_bmfont" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数注册了一个给定明细的BMFont(位图字体)。请注意，字号、粗体、斜体和下划线入参只是询问性质的(用于特性匹配)，并不会改变字体的实际效果。</p>
+<p>请查看 <a class="reference external" href="http://www.angelcode.com/products/bmfont/">BMFont首页</a> 可以找到创建BMFonts的工具。Ren’Py需要filename参数是BMFont文本格式的，其描述了一个32比特字体的信息。alpha通道应该包含字体信息，而红绿蓝颜色通道应该被设置为1。图形文件、字偶距和其他控制信息都可以从BMFont文件中读取。</p>
+<p>我们推荐你创建的BMFont中包含拉丁字母和主要的标点符号，并确保在Ren’Py的接口上可以正确渲染。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>一个字符串，注册的字体名称。</dd>
+<dt><cite>size</cite></dt>
+<dd>一个整数，注册字体的字号。</dd>
+<dt><cite>bold</cite></dt>
+<dd>一个布尔值，标识注册字体是否为粗体。</dd>
+<dt><cite>italics</cite></dt>
+<dd>一个布尔值，标识注册字体是否为斜体。</dd>
+<dt><cite>underline</cite></dt>
+<dd>可以忽略的参数。</dd>
+</dl>
+<p><cite>filename</cite></p>
+<blockquote>
+<div>包含BMFont控制信息的文件。</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.register_mudgefont">
+<code class="descclassname">renpy.</code><code class="descname">register_mudgefont</code><span class="sig-paren">(</span><em>name=None</em>, <em>size=None</em>, <em>bold=False</em>, <em>italics=False</em>, <em>underline=False</em>, <em>filename=None</em>, <em>xml=None</em>, <em>spacewidth=10</em>, <em>default_kern=0</em>, <em>kerns={}</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_mudgefont" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数注册了一个给定明细的MudgeFont。请注意，字号、粗体、斜体和下划线入参只是询问性质的(用于特性匹配)，并不会改变字体的实际效果。</p>
+<p>请查看 <a class="reference external" href="http://www.larryhastings.com/programming/mudgefont/">MudgeFont首页</a> 可以找到创建BMFonts的工具。Ren’Py假设MudgeFont的xml文件中的字符带都unicode字符数值，并会忽略所有负值。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>一个字符串，注册的字体名称。</dd>
+<dt><cite>size</cite></dt>
+<dd>一个整数，注册字体的字号。</dd>
+<dt><cite>bold</cite></dt>
+<dd>一个布尔值，标识注册字体是否为粗体。</dd>
+<dt><cite>italics</cite></dt>
+<dd>一个布尔值，标识注册字体是否为斜体。</dd>
+<dt><cite>underline</cite></dt>
+<dd>可以忽略的参数。</dd>
+<dt><cite>filename</cite></dt>
+<dd>一个字符串，表示包含MudgeFont图形的文件。该图形通常是一个TGA文件，也可能是一个PNG或者其他Ren’Py支持的图片格式。</dd>
+<dt><cite>xml</cite></dt>
+<dd>包含MudgeFont工具生成信息的xml文件。</dd>
+<dt><cite>spacewidth</cite></dt>
+<dd>表示空格字符的宽度的整数，单位是像素。</dd>
+<dt><cite>default_kern</cite></dt>
+<dd>字符间距的默认值，单位是像素。</dd>
+<dt><cite>kerns</cite></dt>
+<dd>两字型字符串中字符间距的值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.register_sfont">
+<code class="descclassname">renpy.</code><code class="descname">register_sfont</code><span class="sig-paren">(</span><em>name=None</em>, <em>size=None</em>, <em>bold=False</em>, <em>italics=False</em>, <em>underline=False</em>, <em>filename=None</em>, <em>spacewidth=10</em>, <em>default_kern=0</em>, <em>kerns={}</em>, <em>charset=u'!&quot;#$%&amp;'()*+</em>, <em>-./0123456789:;&lt;=&gt;?&#64;ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~'</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sfont" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数注册了一个给定明细的SFont。请注意，字号、粗体、斜体和下划线入参只是询问性质的(用于特性匹配)，并不会改变字体的实际效果。</p>
+<p><a class="reference external" href="http://www.linux-games.com/sfont/">关于SFont的更多详情</a> 。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>一个字符串，注册的字体名称。</dd>
+<dt><cite>size</cite></dt>
+<dd>一个整数，注册字体的字号。</dd>
+<dt><cite>bold</cite></dt>
+<dd>一个布尔值，标识注册字体是否为粗体。</dd>
+<dt><cite>italics</cite></dt>
+<dd>一个布尔值，标识注册字体是否为斜体。</dd>
+<dt><cite>underline</cite></dt>
+<dd>可以忽略的参数。</dd>
+<dt><cite>filename</cite></dt>
+<dd>一个字符串，包含SFont图形的文件名。</dd>
+<dt><cite>spacewidth</cite></dt>
+<dd>表示空格字符的宽度的整数，单位是像素。</dd>
+<dt><cite>default_kern</cite></dt>
+<dd>字符间距的默认值，单位是像素。</dd>
+<dt><cite>kerns</cite></dt>
+<dd>两字型字符串中字符间距的值。</dd>
+<dt><cite>charset</cite></dt>
+<dd><p class="first">字体的字符集。这是一个字符串，可以按照字符串中包含的字符顺序在图像文件中找到对应的字符。more的SFont字符集如下：</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="s2">&quot; # $ % &amp; &#39; ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?</span>
+<span class="err">@</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span> <span class="n">E</span> <span class="n">F</span> <span class="n">G</span> <span class="n">H</span> <span class="n">I</span> <span class="n">J</span> <span class="n">K</span> <span class="n">L</span> <span class="n">M</span> <span class="n">N</span> <span class="n">O</span> <span class="n">P</span> <span class="n">Q</span> <span class="n">R</span> <span class="n">S</span> <span class="n">T</span> <span class="n">U</span> <span class="n">V</span> <span class="n">W</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">Z</span> <span class="p">[</span> \ <span class="p">]</span> <span class="o">^</span> <span class="n">_</span>
+<span class="err">`</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="n">e</span> <span class="n">f</span> <span class="n">g</span> <span class="n">h</span> <span class="n">i</span> <span class="n">j</span> <span class="n">k</span> <span class="n">l</span> <span class="n">m</span> <span class="n">n</span> <span class="n">o</span> <span class="n">p</span> <span class="n">q</span> <span class="n">r</span> <span class="n">s</span> <span class="n">t</span> <span class="n">u</span> <span class="n">v</span> <span class="n">w</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="p">{</span> <span class="o">|</span> <span class="p">}</span> <span class="o">~</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<p>由于BMFont是Ren’Py支持的所有三种图形文字中完成度最高的，所以我们推荐新建项目使用BMFont。一个BMFont的使用样例如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">renpy</span><span class="o">.</span><span class="n">register_bmfont</span><span class="p">(</span><span class="s2">&quot;bmfont&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;bmfont.fnt&quot;</span><span class="p">)</span>
+
+<span class="k">define</span> <span class="n">ebf</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;Eileen&#39;</span><span class="p">,</span> <span class="n">what_font</span><span class="o">=</span><span class="s2">&quot;bmfont&quot;</span><span class="p">,</span> <span class="n">what_size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">demo_bmfont</span><span class="p">:</span>
+
+    <span class="n">ebf</span> <span class="s2">&quot;Finally, Ren&#39;Py supports BMFonts.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="font-groups">
+<span id="id12"></span><h3>字体组<a class="headerlink" href="#font-groups" title="Permalink to this headline"> link</a></h3>
+<p>创建一个多语言游戏时，有时无法找到单一的字体能够包含所有文字并保持创作者想要表现的氛围。
+因此，Ren’Py支持将“字体组”的形式，将两种或更多字体合并为一种字体。</p>
+<p>创建字体组时，需要创建一个FontGroup对象并调用逐次调用 <code class="docutils literal notranslate"><span class="pre">.add</span></code> 方法。FontGroup对象可以直接当作字体使用。
+add方法会查看指定范围内的unicode字符，并采用最先能匹配到的unicode字符范围对应的字体。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">style</span> <span class="k">default</span><span class="p">:</span>
+     <span class="na">font</span> <span class="n">FontGroup</span><span class="p">()</span><span class="o">.</span><span class="k">add</span><span class="p">(</span><span class="s2">&quot;english.ttf&quot;</span><span class="p">,</span> <span class="mh">0x0020</span><span class="p">,</span> <span class="mh">0x007f</span><span class="p">)</span><span class="o">.</span><span class="k">add</span><span class="p">(</span><span class="s2">&quot;japanese.ttf&quot;</span><span class="p">,</span> <span class="mh">0x0000</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="FontGroup">
+<em class="property">class </em><code class="descname">FontGroup</code><a class="headerlink" href="#FontGroup" title="Permalink to this definition"> link</a></dt>
+<dd><p>可以将一组字体当作一种字体使用。</p>
+<dl class="method">
+<dt id="FontGroup.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>font</em>, <em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#FontGroup.add" title="Permalink to this definition"> link</a></dt>
+<dd><p>说明字体中字符的unicode范围。</p>
+<dl class="docutils">
+<dt><cite>start</cite></dt>
+<dd>unicode范围起点。可以是一个单字符的字符串，也可以是一个unicode字符对应的整数值。</dd>
+<dt><cite>end</cite></dt>
+<dd>unicode范围终点。可以是一个单字符的字符串，也可以是一个unicode字符对应的整数值。</dd>
+</dl>
+<p>当多个 <code class="docutils literal notranslate"><span class="pre">.add()</span></code> 调用中包含同一个字符时，使用第一个包含这个字符的add方法中的字体。</p>
+<p>这个方法会返回FontGroup对象，所以能多个 <code class="docutils literal notranslate"><span class="pre">.add()</span></code> 串联使用。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="text-displayables">
+<span id="id13"></span><h2>文本组件<a class="headerlink" href="#text-displayables" title="Permalink to this headline"> link</a></h2>
+<p>文本也可以用作一个 <a class="reference internal" href="displayables.html#displayables"><span class="std std-ref">displayable</span></a>，这意味着你可以在文本上应用各种表单格式(transform)，可以当作一个图片显示并在界面上移动它的位置。</p>
+<dl class="function">
+<dt id="renpy.ParameterizedText">
+<code class="descclassname">renpy.</code><code class="descname">ParameterizedText</code><span class="sig-paren">(</span><em>style='default'</em>, <em>`properties</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.ParameterizedText" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数创建一个可视组件对象，可以带一个字符串做为入参，根据入参字符串生成的对象能当作图像显示。常用作预定义的 <code class="docutils literal notranslate"><span class="pre">文本</span></code> 图片的一部分。</p>
+<p>举例，我们可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="k">text</span> <span class="s2">&quot;Hello, World&quot;</span> <span class="k">at</span> <span class="n">truecenter</span>
+<span class="k">with</span> <span class="n">dissolve</span>
+<span class="k">pause</span> <span class="mi">1</span>
+<span class="k">hide</span> <span class="k">text</span>
+<span class="k">with</span> <span class="n">dissolve</span>
+</pre></div>
+</div>
+<p>你可以使用ParameterizedText函数，采用不同的样式特性，直接定义出一些类似的图片。举例，我们可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">top_text</span> <span class="o">=</span> <span class="n">ParameterizedText</span><span class="p">(</span><span class="na">xalign</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Text">
+<code class="descname">Text</code><span class="sig-paren">(</span><em>text</em>, <em>slow=None</em>, <em>scope=None</em>, <em>substitute=None</em>, <em>slow_done=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Text" title="Permalink to this definition"> link</a></dt>
+<dd><p>创建一个可视组件，在界面上显示文本。</p>
+<dl class="docutils">
+<dt><cite>text</cite></dt>
+<dd>在界面上显示的文本内容。该参数可以是一个字符串，或者一个字符串和可视组件的列表。</dd>
+<dt><cite>slow</cite></dt>
+<dd>决定文本是否缓慢显示，即在界面上逐个显示出每个字符。若为None，缓慢文本模式取决于slow_cps样式特性。否则，是否启用缓慢文本模式由此处参数slow决定。</dd>
+<dt><cite>scope</cite></dt>
+<dd>若不为None，该值应该是一个字典型数值，提供了额外的视角(scope)供文本插入(interpolation)的使用。</dd>
+<dt><cite>substitute</cite></dt>
+<dd>若该值为真(true)，则应用文本插入(interpolation)。若该值为假(false)，不应用文本插入。若该值为None，由config.new_substitutions控制文本插入表现。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="text-utility-functions">
+<span id="id14"></span><h2>文本功用函数<a class="headerlink" href="#text-utility-functions" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.filter_text_tags">
+<code class="descclassname">renpy.</code><code class="descname">filter_text_tags</code><span class="sig-paren">(</span><em>s</em>, <em>allow=None</em>, <em>deny=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.filter_text_tags" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回入参s的一个拷贝，其是文本标签过滤后的结果。allow和deny关键词参数至少需要给出1个。</p>
+<dl class="docutils">
+<dt><cite>allow</cite></dt>
+<dd>允许通过的标签的集。如果某个标签不在该列表中，将会被移除。</dd>
+<dt><cite>deny</cite></dt>
+<dd>禁止通过的标签的集。如果某个标签不在该列表中，将会保留在字符串中。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="slow-text-concerns">
+<span id="id15"></span><h2>慢速文本的顾虑<a class="headerlink" href="#slow-text-concerns" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py允许创作者或者用于指示某些文本以慢速显示。这种情况下，Ren’Py会将文本渲染至某个纹理(texture)，然后将纹理的矩形区域绘制到界面上。</p>
+<p>不幸的是，这意味着字符间的重叠区域会被渲染成工件(artifact)。为了尽可能减少这种渲染工件(artifact)，需要尽可能保证 <a class="reference internal" href="style_properties.html#style-property-line_leading"><code class="xref std std-propref docutils literal notranslate"><span class="pre">line_leading</span></code></a> 和
+<a class="reference internal" href="style_properties.html#style-property-line_spacing"><code class="xref std std-propref docutils literal notranslate"><span class="pre">line_spacing</span></code></a> 值足够大，各行之间没有覆盖的区域。如果首行缩进文本，特别是line_spacing为负值的情况，我们需要考虑增大
+<a class="reference internal" href="style_properties.html#style-property-line_overlap_split"><code class="xref std std-propref docutils literal notranslate"><span class="pre">line_overlap_split</span></code></a> 的值。</p>
+<p>水平工件(artifact)也可能由于字偶距原因而挤在一起，不过这不是什么严重的问题，毕竟相邻字符之间显示的时间差不过1帧而已。</p>
+<p>对于静态文本来说工件(artifact)不是什么问题，比如菜单等用户界面部分。</p>
+<div class="section" id="text-overflow-logging">
+<span id="id16"></span><h3>文本溢出日志<a class="headerlink" href="#text-overflow-logging" title="Permalink to this headline"> link</a></h3>
+<p>Ren’Py可以记录文本溢出所在区域的日志。要启用文本溢出日志功能的话，需要经过以下步骤：</p>
+<ol class="arabic simple">
+<li>将 <a class="reference internal" href="config.html#var-config.debug_text_overflow"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.debug_text_overflow</span></code></a> 配置项设为true。</li>
+<li>设置 <a class="reference internal" href="style_properties.html#style-property-xmaximum"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xmaximum</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-ymaximum"><code class="xref std std-propref docutils literal notranslate"><span class="pre">ymaximum</span></code></a> 样式特性，该样式特性配置在文本组件上，或者包含文本组件的容器上。</li>
+<li>运行游戏。</li>
+</ol>
+<p>一旦文本显示溢出了可用区域，Ren’Py就会把错误记录在 <code class="docutils literal notranslate"><span class="pre">text_overflow.txt</span></code> 文件中。</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

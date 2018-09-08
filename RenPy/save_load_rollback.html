@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>存档、读档和回滚 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="持久化数据" href="persistent.html" />
+    <link rel="prev" title="等效语句" href="statement_equivalents.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">存档、读档和回滚</a><ul>
+<li><a class="reference internal" href="#what-is-saved">保存了什么</a></li>
+<li><a class="reference internal" href="#what-isn-t-saved">不保存什么</a></li>
+<li><a class="reference internal" href="#ren-py">Ren’Py保存在哪里</a></li>
+<li><a class="reference internal" href="#what-ren-py-can-save">Ren’Py能保存什么</a></li>
+<li><a class="reference internal" href="#save-functions-and-variables">保存函数和变量</a></li>
+<li><a class="reference internal" href="#retaining-data-after-load">读取存档后保持数据</a></li>
+<li><a class="reference internal" href="#rollback">回滚</a></li>
+<li><a class="reference internal" href="#supporting-rollback-and-roll-forward">支持回滚和前向滚动</a></li>
+<li><a class="reference internal" href="#blocking-rollback">阻拦回滚</a></li>
+<li><a class="reference internal" href="#fixing-rollback">混合回滚</a></li>
+<li><a class="reference internal" href="#styling-fixed-rollback">样式化混合回滚</a></li>
+<li><a class="reference internal" href="#fixed-rollback-and-custom-screens">混合回滚和自定义界面</a></li>
+<li><a class="reference internal" href="#rollback-blocking-and-fixing-functions">回滚阻拦和回滚混合函数</a></li>
+<li><a class="reference internal" href="#norollback">不回滚</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="saving-loading-and-rollback">
+<span id="id1"></span><h1>存档、读档和回滚<a class="headerlink" href="#saving-loading-and-rollback" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持保存游戏状态、载入游戏状态和回滚到之前的某个游戏状态。尽管实现的方式明显不同，回滚(rollback)可以认为每一条能与用户互动的语句开始时都保存了游戏状态，当用户进行回滚时加载之前保存的状态。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">我们通常需要保证不同release版本存档的兼容性，但兼容性并不能得到绝对保证。如果能带来巨大的游戏表现提升，我们也可以打破存档兼容性的要求。</p>
+</div>
+<div class="section" id="what-is-saved">
+<span id="id2"></span><h2>保存了什么<a class="headerlink" href="#what-is-saved" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py会保存游戏状态。保存的内容包括内部状态和Python的状态。</p>
+<p>内部状态由几个部分组成：Ren’Py在游戏启动后就改变的所有内容，以及下列内容：</p>
+<ul class="simple">
+<li>当前语句和所有主控流程可能返回到的语句。</li>
+<li>正在显示的图像和可视组件。</li>
+<li>正在显示的界面，以及界面内所有的变量值。</li>
+<li>Ren’Py正在播放的音乐。</li>
+<li>NVL模式文本块(block)列表。</li>
+</ul>
+<p>Python状态包括从游戏启动后存储区变化过的所有变量，以及跟那些变量有关的所有对象。注意，只有变量相关才行——改变对象内的字段(field)并不会触发对象状态被保存。</p>
+<p>在下例中：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">define</span> <span class="n">o</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+     <span class="k">$</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+     <span class="k">$</span> <span class="n">o</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>只有 <cite>b</cite> 会被保存。 A 不会被保存，因为它从游戏启动后就没有变动。 <cite>O</cite> 不会被保存因为它也没有变动——这里的变动是指引用对象的变化，而不是对象中变量值的变化。</p>
+</div>
+<div class="section" id="what-isn-t-saved">
+<span id="id3"></span><h2>不保存什么<a class="headerlink" href="#what-isn-t-saved" title="Permalink to this headline"> link</a></h2>
+<p>在游戏开始之前定义，之后一直没有改变过的Python变量不会被保存。这可能是个重大的问题，前提是某个保存的变量引用了相同的对象。(对象的别名(alias)。)在这个例子中：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="k">$</span> <span class="n">b</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="s2">&quot;a.f=[a.f] b.f=[b.f]&quot;</span>
+</pre></div>
+</div>
+<p><cite>b</cite> 是 <cite>a</cite> 的别名。保存和加载可能打断这个别名关系，导致
+<cite>a</cite> 和 <cite>b</cite> 引用不同的对象。因为这个问题让人十分头大，所以最好的办法就是避免在保存和不保存的变量间建立别名关系。(很少直接遇到这种情况，往往发生在不保存的变量和保存的字段(field)别名上。)</p>
+<p>还有几种其他类型的状态不保存。</p>
+<dl class="docutils">
+<dt>control flow path</dt>
+<dd>Ren’Py值保存当前语句，以及该语句需要返回的对应语句。Ren’Py不记得如何抵达当前语句。关键是，被添加到游戏的语句(包括变量声明)不会运行。</dd>
+<dt>mappings of image names to displayables</dt>
+<dd>因为这个映射关系不会保存，游戏加载后图像可能变成了一个新的图像。随着游戏的进度，允许某个图像变为使用一个新的文件。</dd>
+<dt>configuration variables, styles, and style properties</dt>
+<dd>配置项变量和样式不会作为游戏的一部分保存。所以它们应该只在初始化语句块(init block)中改变，游戏启动后就不再改变。</dd>
+</dl>
+</div>
+<div class="section" id="ren-py">
+<span id="where-ren-py-saves"></span><h2>Ren’Py保存在哪里<a class="headerlink" href="#ren-py" title="Permalink to this headline"> link</a></h2>
+<p>保存发生在外沿(outermost)互动上下文(context)中，Ren’Py语句的开头。</p>
+<p>这里关注的重点是，保存发生在语句的 <strong>开头</strong> 。如果加载或回滚发生在某个语句中间，而且那个语句有多次互动，所有状态都会重置为语句开始的状态。</p>
+<p>在使用Python定义的语句中，这可能会导致问题。在下面的语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">python</span><span class="p">:</span>
+
+     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+     <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+
+          <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+          <span class="n">narrator</span><span class="p">(</span><span class="s2">&quot;现在的计数是 [i] 。&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果用户在中间保存和加载，循环会从头开始。使用Ren’Py脚本——而不是直接用Python语句——的循环就能避免这个问题：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+
+     <span class="k">$</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+     <span class="s2">&quot;The count is now [i].&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-ren-py-can-save">
+<span id="id4"></span><h2>Ren’Py能保存什么<a class="headerlink" href="#what-ren-py-can-save" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py使用Python的pickle系统保存游戏状态。这个模块可以保存：</p>
+<ul class="simple">
+<li>基本数据类型，比如True、False、None、整型(int)、字符型(str)、浮点型(float)、复杂字符(complex str)和unicode对象。</li>
+<li>复合类型，比如列表(list)、元组(tuple)、集合(set)和字典(dict)。</li>
+<li>创作者定义的对象(object)、类(class)、函数(function)、方法(methed)和绑定方法(bound method)。成功pickle后，它们可以使用原来的名称维持功能。</li>
+<li>角色(character)、可视组件(displayable)、变换(transform)和转场(transition)对象。</li>
+</ul>
+<p>还有几种无法pickle的数据类型：</p>
+<ul class="simple">
+<li>渲染(render)对象</li>
+<li>迭代器(iterator)对象。</li>
+<li>类文件(file-like)对象。</li>
+<li>内部函数和lambda。</li>
+</ul>
+<p>默认情况下，Ren’Py使用cPickle模块保存游戏。配置 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.use_cpickle</span></code> 的值可以让Ren’Py使用pickle模块。默认配置速度较慢，但是比保存报错要好。</p>
+</div>
+<div class="section" id="save-functions-and-variables">
+<span id="id5"></span><h2>保存函数和变量<a class="headerlink" href="#save-functions-and-variables" title="Permalink to this headline"> link</a></h2>
+<p>有一个变量用于高级保存系统：</p>
+<dl class="var">
+<dt id="var-save_name">
+<code class="descname">save_name</code> = …<a class="headerlink" href="#var-save_name" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个字符串，每次保存时都会存储。它可以用作存档名称，帮助用户区分不同存档。</p>
+</dd></dl>
+
+<p>在 <a class="reference internal" href="screen_actions.html#screen-actions"><span class="std std-ref">界面动作</span></a> 中定义了一些高级别的保存动作和函数。除此之外，还有一些低级别的保存和加载动作。</p>
+<dl class="function">
+<dt id="renpy.can_load">
+<code class="descclassname">renpy.</code><code class="descname">can_load</code><span class="sig-paren">(</span><em>filename</em>, <em>test=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.can_load" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果 <em>filename</em> 作为存档槽已存在则返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.copy_save">
+<code class="descclassname">renpy.</code><code class="descname">copy_save</code><span class="sig-paren">(</span><em>old</em>, <em>new</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.copy_save" title="Permalink to this definition"> link</a></dt>
+<dd><p>将存档 <em>old</em> 复制到存档 <em>new</em> 。(如果 <em>old</em> 不存在则不做任何事。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.list_saved_games">
+<code class="descclassname">renpy.</code><code class="descname">list_saved_games</code><span class="sig-paren">(</span><em>regexp='.'</em>, <em>fast=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.list_saved_games" title="Permalink to this definition"> link</a></dt>
+<dd><p>列出保存的游戏。每一个保存的游戏返回的一个元组中包含：</p>
+<ul class="simple">
+<li>保存的文件名。</li>
+<li>传入的extra_info。</li>
+<li>一个可视组件，保存的截屏。</li>
+<li>游戏时间戳，UNIX时代开始计算的秒数。</li>
+</ul>
+<dl class="docutils">
+<dt><cite>regexp</cite></dt>
+<dd>在列表中过滤文件名的正则表达式。</dd>
+<dt><cite>fast</cite></dt>
+<dd>若为True，返回文件名而不是元组。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.list_slots">
+<code class="descclassname">renpy.</code><code class="descname">list_slots</code><span class="sig-paren">(</span><em>regexp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.list_slots" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个非空存档槽的列表。如果 <em>regexp</em> 存在，只返回开头为 <em>regexp</em> 的槽位。列表内的槽位按照字符串排序(string-order)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.load">
+<code class="descclassname">renpy.</code><code class="descname">load</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.load" title="Permalink to this definition"> link</a></dt>
+<dd><p>从存档槽 <em>filename</em> 加载游戏状态。如果文件加载成功，这个函数不会返回。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.newest_slot">
+<code class="descclassname">renpy.</code><code class="descname">newest_slot</code><span class="sig-paren">(</span><em>regexp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.newest_slot" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回最新(具有最近修改时间)存档槽的名称，如果没有(匹配的)存档则返回None。</p>
+<p>如果 <em>regexp</em> 存在，只返回开头为 <em>regexp</em> 的槽位。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.rename_save">
+<code class="descclassname">renpy.</code><code class="descname">rename_save</code><span class="sig-paren">(</span><em>old</em>, <em>new</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.rename_save" title="Permalink to this definition"> link</a></dt>
+<dd><p>将某个名为 <em>old</em> 的存档重命名为 <em>new</em> 。(如果 <em>old</em> 不存在则不做任何事。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.save">
+<code class="descclassname">renpy.</code><code class="descname">save</code><span class="sig-paren">(</span><em>filename</em>, <em>extra_info=''</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.save" title="Permalink to this definition"> link</a></dt>
+<dd><p>将游戏状态保存至某个存档槽。</p>
+<dl class="docutils">
+<dt><cite>filename</cite></dt>
+<dd>一个表示存档槽名称的字符串。Despite the variable name, this corresponds only loosely to filenames.</dd>
+<dt><cite>extra_info</cite></dt>
+<dd>会保存在存档文件中的一个额外字符串。通常就是 <code class="xref py py-func docutils literal notranslate"><span class="pre">save_name()</span></code> 的值。</dd>
+</dl>
+<p><a class="reference internal" href="#renpy.take_screenshot" title="renpy.take_screenshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.take_screenshot()</span></code></a> 应该在这个函数之前被调用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.slot_json">
+<code class="descclassname">renpy.</code><code class="descname">slot_json</code><span class="sig-paren">(</span><em>slotname</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.slot_json" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回 <em>slotname</em> 的json信息，如果对应的槽位为空则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.slot_mtime">
+<code class="descclassname">renpy.</code><code class="descname">slot_mtime</code><span class="sig-paren">(</span><em>slotname</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.slot_mtime" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回 <em>slotname</em> 的修改时间，如果对应的槽位为空则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.slot_screenshot">
+<code class="descclassname">renpy.</code><code class="descname">slot_screenshot</code><span class="sig-paren">(</span><em>slotname</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.slot_screenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回 <em>slotname</em> 使用的截屏，如果对应的槽位为空则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.take_screenshot">
+<code class="descclassname">renpy.</code><code class="descname">take_screenshot</code><span class="sig-paren">(</span><em>scale=None</em>, <em>background=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.take_screenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>执行截屏。截屏图像会被作为存档的一部分保存。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.unlink_save">
+<code class="descclassname">renpy.</code><code class="descname">unlink_save</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.unlink_save" title="Permalink to this definition"> link</a></dt>
+<dd><p>删除指定名称的存档。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="retaining-data-after-load">
+<span id="id6"></span><h2>读取存档后保持数据<a class="headerlink" href="#retaining-data-after-load" title="Permalink to this headline"> link</a></h2>
+<p>当游戏加载后，游戏状态会被重置(使用下面会提到的回滚系统)为当前语句开始执行的状态。</p>
+<p>在某些情况下，这是不希望发生的。例如，当某个界面允许编辑某个值时，我们可能想要游戏加载后维持那个值。调用 <a class="reference internal" href="#renpy.retain_after_load" title="renpy.retain_after_load"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.retain_after_load()</span></code></a> 后，当游戏在下一个带检查点(checkpoint)的交互结束前，进行保存和加载动作都会保持不变。</p>
+<p>注意，当数据没有被改变，主控流程会被重置为当前语句的开头。这条语句将再次执行，语句开头则使用新的数据。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">edit_value</span><span class="p">:</span>
+    <span class="k">hbox</span><span class="p">:</span>
+        <span class="k">text</span> <span class="s2">&quot;[value]&quot;</span>
+        <span class="k">textbutton</span> <span class="s2">&quot;+&quot;</span> <span class="na">action</span> <span class="n">SetVariable</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="na">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">textbutton</span> <span class="s2">&quot;-&quot;</span> <span class="na">action</span> <span class="n">SetVariable</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="na">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">textbutton</span> <span class="s2">&quot;+&quot;</span> <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+    <span class="k">$</span> <span class="na">value</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">retain_after_load</span><span class="p">()</span>
+    <span class="k">call</span> <span class="k">screen</span> <span class="n">edit_value</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="renpy.retain_after_load">
+<code class="descclassname">renpy.</code><code class="descname">retain_after_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.retain_after_load" title="Permalink to this definition"> link</a></dt>
+<dd><p>在当前语句和包含下一个检查点(checkpoint)的语句之间发生加载(load)时，保持数据。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="rollback">
+<span id="id7"></span><h2>回滚<a class="headerlink" href="#rollback" title="Permalink to this headline"> link</a></h2>
+<p>回滚(rollback)允许用户将游戏恢复到之前的状态，类似流行应用程序中的“撤销/重做”系统。在回滚事件中，系统需要重点维护可视化和游戏变量，所以在创作游戏时有几点需要考虑。</p>
+</div>
+<div class="section" id="supporting-rollback-and-roll-forward">
+<span id="id8"></span><h2>支持回滚和前向滚动<a class="headerlink" href="#supporting-rollback-and-roll-forward" title="Permalink to this headline"> link</a></h2>
+<p>大多数Ren’Py语句自动支持回滚和前向滚动。如果直接调用 <a class="reference internal" href="screen_python.html#ui.interact" title="ui.interact"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.interact()</span></code></a> ，就需要自行添加对回滚和前向滚动的支持。可以使用下列结构实现：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 非回滚状态这项是None；或前向滚动时最后传入检查点的值。</span>
+<span class="n">roll_forward</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">roll_forward_info</span><span class="p">()</span>
+
+<span class="c1"># 这里配置界面……</span>
+
+<span class="c1"># 与用户交互</span>
+<span class="n">rv</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">roll_forward</span><span class="o">=</span><span class="n">roll_forward</span><span class="p">)</span>
+
+<span class="c1"># 存储互动结果。</span>
+<span class="n">renpy</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="n">rv</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>重点是，你的游戏在调用renpy.checkpoint后不与用户发生交互。(不然，用户可能无法回滚。)</p>
+<dl class="function">
+<dt id="renpy.can_rollback">
+<code class="descclassname">renpy.</code><code class="descname">can_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.can_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果可以回滚则返回True。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.checkpoint">
+<code class="descclassname">renpy.</code><code class="descname">checkpoint</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.checkpoint" title="Permalink to this definition"> link</a></dt>
+<dd><p>在当前语句设置一个能让用户回滚的检查点(checkpoint)。一旦调用这个函数，当前语句就不该再出现互动行为。</p>
+<dl class="docutils">
+<dt><cite>data</cite></dt>
+<dd>当游戏回滚时，这个数据通过 <a class="reference internal" href="#renpy.roll_forward_info" title="renpy.roll_forward_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.roll_forward_info()</span></code></a> 返回。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_identifier_checkpoints">
+<code class="descclassname">renpy.</code><code class="descname">get_identifier_checkpoints</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_identifier_checkpoints" title="Permalink to this definition"> link</a></dt>
+<dd><p>从HistoryEntry对象中寻找rollback_identifier，返回需要的检查点(checkpoint)数量，并传入 <a class="reference internal" href="#renpy.rollback" title="renpy.rollback"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.rollback()</span></code></a> 以到达目标标识符(identifier)。如果标识符不在回滚历史中，返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.in_rollback">
+<code class="descclassname">renpy.</code><code class="descname">in_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.in_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>游戏回滚过则返回True。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.roll_forward_info">
+<code class="descclassname">renpy.</code><code class="descname">roll_forward_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.roll_forward_info" title="Permalink to this definition"> link</a></dt>
+<dd><p>在回滚中，返回这条语句最后一次执行时返回并应用于 <a class="reference internal" href="#renpy.checkpoint" title="renpy.checkpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.checkpoint()</span></code></a> 的数据。如果超出滚回范围，则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.rollback">
+<code class="descclassname">renpy.</code><code class="descname">rollback</code><span class="sig-paren">(</span><em>force=False</em>, <em>checkpoints=1</em>, <em>defer=False</em>, <em>greedy=True</em>, <em>label=None</em>, <em>abnormal=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>将游戏状态回滚至最后一个检查点(checkpoint)。</p>
+<dl class="docutils">
+<dt><cite>force</cite></dt>
+<dd>若为True，所有情况下都可以回滚。否则，在存储区、上下文(context)和配置(config)中启用时才能进行回滚。</dd>
+<dt><cite>checkpoints</cite></dt>
+<dd>通过renpy.checkpoint回滚的目标检查点(checkpoint)。这种情况下，会尽可能快地回滚。</dd>
+<dt><cite>defer</cite></dt>
+<dd>若为True，调用会推迟到主控流程回到主语境(context)。</dd>
+<dt><cite>greedy</cite></dt>
+<dd>若为True，回滚会在前一个检查点(checkpoint)后面结束。若为False，回滚会在当前检查点前结束。</dd>
+<dt><cite>label</cite></dt>
+<dd>若不是None，当回滚完成后，调用的脚本标签(label)。</dd>
+<dt><cite>abnormal</cite></dt>
+<dd>若为True，也是默认值，异常(abnormal)模式下的转场(transition)会被跳过，否则显示转场。当某个互动行为开始时，异常(abnormal)模式结束。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.suspend_rollback">
+<code class="descclassname">renpy.</code><code class="descname">suspend_rollback</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.suspend_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>回滚会跳过游戏中已经挂起回滚的章节。</p>
+<dl class="docutils">
+<dt><cite>flag</cite></dt>
+<dd>当 <em>flag</em> 为True时，回滚挂起。当 <em>flag</em> 为False时，回滚恢复。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="blocking-rollback">
+<span id="id9"></span><h2>阻拦回滚<a class="headerlink" href="#blocking-rollback" title="Permalink to this headline"> link</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">阻拦回滚是一个对用户不友好的事情。如果一个用户错误点击了不希望进入的分支选项，ta就不能修正自己的错误。由于回滚等效于存档和读档，用户就会被强迫频繁地存档，破坏游戏体验。</p>
+</div>
+<p>部分或者完全禁用回滚是可能的。如果根本不想要回滚，可以使用 <a class="reference internal" href="config.html#var-config.rollback_enabled"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.rollback_enabled</span></code></a> 函数关闭选项。</p>
+<p>更通用的做法是分段阻拦回滚。这可以通过 <a class="reference internal" href="#renpy.block_rollback" title="renpy.block_rollback"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.block_rollback()</span></code></a> 函数实现。当调用该函数时，Ren’Py的回滚会在某个点上停止。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">final_answer</span><span class="p">:</span>
+    <span class="s2">&quot;这就是你的最终答案吗？&quot;</span>
+
+<span class="k">menu</span><span class="p">:</span>
+    <span class="s2">&quot;是&quot;</span><span class="p">:</span>
+        <span class="k">jump</span> <span class="n">no_return</span>
+    <span class="s2">&quot;不&quot;</span><span class="p">:</span>
+        <span class="s2">&quot;我们有办法让你开口。&quot;</span>
+        <span class="s2">&quot;你还是好好想考虑下吧。&quot;</span>
+        <span class="s2">&quot;我再问你一次……&quot;</span>
+        <span class="k">jump</span> <span class="n">final_answer</span>
+
+<span class="k">label</span> <span class="n">no_return</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">block_rollback</span><span class="p">()</span>
+
+    <span class="s2">&quot;然后到了这里。现在不能回头了。&quot;</span>
+</pre></div>
+</div>
+<p>当到达脚本标签(label)no_return时，Ren’Py就停止回滚，不会进一步回滚到标签menu。</p>
+</div>
+<div class="section" id="fixing-rollback">
+<span id="id10"></span><h2>混合回滚<a class="headerlink" href="#fixing-rollback" title="Permalink to this headline"> link</a></h2>
+<p>混合回滚提供了一种介于完全无限制回滚和完全阻拦回滚之间的中间选项。回滚是允许的，但用户无法修改之前做出的选择。混合修改使用 <a class="reference internal" href="#renpy.fix_rollback" title="renpy.fix_rollback"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.fix_rollback()</span></code></a> 函数实现，下面是样例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">final_answer</span><span class="p">:</span>
+    <span class="s2">&quot;这就是你的最终答案吗？&quot;</span>
+<span class="k">menu</span><span class="p">:</span>
+    <span class="s2">&quot;是&quot;</span><span class="p">:</span>
+        <span class="k">jump</span> <span class="n">no_return</span>
+    <span class="s2">&quot;不&quot;</span><span class="p">:</span>
+        <span class="s2">&quot;我们有办法让你开口。&quot;</span>
+        <span class="s2">&quot;你还是好好想考虑下吧。&quot;</span>
+        <span class="s2">&quot;我再问你一次……&quot;</span>
+        <span class="k">jump</span> <span class="n">final_answer</span>
+
+<span class="k">label</span> <span class="n">no_return</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">fix_rollback</span><span class="p">()</span>
+
+    <span class="s2">&quot;然后到了这里。现在不能回头了。&quot;</span>
+</pre></div>
+</div>
+<p>现在，调用fix_rollback函数后，用户依然可以回滚到标签menu，但不能选择一个不同的分支选项。</p>
+<p>使用fix_rollback设计游戏时，还有几处要点。Ren’Py会自动关注并锁定传入 <code class="xref py py-func docutils literal notranslate"><span class="pre">checkpoint()</span></code> 的任何数据。但由于Ren’Py的天然特性，可以用Python语句穿透这个显示并修改数据，这样会导致不需要的结果。这取决于游戏设计者是否在某些有问题的地方阻拦回滚或者写了额外的Python语句处理问题。</p>
+<p>内部用户的菜单互动选项， <a class="reference internal" href="input.html#renpy.input" title="renpy.input"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.input()</span></code></a> 和 <code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.imagemap()</span></code> 被设计为完全支持fix_rollback。</p>
+</div>
+<div class="section" id="styling-fixed-rollback">
+<span id="id11"></span><h2>样式化混合回滚<a class="headerlink" href="#styling-fixed-rollback" title="Permalink to this headline"> link</a></h2>
+<p>因为fix_rollback改变了菜单和imagemap的功能，建议考虑应对这种情况。理解菜单按钮的组件状态如何改变很重要。通过 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.fix_rollback_without_choice()</span></code> 选项，可以更改两种模式。</p>
+<p>默认配置会将选过的选项设置为“selected”，进而激活样式所有带“selected_”前缀的样式特性。所有其他按钮会被设置为不可用，并使用前缀为“insensitive_”前缀的特性显示。这样的最终效果就是菜单仅有一个可选的选项。</p>
+<p>当 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.fix_rollback_without_choice()</span></code> 项被设为False时，所有按钮都会设置为不可用。之前选过的那项会使用“selected_insensitive_”前缀的风格特性，而其他按钮会使用前缀为“insensitive_”前缀的特性。</p>
+</div>
+<div class="section" id="fixed-rollback-and-custom-screens">
+<span id="id12"></span><h2>混合回滚和自定义界面<a class="headerlink" href="#fixed-rollback-and-custom-screens" title="Permalink to this headline"> link</a></h2>
+<p>当使用fix_rollback系统编写定制Python路由，使游戏流程更舒服时，有几个简单的要点。首先是 <a class="reference internal" href="#renpy.in_fixed_rollback" title="renpy.in_fixed_rollback"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.in_fixed_rollback()</span></code></a> 函数可以用作决定游戏当前是否处于混合回滚状态。其次，当处于混合回滚状态时， <a class="reference internal" href="screen_python.html#ui.interact" title="ui.interact"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.interact()</span></code></a> 函数总会返回使用的roll_forward数据，而不考虑动作是否执行。这表示，当 <a class="reference internal" href="screen_python.html#ui.interact" title="ui.interact"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.interact()</span></code></a>/<a class="reference internal" href="#renpy.checkpoint" title="renpy.checkpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.checkpoint()</span></code></a> 函数被使用时，大多数工作都已经完成了。</p>
+<p>为了简化定制界面的创建，Ren’Py提供了两个最常用的动作(action)。当按钮检测到被按下时， <a class="reference internal" href="#ui.ChoiceReturn" title="ui.ChoiceReturn"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.ChoiceReturn()</span></code></a> 动作会返回。 <a class="reference internal" href="#ui.ChoiceJump" title="ui.ChoiceJump"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.ChoiceJump()</span></code></a> 动作可以用于跳转到某个脚本标签(label)。当界面通过一个  <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">screen</span></code> 语句被调用时，这个动作才能正常工作。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">demo_imagemap</span><span class="p">:</span>
+    <span class="k">imagemap</span><span class="p">:</span>
+        <span class="na">ground</span> <span class="s2">&quot;imagemap_ground.jpg&quot;</span>
+        <span class="na">hover</span> <span class="s2">&quot;imagemap_hover.jpg&quot;</span>
+        <span class="na">selected_idle</span> <span class="s2">&quot;imagemap_selected_idle.jpg&quot;</span>
+        <span class="na">selected_hover</span> <span class="s2">&quot;imagemap_hover.jpg&quot;</span>
+
+        <span class="k">hotspot</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">78</span><span class="p">)</span> <span class="na">action</span> <span class="n">ui</span><span class="o">.</span><span class="n">ChoiceJump</span><span class="p">(</span><span class="s2">&quot;swimming&quot;</span><span class="p">,</span> <span class="s2">&quot;go_swimming&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">hotspot</span> <span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">78</span><span class="p">)</span> <span class="na">action</span> <span class="n">ui</span><span class="o">.</span><span class="n">ChoiceJump</span><span class="p">(</span><span class="s2">&quot;science&quot;</span><span class="p">,</span> <span class="s2">&quot;go_science_club&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">hotspot</span> <span class="p">(</span><span class="mi">452</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">78</span><span class="p">)</span> <span class="na">action</span> <span class="n">ui</span><span class="o">.</span><span class="n">ChoiceJump</span><span class="p">(</span><span class="s2">&quot;art&quot;</span><span class="p">,</span> <span class="s2">&quot;go_art_lessons&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">hotspot</span> <span class="p">(</span><span class="mi">602</span><span class="p">,</span> <span class="mi">316</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">78</span><span class="p">)</span> <span class="na">action</span> <span class="n">uiChoiceJump</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;go_home&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">python</span><span class="p">:</span>
+    <span class="n">roll_forward</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">roll_forward_info</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">roll_forward</span> <span class="k">not</span> <span class="k">in</span> <span class="p">(</span><span class="s2">&quot;Rock&quot;</span><span class="p">,</span> <span class="s2">&quot;Paper&quot;</span><span class="p">,</span> <span class="s2">&quot;Scissors&quot;</span><span class="p">):</span>
+        <span class="n">roll_forward</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="n">ui</span><span class="o">.</span><span class="k">hbox</span><span class="p">()</span>
+    <span class="n">ui</span><span class="o">.</span><span class="k">imagebutton</span><span class="p">(</span><span class="s2">&quot;rock.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rock_hover.png&quot;</span><span class="p">,</span> <span class="na">selected_insensitive</span><span class="o">=</span><span class="s2">&quot;rock_hover.png&quot;</span><span class="p">,</span> <span class="na">clicked</span><span class="o">=</span><span class="n">ui</span><span class="o">.</span><span class="n">ChoiceReturn</span><span class="p">(</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;Rock&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="n">ui</span><span class="o">.</span><span class="k">imagebutton</span><span class="p">(</span><span class="s2">&quot;paper.png&quot;</span><span class="p">,</span> <span class="s2">&quot;paper_hover.png&quot;</span><span class="p">,</span> <span class="na">selected_insensitive</span><span class="o">=</span><span class="s2">&quot;paper_hover.png&quot;</span><span class="p">,</span> <span class="na">clicked</span><span class="o">=</span><span class="n">ui</span><span class="o">.</span><span class="n">ChoiceReturn</span><span class="p">(</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;Paper&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="n">ui</span><span class="o">.</span><span class="k">imagebutton</span><span class="p">(</span><span class="s2">&quot;scissors.png&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors_hover.png&quot;</span><span class="p">,</span> <span class="na">selected_insensitive</span><span class="o">=</span><span class="s2">&quot;scissors_hover.png&quot;</span><span class="p">,</span> <span class="na">clicked</span><span class="o">=</span><span class="n">ui</span><span class="o">.</span><span class="n">ChoiceReturn</span><span class="p">(</span><span class="s2">&quot;scissors&quot;</span><span class="p">,</span> <span class="s2">&quot;Scissors&quot;</span><span class="p">,</span> <span class="n">block_all</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="n">ui</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">renpy</span><span class="o">.</span><span class="n">in_fixed_rollback</span><span class="p">():</span>
+        <span class="n">ui</span><span class="o">.</span><span class="n">saybehavior</span><span class="p">()</span>
+
+    <span class="k">choice</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">roll_forward</span><span class="o">=</span><span class="n">roll_forward</span><span class="p">)</span>
+    <span class="n">renpy</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="k">choice</span><span class="p">)</span>
+
+<span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">fix_rollback</span><span class="p">()</span>
+<span class="n">m</span> <span class="s2">&quot;[choice]!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rollback-blocking-and-fixing-functions">
+<span id="id13"></span><h2>回滚阻拦和回滚混合函数<a class="headerlink" href="#rollback-blocking-and-fixing-functions" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.block_rollback">
+<code class="descclassname">renpy.</code><code class="descname">block_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.block_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>防止回滚到当前语句之前的脚本。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.fix_rollback">
+<code class="descclassname">renpy.</code><code class="descname">fix_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.fix_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>防止用于更改在当前语句之前做出的选项决定。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.in_fixed_rollback">
+<code class="descclassname">renpy.</code><code class="descname">in_fixed_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.in_fixed_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果正在发生回滚的当前上下文(context)后面有一个执行过的renpy.fix_rollback()语句，就返回True。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.ChoiceJump">
+<code class="descclassname">ui.</code><code class="descname">ChoiceJump</code><span class="sig-paren">(</span><em>label</em>, <em>value</em>, <em>location=None</em>, <em>block_all=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ChoiceJump" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个菜单选项动作(action)，返回值为 <em>value</em> 。同时管理按钮在混合回滚模式下的状态。(详见对应的 <em>block_all</em> 参数。)</p>
+<dl class="docutils">
+<dt><cite>label</cite></dt>
+<dd>按钮的文本标签(label)。对imagebutton和hotspot来说可以是任何类型。这个标签用作当前界面内选项的唯一标识符。这个标识符与 <em>location</em> 一起存储，用于记录该选项是否可以被选择。</dd>
+<dt><cite>value</cite></dt>
+<dd>跳转的位置。</dd>
+<dt><cite>location</cite></dt>
+<dd>当前选项界面的唯一位置标识符。</dd>
+<dt><cite>block_all</cite></dt>
+<dd><p class="first">若为False，被选中选项的按钮会赋予“selected”角色，未选中的选项按钮会置为不可用。</p>
+<p>若为True，混合回滚时按钮总是不可用。</p>
+<p>若为None，该值使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.fix_rollback_without_choice()</span></code> 配置项。</p>
+<p class="last">当某个界面内所有选项都被赋值为True时，选项菜单变成点击无效状态(回滚依然有效)。这可以通过在 <a class="reference internal" href="screen_python.html#ui.interact" title="ui.interact"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.interact()</span></code></a> 之前调用 <code class="xref py py-func docutils literal notranslate"><span class="pre">ui.saybehavior()</span></code> 修改。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.ChoiceReturn">
+<code class="descclassname">ui.</code><code class="descname">ChoiceReturn</code><span class="sig-paren">(</span><em>label</em>, <em>value</em>, <em>location=None</em>, <em>block_all=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ChoiceReturn" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个菜单选项动作(action)，返回值为 <em>value</em> 。同时管理按钮在混合回滚模式下的状态。(详见对应的 <em>block_all</em> 参数。)</p>
+<dl class="docutils">
+<dt><cite>label</cite></dt>
+<dd>按钮的文本标签(label)。对imagebutton和hotspot来说可以是任何类型。这个标签用作当前界面内选项的唯一标识符。这个标识符与 <em>location</em> 一起存储，用于记录该选项是否可以被选择。</dd>
+<dt><cite>value</cite></dt>
+<dd>选择某个选项后返回的位置。</dd>
+<dt><cite>location</cite></dt>
+<dd>当前选项界面的唯一位置标识符。</dd>
+<dt><cite>block_all</cite></dt>
+<dd><p class="first">若为False，被选中选项的按钮会赋予“selected”角色，未选中的选项按钮会置为不可用。</p>
+<p>若为True，混合回滚时按钮总是不可用。</p>
+<p>若为None，该值使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.fix_rollback_without_choice()</span></code> 配置项。</p>
+<p class="last">当某个界面内所有选项都被赋值为True时，选项菜单变成点击无效状态(回滚依然有效)。这可以通过在 <a class="reference internal" href="screen_python.html#ui.interact" title="ui.interact"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.interact()</span></code></a> 之前调用 <code class="xref py py-func docutils literal notranslate"><span class="pre">ui.saybehavior()</span></code> 修改。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="norollback">
+<span id="id14"></span><h2>不回滚<a class="headerlink" href="#norollback" title="Permalink to this headline"> link</a></h2>
+<dl class="class">
+<dt id="NoRollback">
+<em class="property">class </em><code class="descname">NoRollback</code><a class="headerlink" href="#NoRollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>从这个类继承的类的实例，在回滚操作中不执行回滚。一个NoRollback类实例的所有相关对象，仅在它们有其他可抵达路径的情况下才不回滚。</p>
+</dd></dl>
+
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">NoRollback</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">o</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+    <span class="s2">&quot;欢迎！&quot;</span>
+
+    <span class="k">$</span> <span class="n">o</span><span class="o">.</span><span class="na">value</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="s2">&quot;o.value的值是 [o.value] 。你每次回滚并点到这里都会增加它的值。&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

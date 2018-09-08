@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>不兼容的变更 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="分发器笔记" href="distributor.html" />
+    <link rel="prev" title="完整变更日志" href="changelog.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">不兼容的变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">分发器笔记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">许可证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">制作人员</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py开发赞助者</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">“The Question”游戏脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">不兼容的变更</a><ul>
+<li><a class="reference internal" href="#incompatible-7-0">7.0</a></li>
+<li><a class="reference internal" href="#incompatible-6-99-13">6.99.13</a></li>
+<li><a class="reference internal" href="#incompatible-6-99-12-3">6.99.12.3</a></li>
+<li><a class="reference internal" href="#incompatible-6-99-11">6.99.11</a></li>
+<li><a class="reference internal" href="#incompatible-6-99-9">6.99.9</a></li>
+<li><a class="reference internal" href="#incompatible-6-99-2">6.99.2</a></li>
+<li><a class="reference internal" href="#incompatible-6-18">6.18</a></li>
+<li><a class="reference internal" href="#incompatible-6-16">6.16</a></li>
+<li><a class="reference internal" href="#incompatible-6-15-7">6.15.7</a></li>
+<li><a class="reference internal" href="#incompatible-6-14">6.14</a></li>
+<li><a class="reference internal" href="#incompatible-6-13-8">6.13.8</a></li>
+<li><a class="reference internal" href="#incompatible-6-13">6.13</a></li>
+<li><a class="reference internal" href="#incompatible-6-12-1">6.12.1</a></li>
+<li><a class="reference internal" href="#incompatible-6-12-0">6.12.0</a></li>
+<li><a class="reference internal" href="#incompatible-6-11-1">6.11.1</a></li>
+<li><a class="reference internal" href="#incompatible-6-11-0">6.11.0</a></li>
+<li><a class="reference internal" href="#incompatible-6-10-1">6.10.0</a></li>
+<li><a class="reference internal" href="#incompatible-6-9-2">6.9.2</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="incompatible-changes">
+<span id="id1"></span><h1>不兼容的变更<a class="headerlink" href="#incompatible-changes" title="Permalink to this headline"> link</a></h1>
+<p>这里列出了脚本格式或者创作者开发环境变更后，需要调整的内容。我们旨在所有的变更都不会影响已存在的脚本内容。</p>
+<p>只需要注意，设置 <a class="reference internal" href="config.html#var-config.script_version"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.script_version</span></code></a> 就恢复版本变更导致的许多变化，代价是无法使用新增特性。</p>
+<p>关于GUI方面的不兼容变更，详见 <a class="reference internal" href="gui.html#gui-changes"><span class="std std-ref">不兼容的GUI变更</span></a> 部分，只有重新生成GUI才会让这些变更生效。</p>
+<div class="section" id="incompatible-7-0">
+<span id="id2"></span><h2>7.0<a class="headerlink" href="#incompatible-7-0" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py现在将自动图像(automatic images)的优先级定义为 init 0，而不是原来那样一个非常低的init级别。
+如果需要恢复到以前的情况，需要在游戏脚本中这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">late_images_scan</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>现在 <a class="reference internal" href="transitions.html#Dissolve" title="Dissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dissolve()</span></code></a> ， <a class="reference internal" href="transitions.html#ImageDissolve" title="ImageDissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">ImageDissolve()</span></code></a> 和 <a class="reference internal" href="transitions.html#AlphaDissolve" title="AlphaDissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">AlphaDissolve()</span></code></a> 转场默认使用原可视组件的alpha通道值，就像指定了 <code class="docutils literal notranslate"><span class="pre">alpha=True</span></code> 。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">dissolve_force_alpha</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>已经显示的某个影片精灵(movie sprite)再次使用show命令时，现在会重播该影片。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">replay_movie_sprites</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-99-13">
+<span id="id3"></span><h2>6.99.13<a class="headerlink" href="#incompatible-6-99-13" title="Permalink to this headline"> link</a></h2>
+<p>超链接的字体大小继承邻近文本。禁用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">hyperlink_inherit_size</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>文本标签 {nw} 现在会等待语音和自动语音结束，然后实现文本消失的效果。
+如果想禁用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">nw_voice</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>现在ATL变换(transform)在遇到某个pause语句或者interpolation语句时，会显示至少一帧。
+如果游戏中不希望出现这种情况，而是显示为一些快速略过的帧，需要这样配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">atl_one_frame</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>现在某个语句内显示的图层(layer)，将保持变换(transform)的状态，就跟其他ATL变换一样。
+这个特性会导致一些行为表现的变化，例如，语句中多个图层显示的偏移量会保持一致。
+如果想禁用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">keep_show_layer_state</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>如果并非不兼容性变更导致， <a class="reference internal" href="file_python.html#renpy.list_files" title="renpy.list_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.list_files()</span></code></a> 会以标准顺序将变更排序。
+这会触发Ren’Py对存在歧义的行为进行定，并产生确定的唯一结果。
+例如，images目录下有多个同名文件，Ren’Py会随机选取其中之一。(在不同的系统上，选取的文件可能不同。)
+现在，Ren’Py运行时总是会选择同一个文件。</p>
+</div>
+<div class="section" id="incompatible-6-99-12-3">
+<span id="id4"></span><h2>6.99.12.3<a class="headerlink" href="#incompatible-6-99-12-3" title="Permalink to this headline"> link</a></h2>
+<p>开发者模式下，Ren’Py不再搜索系统已安装的字体文件。
+如果游戏使用系统已安装的字体，字体文件应该被复制到game目录下。(但是请确保这个行为符合字体文件的使用许可。)</p>
+</div>
+<div class="section" id="incompatible-6-99-11">
+<span id="id5"></span><h2>6.99.11<a class="headerlink" href="#incompatible-6-99-11" title="Permalink to this headline"> link</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">style</span></code> 和``translate`` 语句的执行顺序已经改变，详见文档 <span class="xref std std-ref">the changelog</span> 。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">new_translate_order</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>注意，不使用这个变更会让新版本的GUI也无法生效。</p>
+<p>配置项 <a class="reference internal" href="config.html#var-config.quit_action"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.quit_action</span></code></a> 的默认值已经变更，改为“游戏中”上下文(context)时退出才会给提示。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">quit_action</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">gamemenus</span><span class="p">(</span><span class="s2">&quot;_quit_prompt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>现在Ren’Py增大了按钮和窗口所允许的最大尺寸。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">enforce_window_max_size</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-99-9">
+<span id="id6"></span><h2>6.99.9<a class="headerlink" href="#incompatible-6-99-9" title="Permalink to this headline"> link</a></h2>
+<p>现在Ren’Py在名为“audio”的通道上播放接口音效，并且支持同时播放多个音效。
+该通道的设置未必与定制化的音效通道相同。audio通道可以通过调整配置项 <a class="reference internal" href="config.html#var-config.auto_channels"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.auto_channels</span></code></a> 的值来改变。
+或者添加如下代码使用sound通道。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">play_channel</span> <span class="o">=</span> <span class="s2">&quot;sound&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-99-2">
+<span id="id7"></span><h2>6.99.2<a class="headerlink" href="#incompatible-6-99-2" title="Permalink to this headline"> link</a></h2>
+<p>现在Ren’Py会自动扫描图片目录(game目录下名为images的子目录)并搜索图片文件，并基于图片文件名自动定义图像(image)。
+如果不使用这个特性，需要在配置中添加：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">image_directory</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-18">
+<span id="id8"></span><h2>6.18<a class="headerlink" href="#incompatible-6-18" title="Permalink to this headline"> link</a></h2>
+<p>现在 <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">screen</span></code> 和 <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">screen</span></code> 语句将在界面预处理进程中计算使用的入参。
+如果计算结果对某个界面可能会产生副作用， <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">screen</span></code> 和 <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">screen</span></code> 后面就需要使用新增的 <code class="docutils literal notranslate"><span class="pre">nopredict</span></code> 分句，这样就不进行预处理。</p>
+<p>界面(screen)现在可以接受转场(transition)——转场效果可以让界面从旧的状态转变到新的状态。
+如果不使用这个特性，需要将配置项 <a class="reference internal" href="config.html#var-config.transition_screens"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.transition_screens</span></code></a> 设置为false。</p>
+<p>同名tag的界面互相替换时，Ren’Py不在使用等式赋值方式转换界面状态。
+现在的方法是， <a class="reference internal" href="screens.html#sl-use"><span class="std std-ref">use语句</span></a> 现在支持 <code class="docutils literal notranslate"><span class="pre">id</span></code> 特性，这个特性可以用于显式转换界面状态。</p>
+</div>
+<div class="section" id="incompatible-6-16">
+<span id="id9"></span><h2>6.16<a class="headerlink" href="#incompatible-6-16" title="Permalink to this headline"> link</a></h2>
+<p>如果需要使用原来的特性，需要将 <cite>loop</cite> 和 <cite>single_track</cite> 同时设置为true。</p>
+</div>
+<div class="section" id="incompatible-6-15-7">
+<span id="id10"></span><h2>6.15.7<a class="headerlink" href="#incompatible-6-15-7" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py在 <a class="reference internal" href="screen_actions.html#Preference" title="Preference"><code class="xref py py-func docutils literal notranslate"><span class="pre">Preference()</span></code></a> 函数中加入了“auto-forward”，可用于控制自动前进模式。
+如果需要使用自动前进模式滑动条，就将配置将 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.default_afm_enable</span></code> 设置为None。</p>
+</div>
+<div class="section" id="incompatible-6-14">
+<span id="id11"></span><h2>6.14<a class="headerlink" href="#incompatible-6-14" title="Permalink to this headline"> link</a></h2>
+<p>以前的版本中，Ren’Py会将归档文件放入archived目录。当运行游戏或生成归档时，Ren’Py会自动搜索该目录。
+现在有了一键打包功能，就没有必要执行这步操作，所有原来在archived目录里的文件都应该移到game目录下。</p>
+<p><a class="reference internal" href="transitions.html#MoveTransition" title="MoveTransition"><code class="xref py py-func docutils literal notranslate"><span class="pre">MoveTransition()</span></code></a> 修改了接口。
+如果创作者不想使用重写代码，可以使用OldMoveTransition实现旧版本MoveTransition的功能。
+(新旧版本的变化，仅跟使用MoveTransition实现的效果有关。)</p>
+<p><a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 修改了特性，可以实现图片的非对称缩放和旋转。这与旧版的使用方法不同。</p>
+</div>
+<div class="section" id="incompatible-6-13-8">
+<span id="id12"></span><h2>6.13.8<a class="headerlink" href="#incompatible-6-13-8" title="Permalink to this headline"> link</a></h2>
+<p>旧式的字符串替换重新默认为启用状态。
+如果创作者写的代码(使用6.13和6.13.7之间的版本)，在say语句或menu语句中使用了 % ，可以直接替换为 %% ，或者添加如下代码：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">old_substitutions</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-13">
+<span id="id13"></span><h2>6.13<a class="headerlink" href="#incompatible-6-13" title="Permalink to this headline"> link</a></h2>
+<p>关于文本特性的许多变化会对游戏开发产生多种影响。
+最大的变化是，引入了新式的(方括号)文本替换，并淘汰了旧式的(使用百分号)文本替换方案。
+如果需要恢复旧式特性，需要使用以下配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">old_substitutions</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">new_substitutions</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>将两项都设置为True后，就可以在同一个游戏里混用新式和旧式文本替换。</p>
+<p>Ren’Py还修改了默认的线性传送(line-wrapping)特性。新的特性不会再增加某个段落中的的行数，它可能会修改每行内单词。
+如果需要使用旧特性，可以添加如下代码：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">style</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="na">layout</span> <span class="o">=</span> <span class="s2">&quot;greedy&quot;</span>
+    <span class="k">style</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="s2">&quot;western&quot;</span>
+</pre></div>
+</div>
+<p>行间距为负数的bug已经修复。这个修复能导致语句块中显示文本高度会有一点缩进。
+如果需要使用旧版特性，使用如下配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">broken_line_spacing</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>最后，新的文本代码可能会在显示慢速文本时需要手工调整，特别是在负值的行间距情况下。
+可以考虑调整 <a class="reference internal" href="style_properties.html#style-property-line_overlap_split"><code class="xref std std-propref docutils literal notranslate"><span class="pre">line_overlap_split</span></code></a> 的值来修正。</p>
+</div>
+<div class="section" id="incompatible-6-12-1">
+<span id="id14"></span><h2>6.12.1<a class="headerlink" href="#incompatible-6-12-1" title="Permalink to this headline"> link</a></h2>
+<p>图像的名称，已经从静态名改为基于属性的命名方式。这个特性可能会导致原先唯一的图像名称变成同名图像。
+如果需要禁用基础属性的图像命名，将配置项 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.image_attributes</span></code> 设置为False。</p>
+<p>不显式提供一个变换(transform)或ATL语句块(block)的情况下显示某个图像，将保持那个图像前一个使用的变换(transform)。
+这意味着，某个移动中的图像将保持移动状态。如果需要使用旧的特性，可以将配置项 <a class="reference internal" href="config.html#var-config.keep_running_transform"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.keep_running_transform</span></code></a> 设置为False。</p>
+<p><a class="reference internal" href="dialogue.html#Character" title="Character"><code class="xref py py-func docutils literal notranslate"><span class="pre">Character()</span></code></a> 的 <cite>image</cite> 入参含义发生变化。
+旧版本的含义在基于界面环境下不能被支持。
+出于兼容性的考量，将配置项 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.new_character_image_argument</span></code> 设置为False可以使用恢复旧版的含义。</p>
+</div>
+<div class="section" id="incompatible-6-12-0">
+<span id="id15"></span><h2>6.12.0<a class="headerlink" href="#incompatible-6-12-0" title="Permalink to this headline"> link</a></h2>
+<p><a class="reference internal" href="screen_special.html#choice-screen"><span class="std std-ref">Choice</span></a> 和 <code class="docutils literal notranslate"><span class="pre">nvl_choice</span></code> 界面内的 <cite>items</cite> 参数定义已改变。
+<code class="docutils literal notranslate"><span class="pre">nvl_choice</span></code> 界面不再作为 <a class="reference internal" href="screen_special.html#nvl-screen"><span class="std std-ref">NVL</span></a> 的代替。</p>
+<p>为了允许预加载图像，可以在任意时刻唤起界面，除非预加载特性(property)的值是False。
+当预加载特性的值不为False时，从最初的显示开始，界面就不应该导致任何副作用。</p>
+<p>由于某些性能原因，Ren’Py现在忽略ImageReference的位置特性(property)。
+这意味着style.image_placement类型的位置特性都会被忽略。如果需要恢复旧版本的特性，将配置项 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.imagereference_respects_position</span></code> 设置为True。</p>
+</div>
+<div class="section" id="incompatible-6-11-1">
+<span id="id16"></span><h2>6.11.1<a class="headerlink" href="#incompatible-6-11-1" title="Permalink to this headline"> link</a></h2>
+<p><a class="reference internal" href="transitions.html#MoveTransition" title="MoveTransition"><code class="xref py py-func docutils literal notranslate"><span class="pre">MoveTransition()</span></code></a> 已修改为适应移动可视组件的xoffset和yoffset参数。
+用于移动的功能函数现在使用 <cite>xoffset</cite> 和 <cite>yoffset</cite> 作为入参。内建的移动功能函数使用这些参数可以正常运行。
+用户自定义功能函数需要升级，正确使用或者忽略这些新增入参。</p>
+</div>
+<div class="section" id="incompatible-6-11-0">
+<span id="id17"></span><h2>6.11.0<a class="headerlink" href="#incompatible-6-11-0" title="Permalink to this headline"> link</a></h2>
+<ul class="simple">
+<li>通过配置项 <a class="reference internal" href="config.html#var-config.default_transform"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.default_transform</span></code></a> 指定的变换(transform)用于初始化show和hide语句中图像的变换特性(property)。</li>
+</ul>
+<p>该变换的默认值将 <a class="reference internal" href="style_properties.html#style-property-xpos"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xpos</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-xanchor"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xanchor</span></code></a> 设置为0.5， <a class="reference internal" href="style_properties.html#style-property-ypos"><code class="xref std std-propref docutils literal notranslate"><span class="pre">ypos</span></code></a>  和 <a class="reference internal" href="style_properties.html#style-property-yanchor"><code class="xref std std-propref docutils literal notranslate"><span class="pre">yanchor</span></code></a> 设置为1.0。</p>
+<blockquote>
+<div><p>这个特性防止风格特性的默认值发生改变。在之前的版本中，风格特性未被初始化的情况下，默认值均为0.</p>
+<p>在ATL变换中包含 <a class="reference internal" href="transforms.html#var-reset"><code class="xref std std-var docutils literal notranslate"><span class="pre">reset</span></code></a> ，所有这些特性都可以被重新设置回0。因此，创作者可以停用默认变化，并恢复到老版本的特性，使用如下配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">style</span><span class="o">.</span><span class="n">image_placement</span><span class="o">.</span><span class="na">xpos</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">style</span><span class="o">.</span><span class="n">image_placement</span><span class="o">.</span><span class="na">ypos</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">style</span><span class="o">.</span><span class="n">image_placement</span><span class="o">.</span><span class="na">xanchor</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">style</span><span class="o">.</span><span class="n">image_placement</span><span class="o">.</span><span class="na">yanchor</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="n">config</span><span class="o">.</span><span class="n">default_transform</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">如果某个变换没有定义全部的位置(position)特性，包括 <a class="reference internal" href="style_properties.html#style-property-xpos"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xpos</span></code></a>， <a class="reference internal" href="style_properties.html#style-property-ypos"><code class="xref std std-propref docutils literal notranslate"><span class="pre">ypos</span></code></a>， <a class="reference internal" href="style_properties.html#style-property-xanchor"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xanchor</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-yanchor"><code class="xref std std-propref docutils literal notranslate"><span class="pre">yanchor</span></code></a> ，就会尝试从该变化的子组件或子特性中获取对应特性的值，前提是其子组件或子特性中定义了对应特性的值。</p>
+<p>这个特性允许某个变换控制可视组件的水平运动，而另一个变换控制可视组件的垂直运动。不过这个特性与之前的不兼容。
+可以修改配置项 <a class="reference internal" href="config.html#var-config.transform_uses_child_position"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.transform_uses_child_position</span></code></a> 禁用新特性。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">transform_uses_child_position</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="incompatible-6-10-1">
+<span id="id18"></span><h2>6.10.0<a class="headerlink" href="#incompatible-6-10-1" title="Permalink to this headline"> link</a></h2>
+<ul class="simple">
+<li>几个默认的位置名称(left，right，center，truecenter，offscreenleft和offscreenright)，现在已定义为ATL变换(transform)。这意味着在某个位置显示图像后，图像的位置会被记录。如果不需要使用这个特性，要重定义所有位置，添加如下代码：</li>
+</ul>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">left</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xalign</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">center</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xalign</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">truecenter</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xalign</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="na">yalign</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">right</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xalign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">offscreenleft</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xpos</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="na">xanchor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">offscreenright</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="na">xpos</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="na">xanchor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="incompatible-6-9-2">
+<span id="id19"></span><h2>6.9.2<a class="headerlink" href="#incompatible-6-9-2" title="Permalink to this headline"> link</a></h2>
+<ul class="simple">
+<li>如果要将你的游戏从Ren’Py 6.9.2或更低版本迁移到高版本，将包含游戏的目录复制到工程目录中。创作者可以点击启动器中的“设置”、再进入“工程目录”，即可选中一个需要的工程。详见 <a class="reference external" href="http://www.renpy.org/wiki/renpy/releases/6.9.2">Ren’Py 6.9.2 发布说明</a> 查看更低版本的迁移方法。</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>快速入门 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GUI(图形用户接口)定制化指导" href="gui.html" />
+    <link rel="prev" title="欢迎来到Ren’Py的参考文档" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">快速入门</a><ul>
+<li><a class="reference internal" href="#ren-py-launcher">Ren’Py启动器(launcher)</a></li>
+<li><a class="reference internal" href="#a-simple-game">一个简单游戏</a></li>
+<li><a class="reference internal" href="#character">角色(character)</a></li>
+<li><a class="reference internal" href="#image">图像(image)</a></li>
+<li><a class="reference internal" href="#transition">转场(transition)</a></li>
+<li><a class="reference internal" href="#position">位置(position)</a></li>
+<li><a class="reference internal" href="#music-and-sound">音乐和音效</a></li>
+<li><a class="reference internal" href="#pause">pause语句</a></li>
+<li><a class="reference internal" href="#ending-the-game">结束游戏</a></li>
+<li><a class="reference internal" href="#menu-labeljump">menu，label和jump语句</a></li>
+<li><a class="reference internal" href="#defaultpythonifflag">使用default、Python和if语句支持flag(标识)</a></li>
+<li><a class="reference internal" href="#releasing-your-game">发布你的游戏</a></li>
+<li><a class="reference internal" href="#the-question">“The Question”的游戏脚本</a></li>
+<li><a class="reference internal" href="#where-do-we-go-from-here">离开这里之后我们可以去哪里进一步学习？</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="quickstart">
+<span id="id1"></span><h1>快速入门<a class="headerlink" href="#quickstart" title="Permalink to this headline"> link</a></h1>
+<p>欢迎来到Ren’Py快速入门手册。此手册意在指导你如何从零起步，
+过一系列简单的步骤制作一个Ren’Py游戏。我们通过制作一个简单游戏 <em>The Question</em>，来实现这一目标。</p>
+<div class="section" id="ren-py-launcher">
+<span id="the-ren-py-launcher"></span><h2>Ren’Py启动器(launcher)<a class="headerlink" href="#ren-py-launcher" title="Permalink to this headline"> link</a></h2>
+<p>在开始制作一个游戏之前，你最好首先花点时间学习Ren’Py启动器(launcher)的工作机制。
+启动器(launcher)允许你创造、管理、编辑和运行Ren’Py工程。</p>
+<p><strong>正式开始。</strong> 正式开始前，你会需要
+<a class="reference external" href="https://www.renpy.org/latest.html">下载 Ren’Py</a>.</p>
+<p>下载Ren’Py，然后解压并运行。</p>
+<ul class="simple">
+<li>在Windows平台上，双击下载的可执行文件。它会自动解压Ren’Py到一个名为 <code class="docutils literal notranslate"><span class="pre">renpy-&lt;version&gt;</span></code> 的文件夹。进入这个文件夹并运行 <code class="docutils literal notranslate"><span class="pre">renpy.exe</span></code> 。(在扩展名隐藏的情况下，renpy.exe文件可能名字是renpy)</li>
+<li>在Max OS X平台上，双击下载驱动器镜像，将其挂载为一个驱动器。当驱动器打开后，将目录命名为 <code class="docutils literal notranslate"><span class="pre">renpy-&lt;version&gt;</span></code> 并复制到其他任意地方。(复制到哪里不重要，但不能是只读驱动器。不要将renpy程序文件移动到其所有目录之外的地方——不然在其他地方该程序无法工作)进入这个目录并运行 <code class="docutils literal notranslate"><span class="pre">renpy</span></code> 程序。</li>
+<li>在Linux平台上，解tar包，进入 <code class="docutils literal notranslate"><span class="pre">renpy-&lt;version&gt;</span></code> 目录，然后运行 <code class="docutils literal notranslate"><span class="pre">renpy.sh</span></code> 。</li>
+</ul>
+<p>完成以上操作后，Ren’Py启动器(launcher)应该正常运行了。</p>
+<p>Ren’Py启动器(launcher)已经被翻译为多种语言。需要更改语言的话，选择底部右侧的“preferences”项，就可以更改语言了。</p>
+<p>(译者注：首次运行的启动器界面默认使用英语。请进入“preferences”，将“Language”修改为“Simplified Chinese”，就能切换为简体中文了。后续所有图片和描述均以简体中文界面为基础。)</p>
+<p><strong>选择和启动一个工程。</strong> 你首先会看到游戏“The Question”完成之后的样子。进入Ren’Py启动器(launcher)，在弹出的第一个窗口选择“The Question”。然后选择“启动工程”进入“The Question”。</p>
+<p>通过同样的操作，你可以进入Ren’Py演示demo，不过请选择“教程”而不是“The Question”。</p>
+<div class="figure" id="id8">
+<a class="reference internal image-reference" href="_images/launcher.png"><img alt="_images/launcher.png" src="_images/launcher.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Ren’Py启动器主界面。</span></p>
+</div>
+<div class="figure" id="id9">
+<a class="reference internal image-reference" href="_images/project_name.png"><img alt="_images/project_name.png" src="_images/project_name.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">给一个新工程命名。</span></p>
+</div>
+<div class="figure" id="id10">
+<a class="reference internal image-reference" href="_images/resolution.png"><img alt="_images/resolution.png" src="_images/resolution.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">选择工程分辨率。</span></p>
+</div>
+<div class="figure" id="id11">
+<a class="reference internal image-reference" href="_images/color.png"><img alt="_images/color.png" src="_images/color.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">选择默认主题的强调颜色和背景颜色。</span></p>
+</div>
+<p><strong>创建一个新工程。</strong> 在启动器(launcher)界面选择“创建新工程”创建一个新工程。</p>
+<p>如果这是你第一次创建工程，Ren’Py可能会要求你选择一个工程目录。这个目录(或者称为文件夹)会被用于创建新的工程，并且会扫描已经存在的工程。目录选择窗口可能会弹出在Ren’Py主界面窗口后面，我们需要找到这个窗口。</p>
+<p>然后，启动器(launcher)会询问工程名称。由于“The Question”已经被占用了，你需要输入一个不同的工程名称，比如“My Question”，然后输入回车确认。</p>
+<p>之后，启动器(launcher)会询问工程分辨率。考虑到游戏(文件)大小和游戏画面质量，默认的1280x720分辨率是个良好的折中方案。由于是入门演示，我们将选择1280x720以匹配“The Question”游戏的美术资源，点击“继续”。</p>
+<p>启动器(launcher)将继续询问颜色主题——新GUI(用户图形界面)的强调色和背景色。此时你选择什么颜色都不要紧，所以随心所欲选择，然后点击“继续”。</p>
+<p>到了这一步，Ren’Py会处理一些(后台)工作，然后输出一个简单的游戏模板。该模板使用预置的美术和文本资源，但是可以运行的，并且支持一些预置的特性，例如回滚、读档、存档等。选择“启动工程”运行这个工程。</p>
+</div>
+<div class="section" id="a-simple-game">
+<span id="id2"></span><h2>一个简单游戏<a class="headerlink" href="#a-simple-game" title="Permalink to this headline"> link</a></h2>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="s2">&quot;希尔维亚&quot;</span> <span class="s2">&quot;嗨！今天的课怎么样？&quot;</span>
+
+    <span class="s2">&quot;我&quot;</span> <span class="s2">&quot;挺好的……&quot;</span>
+
+    <span class="s2">&quot;我当然不会承认，上课的时候内容只是左耳进右耳出。&quot;</span>
+
+    <span class="s2">&quot;我&quot;</span> <span class="s2">&quot;你现在要回家了吗？要不要跟我一起走？&quot;</span>
+
+    <span class="s2">&quot;希尔维亚&quot;</span> <span class="s2">&quot;当然！&quot;</span>
+</pre></div>
+</div>
+<p>这是一个非常简单的Ren’Py游戏。它不包含任何图片和音乐，但它展示了两个角色之间的一次对话，以及一行旁白。</p>
+<p>如果想要尝试，从启动器(launcher)顶端选择“My Question”工程，进入“编辑文件”并选择“script.rpy”。如果这是你首次进入编辑模式，Ren’Py会询问选用哪一款编辑器(我们向新人推荐Editra)，并下载你选择的那款。启动器(launcher)会使用编辑器打开rpy脚本文件。</p>
+<p>编辑器打开后，清除script.rpy里所有内容。我们将从零开始，所以你不需要原来的那些内容。将上面案例复制到script.ry里并保存文件。</p>
+<p>现在万事俱备，可以运行这个样例了。回到启动器(launcher)主界面，选择“启动工程”。Ren’Py会启动运行。注意，不需要额外的工作量，Ren’Py就已经提供了可以读档和存档以及改变配置项的菜单选项。当这些工作都完成时，点击“启动工程”，就可以玩这个样例游戏了。</p>
+<p>这个样例展示了一些常用的Ren’Py语句。</p>
+<p>第一行是一个label语句。label语句常用于在程序中给某个脚本点命名。在这个例子中，我们创建了一个名为 <code class="docutils literal notranslate"><span class="pre">start</span></code> 的标签。start标签是特殊的，因为当用户点击主菜单的“Start Game”时，Ren’Py脚本会从这个标签开始运行。</p>
+<p>其他行是say语句。say语句有两种格式。一种格式是，一行单独字符串(双引号开头，双引号结束，中间文字)，用于表现主视角角色的陈述或者内心想法。另一种格式有两个字符串组成。常用于对话，第一个字符串是说话角色名字，第二个字符串是该角色正在说的话。</p>
+<p>注意，所有say语句都要用4个空格(半角)缩进.这是因为say语句属于同一个标签语句下的语句块(block)。在Ren’Py中，语句块(block)必须相对于从属的主语句缩进，并且同一个语句块(block)的语句使用同样的缩进量。</p>
+<p>当文本自身包含双引号时，需要使用反斜杠作为转义符。例如</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="s2">&quot;希尔维亚&quot;</span> <span class="s2">&quot;你有没有听过林肯著名的格言， </span><span class="se">\&quot;</span><span class="s2">网络无真相</span><span class="se">\&quot;</span><span class="s2">？&quot;</span>
+</pre></div>
+</div>
+<p>当然这个简单游戏没什么可多看的，它只是一个演示如何在Ren’Py里简单构建框架的样例。之后我们会添加一些图片，不过首先，让我们看看如何定义角色。</p>
+</div>
+<div class="section" id="character">
+<span id="characters"></span><h2>角色(character)<a class="headerlink" href="#character" title="Permalink to this headline"> link</a></h2>
+<p>在第一个样例里存在一个问题，每当角色说话时，你需要反复输入角色名字。在一个对话为主的游戏中，这可能是很繁重的工作。还有，游戏启动后角色名字始终会以强调色显示。为了解决这些问题，Ren’Py允许你在开头就定义角色。这可以使你用一个短名关联一个角色，并且能够改变角色名字显示的颜色。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;希尔维亚&#39;</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#c8ffc8&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;我&#39;</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#c8c8ff&quot;</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="n">s</span> <span class="s2">&quot;嗨！今天的课怎么样？&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;挺好的……&quot;</span>
+
+    <span class="s2">&quot;我当然不会承认，上课的时候内容只是左耳进右耳出。&quot;</span>
+
+    <span class="n">s</span> <span class="s2">&quot;你现在要回家了吗？要不要跟我一起走？&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;当然！&quot;</span>
+</pre></div>
+</div>
+<p>第一和第二行语句定义了角色。第一行定义一个短名为“s”，长名为“希尔维亚”的角色，名字颜色为淡绿色。(如同网页里常见的，这里的颜色使用RGB的16进制字符表示)</p>
+<p>第二行创建一个短名为“m”，长名为“我”的角色，名字颜色为淡红色。其他角色的定义可以使用“复制-粘贴”，修改角色的长名、短名和名字颜色。</p>
+<p>我们也已经使用角色对象代替了角色名字字符串。这会告诉Ren’Py使用我们定义的对应角色。</p>
+</div>
+<div class="section" id="image">
+<span id="quickstart-images"></span><h2>图像(image)<a class="headerlink" href="#image" title="Permalink to this headline"> link</a></h2>
+<p>一个视觉小说如果没有图像的话就称不上视觉小说了。在“The Question”里还有另外一个场景。这也包含了一些语句展现角色图像。如果你想尝试的话，用这段内容完全覆盖之前那个脚本。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;希尔维亚&#39;</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#c8ffc8&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s1">&#39;我&#39;</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#c8c8ff&quot;</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="k">scene</span> <span class="n">bg</span> <span class="n">meadow</span>
+
+    <span class="s2">&quot;不久之后，我们就抵达了牧场，也是我们俩人出生的地方&quot;</span>
+
+    <span class="s2">&quot;我就是在这样的风景环绕之中成长起来的。这里的秋天格外秀美。&quot;</span>
+
+    <span class="s2">&quot;童年时，我们经常在牧场里玩耍，所以这里满满充斥着回忆。&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;嗨……唔……&quot;</span>
+
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">smile</span>
+
+    <span class="s2">&quot;她把脸转向我，上面挂着微笑。她看起来兴致高昂。我觉得自己刚才的紧张情绪已经消散。&quot;</span>
+
+    <span class="s2">&quot;我得问问她！&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;嗯呣……你是否可以……&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;你是否可以做我的视觉小说画师？&quot;</span>
+
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">surprised</span>
+
+    <span class="s2">&quot;沉默。&quot;</span>
+</pre></div>
+</div>
+<p>界面中的所有图像，都会显示在同一个画面上。这段脚本介绍了两种新的语句。第6行的scene语句清除了所有图像并显示了一个背景图像。从第16行至第26行的展示语句在背景上显示了一个精灵(sprite)， 并根据预设改变展示的精灵。</p>
+<p>在Ren’Py中，每个图像都有一个名称。该名称包含一个tag(译者注：图像标签，与label脚本标签不同)，以及一个以上的可选属性(attribute)。tag标签和属性名必须以字母开头，包含字母、数字和下划线。例如：</p>
+<ul class="simple">
+<li>第6行的scene语句中，tag标签是“bg”，属性是“meadow”。按照习惯，背景图像应该使用的bg作为tag标签。</li>
+<li>第16行的第一个show语句中，tag标签是“sylvie”，属性是“green”和“smile”。</li>
+<li>第26行的第二个show语句中，tag标签是“sylvie”，属性是“green”和“surprised”。</li>
+</ul>
+<p>给定tag标签时，每次只能展示一副图像。当拥有同样tag标签的第二副图像需要展示时，它会直接替换第一副图像，如同在第26行里发生的情况。</p>
+<p>Ren’Py会在images目录下搜索图像文件，可以通过启动器(launcher)的“打开目录”选项里选择“images”完成配置。Ren’Py能使用PNG或者WEBP文件作为角色美术资源，JPG、JPEG、PNG或者WEBP文件作为背景美术资源。文件的命名相当重要，Ren’py将使用除去扩展名后，强制字母变为小写的文件名来作为图象名。</p>
+<p>例如，images目录下的这些文件，定义了下列图像：</p>
+<ul class="simple">
+<li>“bg meadow.jpg” -&gt; <code class="docutils literal notranslate"><span class="pre">bg</span> <span class="pre">meadow</span></code></li>
+<li>“sylvie green smile.png” -&gt; <code class="docutils literal notranslate"><span class="pre">sylvie</span> <span class="pre">green</span> <span class="pre">smile</span></code></li>
+<li>“sylvie green surprised.png” -&gt; <code class="docutils literal notranslate"><span class="pre">sylvie</span> <span class="pre">green</span> <span class="pre">surprised</span></code></li>
+</ul>
+<p>因为文件名会被转换为小写字母，所以下面这种方式也可行。</p>
+<ul class="simple">
+<li>“Sylvie Green Surprised.png” -&gt; <code class="docutils literal notranslate"><span class="pre">sylvie</span> <span class="pre">green</span> <span class="pre">surprised</span></code></li>
+</ul>
+<p>图像可以被放在images目录的子目录(子文件夹)中。目录名忽略，只使用文件名定义图像名。</p>
+<p><strong>hide语句。</strong> Ren’Py也支持hide语句，可以用来隐藏图像。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">leaving</span><span class="p">:</span>
+
+    <span class="n">s</span> <span class="s2">&quot;我立刻去办！&quot;</span>
+
+    <span class="k">hide</span> <span class="n">sylvie</span>
+
+    <span class="s2">&quot;...&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;我不是这个意思！&quot;</span>
+</pre></div>
+</div>
+<p>实际上，你需要使用hide语句的情况非常少见。show语句能用在角色情感变化，而scene语句用在所有人离开的情况。当某个角色离开但场景不变化时，你才需要使用hide语句。</p>
+<p><strong>image语句。</strong> 有时候，制作者可能不想让Ren’Py自动定义图像。这时image语句就能派上用场。它应该出现在文件最顶层(不缩进，在label标签前面)，为图像文件指定对应的图像名称。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">logo</span> <span class="o">=</span> <span class="s2">&quot;renpy logo.png&quot;</span>
+<span class="k">image</span> <span class="n">eileen</span> <span class="n">happy</span> <span class="o">=</span> <span class="s2">&quot;eileen_happy_blue_dress.png&quot;</span>
+</pre></div>
+</div>
+<p>image语句于初始化阶段就会运行，早于label标签开始以及其他的游戏脚本与玩家交互。</p>
+<p>image语句也用于比较复杂的任务，但我们会在 <a class="reference external" href="displaying-images">其他地方</a> 讨论这部分。</p>
+</div>
+<div class="section" id="transition">
+<span id="quickstart-transitions"></span><h2>转场(transition)<a class="headerlink" href="#transition" title="Permalink to this headline"> link</a></h2>
+<p>在上面的脚本中，图像的切换十分生硬。由于切换地点或者角色的出场、离场很重要，Ren’Py支持图像的各种转场效果。</p>
+<p>转场切换用于显示在最后一个交互(对话、菜单或来源于其他语句的转场)发生后，到下一个scene、show或hide语句运行之间。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="k">scene</span> <span class="n">bg</span> <span class="n">meadow</span>
+    <span class="k">with</span> <span class="n">fade</span>
+
+    <span class="s2">&quot;不久之后，我们就抵达了牧场，也是我们俩人出生的地方。&quot;</span>
+
+    <span class="s2">&quot;我就是在这样的风景环绕之中成长起来的。这里的秋天格外秀美。&quot;</span>
+
+    <span class="s2">&quot;童年时，我们经常在牧场里玩耍，所以这里满满充斥着回忆。&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;嗨……唔……&quot;</span>
+
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">smile</span>
+    <span class="k">with</span> <span class="n">dissolve</span>
+
+    <span class="s2">&quot;她把脸转向我，上面挂着微笑。她看起来兴致高昂。我觉得自己刚才的紧张情绪已经消散。&quot;</span>
+
+    <span class="s2">&quot;我得问问她！&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;嗯呣……你是否可以……&quot;</span>
+
+    <span class="n">m</span> <span class="s2">&quot;你是否可以做我的视觉小说画师？&quot;</span>
+</pre></div>
+</div>
+<p>这里的with语句决定了需要使用的转场效果名。最常用的转场效果是 <code class="docutils literal notranslate"><span class="pre">dissolve</span></code> (溶解)。 另一个有用的转场效果是 <code class="docutils literal notranslate"><span class="pre">fade</span></code> (褪色)，能让界面褪为全黑，然后逐渐亮起成新的界面。</p>
+<p>当在多个scene、show、hide语句之后有一个转场效果，将对以上所有语句都有效。如果你写成这样：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">scene</span> <span class="n">bg</span> <span class="n">meadow</span>
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">smile</span>
+    <span class="k">with</span> <span class="n">dissolve</span>
+</pre></div>
+</div>
+<p>“bg meadow”和“sylvie green smile”图像会同时使用dissolve转场。如果想要每次只让其中之一使用dissolve转场，你需要写两个转场语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">scene</span> <span class="n">bg</span> <span class="n">meadow</span>
+    <span class="k">with</span> <span class="n">dissolve</span>
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">smile</span>
+    <span class="k">with</span> <span class="n">dissolve</span>
+</pre></div>
+</div>
+<p>场景meadow里有第一个dissolve效果，而角色sylvie里有第二个dissolve效果。如果你想要立刻展现meadow场景，然后使用转场效果展现角色sylvie，你可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">scene</span> <span class="n">bg</span> <span class="n">meadow</span>
+    <span class="k">with</span> <span class="bp">None</span>
+    <span class="k">show</span> <span class="n">sylvie</span> <span class="n">smile</span>
+    <span class="k">with</span> <span class="n">dissolve</span>
+</pre></div>
+</div>
+<p>这里的“None”被用于标识一个特殊转场效果，对玩家来说主界面没有产生任何特殊效果。</p>
+</div>
+<div class="section" id="position">
+<span id="positions"></span><h2>位置(position)<a class="headerlink" href="#position" title="Permalink to this headline"> link</a></h2>
+<p>图像在展示时默认水平居中，图像底部与界面底部相接。这样设计通常对背景和单个角色没问题，但当界面上需要展现1个以上角色时，重新调整图像位置也是十分合理的。同样，基于剧情需要，调整单一角色的图像位置也可以理解。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+     <span class="k">show</span> <span class="n">sylvie</span> <span class="n">green</span> <span class="n">smile</span> <span class="k">at</span> <span class="n">right</span>
+</pre></div>
+</div>
+<p>为了重新调整图像位置，需要在show语句中添加一个at分句。at分句指定了图像的展示位置。Ren’Py中包含了多个域定义的位置关键字:  <code class="docutils literal notranslate"><span class="pre">left</span></code> 表示界面左端， <code class="docutils literal notranslate"><span class="pre">right</span></code> 表示屏幕右端， <code class="docutils literal notranslate"><span class="pre">center</span></code> 表示水平居中(默认位置)， <code class="docutils literal notranslate"><span class="pre">truecenter</span></code> 表示水平和垂直同时居中。</p>
+<p>创作者可以自己定义位置关键字，甚至复杂的位置移动，不过那超过了本章“快速入门”的范畴。</p>
+</div>
+<div class="section" id="music-and-sound">
+<span id="id4"></span><h2>音乐和音效<a class="headerlink" href="#music-and-sound" title="Permalink to this headline"> link</a></h2>
+<p>大多数Ren’Py游戏都会播放背景音乐。音乐播放需要使用play music语句。play music语句将语句中指定的文件名识别为一个音频文件并播放。Ren’Py跟识别音频文件名并在game目录下寻找关联文件。音频文件应该是opus、ogg vorbis或者mp3格式的文件。</p>
+<p>举例:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">play</span> <span class="k">music</span> <span class="s2">&quot;illurock.ogg&quot;</span>
+</pre></div>
+</div>
+<p>更换音乐时，我们可以使用一个fadeout and fadein分句，fadeout and fadein分句用于旧音乐的淡出和新音乐的淡入。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">play</span> <span class="k">music</span> <span class="s2">&quot;illurock.ogg&quot;</span> <span class="n">fadeout</span> <span class="mf">1.0</span> <span class="n">fadein</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>queue music语句表示，在当前音乐播放完毕后播放的音频文件。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">queue</span> <span class="k">music</span> <span class="s2">&quot;next_track.opus&quot;</span>
+</pre></div>
+</div>
+<p>乐播放可以使用stop music语句停止，这个语句也可选用fadeout分句。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">stop</span> <span class="k">music</span>
+</pre></div>
+</div>
+<p>音效可以使用play sound语句来播放。与音乐不同，音效不会循环播放。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">play</span> <span class="k">sound</span> <span class="s2">&quot;effect.ogg&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pause">
+<span id="pause-statement"></span><h2>pause语句<a class="headerlink" href="#pause" title="Permalink to this headline"> link</a></h2>
+<p>pause语句可以让整个Ren’Py进程暂停，直到出现鼠标单击事件。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">pause</span>
+</pre></div>
+</div>
+<p>如果pause语句中给定一个数字，就只会暂停数字对应的秒数。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="k">pause</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ending-the-game">
+<span id="id5"></span><h2>结束游戏<a class="headerlink" href="#ending-the-game" title="Permalink to this headline"> link</a></h2>
+<p>通过运行return语句，你可以结束游戏，而不需要做其他任何事。在此之前，最好设置一些东西能够提示游戏已经结束，并且可能的话给用户一个结局数字或者结局名称。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="s2">&quot;.:. Good 结局。&quot;</span>
+
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>这就是你制作一个动态小说(kinetic novel)所需要做的，动态小说是指没有任何分支选项的游戏。现在，我们将关注如何在游戏中为用户提供菜单。</p>
+</div>
+<div class="section" id="menu-labeljump">
+<span id="menus-labels-and-jumps"></span><h2>menu，label和jump语句<a class="headerlink" href="#menu-labeljump" title="Permalink to this headline"> link</a></h2>
+<p>menu语句能够给玩家提供一个分支选项:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>
+    <span class="n">s</span> <span class="s2">&quot;当然，不过，什么是</span><span class="se">\&quot;</span><span class="s2">视觉小说</span><span class="se">\&quot;</span><span class="s2">？&quot;</span>
+
+<span class="k">menu</span><span class="p">:</span>
+
+    <span class="s2">&quot;是一种视频游戏。&quot;</span><span class="p">:</span>
+        <span class="k">jump</span> <span class="n">game</span>
+
+    <span class="s2">&quot;是一种互动小说。&quot;</span><span class="p">:</span>
+        <span class="k">jump</span> <span class="n">book</span>
+
+<span class="k">label</span> <span class="n">game</span><span class="p">:</span>
+
+    <span class="n">m</span> <span class="s2">&quot;是一种可以在电脑和主机上玩的视频游戏。&quot;</span>
+
+    <span class="k">jump</span> <span class="n">marry</span>
+
+<span class="k">label</span> <span class="n">book</span><span class="p">:</span>
+
+    <span class="n">m</span> <span class="s2">&quot;就像一种可以在电脑和主机上阅读的互动式图书。&quot;</span>
+
+    <span class="k">jump</span> <span class="n">marry</span>
+
+<span class="k">label</span> <span class="n">marry</span><span class="p">:</span>
+
+    <span class="s2">&quot;那么，我们已经成为视觉小说创作二人组了。&quot;</span>
+</pre></div>
+</div>
+<p>这个例子展示了在Ren’Py中如何使用menu语句。menu语句提供了一个游戏内的分支选项。menu语句使用一段缩进的文字，每一段文字后都跟着一个冒号。这段文字描述是提供给玩家的选项。每一个选项下面一行的缩进文字，是选择之后对应选项后会运行的脚本内容。</p>
+<p>在这个例子中，两个选项中各运行一个jump语句。jump语句将控制转换至label(脚本标签)对应的label语句。在跳转后，脚本会执行label下的语句。</p>
+<p>在上面的例子中，Sylvie提出她的问题后，玩家会面临“二选一”的分支选项。如果玩家选择“是一种视频游戏。”，第一个jump语句会执行，Ren’Py会跳转到 <code class="docutils literal notranslate"><span class="pre">game</span></code> label脚本位置。这会引发主视角角色说“是一种可以在电脑和主机上玩的视频游戏。”，然后Ren’Py将跳转到 <code class="docutils literal notranslate"><span class="pre">marry</span></code> label。</p>
+<p>如果label后面相关的语句块(block)之后没有jump语句，Ren’Py会顺序执行后面的语句。最后的jump语句在技术上不是必须的，不过带上一个会让游戏流程显得更清晰。</p>
+<p>游戏目录中任意后缀为 .rpy 的文件中都可以定义label。对于Ren’Py来说文件名无关紧要，只有文件里的label才是重点。你可以认为，所有这些rpy文件的合集等价于一个很大的rpy文件，用于跳转和转换控制。这种设计提供了你“构建一个更庞大游戏”的脚本所需的灵活度。</p>
+</div>
+<div class="section" id="defaultpythonifflag">
+<span id="supporting-flags-using-the-default-python-and-if-statements"></span><h2>使用default、Python和if语句支持flag(标识)<a class="headerlink" href="#defaultpythonifflag" title="Permalink to this headline"> link</a></h2>
+<p>上面那些语句已经足以用于制作某些游戏，其他一些游戏则需要保存数据及提取数据。例如，制作者需要游戏记下玩家做出的一个选择，先返回主线流程中，并在后面的流程中根据之前的选择出现对应的游戏变现，这是个合理的需求。这就是Ren’Py支持内嵌Python代码的原因。</p>
+<p>这一段，我们将演示如何存储一个flag(标识)，该flag(标识)包含了玩家做过的某个选择。我们需要先初始化flag(标识)，在label之前，使用default语句。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 如果玩家决定将视觉小说比作一本图书，则设置为True。</span>
+<span class="k">default</span> <span class="n">book</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="n">s</span> <span class="s2">&quot;嗨！今天的课怎么样？&quot;</span>
+</pre></div>
+</div>
+<p>名为“book”的flag(标识)被初始化为特殊值 <code class="docutils literal notranslate"><span class="pre">False</span></code> (请注意首字母大写)，表示该flag还未被设置。如果label “book”对应的路径被选择，我们将使用一个Python assignment(Python 赋值)语句将其设置为True。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">book</span><span class="p">:</span>
+
+    <span class="k">$</span> <span class="n">book</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">m</span> <span class="s2">&quot;就像一种可以在电脑和主机上阅读的互动式图书。&quot;</span>
+
+    <span class="k">jump</span> <span class="n">marry</span>
+</pre></div>
+</div>
+<p>以美元标志符“$”开头那行文本会被识别为Python语句。assignment(赋值)语句将这里的“book”判定为一个变量而不是一个值。Ren’Py已经支持一些其他包含Python代码的办法，例如多行的Python语句。我们将在本手册的其他章节讨论这点。</p>
+<p>需要检查flag(标识)时，请使用if语句:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">book</span><span class="p">:</span>
+
+    <span class="s2">&quot;我们的第一个游戏是基于希尔维亚的一个主意，但是后面我想实现一个自己设计的故事。&quot;</span>
+</pre></div>
+</div>
+<p>如果结果为True，if语句下的脚本语句块(block)将执行。相反，if语句下的脚本语句块(block)将被跳过。if语句也可以包含一个else分句，当if结果为False时，将执行else分句中的脚本语句块(block)。:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">book</span><span class="p">:</span>
+
+    <span class="s2">&quot;我们的第一个游戏是基于希尔维亚的一个主意，但是后面我想实现一个自己设计的故事。&quot;</span>
+
+<span class="k">else</span><span class="p">:</span>
+
+    <span class="s2">&quot;我们的第一个视频游戏中，希尔维亚在脚本方面给了很多帮助。&quot;</span>
+</pre></div>
+</div>
+<p>Python变量不仅仅可以是简单的布尔值。变量也可以存储玩家名字、分数或者其他一些想要记录的事情。由于Ren’Py支持Python编程语言的所有功能，许多想法都可能实现。</p>
+</div>
+<div class="section" id="releasing-your-game">
+<span id="id6"></span><h2>发布你的游戏<a class="headerlink" href="#releasing-your-game" title="Permalink to this headline"> link</a></h2>
+<p>一旦你制作了一个游戏，在你发布它之前还有一些事情需要完成。</p>
+<dl class="docutils">
+<dt><strong>检查Ren’Py版本更新</strong></dt>
+<dd><p class="first">基线的新版Ren’Py通常会修复bug和添加新特性。发布前，你需要在启动器(launcher)中点击“更新”，更新到最新版本的Ren’Py。你也可以手动下载新版本并查看版本更新列表，以上工作可以使用这个页面 <a class="reference external" href="https://www.renpy.org/latest.html">https://www.renpy.org/latest.html</a>。</p>
+<p class="last">少数情况下，Ren’Py版本升级变更后会要求你修改原来的游戏脚本。 <a class="reference external" href="https://www.renpy.org/doc/html/incompatible.html">https://www.renpy.org/doc/html/incompatible.html</a> 页面列出了这些变更明细。</p>
+</dd>
+<dt><strong>检查脚本</strong></dt>
+<dd>在启动器(launcher)的前端页面，选择“生成分发版”。基于options.rpy文件中的信息，启动器(launcher)会建立一个或多个包含创作者所作游戏的归档文件。</dd>
+<dt><strong>打包</strong></dt>
+<dd>在启动器的首页，选择 “生成分发版”。基于 options.rpy 中所包含的信息，启动器将会建立一个或者更多个包含有游戏文件的归档文件。</dd>
+<dt><strong>测试</strong></dt>
+<dd>lint代码检查工具不能替代完整的使用测试。在发布你的游戏之前，你有责任进行检查。可以考虑请求你的朋友们帮忙进行beta测试，测试者往往能发现你未能发现的问题。</dd>
+<dt><strong>发布</strong></dt>
+<dd><p class="first">一旦游戏完成并通过测试，你可以将生成的归档文件上传到网上，好让别人能找到它们。(如果你没有自己的网站，试试 <a class="reference external" href="https://itch.io">https://itch.io</a> 该站点里有一大票视觉小说。) 恭喜，你已经完成了人生中的第一部视觉小说！</p>
+<p>还有几个地方可以发布游戏信息：</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://games.renpy.org">Ren’Py Games List</a> 帮助我们追踪记录制作中的Ren’Py游戏。</li>
+<li><a class="reference external" href="https://lemmasoft.renai.us/forums/viewforum.php?f=11">Completed Games section of the Lemma Soft Forums</a> 是个向后来人诉说关于你游戏故事的好地方。</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="the-question">
+<span id="script-of-the-question"></span><h2>“The Question”的游戏脚本<a class="headerlink" href="#the-question" title="Permalink to this headline"> link</a></h2>
+<p>你可以在 <a class="reference internal" href="thequestion.html#thequestion"><span class="std std-ref">这里</span></a> 查看完整的“The Question”游戏脚本。</p>
+</div>
+<div class="section" id="where-do-we-go-from-here">
+<span id="id7"></span><h2>离开这里之后我们可以去哪里进一步学习？<a class="headerlink" href="#where-do-we-go-from-here" title="Permalink to this headline"> link</a></h2>
+<p>从零开始的快速入门只是Ren’Py功能的惊鸿一瞥。限于篇幅原因，我们省略了很多Ren’Py支持的特性，并尽可能地做出简化——专注于“制作一部视觉小说”的最小功能特性集。</p>
+<p>想要感受Ren’Py所有功能的话，请玩一些演示游戏，可能的话通过网站 <a class="reference external" href="https://www.renpy.org/">Ren’Py website</a> 了解一些游戏特性。你也可能会想要阅读本手册的其他内容，从GUI(用户图形界面)定制向导开始吧。</p>
+<p>除此之外，我们推荐你看看 <a class="reference external" href="https://lemmasoft.renai.us/forums">Lemma Soft Forums</a> 论坛的Ren’Py版块，该版块里有三个子版块，分别用于问答、各类库的使用手册以及可以用于二次开发的样例。Lemma Soft Forums论坛是Ren’Py的交流中枢，我们非常欢迎新近入坑的创作者以及他们带来的问题。</p>
+<p>感谢你选择Ren’Py视觉小说引擎。我们期待着您使用它创造出作品的那一天！</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

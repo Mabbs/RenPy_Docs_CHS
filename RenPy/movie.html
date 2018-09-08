@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>影片 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="语音" href="voice.html" />
+    <link rel="prev" title="音频" href="audio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">影片</a><ul>
+<li><a class="reference internal" href="#fullscreen-movies">全屏播放影片</a></li>
+<li><a class="reference internal" href="#sprite">影片组件和影片精灵(sprite)</a></li>
+<li><a class="reference internal" href="#python">python函数</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="movie">
+<span id="id1"></span><h1>影片<a class="headerlink" href="#movie" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py可以使用libav解码器(已内置)播放以下视频编码格式的影片：</p>
+<ul class="simple">
+<li>VP9</li>
+<li>VP8</li>
+<li>Theora</li>
+<li>MPEG 4 part 2 (包括Xvid和DivX)</li>
+<li>MPEG 2</li>
+<li>MPEG 1</li>
+</ul>
+<p>及以下编码格式的音频：</p>
+<ul class="simple">
+<li>OPUS</li>
+<li>Vorbis</li>
+<li>MP3</li>
+<li>MP2</li>
+<li>PCM</li>
+</ul>
+<p>还支持以下容器格式：</p>
+<ul class="simple">
+<li>WebM</li>
+<li>Matroska</li>
+<li>Ogg</li>
+<li>Avi</li>
+<li>Various kinds of MPEG stream.</li>
+</ul>
+<p>(注意某些格式可能需要专利许可证书。没有把握的情况下，我们推荐使用VP9、VP8或者Theora、Opus、Vorbis，以及WebM、Matroska或者Ogg。)</p>
+<p>影片可以全屏播放，也可以在一个可视组件内播放。全屏播放更省事。</p>
+<div class="section" id="fullscreen-movies">
+<span id="id2"></span><h2>全屏播放影片<a class="headerlink" href="#fullscreen-movies" title="Permalink to this headline"> link</a></h2>
+<p>全屏播放影片最简单有效的办法是，使用 <code class="xref std std-var docutils literal notranslate"><span class="pre">renpy.movie_cutscene</span></code> 函数。该函数会全屏播放影片直到影片结尾。用户也可以点击直接跳过播放。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">movie_cutscene</span><span class="p">(</span><span class="s2">&quot;On_Your_Mark.webm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在移动端平台，例如安卓和iOS，默认情况下配置项 <a class="reference internal" href="config.html#var-config.hw_video"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.hw_video</span></code></a> 设为True，此时会启用硬件视频解码。硬件视频解码效率更高，但具体支持的影片格式需要视具体平台而定。</p>
+</div>
+<div class="section" id="sprite">
+<span id="movie-displayables-and-movie-sprites"></span><h2>影片组件和影片精灵(sprite)<a class="headerlink" href="#sprite" title="Permalink to this headline"> link</a></h2>
+<p>任何可展示可视组件的地方，Ren’Py都可以使用影片组件实现影片的播放。例如，可以在菜单界面播放一个影片作为背景。</p>
+<p>影片组件也能用于定义一个影片精灵(sprite)。影片精灵(sprite)由两段影片组成。主影片提供精灵(sprite)的各种颜色信息。次影片是一个遮罩影片，提供alpha通道信息，白色表示完全不透明而黑色表示完全透明。</p>
+<p>使用影片组件会自动循环播放。</p>
+<p>影片组件有两个参数：</p>
+<dl class="docutils">
+<dt><cite>play</cite></dt>
+<dd><p class="first">该值是一个字符串，给定了需要播放的影片文件名。</p>
+<p class="last">必须提供的这个值。</p>
+</dd>
+<dt><cite>mask</cite></dt>
+<dd>该值是一个字符串，给定了alpha遮罩影片文件名。它需要与 <cite>play</cite> 原影片的大小，时长，帧率相同。</dd>
+</dl>
+<p>这里有一个定义影片精灵(sprite)的样例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">eileen</span> <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="k">play</span><span class="o">=</span><span class="s2">&quot;eileen_movie.webm&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="s2">&quot;eileen_mask.webm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>影片精灵可以使用show语句显示，并自动启动影片播放。如果可视组件被隐藏时，影片播放会自动停止。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">eileen</span> <span class="n">movie</span>
+
+<span class="n">e</span> <span class="s2">&quot;我感觉自己今天很活跃。&quot;</span>
+
+<span class="k">hide</span> <span class="n">eileen</span>
+
+<span class="n">e</span> <span class="s2">&quot;不过在我不出现的时候没必要浪费力气。&quot;</span>
+</pre></div>
+</div>
+<p>影片组件也能被用作某个界面的一部分，在初始化阶段定义即可(然后就可作为某个image语句的一部分)。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">main_menu</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="k">play</span><span class="o">=</span><span class="s2">&quot;main_menu.ogv&quot;</span><span class="p">)</span>
+
+<span class="k">screen</span> <span class="n">main_menu</span><span class="p">:</span>
+    <span class="k">add</span> <span class="s2">&quot;main_menu&quot;</span>
+    <span class="k">textbutton</span> <span class="s2">&quot;Start&quot;</span> <span class="na">action</span> <span class="n">Start</span><span class="p">()</span> <span class="na">xalign</span> <span class="mf">0.5</span> <span class="na">yalign</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>在同一个界面的同一时间可以显示多个影片组件或影片精灵(sprite)。受到系统性能限制，多个影片播放时使用相同的帧率。Ren’Py中没有定义过使用不同帧率播放影片的行为，很可能会导致很严重的掉帧。</p>
+</div>
+<div class="section" id="python">
+<span id="movie-python-functions"></span><h2>python函数<a class="headerlink" href="#python" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.movie_cutscene">
+<code class="descclassname">renpy.</code><code class="descname">movie_cutscene</code><span class="sig-paren">(</span><em>filename</em>, <em>delay=None</em>, <em>loops=0</em>, <em>stop_music=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.movie_cutscene" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数播放一个MPEG-1格式的过场。用户可以使用点击跳过该过场。顶层元素overlay和底层元素underlay在过场中依然显示。</p>
+<p><strong>filename</strong></p>
+<blockquote>
+<div>含有MPEG-1影片的文件名。</div></blockquote>
+<p><strong>delay</strong></p>
+<blockquote>
+<div>过场结束前等待(用户交互行为)的时间，单位为秒。通常就是影片长度，以秒计。若该值为None，delay值会被自动计算，使用循环总次数(即入参loop+1)乘以影片总时长。若该值为-1，则会一直等待用户点击。</div></blockquote>
+<p><strong>loops</strong></p>
+<blockquote>
+<div>该值表示，除了首次播放之外，额外循环播放的次数。若值为-1表示始终循环播放。</div></blockquote>
+<p>若影片播放被用户停止则返回True，若在delay定义的预计时间内由于其他原因中断播放则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Movie">
+<code class="descname">Movie</code><span class="sig-paren">(</span><em>fps=24</em>, <em>size=None</em>, <em>channel='movie'</em>, <em>play=None</em>, <em>mask=None</em>, <em>mask_channel=None</em>, <em>image=None</em>, <em>play_callback=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Movie" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数创建了一个可视组件用于显示当前影片。</p>
+<p><strong>fps</strong></p>
+<blockquote>
+<div>指定影片的播放帧率。(该值通常可以省略。播放时指定的帧率会后向匹配，即高帧率视频可以指定更低帧率播放。影片文件的原始帧率会被自动检测到。)</div></blockquote>
+<p><strong>size</strong></p>
+<blockquote>
+<div>该值有两种情况：指定一个包含指定影片宽度和高度的元组，或空值(None)自适应影片原尺寸。(如果这里设置为空值(None)，可视组件在不播放影片时的值就是(0, 0)。)</div></blockquote>
+<p><strong>channel</strong></p>
+<blockquote>
+<div>与播放影片相关联的音频通道名。当某个影片在该通道上播放时，就会在对应的影片组件上显示。若未指定该值，并且入参play提供了播放文件名的情况下，会自动选择可用的通道名。</div></blockquote>
+<p><strong>play</strong></p>
+<blockquote>
+<div>若给定入参play，其应该是某个影片文件的路径。显示影片时，入参channel通道上的影片文件将会自动播放。当影片被隐藏时，影片文件会自动停止播放。</div></blockquote>
+<p><strong>mask</strong></p>
+<blockquote>
+<div>若给定入参mask，其应是某个影片文件的路径，而这个影片用作可视组件的alpha通道。影片被显示时，在mask_channel通道上的影片文件将会自动播放。当影片被隐藏时，影片文件会自动停止播放。</div></blockquote>
+<p><strong>mask_channel</strong></p>
+<blockquote>
+<div>alpha遮罩视频播放使用的通道。若未给定，默认会在入参channel后面加上 <code class="docutils literal notranslate"><span class="pre">_mask</span></code> 后缀，注册一个新的通道。(例如，若入参channel名为“sprite”，那么自动生成的mask_channel值就是“sprite_mask”。)</div></blockquote>
+<p><strong>image</strong></p>
+<blockquote>
+<div>若入参play给定，但文件可能并不存在或不能播放的情况下，则会显示入参image给定的图片文件。(例如，这个功能可以用于创建一个精简的移动版本，其不包含影片精灵。)当用户遇到系统负荷过重时，也能在特性中选择降低为显示图片而不是播放影片。</div></blockquote>
+<p><cite>play_callback</cite></p>
+<blockquote>
+<div><p>若不是None，这个函数用于启动影片的播放。(函数的工作可能是将一个转场加入到各个sprite之间。)调用函数时使用下列入参：</p>
+<p><strong>old</strong></p>
+<blockquote>
+<div>旧的Movie对象，如果没有播放影片则为None。</div></blockquote>
+<p><strong>new</strong></p>
+<blockquote>
+<div>新的Movie对象。</div></blockquote>
+<p>Movie对象中包含的播放参数分别对应 <code class="docutils literal notranslate"><span class="pre">channel</span></code> 、 <code class="docutils literal notranslate"><span class="pre">mask</span></code> 和 <code class="docutils literal notranslate"><span class="pre">mask_channel</span></code> 字段(field)的入参。</p>
+<p>如果想要使用 <a class="reference internal" href="audio.html#renpy.music.play" title="renpy.music.play"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.music.play()</span></code></a> 在指定的通道启动影片播放的话，带上synchro_start=True。最小化实现代码如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play_callback</span><span class="p">(</span><span class="k">old</span><span class="p">,</span> <span class="k">new</span><span class="p">):</span>
+
+    <span class="n">renpy</span><span class="o">.</span><span class="k">music</span><span class="o">.</span><span class="k">play</span><span class="p">(</span><span class="k">new</span><span class="o">.</span><span class="n">_play</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="k">new</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">synchro_start</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="k">new</span><span class="o">.</span><span class="n">mask</span><span class="p">:</span>
+        <span class="n">renpy</span><span class="o">.</span><span class="k">music</span><span class="o">.</span><span class="k">play</span><span class="p">(</span><span class="k">new</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="k">new</span><span class="o">.</span><span class="n">mask_channel</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">synchro_start</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>影片组件在不播放影片时是完全透明的。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>编程语言基础 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="脚本标签(label)和主控流程" href="label.html" />
+    <link rel="prev" title="GUI(图形用户接口)定制化指导" href="gui.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">编程语言基础</a><ul>
+<li><a class="reference internal" href="#files">文件</a><ul>
+<li><a class="reference internal" href="#base-directory">基础目录</a></li>
+<li><a class="reference internal" href="#game-directory">游戏目录</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comment">注释(comment)</a></li>
+<li><a class="reference internal" href="#logical-line">逻辑行(logical line)</a></li>
+<li><a class="reference internal" href="#block">缩进和语句块(block)</a></li>
+<li><a class="reference internal" href="#elements-of-statements">语句元素</a></li>
+<li><a class="reference internal" href="#common-statement-syntax">通用语句语法</a></li>
+<li><a class="reference internal" href="#python">python表达式语法</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="language-basics">
+<span id="id1"></span><h1>编程语言基础<a class="headerlink" href="#language-basics" title="Permalink to this headline"> link</a></h1>
+<p>在我们详细介绍Ren’Py的编程语言之前，我们必须首先介绍一下Ren’Py脚本的结构。这包括：脚本文件如何分割为语句块(block)，而语句块(block)是由多行脚本构成；各行脚本如何分割为基本元素(element)，并构成语句(statement)。</p>
+<div class="section" id="files">
+<span id="id2"></span><h2>文件<a class="headerlink" href="#files" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py游戏脚本由game目录下众多扩展名为 <code class="docutils literal notranslate"><span class="pre">.rpy</span></code> 的文件组成。Ren’Py会依次检查每一个文件(按照拉丁字母顺序)，并把文件内容用作脚本。</p>
+<p>总之，把一份脚本打散成多个文件，与一份脚本保存在一个大文件中，两种方法是等效的。主控流程可以在文件之间通过调用脚本标签(label)跳转。把一份脚本切分为多个文件跟创作者个人风格有关——有些游戏制作者喜欢使用小文件(像一个事件一个文件，或者每一天一个文件)，而其他制作者倾向于使用一个完整的大脚本文件。</p>
+<p>为了提高加载速度，Ren’Py启动时会把 <code class="docutils literal notranslate"><span class="pre">.rpy</span></code> 文件编译为 <code class="docutils literal notranslate"><span class="pre">.rpyc</span></code> 文件。当一个 <code class="docutils literal notranslate"><span class="pre">.rpy</span></code> 文件发生变更时， <code class="docutils literal notranslate"><span class="pre">.rpyc</span></code> 只有重启Ren’Py进程才会更新。另外，如果一个 <code class="docutils literal notranslate"><span class="pre">.rpyc</span></code> 文件并没有对应的 <code class="docutils literal notranslate"><span class="pre">.rpy</span></code> 源文件，这个 <code class="docutils literal notranslate"><span class="pre">.rpyc</span></code> 文件依然会被使用。当 <code class="docutils literal notranslate"><span class="pre">.rpy</span></code> 文件已经删除而 <code class="docutils literal notranslate"><span class="pre">.rpyc</span></code> 文件没有删除的情况下，可能会导致运行时出现问题。</p>
+<div class="section" id="base-directory">
+<span id="id3"></span><h3>基础目录<a class="headerlink" href="#base-directory" title="Permalink to this headline"> link</a></h3>
+<p>基础目录是包含构建该游戏所有文件的目录。(这可能也包含一些跟游戏无关的文件。)像README(须知)类文件应该放在基础目录中。</p>
+<p>基础目录会被创建在Ren’Py目录下，以创作者游戏的名称命名。例如，如果创作者的Ren’Py目录名为renpy-6.11.2，游戏名为“HelloWorld”，创作者的基础目录就是renpy-6.11.2/HelloWorld。</p>
+</div>
+<div class="section" id="game-directory">
+<span id="id4"></span><h3>游戏目录<a class="headerlink" href="#game-directory" title="Permalink to this headline"> link</a></h3>
+<p>游戏目录很可能是在基础目录下一个名为“game”的目录。例如，如果创作者的基础目录是renpy-6.11.2/HelloWorld，创作者的游戏目录就会是renpy-6.11.2/HelloWorld/game。</p>
+<p>Ren’Py会按以下顺序依次搜索所有目录：</p>
+<ul class="simple">
+<li>根据可执行文件名，去掉后缀名。比如，如果可执行文件被命名为moonlight.exe，Ren’Py将会寻找基础目录下名为“moonlight”的目录。</li>
+<li>根据可执行文件名，去掉后缀名，再去掉下划线“_”及其前缀。比如，如果可执行文件是moonlight_en.exe，Ren’Py会寻找名为“en”的目录。</li>
+<li>按照“game”、“data”、“launcher”的顺序。</li>
+</ul>
+<p>启动器(launcher)只会识别“game”和“data”目录。</p>
+<p>游戏目录包含了游戏内使用的所有文件。其自身及其所有子目录下，会被扫描出所有 <cite>.rpy</cite> 和 <cite>.rpyc</cite> 文件，并拼装组合成整个游戏的脚本。 <cite>.rpa</cite> 文件也会被扫描到，这些文件会被游戏自动使用。当游戏指定某个需要加载的文件路径时，文件路径会与游戏目录关联。(注意config.searchpath可以控制并修改这一点。)</p>
+</div>
+</div>
+<div class="section" id="comment">
+<span id="comments"></span><h2>注释(comment)<a class="headerlink" href="#comment" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py脚本文件可能会包含一些注释(comment)。每条注释都以记号(‘#’)开头，直到该行文本结束。不过有一种情况例外，注释(comment)不能用在某个字符串的一部分。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这是一条注释。</span>
+<span class="k">show</span> <span class="n">black</span> <span class="c1"># 这也是一条注释。</span>
+
+<span class="s2">&quot;# 这不是一条注释因为它是一个字符串的一部分。&quot;</span>
+</pre></div>
+</div>
+<p>Ren’Py忽略注释, 所以脚本处理过程中那段注释如同不存在。</p>
+</div>
+<div class="section" id="logical-line">
+<span id="logical-lines"></span><h2>逻辑行(logical line)<a class="headerlink" href="#logical-line" title="Permalink to this headline"> link</a></h2>
+<p>一个脚本文件可以被切割为一些逻辑行(logical line)。一条logical line(逻辑行)往往在文件中顶格起始，换行结束，有一些例外：</p>
+<ul class="simple">
+<li>该行结尾是反斜杠(‘’)。</li>
+<li>该行包含几个开括号字符(‘(‘, ‘{‘, or ‘[‘)，而该行没有匹配到对应的闭括号字符(‘)’, ‘}’, or ‘]’。</li>
+<li>一个包含换行的字符串中。</li>
+</ul>
+<p>一个逻辑行结束后，下一行就是另一个逻辑行的开始。</p>
+<p>Ren’Py编程语言中大多数语句都只由一个逻辑行，有一些语句则包含多行。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;这是一条逻辑行&quot;</span>
+
+<span class="s2">&quot;因为这条逻辑行包含一个字符串，</span>
+ <span class="err">所以换行也依然是同一条逻辑行。</span><span class="s2">&quot;</span>
+
+<span class="k">$</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;由于括号的存在，这也是一条&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;可以突破换行的逻辑行。&quot;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>空的逻辑行会被忽略。</p>
+</div>
+<div class="section" id="block">
+<span id="indentation-and-blocks"></span><h2>缩进和语句块(block)<a class="headerlink" href="#block" title="Permalink to this headline"> link</a></h2>
+<p><em class="dfn">缩进</em> 是我们指代Ren’Py语句每个逻辑行开头的空间。在Ren’Py中，缩进必须使用空格。</p>
+<p>缩进被用来将一些语句分组形成语句块(block)。一个语句块是一组逻辑行，通常也是一组语句。将一个文件分割为语句块的原则是：</p>
+<ul class="simple">
+<li>一个语句块在文件开头被打开加载。</li>
+<li>在某个逻辑行使用了比上一行更多缩进量时，就表示开始了一个新语句块。</li>
+<li>在一个语句块中所有的逻辑行必须保持同样的缩进量。</li>
+<li>当一个逻辑行的缩进量比其他行更少，表示上一个语句块的结束。</li>
+</ul>
+<p>对Ren’Py来说，缩进非常重要，甚至缩进量能引起语法或者逻辑错误。同时，缩进的使用表明了块结构，使我们不需要浏览整个脚本文件就能识别出块结构。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;这是一个语句，后面跟着的是if语句，那是一个语句块的一部分。&quot;</span>
+
+<span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+
+    <span class="s2">&quot;这个语句是新语句块的一部分。&quot;</span>
+
+    <span class="s2">&quot;这个语句也是新语句块的一部分。&quot;</span>
+
+<span class="s2">&quot;这个语句又是第一个语句块的一部分了。&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="elements-of-statements">
+<span id="id5"></span><h2>语句元素<a class="headerlink" href="#elements-of-statements" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py语句由一些基本部分组成。</p>
+<dl class="docutils">
+<dt><em class="dfn">关键词(keyword)</em></dt>
+<dd><p class="first">关键词是一个英文单词，必须在游戏脚本中合法出现。关键词通常用于出现在语句和属性中。</p>
+<p class="last">名字以一个下划线(_)开头的关键字仅限Ren’Py内部使用，除非文档另有说明。当一个关键词名字开头是两条下划线__但结尾没有两条下划线__，在使用时它会改变为特定文件版本号。</p>
+</dd>
+<dt><em class="dfn">名称(name)</em></dt>
+<dd>名称以一个字母或者下划线开头，之后跟随着0个或者若干个字母、数字或者下划线。出于我们的需求，在“U+00a0”和“U+fffd”之间的unicode字符都被认为是字母。</dd>
+<dt><em class="dfn">图像名(image name)</em></dt>
+<dd><p class="first"><em class="dfn">图像名(image name)</em> 由一个或多个部分构成，以空格分隔。 图像名的第一部分称作
+<em class="dfn">图像标签(image tag)</em> 。图像名后面的部分都是 <em class="dfn">图像属性(image attributes)</em> 。图像的各部分都是由字符、数字和下划线组成的字符串。</p>
+<p class="last">例如，一个图像名为 <code class="docutils literal notranslate"><span class="pre">mary</span> <span class="pre">beach</span> <span class="pre">night</span> <span class="pre">happy</span></code> 。图像标签(tag)就是 <code class="docutils literal notranslate"><span class="pre">mary</span></code> ，而图像属性(attribute)就是 <code class="docutils literal notranslate"><span class="pre">beach</span></code> 、 <code class="docutils literal notranslate"><span class="pre">night</span></code> 和 <code class="docutils literal notranslate"><span class="pre">happy</span></code> 。</p>
+</dd>
+<dt><em class="dfn">字符串(string)</em></dt>
+<dd><p class="first">字符串以一个引用字符(“、’或者`)开头，包含几串文字，并以同样的引用字符结尾。</p>
+<p>反斜杠(\)用于字符转义，一些特殊字符，比如%(需要写作\%)、[(需要写作\[)、{(需要写作\{)。它还用于包含下一行，此时使用\n串。</p>
+<p>在Ren’Py字符串中，连续多个空格会被压缩为一个空格字符，除非某个空格前面有一个反斜行。</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Strings can</span><span class="se">\&#39;</span><span class="s1">t contain their delimiter, unless you escape it.&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt><em class="dfn">简单表达式(simple expression)</em></dt>
+<dd><p class="first">简单表达式就是一个Python表达式，用于在Ren’Py脚本中运行Python。一个简单表达式使用以下类型作开头：</p>
+<ul class="simple">
+<li>一个变量名。</li>
+<li>一个字符串。</li>
+<li>一个数字。</li>
+<li>圆括号中包含的任意表达式。</li>
+</ul>
+<p>其后可以接续任意数量的：</p>
+<ul class="simple">
+<li>名称前的一个英文句号字符。</li>
+<li>圆括号内的Python表达式。</li>
+</ul>
+<p class="last">举例，<code class="docutils literal notranslate"><span class="pre">3</span></code> 、<code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">+</span> <span class="pre">4)</span></code> 、 <code class="docutils literal notranslate"><span class="pre">foo.bar</span></code> 和 <code class="docutils literal notranslate"><span class="pre">foo(42)</span></code> 都是简单表达式。但 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> 则不是“简单”表达式，因为该表达式是一个算式字符串且没有使用圆括号。</p>
+</dd>
+<dt><em class="dfn">at列表(At List)</em></dt>
+<dd>at列表由一系列简单表达式组成，使用英文逗号字符分隔。</dd>
+<dt><em class="dfn">python表达式</em></dt>
+<dd>python表达式是指任意的、可能不包含分号的python表达式。这些表达式常用于if和while语句中，处理对应的情况。</dd>
+</dl>
+</div>
+<div class="section" id="common-statement-syntax">
+<span id="id6"></span><h2>通用语句语法<a class="headerlink" href="#common-statement-syntax" title="Permalink to this headline"> link</a></h2>
+<p>大多数Ren’Py语句使用通用的语法。而say语句是个例外，其使用开头的某个关键词标识say语句。如果语句中包含变量的话，会跟在该关键词后面。</p>
+<p>变量后面会跟着一个或多个特性(property)。特性(property)可以使用任意顺序排列，每个属性均只会出现一次。一项特性(property)以一个关键词开头。对大多数的特性(property)来说，属性名字会跟之前出现的语法元素(element)之一保持一致。</p>
+<p>若该语句包含一个语句块(block)，那行语句会以冒号(:)结尾。否则的话，以换行结尾。</p>
+</div>
+<div class="section" id="python">
+<span id="python-expression-syntax"></span><h2>python表达式语法<a class="headerlink" href="#python" title="Permalink to this headline"> link</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">本段内容现在可以先跳过不看。当你觉得无法理解某个样例，或者你觉得需要理解更深层次的运行机制时，可以再返回来看本段内容。</p>
+</div>
+<p>Ren’Py的很多地方都会用到python表达式。例如，定义一个新角色就意味着调用charactre(角色)的函数。由于python表达式功能十分强大，只是用其很小部分就足以实现一个基本的Ren’Py游戏。</p>
+<p>这是一个python表达式的概要。</p>
+<dl class="docutils">
+<dt><em class="dfn">整数(integer)</em></dt>
+<dd>整数是一个不带小数点的数字。 <code class="docutils literal notranslate"><span class="pre">3</span></code> 和 <code class="docutils literal notranslate"><span class="pre">42</span></code> 就都是整数。</dd>
+<dt><em class="dfn">浮点数(float)</em></dt>
+<dd>浮点数是一个带小数点的数字。 <code class="docutils literal notranslate"><span class="pre">.5</span></code> 、 <code class="docutils literal notranslate"><span class="pre">7.</span></code> 和 <code class="docutils literal notranslate"><span class="pre">9.0</span></code> 就都是浮点数。</dd>
+<dt><em class="dfn">字符串(string)</em></dt>
+<dd>python字符串以英文符号的双引号(“)或单引号(‘)开头，并使用同样的符号结尾。斜杠(\)被用来转义换行符，并可以使用特殊字符(\n)表示换行。与Ren’Py字符串不同，python字符串不能分多行。</dd>
+<dt><em class="dfn">True, False, None</em></dt>
+<dd>这是三个特殊的值。 <code class="docutils literal notranslate"><span class="pre">True</span></code> 表示真值， <code class="docutils literal notranslate"><span class="pre">False</span></code> 表示假值。 <code class="docutils literal notranslate"><span class="pre">None</span></code> 表示空值。</dd>
+<dt><em class="dfn">元组(tuple)</em></dt>
+<dd><p class="first">元组(tuple)是一种容器，其元素(item)数量非常重要。例如，我们可以使用一个2维元组(也被称作pair)来装宽度和高度数据，或者使用一个4维元组(包含x、y、宽度和高度)来装一个三角形的数据。</p>
+<p>元组(tuple)开头有一个左括号 <code class="docutils literal notranslate"><span class="pre">(</span></code> ，可以由0个或若干个逗号分隔的python表达式，并以一个右括号 <code class="docutils literal notranslate"><span class="pre">)</span></code> 结束。比较特殊的是，只有一个元素(item)的元组中，元素后面必须带一个逗号。各种例子如下:</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="p">()</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;#555&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><em class="dfn">列表(list)</em></dt>
+<dd><p class="first">列表(list)是一种容器，用来装各种类型的数据。列表以 <cite>[</cite> 开头，包含一系列逗号分隔的表达式，并以 <cite>]</cite> 结束。举例如下:</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">]</span>
+<span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+<span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span>
+<span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+</pre></div>
+</div>
+</dd>
+<dt><em class="dfn">变量(variable)</em></dt>
+<dd><p class="first">python表达式中允许使用变量。通过定义语句或者python语句产生的数值可以存放在变量中。变量以字母或者下划线开头，后接0个或若干个字母、数据或下划线。举例如下:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">name</span>
+<span class="n">love_love_points</span>
+<span class="n">trebuchet2_range</span>
+</pre></div>
+</div>
+<p class="last">以下划线“_”开头的变量是预留给Ren’Py专用，创作者不应使用。</p>
+</dd>
+<dt><em class="dfn">字段(field)访问</em></dt>
+<dd><p class="first">python模块(module)和对象(object)都有字段(field)的概念，可以在字段(field)后接一个英文句号“.”和一个表达式(通常是一个变量)，实现对字段的访问。例如:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">screen_width</span>
+</pre></div>
+</div>
+<p class="last">实现了对config中screen_width字段的访问。</p>
+</dd>
+<dt><em class="dfn">调用(call)</em></dt>
+<dd><p class="first">python表达式可以调用一个函数并获得一个返回值。函数调用以一个表达式开头(通常是函数名)，后面跟着一对圆括号，括号内有一系列参数。参数列表开头是个python表达式，也是固定位置参数。后面则是关键词参数，由参数名、等号和表达式组成。下面是一个例子:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">Character</span><span class="p">(</span><span class="s2">&quot;Eileen&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">adv</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#0f0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们调用了Charactre函数。其给定了一个固定位置参数，也就是字符串”Eileen”。其给定了两个关键词参数： <code class="docutils literal notranslate"><span class="pre">type</span></code> 被赋值为 <code class="docutils literal notranslate"><span class="pre">adv</span></code> ，而 <code class="docutils literal notranslate"><span class="pre">color</span></code> 被复制为字符串“#0f0”。</p>
+<p class="last">构造器是一类专门用于返回一个新对象的函数，且会被使用相同的方式调用。</p>
+</dd>
+</dl>
+<p>阅读此份文档时，你可能会看到这样的函数声明:</p>
+<dl class="function">
+<dt id="Sample">
+<code class="descname">Sample</code><span class="sig-paren">(</span><em>name</em>, <em>delay</em>, <em>position=(0</em>, <em>0)</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Sample" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个样例函数并不真正在Ren’Py中使用，而只存在这份文档中。</p>
+</dd></dl>
+
+<p>这个函数:</p>
+<ul class="simple">
+<li>函数名为“Sample”</li>
+<li>有两个固定位置参数，分别是name和delay。真实情况下，在文档中应该有参数的详细说明。</li>
+<li>有一个关键词参数position，其默认值为(0, 0)。</li>
+</ul>
+<p>由于函数结尾是 **properties, 这意味着其可以使用 <a class="reference internal" href="style_properties.html#style-properties"><span class="std std-ref">样式特性</span></a> 作为额外的关键词参数。 其他的特殊形式结尾还有*args，表示其可以使用任意数量的固定位置参数，而**kwargs表示在文档中已详细描述过的固定位置参数。</p>
+<p>Python的强大，远非我们这份文档所能完全展现。若希望学习python的更多细节，我们推荐Python入门教学， <a class="reference external" href="http://docs.python.org/release/2.7/tutorial/index.html">python.org</a> 。由于我们认为对于Ren’Py来说，更深一层的python知识不是必要的，了解python语句和表达式通常就足够了。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

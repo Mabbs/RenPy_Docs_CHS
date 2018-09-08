@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>转场(transition) &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="动画和变换语言" href="atl.html" />
+    <link rel="prev" title="变换" href="transforms.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">转场(transition)</a><ul>
+<li><a class="reference internal" href="#pre-defined-transitions">预定义的转场(Pre-Defined Transitions)</a></li>
+<li><a class="reference internal" href="#transition-classes">转场(transition)类</a></li>
+<li><a class="reference internal" href="#transition-families">转场族群</a></li>
+<li><a class="reference internal" href="#dict-transitions">字典转场(Dict Transitions)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="transition">
+<span id="transitions"></span><h1>转场(transition)<a class="headerlink" href="#transition" title="Permalink to this headline"> link</a></h1>
+<p>在Ren’Py中，转场(transition)可以用作  <a class="reference internal" href="displaying_images.html#with-statement"><span class="std std-ref">with 语句</span></a> 及其他语句的一部分，用于场景切换时提供各种效果。Ren’Py自带一写预定义的转场(transition)效果，可以在with语句中直接使用。Ren’Py中还包含transition类，可以用于创建新的transition对象。</p>
+<div class="section" id="pre-defined-transitions">
+<span id="id1"></span><h2>预定义的转场(Pre-Defined Transitions)<a class="headerlink" href="#pre-defined-transitions" title="Permalink to this headline"> link</a></h2>
+<p>预定义的转场(transition)可以直接使用在with语句中。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">bg</span> <span class="n">washington</span>
+<span class="k">with</span> <span class="n">dissolve</span>
+</pre></div>
+</div>
+<dl class="var">
+<dt id="var-fade">
+<code class="descname">fade</code><a class="headerlink" href="#var-fade" title="Permalink to this definition"> link</a></dt>
+<dd><p>0.5秒时间画面逐渐暗淡至全黑，然后0.5秒时间画面从全黑逐渐变亮成新界面。一个 <a class="reference internal" href="#Fade" title="Fade"><code class="xref py py-func docutils literal notranslate"><span class="pre">Fade()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-dissolve">
+<code class="descname">dissolve</code><a class="headerlink" href="#var-dissolve" title="Permalink to this definition"> link</a></dt>
+<dd><p>0.5秒时间，使用溶解效果从旧界面切到新界面。一个 <a class="reference internal" href="#Dissolve" title="Dissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dissolve()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-pixellate">
+<code class="descname">pixellate</code><a class="headerlink" href="#var-pixellate" title="Permalink to this definition"> link</a></dt>
+<dd><p>0.5秒像素化旧场景，并0.5秒反向像素化至新场景。一个 <a class="reference internal" href="#Pixellate" title="Pixellate"><code class="xref py py-func docutils literal notranslate"><span class="pre">Pixellate()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-move">
+<code class="descname">move</code><a class="headerlink" href="#var-move" title="Permalink to this definition"> link</a></dt>
+<dd><p>通过在图像上移动位置切换场景。一个 <a class="reference internal" href="#MoveTransition" title="MoveTransition"><code class="xref py py-func docutils literal notranslate"><span class="pre">MoveTransition()</span></code></a> 的转场实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-moveinright">
+<code class="descname">moveinright</code><a class="headerlink" href="#var-moveinright" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>moveinleft, moveintop, moveinbottom</strong></p>
+<p>从界面上对应的边界移入图像，用时0.5秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-moveoutright">
+<code class="descname">moveoutright</code><a class="headerlink" href="#var-moveoutright" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>moveoutleft, moveouttop, moveoutbottom</strong></p>
+<p>从界面上对应的边界移出图像，用时0.5秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-ease">
+<code class="descname">ease</code><a class="headerlink" href="#var-ease" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>easeinright, easeinleft, easeintop, easeinbottom, easeoutright, easeoutleft, easeouttop, easeoutbottom</strong></p>
+<p>类似于上面的move系列转场效果，差别在于ease系列基于余弦曲线放缓开始和结束的转场。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-zoomin">
+<code class="descname">zoomin</code><a class="headerlink" href="#var-zoomin" title="Permalink to this definition"> link</a></dt>
+<dd><p>镜头放大切入图像，耗时0.5秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-zoomout">
+<code class="descname">zoomout</code><a class="headerlink" href="#var-zoomout" title="Permalink to this definition"> link</a></dt>
+<dd><p>镜头缩小离开图像，耗时0.5秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-zoominout">
+<code class="descname">zoominout</code><a class="headerlink" href="#var-zoominout" title="Permalink to this definition"> link</a></dt>
+<dd><p>先镜头放大切入图像，然后镜头缩小离开图像，耗时0.5秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-vpunch">
+<code class="descname">vpunch</code><a class="headerlink" href="#var-vpunch" title="Permalink to this definition"> link</a></dt>
+<dd><p>这种转场效果，会垂直摇晃界面0.25秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-hpunch">
+<code class="descname">hpunch</code><a class="headerlink" href="#var-hpunch" title="Permalink to this definition"> link</a></dt>
+<dd><p>这种转场效果，会水平摇晃界面0.25秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-blinds">
+<code class="descname">blinds</code><a class="headerlink" href="#var-blinds" title="Permalink to this definition"> link</a></dt>
+<dd><p>垂直遮蔽原界面，耗时1秒。一个 <a class="reference internal" href="#ImageDissolve" title="ImageDissolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">ImageDissolve()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-squares">
+<code class="descname">squares</code><a class="headerlink" href="#var-squares" title="Permalink to this definition"> link</a></dt>
+<dd><p>以平面效果转场界面，耗时1秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-wipeleft">
+<code class="descname">wipeleft</code><a class="headerlink" href="#var-wipeleft" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>wiperight, wipeup, wipedown</strong></p>
+<p>以指定方向擦除原界面。 <a class="reference internal" href="#CropMove" title="CropMove"><code class="xref py py-func docutils literal notranslate"><span class="pre">CropMove()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-slideleft">
+<code class="descname">slideleft</code><a class="headerlink" href="#var-slideleft" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>slideright, slideup, slidedown</strong></p>
+<p>以指定方向滑入新场景。 <a class="reference internal" href="#CropMove" title="CropMove"><code class="xref py py-func docutils literal notranslate"><span class="pre">CropMove()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-slideawayleft">
+<code class="descname">slideawayleft</code><a class="headerlink" href="#var-slideawayleft" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>slideawayright, slideawayup, slideawaydown</strong></p>
+<p>以指定方向滑出旧场景。 <a class="reference internal" href="#CropMove" title="CropMove"><code class="xref py py-func docutils literal notranslate"><span class="pre">CropMove()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-pushright">
+<code class="descname">pushright</code><a class="headerlink" href="#var-pushright" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>pushleft, pushtop, pushbottom</strong></p>
+<p>新场景把旧场景从指定的边界推出。 <a class="reference internal" href="#PushMove" title="PushMove"><code class="xref py py-func docutils literal notranslate"><span class="pre">PushMove()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-irisin">
+<code class="descname">irisin</code><a class="headerlink" href="#var-irisin" title="Permalink to this definition"> link</a></dt>
+<dd><p>及： <strong>irisout</strong></p>
+<p>使用一个矩形iris显示新界面，或者隐藏旧界面。 <a class="reference internal" href="#CropMove" title="CropMove"><code class="xref py py-func docutils literal notranslate"><span class="pre">CropMove()</span></code></a> 转场类的实例。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="transition-classes">
+<span id="id2"></span><h2>转场(transition)类<a class="headerlink" href="#transition-classes" title="Permalink to this headline"> link</a></h2>
+<p>转场(transition)类是可以用于创建新转场效果的功能函数。这些函数是参数化的，允许创建一个系列的转场。</p>
+<p>使用with语句就可以调用转场类。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个持续时间10秒的溶解转场</span>
+<span class="k">with</span> <span class="n">Dissolve</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果我们经常调用同一个转场效果，可以使用 <a class="reference internal" href="python.html#define-statement"><span class="std std-ref">define语句</span></a> 把转场效果声明为一个变量。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">annoytheuser</span> <span class="o">=</span> <span class="n">Dissolve</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+     <span class="k">show</span> <span class="n">bg</span> <span class="n">washington</span>
+     <span class="k">with</span> <span class="n">annoytheuser</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="AlphaDissolve">
+<code class="descname">AlphaDissolve</code><span class="sig-paren">(</span><em>control</em>, <em>delay=0.0</em>, <em>alpha=False</em>, <em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaDissolve" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场(transition)效果，其使用一个控制组件(大多数情况下是某些动画)实现新旧界面的转场。transform表达式会进行计算。当transform完全不透明时新界面被启用，而transform完全透明时依然使用旧界面。</p>
+<dl class="docutils">
+<dt><cite>control</cite></dt>
+<dd>控制transform。</dd>
+<dt><cite>delay</cite></dt>
+<dd>转场效果使用时间。</dd>
+<dt><cite>alpha</cite></dt>
+<dd>若该值为真(true)，图像会与其后面的图像混合。若该值为假(false)，图像完全不透明，并会覆盖在后面的图像上。</dd>
+<dt><cite>reverse</cite></dt>
+<dd>若该值为真(true)，alpha通道值反转。不透明区域来自旧图像，而透明区域来自新图像。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ComposeTransition">
+<code class="descname">ComposeTransition</code><span class="sig-paren">(</span><em>trans</em>, <em>before</em>, <em>after</em><span class="sig-paren">)</span><a class="headerlink" href="#ComposeTransition" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回由三种转场合成的一个转场效果。 <em>before</em> 和 <em>after</em> 转场会分别应用在旧场景和新场景，前提是这两个参数非空。被更新后的旧场景和新场景最后还会应用 <em>trans</em> 转场效果。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 旧场景图像从左侧移出，新场景图像从右侧移入，同时使用溶解效果。(这是一个系统消耗比较大的转场。)</span>
+<span class="k">define</span> <span class="n">moveinoutdissolve</span> <span class="o">=</span> <span class="n">ComposeTransition</span><span class="p">(</span><span class="n">dissolve</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="n">moveoutleft</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="n">moveinright</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="CropMove">
+<code class="descname">CropMove</code><span class="sig-paren">(</span><em>time</em>, <em>mode=&quot;slideright&quot;</em>, <em>startcrop=(0.0</em>, <em>0.0</em>, <em>0.0</em>, <em>1.0)</em>, <em>startpos=(0.0</em>, <em>0.0)</em>, <em>endcrop=(0.0</em>, <em>0.0</em>, <em>1.0</em>, <em>1.0)</em>, <em>endpos=(0.0</em>, <em>0.0)</em>, <em>topnew=True</em><span class="sig-paren">)</span><a class="headerlink" href="#CropMove" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其会剪裁一个场景并将其放置在界面中指定位置。其可以模板化处理一堆效果，这些效果的共通点是将界面分割成矩形条(slice)。</p>
+<dl class="docutils">
+<dt><cite>time</cite></dt>
+<dd>转场效果耗时。</dd>
+<dt><cite>mode</cite></dt>
+<dd><p class="first">转场模式名。转场模式总共有3大类：wipes、slides、其他。也可以是“custom”，是一个用户自己定义的模式。</p>
+<p>在wipe模式下，原图像先保持不变，然后逐渐使用转场效果全部擦除。例如，在“wiperight”模式下，一个刷子会从左到右擦除原图像，即先擦除界面最左边的图像，接着擦除界面中间，最后擦除界面最右边。其他的wipe包括“wipeleft”、“wipedown”和“wipeup”。</p>
+<p>在slide模式下，图像会移动。在“slideright”模式下，图像的右边从界面的左边开始，平移至界面右边，完成整个转场过程。其他slide模式包括“slideleft”、“slidedown”和“slideup”。</p>
+<p>还有slideaway模式，这个模式下原图像在新图像上层，平移出界面。slideaway模式包括“slideawayright”、“slideawayleft”、“slideawayup”和“slideawaydown”。</p>
+<p class="last">我们还支持矩形iris，包括“irisin”和“irisout”。</p>
+</dd>
+</dl>
+<p>下列参数值在模式为“custom”的情况下才会使用。位置信息与界面尺寸相关，剪裁大小与图像尺寸相关。一个(0.25, 0.0, 0.5, 1.0)的剪裁会使用某个图像的中间一小块。</p>
+<dl class="docutils">
+<dt><cite>startcrop</cite></dt>
+<dd>顶层图像的剪裁起始矩形。一个4元素的元组，包含x、y、width和height。</dd>
+<dt><cite>startpos</cite></dt>
+<dd>顶层图像绘制在界面上起始坐标。一个2元素的元组，包含x和y。</dd>
+<dt><cite>endcrop</cite></dt>
+<dd>顶层图像的剪裁结束矩形。一个4元素的元组，包含x、y、width和height。</dd>
+<dt><cite>endpos</cite></dt>
+<dd>顶层图像绘制在界面上结束坐标。一个2元素的元组，包含x和y。</dd>
+<dt><cite>topnew</cite></dt>
+<dd>若该值为真(true)，被剪裁和移动的是新场景。若该值为假(false)，被剪裁和移动的是旧场景。</dd>
+</dl>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">wiperight</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;wiperight&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">wipeleft</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;wipeleft&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">wipeup</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;wipeup&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">wipedown</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;wipedown&quot;</span><span class="p">)</span>
+
+<span class="k">define</span> <span class="n">slideright</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideright&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slideleft</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideleft&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slideup</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideup&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slidedown</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slidedown&quot;</span><span class="p">)</span>
+
+<span class="k">define</span> <span class="n">slideawayright</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideawayright&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slideawayleft</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideawayleft&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slideawayup</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideawayup&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">slideawaydown</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;slideawaydown&quot;</span><span class="p">)</span>
+
+<span class="k">define</span> <span class="n">irisout</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;irisout&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">irisin</span> <span class="o">=</span> <span class="n">CropMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;irisin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Dissolve">
+<code class="descname">Dissolve</code><span class="sig-paren">(</span><em>time</em>, <em>alpha=False</em>, <em>time_warp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Dissolve" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个使用溶解效果切换新旧场景的转场效果。</p>
+<dl class="docutils">
+<dt><cite>time</cite></dt>
+<dd>溶解效果持续时间。</dd>
+<dt><cite>alpha</cite></dt>
+<dd>若该值为真(true)，溶解效果会使用alpha通道。若该值为假(false)，直接替换原界面，这样效率比较高。</dd>
+<dt><cite>time_warp</cite></dt>
+<dd>一个调整时间线的功能函数。若不为空值(None)，其应该是一个使用0.0至1.0之间的小数作为输入的函数，返回结果也是0.0至1.0之间。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Fade">
+<code class="descname">Fade</code><span class="sig-paren">(</span><em>out_time</em>, <em>hold_time</em>, <em>in_time</em>, <em>color=&quot;#000&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#Fade" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其使用 <em>out_time</em> 入参时间(单位为秒)，逐渐将整个界面填充为 <em>color</em> 指定的颜色，维持这个界面 <em>hold_time</em> 指定的时间(单位为秒)，最后使用 <em>in_time</em> 入参时间(单位为秒)逐渐切换为新界面。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 逐渐变黑并还原。</span>
+<span class="k">define</span> <span class="n">fade</span> <span class="o">=</span> <span class="n">Fade</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># 保持全黑界面1秒。</span>
+<span class="k">define</span> <span class="n">fadehold</span> <span class="o">=</span> <span class="n">Fade</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># 镜头闪光——快速且为纯白，然后恢复原界面。</span>
+<span class="k">define</span> <span class="n">flash</span> <span class="o">=</span> <span class="n">Fade</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#fff&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImageDissolve">
+<code class="descname">ImageDissolve</code><span class="sig-paren">(</span><em>image</em>, <em>time</em>, <em>ramplen=8</em>, <em>reverse=False</em>, <em>alpha=True</em>, <em>time_warp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ImageDissolve" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其使用溶解特效切换新旧界面，并利用某个图像控制溶解过程。这意味着纯白的像素首先被溶解，而纯黑的像素最后溶解。</p>
+<dl class="docutils">
+<dt><cite>image</cite></dt>
+<dd>使用的控制图像。其必须是一个图片文件或者图像控制器。控制图像需要与待溶解场景的尺寸一致。</dd>
+<dt><cite>time</cite></dt>
+<dd>溶解效果持续时间。</dd>
+<dt><cite>ramplen</cite></dt>
+<dd>色彩蔓延(ramp)步长。其必须是一个2的整次幂。默认值是8，当纯白像素全部溶解之后，下一步溶解的像素是在灰度上比纯白色低8度的颜色。</dd>
+<dt><cite>reverse</cite></dt>
+<dd>若该值为真(true)，黑色像素反而先于白色像素溶解。</dd>
+<dt><cite>alpha</cite></dt>
+<dd>若该值为真(true)，溶解效果会使用alpha通道。若该值为假(false)，直接替换原界面，这样效率比较高。</dd>
+<dt><cite>time_warp</cite></dt>
+<dd>一个调整时间线的功能函数。若不为空值(None)，其应该是一个使用0.0至1.0之间的小数作为输入的函数，返回结果也是0.0至1.0之间。</dd>
+</dl>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">circirisout</span> <span class="o">=</span> <span class="n">ImageDissolve</span><span class="p">(</span><span class="s2">&quot;circiris.png&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">circirisin</span> <span class="o">=</span> <span class="n">ImageDissolve</span><span class="p">(</span><span class="s2">&quot;circiris.png&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">circiristbigramp</span> <span class="o">=</span> <span class="n">ImageDissolve</span><span class="p">(</span><span class="s2">&quot;circiris.png&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">ramplen</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="MoveTransition">
+<code class="descname">MoveTransition</code><span class="sig-paren">(</span><em>delay, enter=None, leave=None, old=False, layers=['master'], time_warp=None, enter_time_warp=None, leave_time_warp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#MoveTransition" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其插入了新旧场景中(使用相同的图像标签tag)图像的坐标。</p>
+<dl class="docutils">
+<dt><cite>delay</cite></dt>
+<dd>插入效果耗时。</dd>
+<dt><cite>enter</cite></dt>
+<dd>若该值非空，图像所进入的场景会一同移动。 <em>enter</em> 的值应是一个应用在图像行的变换(transform)，该变换可以获取其起始坐标。</dd>
+<dt><cite>leave</cite></dt>
+<dd>若该值非空，图像所离开的场景会一同移动。 <em>leave</em> 的值应是一个应用在图像行的变换(transform)，该变换可以获取其结束坐标。</dd>
+<dt><cite>old</cite></dt>
+<dd>若该值为真(true)，旧图像会被使用而不是新图像。</dd>
+<dt><cite>layers</cite></dt>
+<dd>移动的图层(layer)列表。</dd>
+<dt><cite>time_warp</cite></dt>
+<dd>应用于插入效果的时间warp函数。其是一个使用0.0至1.0之间的小数作为输入的函数，返回结果也是0.0至1.0之间。</dd>
+<dt><cite>enter_time_warp</cite></dt>
+<dd>应用于图像进入场景的时间warp函数。</dd>
+<dt><cite>leave_time_warp</cite></dt>
+<dd>应用于图像离开场景的时间warp函数。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="MultipleTransition">
+<code class="descname">MultipleTransition</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#MultipleTransition" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其是多个转场效果顺序显示之后的集。</p>
+<dl class="docutils">
+<dt><cite>args</cite></dt>
+<dd><p class="first">一个包含奇数个物件的列表。列表中奇数序号的物件必须是场景，偶数序号的物件必须是转场效果。这里说的场景可以是如下类别之一：</p>
+<ul class="simple">
+<li>可视组件。</li>
+<li>false值，表示使用旧场景。</li>
+<li>true值，表示使用新场景。</li>
+</ul>
+<p class="last">大多数情况下，第一个入参会是false而最后一个是true。</p>
+</dd>
+</dl>
+<p><em>args</em> 中的转场按顺序执行。对每一个转场效果而言，其前面的参数就是旧场景，其后面的参数就是新场景。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">logodissolve</span> <span class="o">=</span> <span class="n">MultipleTransition</span><span class="p">([</span>
+     <span class="bp">False</span><span class="p">,</span> <span class="n">Dissolve</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+     <span class="s2">&quot;logo.jpg&quot;</span><span class="p">,</span> <span class="n">Pause</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span>
+     <span class="s2">&quot;logo.jpg&quot;</span><span class="p">,</span> <span class="n">dissolve</span><span class="p">,</span>
+     <span class="bp">True</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>这个例子中，首先会使用溶解效果切换到logo.jpg文件，等待1秒钟后，再使用溶解效果切换至新场景。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Pause">
+<code class="descname">Pause</code><span class="sig-paren">(</span><em>delay</em><span class="sig-paren">)</span><a class="headerlink" href="#Pause" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其会在 <em>delay</em> 秒后显示新的场景。这个转场效果可以用作MultipleTransition的一部分。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Pixellate">
+<code class="descname">Pixellate</code><span class="sig-paren">(</span><em>time</em>, <em>steps</em><span class="sig-paren">)</span><a class="headerlink" href="#Pixellate" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其使用像素化切换新旧场景。</p>
+<dl class="docutils">
+<dt><cite>time</cite></dt>
+<dd>转场效果总耗时，单位为秒。</dd>
+<dt><cite>steps</cite></dt>
+<dd>在各个方向展开像素化使用的步数。每一步都会创建出上一步两倍宽度和高度的像素方块，所以5步像素化就能创建出32×32大小的像素方块。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="PushMove">
+<code class="descname">PushMove</code><span class="sig-paren">(</span><em>time</em>, <em>mode=&quot;pushright&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#PushMove" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个转场效果，其使用新场景把旧场景“推”出界面。</p>
+<dl class="docutils">
+<dt><cite>time</cite></dt>
+<dd>转场效果耗时。</dd>
+<dt><cite>mode</cite></dt>
+<dd>总共有4种模式：“pushright”、“pushleft”、“pushup”和“pushdown”，对应旧场景被“推”出界面的方向。</dd>
+</dl>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">pushright</span> <span class="o">=</span> <span class="n">PushMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;pushright&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">pushleft</span> <span class="o">=</span> <span class="n">PushMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;pushleft&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">pushup</span> <span class="o">=</span> <span class="n">PushMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;pushup&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">pushdown</span> <span class="o">=</span> <span class="n">PushMove</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;pushdown&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="transition-families">
+<span id="id3"></span><h2>转场族群<a class="headerlink" href="#transition-families" title="Permalink to this headline"> link</a></h2>
+<p>转场族群是可以定义一系列相关转场效果的函数。</p>
+<dl class="function">
+<dt id="define.move_transitions">
+<code class="descclassname">define.</code><code class="descname">move_transitions</code><span class="sig-paren">(</span><em>prefix, delay, time_warp=None, in_time_warp=None, out_time_warp=None, old=False, layers=[u'master'], **kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#define.move_transitions" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数定义了move转场效果的族群，类似于move和ease转场。根据给定的入参 <em>prefix</em> ，其定义了以下转场效果：</p>
+<ul class="simple">
+<li><em>prefix</em> ——一个转场效果，其使用 <em>delay</em> 秒时间，将图像移动至新坐标。</li>
+<li><em>prefixinleft</em> ， <em>prefixinright</em> ，<em>prefixintop</em> ，<em>prefixinbottom</em> —— 这些转场效果，使用 <em>delay</em> 秒时间，将图像移动至新坐标，并将新的图像从对应的界面边缘移入界面。</li>
+<li><em>prefixoutleft</em> ， <em>prefixoutright</em> ，<em>prefixouttop</em> ，<em>prefixoutbottom</em> —— 这些转场效果，使用 <em>delay</em> 秒时间，将图像移动至新坐标，并将新的需要隐藏的图像从对应的界面边缘移出界面。</li>
+</ul>
+<dl class="docutils">
+<dt><cite>time_warp, in_time_warp, out_time_warp</cite></dt>
+<dd><p class="first">时间扭曲功能是根据输入的图像移动完成时间(取值范围为0.0值1.0)，返回一个图像直线运动的完成时间比例(取值范围为0.0值1.0)。</p>
+<p>该功能让图像运动速度复合缓动(ease)曲线，而不是让所有图像以一个统一恒定的速度移动。</p>
+<p class="last">三个变量分别对应停留在界面的图像、新显示的图像和新隐藏的图像。</p>
+</dd>
+<dt><cite>old</cite></dt>
+<dd>若该值为真(true)，转场效果作用于旧的可视组件，而不是新的那些。</dd>
+<dt><cite>layers</cite></dt>
+<dd>应用转场效果的图层(layer)名。</dd>
+</dl>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 这条语句定义了所有以“move”开头的预定义转场效果的delay时间</span>
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">define</span><span class="o">.</span><span class="n">move_transitions</span><span class="p">(</span><span class="s2">&quot;move&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="dict-transitions">
+<span id="id4"></span><h2>字典转场(Dict Transitions)<a class="headerlink" href="#dict-transitions" title="Permalink to this headline"> link</a></h2>
+<p>在很多Ren’Py用到转场的地方，可以用一个字典存放各图层和转场的映射关系。这种情况下，Ren’Py会给每个图层应用一个合适的转场。</p>
+<p>当用到dict时，不会发生转场时通常发生的暂停。相反的是，dict语句立即返回字典，并且转场在下一次交互时开始执行。</p>
+<p>这可以与main图层一起使用，以便在界面(screen)上显示对话时发生转场。举个例子，如果我们写成:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">dis</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;master&quot;</span> <span class="p">:</span> <span class="n">Dissolve</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>和:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">eileen</span> <span class="n">happy</span>
+<span class="k">with</span> <span class="n">dis</span>
+
+<span class="n">e</span> <span class="s2">&quot;Hello, world.&quot;</span>
+</pre></div>
+</div>
+<p>溶解效果将在文本显示的时候发生。</p>
+<p>字典层转场不能在所有能用转场的地方使用，只有在能给一个层应用的转场时它才能使用。可以使用 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句和scene、show、hide语句的 <code class="docutils literal notranslate"><span class="pre">with</span></code> 子句。它也可以和 <a class="reference internal" href="statement_equivalents.html#renpy.with_statement" title="renpy.with_statement"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.with_statement()</span></code></a> ，
+<a class="reference internal" href="other.html#renpy.transition" title="renpy.transition"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.transition()</span></code></a> ， <a class="reference internal" href="screen_actions.html#Show" title="Show"><code class="xref py py-func docutils literal notranslate"><span class="pre">Show()</span></code></a> and <a class="reference internal" href="screen_actions.html#Hide" title="Hide"><code class="xref py py-func docutils literal notranslate"><span class="pre">Hide()</span></code></a> 动作和一系列接受转场的config变量一起使用。 字典层*不会*在不能作用于层的功能上起作用，比如ATL，<a class="reference internal" href="#ComposeTransition" title="ComposeTransition"><code class="xref py py-func docutils literal notranslate"><span class="pre">ComposeTransition()</span></code></a>
+和 <a class="reference internal" href="#MultipleTransition" title="MultipleTransition"><code class="xref py py-func docutils literal notranslate"><span class="pre">MultipleTransition()</span></code></a>。</p>
+<p>这可能与导致转场发生的语句互动不佳，就像由 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">auto</span></code> 产生的转场。这通常可以通过适用于不同层次的第二个字典转场来解决。举例来说，如果你发现当对话窗口显示和隐藏时出现了奇怪的闪动，试着把 options.rpy改成：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">window_show_transition</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;screens&quot;</span> <span class="p">:</span> <span class="n">Dissolve</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">window_hide_transition</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;screens&quot;</span> <span class="p">:</span> <span class="n">Dissolve</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>因为对话窗口整个都在界面(screen)层上所以可以修复这个问题。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

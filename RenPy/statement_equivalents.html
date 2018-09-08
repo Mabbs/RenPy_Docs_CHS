@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>等效语句 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="存档、读档和回滚" href="save_load_rollback.html" />
+    <link rel="prev" title="多角色对话" href="multiple.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">等效语句</a><ul>
+<li><a class="reference internal" href="#state-equi-dialogue">对话</a></li>
+<li><a class="reference internal" href="#state-equi-choice-menus">选项菜单</a></li>
+<li><a class="reference internal" href="#state-equi-displaying-images">显示图像</a></li>
+<li><a class="reference internal" href="#state-equi-transitions">转场</a></li>
+<li><a class="reference internal" href="#jump">跳转</a></li>
+<li><a class="reference internal" href="#call">Call</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="statement-equivalents">
+<span id="id1"></span><h1>等效语句<a class="headerlink" href="#statement-equivalents" title="Permalink to this headline"> link</a></h1>
+<p>为了允许Ren’Py能够在Python中脚本化，每个Ren’Py语句都有一条等效的Python语句。每条等效Python语句通常包含一个Python函数，也可能包含一个Python正则表达式，执行一个等效动作。</p>
+<div class="section" id="state-equi-dialogue">
+<span id="id2"></span><h2>对话<a class="headerlink" href="#state-equi-dialogue" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py的say语句等效于以一个函数的形式调用角色对象。下面的两个语句显示了同一行两次：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;Hello, world.&quot;</span>
+
+<span class="k">$</span> <span class="n">e</span><span class="p">(</span><span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>显示旁白也使用了同样的办法，用的是 <code class="docutils literal notranslate"><span class="pre">narrator</span></code> 角色。调用某个角色时，可以传入关键词入参 <cite>interact</cite>。当 <em>interact</em> 为False时，Ren’Py会显示角色对话框，并在执行某个互动操作后返回。</p>
+<p>角色和函数对象的等效语句在其他方面也能正常运行。还可以定义一个Python函数，然后在角色对象的地方使用那个函数。例如，下面定义的函数使用一个变量，在两个角色中选择一个。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">lucy_normal</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;Lucy&quot;</span><span class="p">)</span>
+<span class="k">define</span> <span class="n">lucy_evil</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;Evil Lucy&quot;</span><span class="p">)</span>
+
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">l</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">lucy_is_evil</span><span class="p">:</span>
+            <span class="n">lucy_evil</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lucy_normal</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="k">$</span> <span class="n">lucy_is_evil</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">l</span> <span class="s2">&quot;大多数情况下，我都是个普通人。&quot;</span>
+
+    <span class="k">$</span> <span class="n">lucy_is_evil</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">l</span> <span class="s2">&quot;不过有时候，疯起来我自己都害怕！&quot;</span>
+</pre></div>
+</div>
+<p>这种使用函数的方式，要么忽略未知的关键词入参，要么将那些入参传给某个角色函数。这样做可以在Ren’Py添加角色调用时的新关键词入参时，使游戏依然能运行。</p>
+<dl class="function">
+<dt id="renpy.say">
+<code class="descclassname">renpy.</code><code class="descname">say</code><span class="sig-paren">(</span><em>who</em>, <em>what</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.say" title="Permalink to this definition"> link</a></dt>
+<dd><p>say语句的等效语句。</p>
+<dl class="docutils">
+<dt><cite>who</cite></dt>
+<dd>None表示旁白，不然是发言角色对象，或表示角色名的字符串。最后那种情况， func:<cite>say()</cite> 函数会创建发言角色。</dd>
+<dt><cite>what</cite></dt>
+<dd>一行发言内容的字符串。字符串里带百分号(%)的部分会被替换(substitution)。</dd>
+<dt><cite>interact</cite></dt>
+<dd>若为True，Ren’Py显示对话并等待用户输入。若为False，Ren’Py显示对话，但不执行互动行为。(互动行为会以关键词入参传入相应的处理函数。)</dd>
+</dl>
+<p>这个函数极少直接使用，因为下面三行语句是完全等效的。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;Hello, world.&quot;</span>
+<span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
+<span class="k">$</span> <span class="n">e</span><span class="p">(</span><span class="s2">&quot;Hello, world.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="state-equi-choice-menus">
+<span id="id3"></span><h2>选项菜单<a class="headerlink" href="#state-equi-choice-menus" title="Permalink to this headline"> link</a></h2>
+<p>menu语句有一个等效的Python函数。</p>
+<dl class="function">
+<dt id="menu">
+<code class="descname">menu</code><span class="sig-paren">(</span><em>items</em>, <em>interact=True</em>, <em>screen=&quot;choice&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#menu" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数向用户显示一个菜单。 <em>item</em> 应该是一个二元元组列表。在每个元组中，第一个元素是一个文本标签(label)，第二个参数是该元素被选中时的返回值。如果返回值是None，第一个元素会用作整个菜单的标题。</p>
+<p>该函数使用多个入参，这份文档中只列出了其中一部分。除了 <em>items</em> 之外，所有都是关键字入参。</p>
+<dl class="docutils">
+<dt><cite>interact</cite></dt>
+<dd>若为False，显示菜单，但不执行任何互动行为。</dd>
+<dt><cite>screen</cite></dt>
+<dd>显示菜单的界面名。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.display_menu">
+<code class="descclassname">renpy.</code><code class="descname">display_menu</code><span class="sig-paren">(</span><em>items</em>, <em>interact=True</em>, <em>screen=&quot;choice&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.display_menu" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数向用户显示一个菜单。 <em>item</em> 应该是一个二元元组列表。在每个元组中，第一个元素是一个文本标签(label)，第二个参数是该元素被选中时的返回值。如果返回值是None，第一个元素会用作整个菜单的标题。</p>
+<p>该函数使用多个入参，这份文档中只列出了其中一部分。除了 <em>items</em> 之外，所有都是关键字入参。</p>
+<dl class="docutils">
+<dt><cite>interact</cite></dt>
+<dd>若为False，显示菜单，但不执行任何互动行为。</dd>
+<dt><cite>screen</cite></dt>
+<dd>显示菜单的界面名。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="state-equi-displaying-images">
+<span id="id4"></span><h2>显示图像<a class="headerlink" href="#state-equi-displaying-images" title="Permalink to this headline"> link</a></h2>
+<p>image、scene、show和hide语句都一个等效的Python函数。</p>
+<dl class="function">
+<dt id="renpy.get_at_list">
+<code class="descclassname">renpy.</code><code class="descname">get_at_list</code><span class="sig-paren">(</span><em>name</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_at_list" title="Permalink to this definition"> link</a></dt>
+<dd><p>将图层 <em>layer</em> 上图像标签名为 <em>tag</em> 的图像所应用的变换(transform)，以列表形式返回。如果没有使用任何变换(transform)则返回一个空列表，如果图像不显示则返回None。</p>
+<p>如果 <em>layer</em> 为None，就是用给定图像标签(tag)所在的默认图层。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.hide">
+<code class="descclassname">renpy.</code><code class="descname">hide</code><span class="sig-paren">(</span><em>name</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.hide" title="Permalink to this definition"> link</a></dt>
+<dd><p>从某个图层中隐藏某个图像。hide语句的等效Python语句。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>需要隐藏的图像名称。只是用图像标签(tag)，所有带相同标签的图像都将被隐藏(图像全名不重要)。</dd>
+<dt><cite>layer</cite></dt>
+<dd>该函数操作的图层名。若为None，使用图像标签(tag)关联的默认图层。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.image">
+<code class="descclassname">renpy.</code><code class="descname">image</code><span class="sig-paren">(</span><em>name</em>, <em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.image" title="Permalink to this definition"> link</a></dt>
+<dd><p>定义一个图像。该函数是image语句的等效Python语句。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>需要显示的图像名称，是一个字符串。</dd>
+<dt><cite>d</cite></dt>
+<dd>与图像名关联的可视组件。</dd>
+</dl>
+<p>这个函数可能仅能在init语句块(block)中运行。游戏开始后运行这个函数会触发一个报错。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.scene">
+<code class="descclassname">renpy.</code><code class="descname">scene</code><span class="sig-paren">(</span><em>layer='master'</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.scene" title="Permalink to this definition"> link</a></dt>
+<dd><p>从图层 <em>layer</em> 移动所有可视组件。当scene语句没有指定一个需要显示的图像时，这是scene语句的等效Python语句。</p>
+<p>一个完整的scene语句等效于调用renpy.scene之后再调用 <a class="reference internal" href="#renpy.show" title="renpy.show"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.show()</span></code></a> 。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">scene</span> <span class="n">bg</span> <span class="n">beach</span>
+</pre></div>
+</div>
+<p>等效于：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="k">scene</span><span class="p">()</span>
+<span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="k">show</span><span class="p">(</span><span class="s2">&quot;bg beach&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.show">
+<code class="descclassname">renpy.</code><code class="descname">show</code><span class="sig-paren">(</span><em>name</em>, <em>at_list=</em>, <span class="optional">[</span><span class="optional">]</span><em>layer='master'</em>, <em>what=None</em>, <em>zorder=0</em>, <em>tag=None</em>, <em>behind=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.show" title="Permalink to this definition"> link</a></dt>
+<dd><p>在某个图层上显示某个图像。这是show语句的等效Python语句。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>需要显示的图像名称，是一个字符串。</dd>
+<dt><cite>at_list</cite></dt>
+<dd>应用于图像的变换(transform)列表。等效于 <code class="docutils literal notranslate"><span class="pre">at</span></code> 特性(property)。</dd>
+<dt><cite>layer</cite></dt>
+<dd>一个字符串，表示图像显示使用的图层名。等效于 <code class="docutils literal notranslate"><span class="pre">onlayer</span></code> 特性(property)。若为None，使用图像标签(tag)关联的默认图层。</dd>
+<dt><cite>what</cite></dt>
+<dd>若非None，这是一个代替图像的可视组件。(等效于show表达式语句。)当给定了一个 <em>what</em> 参数时， <em>name</em> 可以用于将图像与标签(tag)关联。</dd>
+<dt><cite>zorder</cite></dt>
+<dd>一个整数，等效于 <code class="docutils literal notranslate"><span class="pre">zorder</span></code> 特性(property)。若为None，zorder会保留之前的值，否则设置为0。</dd>
+<dt><cite>tag</cite></dt>
+<dd>一个字符串，用于指定显示图像的标签(tag)。等效于 <code class="docutils literal notranslate"><span class="pre">as</span></code> 特性(property)。</dd>
+<dt><cite>behind</cite></dt>
+<dd>一个字符串列表，表示需要显示的图像在哪些图像标签(tag)后面。等效于 <code class="docutils literal notranslate"><span class="pre">behind</span></code> 特性(property)。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.show_layer_at">
+<code class="descclassname">renpy.</code><code class="descname">show_layer_at</code><span class="sig-paren">(</span><em>at_list</em>, <em>layer='master'</em>, <em>reset=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.show_layer_at" title="Permalink to this definition"> link</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">layer</span></code> <em>layer</em> <code class="docutils literal notranslate"><span class="pre">at</span></code> <em>at_list</em> 语句的等效Python语句。</p>
+<dl class="docutils">
+<dt><cite>reset</cite></dt>
+<dd>若为True，当图层显示时，变换(transform)状态会重置为开始状态。若为False，变换状态会保持，允许新的变换更新状态。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="state-equi-transitions">
+<span id="id5"></span><h2>转场<a class="headerlink" href="#state-equi-transitions" title="Permalink to this headline"> link</a></h2>
+<p>with语句的等效是renpy.with_statement函数。</p>
+<dl class="function">
+<dt id="renpy.with_statement">
+<code class="descclassname">renpy.</code><code class="descname">with_statement</code><span class="sig-paren">(</span><em>trans</em>, <em>always=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.with_statement" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发一个转场(transition)。这是with语句的Python等效语句。</p>
+<dl class="docutils">
+<dt><cite>trans</cite></dt>
+<dd>转场(transition)名。</dd>
+<dt><cite>always</cite></dt>
+<dd>若为True，在用户禁用转场的情况下依然显示转场效果。</dd>
+</dl>
+<p>当用户中断转场时该函数返回True，其他情况返回False。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="jump">
+<span id="id6"></span><h2>跳转<a class="headerlink" href="#jump" title="Permalink to this headline"> link</a></h2>
+<p>jump语句的Python等效是renpy.jump函数。</p>
+<dl class="function">
+<dt id="renpy.jump">
+<code class="descclassname">renpy.</code><code class="descname">jump</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.jump" title="Permalink to this definition"> link</a></dt>
+<dd><p>结束当前语句，并让主控流程跳转到给定的脚本标签(label)。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="call">
+<span id="id7"></span><h2>Call<a class="headerlink" href="#call" title="Permalink to this headline"> link</a></h2>
+<p>call语句的Python等效是renpy.call函数。</p>
+<dl class="function">
+<dt id="renpy.call">
+<code class="descclassname">renpy.</code><code class="descname">call</code><span class="sig-paren">(</span><em>label</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.call" title="Permalink to this definition"> link</a></dt>
+<dd><p>结束当前Ren’Py语句，并跳转到 <em>label</em> 处。当jump返回后，主控流程会返回到之前的语句。</p>
+<dl class="docutils">
+<dt><cite>from_current</cite></dt>
+<dd>若为True，主控流程会返回到当前语句，而不是当前语句的下一句。(这会导致当前语句运行两次。这项必须作为关键词入参传入。)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.return_statement">
+<code class="descclassname">renpy.</code><code class="descname">return_statement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.return_statement" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发Ren’Py从当前Ren’Py级别的调用返回。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

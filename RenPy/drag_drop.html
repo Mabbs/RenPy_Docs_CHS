@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>拖放组件 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="精灵(sprite)" href="sprites.html" />
+    <link rel="prev" title="画廊、音乐空间和场景回放" href="rooms.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">拖放组件</a><ul>
+<li><a class="reference internal" href="#drag-drop-displayables">可视组件</a></li>
+<li><a class="reference internal" href="#drag-drop-examples">样例</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="drag-and-drop">
+<span id="id1"></span><h1>拖放组件<a class="headerlink" href="#drag-and-drop" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py含有一些拖放组件，这些组件允许使用鼠标在界面上任意移动。关于拖拽功能的使用有以下要点：</p>
+<ul class="simple">
+<li>存储窗口坐标，允许用户重新调整窗口坐标。</li>
+<li>能把卡牌在界面上随意拖拽的卡牌游戏。(例如，solitaire纸牌)</li>
+<li>背包系统。</li>
+<li>拖拽记录系统。</li>
+</ul>
+<p>拖放组件提供不仅限于自身的拖放功能。这里主要涉及两个类。Drag类提供让一些东西能够在界面上拖动的功能，让其他可拖动组件掉落在自己上面的功能，或者两者兼有。DragGroup类提供了Drag的群组功能——当拖放发生时，作为同一个DragGroup内的一部分，组内所有Drag对象都需要做出响应。</p>
+<p>拖放系统可以通过 <a class="reference internal" href="screens.html#screens"><span class="std std-ref">Screen Language</span></a> 使用，或者直接用作可视组件。当你创建Drag对象后不再需要引用这些对象，最好使用界面语言。典型的情况是，可拖拽组件显示了一个用于放置在界面里的窗口。如果你在创建Drag对象后还需要引用，通常更好的做法是直接创建Darg对象并把它们添加到一个DragGroup对象中。</p>
+<div class="section" id="drag-drop-displayables">
+<span id="id2"></span><h2>可视组件<a class="headerlink" href="#drag-drop-displayables" title="Permalink to this headline"> link</a></h2>
+<dl class="class">
+<dt id="Drag">
+<em class="property">class </em><code class="descname">Drag</code><span class="sig-paren">(</span><em>d=None</em>, <em>drag_name=None</em>, <em>draggable=True</em>, <em>droppable=True</em>, <em>drag_raise=True</em>, <em>dragged=None</em>, <em>dropped=None</em>, <em>drag_handle=(0.0</em>, <em>0.0</em>, <em>1.0</em>, <em>1.0)</em>, <em>drag_joined=...</em>, <em>clicked=None</em>, <em>hovered=None</em>, <em>unhovered=None</em>, <em>mouse_drop=False</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#Drag" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个可视组件，提供了一个对象，可以在其有效区域内使用鼠标拖拽。一个Drag对象还有供其他Drag对象可以掉落在上面的区域。</p>
+<p>一个Drag对象可以在父对象(parent)内部随意移动。通常，Drag的父对象是一个 <a class="reference internal" href="displayables.html#Fixed" title="Fixed"><code class="xref py py-func docutils literal notranslate"><span class="pre">Fixed()</span></code></a> 或 <a class="reference internal" href="#DragGroup" title="DragGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DragGroup</span></code></a> 。</p>
+<p>一个Drag对象有一个子组件。子组件的状态反映出拖放操作的状态：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">selected_hover</span></code> - 当其被拖拽时。</li>
+<li><code class="docutils literal notranslate"><span class="pre">selected_idle</span></code> - 当其被放下时。</li>
+<li><code class="docutils literal notranslate"><span class="pre">hover</span></code> - 鼠标已点击而拖拽未发生时。</li>
+<li><code class="docutils literal notranslate"><span class="pre">idle</span></code> - 其他情况。</li>
+</ul>
+<p>拖拽句柄(handle)是一个子组件内的矩形。当鼠标进到拖拽句柄里的非透明像素上方时，就允许发生拖拽或点击。</p>
+<p>一个新创建的可拖拽组件会被添加到默认的DragGroup中。一个可拖拽组件只能在一个DragGroup里。一旦被添加到另一个组中，就会自动被上一个组移除。</p>
+<p>当某个Drag对象首次渲染时，如果从其所在的DragGroup中无法获得坐标，就使用标准布局算法计算出它的左上角坐标。</p>
+<dl class="docutils">
+<dt><cite>d</cite></dt>
+<dd>若存在，这就是Drag对象的子组件。如果不是None，Drag对象就使用子组件的样式。</dd>
+<dt><cite>drag_name</cite></dt>
+<dd>若非None，表示可拖拽组件的名称。也可以用作可拖拽对象的名称特性(property)。如果有或曾经有一个可拖拽组件，名称相同，也在DragGroup当中，它将取代原来的可拖拽对象的起始位置。</dd>
+<dt><cite>draggable</cite></dt>
+<dd>若为True，Drag对象可以使用鼠标拖拽。</dd>
+<dt><cite>droppable</cite></dt>
+<dd>若为True，其他Drag对象可以放在该Drag对象上。</dd>
+<dt><cite>drag_raise</cite></dt>
+<dd>若为True，该Drag对象被拖拽是会升到最高层。如果其与其他Drag对象连在一起，相连的Drag对象都会升到最高层。</dd>
+<dt><cite>dragged</cite></dt>
+<dd>一个回调函数(或回调函数列表)，当Drag对象被拖拽时被调用。调用时使用两个入参。第一个参数是被拖拽的Drag对象列表。第二个参数是某个可以掉落其上的Drag对象，或者None表示不会落下。如果回调函数返回一个非None，这个值也会作为此次交互动作的返回结果。</dd>
+<dt><cite>dropped</cite></dt>
+<dd><p class="first">一个回调函数(或回调函数列表)，当Drag对象落下时被调用。调用时使用两个入参。第一个参数表示掉落在哪个Drag对象上。第二个参数是一个被拖拽的Drag对象列表。如果回调函数返回一个非None，这个值也会作为此次交互动作的返回结果。</p>
+<p class="last">当dragged和dropped回调函数被同一个事件消息触发，那么仅在dragged回调函数返回None的情况dropped回调函数才会被调用。</p>
+</dd>
+<dt><cite>clicked</cite></dt>
+<dd>不使用入参的回调函数，当Drag对象仅仅被点击而没有移动的情况下调用。droppalbe也可以得到焦点并被点击。如果回调函数返回一个非None，这个值也会作为此次交互动作的返回结果。</dd>
+<dt><cite>drag_handle</cite></dt>
+<dd>一个(x, y, width, height)形式的元组，给定了子组件拖拽句柄的坐标信息。在这个元组中，整数被看作像素数的值，浮点数被看作子组件尺寸的比例分数。</dd>
+<dt><cite>drag_joined</cite></dt>
+<dd>使用当前Drag对象作为入参的回调函数。一般返回一个[ (drag, x, y) ]格式的元组列表，表示可拖拽组件连在一起组层一个单元。 <em>x</em> 和 <em>y</em> 是各个拖拽组件之间的偏移量，与Drag左上角的坐标无关。</dd>
+<dt><cite>drag_offscreen</cite></dt>
+<dd>若为True，draggable可以移出屏幕。这样设置有潜在风险，使用drag_joined或可以改变尺寸的Drag对象，一旦被拖离出屏幕，就没有办法把它们弄回来了。</dd>
+<dt><cite>mouse_drop</cite></dt>
+<dd>若为True，Drag对象会掉落在光标下第一层的droppable上。若为False，也是默认值，Drag对象掉落在overlap最大度数的droppab上。</dd>
+</dl>
+<p>除了 <em>d</em> ，所有的参数都在Drag对象的字段(field)中。除此之外，在Drag对象被渲染后，下列域里的值也变成可用状态：</p>
+<dl class="docutils">
+<dt><cite>x, y</cite></dt>
+<dd>Drag对象相对于自身父组件的坐标，单位为像素。</dd>
+<dt><cite>w, h</cite></dt>
+<dd>Drag对象子组件的宽度和高度，单位为像素。</dd>
+</dl>
+<dl class="method">
+<dt id="Drag.bottom">
+<code class="descname">bottom</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Drag.bottom" title="Permalink to this definition"> link</a></dt>
+<dd><p>降低该可视组件的高度，降到其所在drag_group的底层。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Drag.set_child">
+<code class="descname">set_child</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#Drag.set_child" title="Permalink to this definition"> link</a></dt>
+<dd><p>将该Drag对象的子组件设为d。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Drag.snap">
+<code class="descname">snap</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>delay=0</em><span class="sig-paren">)</span><a class="headerlink" href="#Drag.snap" title="Permalink to this definition"> link</a></dt>
+<dd><p>修改Drag对象的坐标。如果Drag对象没有显示，坐标的改变瞬时完成。否则，坐标的改变会耗时 <em>dalay</em> 秒，生成线性移动的动画。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Drag.top">
+<code class="descname">top</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Drag.top" title="Permalink to this definition"> link</a></dt>
+<dd><p>升高该可视组件的高度，升到其所在drag_group的顶层。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="DragGroup">
+<em class="property">class </em><code class="descname">DragGroup</code><span class="sig-paren">(</span><em>*children</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#DragGroup" title="Permalink to this definition"> link</a></dt>
+<dd><p>表示一个Drag对象组。某个Drag对象受限于整个DragGroup。掉落只在同一个组内的Drag对象间发生。组内的Drag对象可以会被抬升高度。</p>
+<p>DragGroup的布局类似 <a class="reference internal" href="displayables.html#Fixed" title="Fixed"><code class="xref py py-func docutils literal notranslate"><span class="pre">Fixed()</span></code></a> 。</p>
+<p>DragGroup构造函数的所有固定位置参数都是需要添加到DragGroup的Drag对象。</p>
+<dl class="method">
+<dt id="DragGroup.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>child</em><span class="sig-paren">)</span><a class="headerlink" href="#DragGroup.add" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加Drag对象作为DragGroup的子组件(child)。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DragGroup.get_child_by_name">
+<code class="descname">get_child_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#DragGroup.get_child_by_name" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回该DragGroup中名为 <em>name</em> 的第一个子组件。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DragGroup.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>child</em><span class="sig-paren">)</span><a class="headerlink" href="#DragGroup.remove" title="Permalink to this definition"> link</a></dt>
+<dd><p>移除该DragGroup中的子组件child。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="drag-drop-examples">
+<span id="id3"></span><h2>样例<a class="headerlink" href="#drag-drop-examples" title="Permalink to this headline"> link</a></h2>
+<p>这个样例中，在say界面允许用户拖拽窗口并选择放在界面的任意位置。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">say</span><span class="p">:</span>
+
+    <span class="k">drag</span><span class="p">:</span>
+        <span class="na">drag_name</span> <span class="s2">&quot;say&quot;</span>
+        <span class="na">yalign</span> <span class="mf">1.0</span>
+        <span class="na">drag_handle</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+        <span class="na">xalign</span> <span class="mf">0.5</span>
+
+        <span class="k">window</span> <span class="na">id</span> <span class="s2">&quot;window&quot;</span><span class="p">:</span>
+            <span class="c1"># 确保窗口尺寸小于整个界面。</span>
+            <span class="na">xmaximum</span> <span class="mi">600</span>
+
+            <span class="k">has</span> <span class="k">vbox</span>
+
+            <span class="k">if</span> <span class="n">who</span><span class="p">:</span>
+                <span class="k">text</span> <span class="n">who</span> <span class="na">id</span> <span class="s2">&quot;who&quot;</span>
+
+            <span class="k">text</span> <span class="n">what</span> <span class="na">id</span> <span class="s2">&quot;what&quot;</span>
+</pre></div>
+</div>
+<p>这是一个稍微复杂的样例，展示了如何拖拽功能如何用在游戏流程中，还有如何使用拖拽功能将一个角色移动到某个位置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">detective_dragged</span><span class="p">(</span><span class="n">drags</span><span class="p">,</span> <span class="n">drop</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="k">not</span> <span class="n">drop</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">store</span><span class="o">.</span><span class="n">detective</span> <span class="o">=</span> <span class="n">drags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="na">drag_name</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">city</span> <span class="o">=</span> <span class="n">drop</span><span class="o">.</span><span class="na">drag_name</span>
+
+        <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">screen</span> <span class="n">send_detective_screen</span><span class="p">:</span>
+
+    <span class="c1"># 作为背景的地图。</span>
+    <span class="k">add</span> <span class="s2">&quot;europe.jpg&quot;</span>
+
+    <span class="c1"># DragGroup确保每个侦探可以拖拽到每个城市。</span>
+    <span class="k">draggroup</span><span class="p">:</span>
+
+        <span class="c1"># 侦探们</span>
+        <span class="k">drag</span><span class="p">:</span>
+            <span class="na">drag_name</span> <span class="s2">&quot;Ivy&quot;</span>
+            <span class="na">child</span> <span class="s2">&quot;ivy.png&quot;</span>
+            <span class="na">droppable</span> <span class="bp">False</span>
+            <span class="na">dragged</span> <span class="n">detective_dragged</span>
+            <span class="na">xpos</span> <span class="mi">100</span> <span class="na">ypos</span> <span class="mi">100</span>
+        <span class="k">drag</span><span class="p">:</span>
+            <span class="na">drag_name</span> <span class="s2">&quot;Zack&quot;</span>
+            <span class="na">child</span> <span class="s2">&quot;zack.png&quot;</span>
+            <span class="na">droppable</span> <span class="bp">False</span>
+            <span class="na">dragged</span> <span class="n">detective_dragged</span>
+            <span class="na">xpos</span> <span class="mi">150</span> <span class="na">ypos</span> <span class="mi">100</span>
+
+        <span class="c1"># 可选的城市。</span>
+        <span class="k">drag</span><span class="p">:</span>
+            <span class="na">drag_name</span> <span class="s2">&quot;London&quot;</span>
+            <span class="na">child</span> <span class="s2">&quot;london.png&quot;</span>
+            <span class="na">draggable</span> <span class="bp">False</span>
+            <span class="na">xpos</span> <span class="mi">450</span> <span class="na">ypos</span> <span class="mi">140</span>
+        <span class="k">drag</span><span class="p">:</span>
+            <span class="na">drag_name</span> <span class="s2">&quot;Paris&quot;</span>
+            <span class="na">draggable</span> <span class="bp">False</span>
+            <span class="na">child</span> <span class="s2">&quot;paris.png&quot;</span>
+            <span class="na">xpos</span> <span class="mi">500</span> <span class="na">ypos</span> <span class="mi">280</span>
+
+<span class="k">label</span> <span class="n">send_detective</span><span class="p">:</span>
+    <span class="s2">&quot;我们需要调查！应该派谁去哪里？&quot;</span>
+
+    <span class="k">call</span> <span class="k">screen</span> <span class="n">send_detective_screen</span>
+
+    <span class="s2">&quot;好的，我们派 [detective] 去 [city]。&quot;</span>
+</pre></div>
+</div>
+<p>更复杂的系统需要使用更重要的编程技巧才能搞定。 <a class="reference external" href="http://www.renpy.org/wiki/renpy/Frameworks#Cardgame">Ren’Py cardgame framework</a>
+是一个在复杂系统如何使用拖放功能和制作卡牌游戏两方面都很有用的例子。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

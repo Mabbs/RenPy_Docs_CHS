@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>持久化数据 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python中的变换(transform)和转场(transition)" href="trans_trans_python.html" />
+    <link rel="prev" title="存档、读档和回滚" href="save_load_rollback.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">持久化数据</a><ul>
+<li><a class="reference internal" href="#merging-persistent-data">合并持久化数据</a></li>
+<li><a class="reference internal" href="#persistent-functions">持久化函数</a></li>
+<li><a class="reference internal" href="#multi-game-persistence">多个游戏数据的持久化</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="persistent-data">
+<span id="id1"></span><h1>持久化数据<a class="headerlink" href="#persistent-data" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持持久化数据，保存游戏中与某个特定时间点无关的数据。绑定了变量 <code class="docutils literal notranslate"><span class="pre">persistent</span></code> 的持久化对象字段(field)，可以读写并实现持久化数据。</p>
+<p>当Ren’Py进程结束时，所有与 <code class="docutils literal notranslate"><span class="pre">persistent</span></code> 关联的数据都会被保存，也可以通过调用 <a class="reference internal" href="#renpy.save_persistent" title="renpy.save_persistent"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.save_persistent()</span></code></a> 。当Ren’Py启动或者检测到磁盘上的持久化数据更新过时，会加载持久化数据。</p>
+<p>持久化对象有个特殊情况，就是接入一个未定义的字段(field)时会得到一个None，而不是触发一个异常。</p>
+<p>使用持久化的例子是创建一个能解锁的图片画廊。通过持久化存储一个标志(flag)，就能判断画廊是否被解锁，比如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">gallery</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="k">not</span> <span class="n">persistent</span><span class="o">.</span><span class="n">gallery_unlocked</span><span class="p">:</span>
+        <span class="k">show</span> <span class="na">background</span>
+        <span class="n">centered</span> <span class="s2">&quot;你还没有解锁画廊。&quot;</span>
+        <span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">full_restart</span><span class="p">()</span>
+
+    <span class="c1"># 这里实际展示画廊。</span>
+</pre></div>
+</div>
+<p>当用于获得了某个解锁画廊的结局，这个标志(flag)必须设置为True。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">persistent</span><span class="o">.</span><span class="n">gallery_unlocked</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>由于持久化数据在初始化Python语句块(block)之前加载，所以持久化数据应该只包含Python和Ren’Py的原生数据类型。不过，定义在 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">early</span></code> 语句块(block)中的类可以使用，提供的那些类可以被pickle和赋值。</p>
+<div class="section" id="merging-persistent-data">
+<span id="id2"></span><h2>合并持久化数据<a class="headerlink" href="#merging-persistent-data" title="Permalink to this headline"> link</a></h2>
+<p>有些时候Ren’Py需要合并源自两处的持久化数据。例如，Ren’Py可能需要合并来自USB驱动器和本地设备两个地方的持久化数据。</p>
+<p>Ren’Py使用“域到域”的形式进行分析，使用每个域中最后更新的值进行比较。在某些情况下，这不是我们需要的行为。这时，可以使用 <a class="reference internal" href="#renpy.register_persistent" title="renpy.register_persistent"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.register_persistent()</span></code></a> 函数。</p>
+<p>例如，如果我们有一个已经看过的结局的集合(set)，我们合并数据时就希望取一个合集。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">persistent</span><span class="o">.</span><span class="n">endings</span> <span class="k">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">persistent</span><span class="o">.</span><span class="n">endings</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">merge_endings</span><span class="p">(</span><span class="k">old</span><span class="p">,</span> <span class="k">new</span><span class="p">,</span> <span class="n">current</span><span class="p">):</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="k">old</span><span class="p">)</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="k">new</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">current</span>
+
+    <span class="n">renpy</span><span class="o">.</span><span class="n">register_persistent</span><span class="p">(</span><span class="s1">&#39;endings&#39;</span><span class="p">,</span> <span class="n">merge_endings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="persistent-functions">
+<span id="id3"></span><h2>持久化函数<a class="headerlink" href="#persistent-functions" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.register_persistent">
+<code class="descclassname">renpy.</code><code class="descname">register_persistent</code><span class="sig-paren">(</span><em>field</em>, <em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_persistent" title="Permalink to this definition"> link</a></dt>
+<dd><p>注册一个函数，用于合并磁盘上的持久化字段(field)值和当前持久化对象的值。</p>
+<p><cite>field</cite></p>
+<blockquote>
+<div>持久化对象的字段(field)名。</div></blockquote>
+<p><cite>func</cite></p>
+<blockquote>
+<div><p>该函数使用 <em>old</em> 、 <em>new</em> 和 <em>current</em> 三个参数。</p>
+<p><strong>old</strong></p>
+<blockquote>
+<div>旧对象域的值。</div></blockquote>
+<p><strong>new</strong></p>
+<blockquote>
+<div>新对象域的值。</div></blockquote>
+<p><strong>current</strong></p>
+<blockquote>
+<div>当前持久化对象域的值。这个参数用于域引用的对象标识符无法改变的情况。</div></blockquote>
+<p>该函数需要返回持久化对象域的新值。</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.save_persistent">
+<code class="descclassname">renpy.</code><code class="descname">save_persistent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.save_persistent" title="Permalink to this definition"> link</a></dt>
+<dd><p>将持久化数据保存到磁盘。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="multi-game-persistence">
+<span id="id4"></span><h2>多个游戏数据的持久化<a class="headerlink" href="#multi-game-persistence" title="Permalink to this headline"> link</a></h2>
+<p>多游戏数据持久化是一个允许在多个Ren’Py游戏中共享信息的特性(feature)。如果你计划制作一个游戏系列，并在系列游戏中共同使用某些信息，就有可能用得上这个特性。</p>
+<p>需要使用多元持久化数据，必须在初始化语句块(init block)中创建一个MultiPersisten对象。用户可以更新这个对象，并调用其save方法保存至磁盘。未定义的字段(field)默认值为None。为了确保这个对象可以能再次正确加载，我们不建议声明用户自定义类型数据对象。</p>
+<dl class="class">
+<dt id="MultiPersistent">
+<em class="property">class </em><code class="descname">MultiPersistent</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#MultiPersistent" title="Permalink to this definition"> link</a></dt>
+<dd><p>创建一个新的MultiPersistent对象。这个类的构造函数应该只能在初始化语句块(init block)中调用，并根据给定的key创建一个新的MultiPersistent对象。</p>
+<dl class="docutils">
+<dt><cite>key</cite></dt>
+<dd>用于接入多元持久化数据的key。使用相同key的游戏可以接入同一个多元持久化数据。</dd>
+</dl>
+<dl class="method">
+<dt id="MultiPersistent.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MultiPersistent.save" title="Permalink to this definition"> link</a></dt>
+<dd><p>将多元持久化数据保存至磁盘。当数据修改后必须调用这个函数。</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>这里的样例，选取了一个分成两部的游戏。这是第一部：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">mp</span> <span class="o">=</span> <span class="n">MultiPersistent</span><span class="p">(</span><span class="s2">&quot;demo.renpy.org&quot;</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="c1"># ...</span>
+
+    <span class="c1"># 记录用户运行第一部的结果</span>
+
+    <span class="k">$</span> <span class="n">mp</span><span class="o">.</span><span class="n">beat_part_1</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">$</span> <span class="n">mp</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+    <span class="n">e</span> <span class="s2">&quot;你打通了第一部。我们第二部再见！&quot;</span>
+</pre></div>
+</div>
+<p>这是第二部：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">mp</span> <span class="o">=</span> <span class="n">MultiPersistent</span><span class="p">(</span><span class="s2">&quot;demo.renpy.org&quot;</span><span class="p">)</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">mp</span><span class="o">.</span><span class="n">beat_part_1</span><span class="p">:</span>
+         <span class="n">e</span> <span class="s2">&quot;你已经打通了第一步，欢迎来到第二部！&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+         <span class="n">e</span> <span class="s2">&quot;呣，你还没有玩过第一部，为什么不先试试第一部呢？&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

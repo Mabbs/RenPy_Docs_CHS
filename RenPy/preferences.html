@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>环境设定配置 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="存储区配置项" href="store_variables.html" />
+    <link rel="prev" title="配置项变量" href="config.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">环境设定配置</a><ul>
+<li><a class="reference internal" href="#audio-channel-defaults">音频通道默认配置</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="preference-variables">
+<span id="id1"></span><h1>环境设定配置<a class="headerlink" href="#preference-variables" title="Permalink to this headline"> link</a></h1>
+<p>环境设定配置存储在Ren’Py的环境设定(preference)中。由于环境设定的值被设置为实时使用 <a class="reference internal" href="screen_actions.html#Preference" title="Preference"><code class="xref py py-func docutils literal notranslate"><span class="pre">Preference()</span></code></a> 动作，环境设定配置应该使用default语句来设置环境设定的默认值。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">default</span> <span class="n">preferences</span><span class="o">.</span><span class="n">text_cps</span> <span class="o">=</span> <span class="mi">142</span>
+</pre></div>
+</div>
+<p>设置默认的每秒显示字符数为40。在环境设定值已经修改过的情况下，使用default语句修改环境设定值才会直接生效。例如，如果用户将cps设置为50，以后运行时cps将保持为50。如果之后还有使用default语句修改cps为42，那么用户的设置就会修改为42。(之后用户可以再次修改。)</p>
+<dl class="var">
+<dt id="var-preferences.afm_after_click">
+<code class="descname">preferences.afm_after_click</code> = False<a class="headerlink" href="#var-preferences.afm_after_click" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，自动前进模式在遇到点击事件消息会保持。若为False，点击会终止自动前进模式。等效于“auto-forward after click”环境设定设置。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.afm_time">
+<code class="descname">preferences.afm_time</code> = 15<a class="headerlink" href="#var-preferences.afm_time" title="Permalink to this definition"> link</a></dt>
+<dd><p>自动前进模式的等待时间。这个值越大，等待时间越长。由于文本分段等消耗，转为时钟时间(wall time)的机制比较复杂。等效于“auto-forward”环境设定。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.desktop_rollback_side">
+<code class="descname">preferences.desktop_rollback_side</code> = “disable”<a class="headerlink" href="#var-preferences.desktop_rollback_side" title="Permalink to this definition"> link</a></dt>
+<dd><p>在桌面平台上，触摸或点击窗口边栏就能触发回滚。该项可以设置为“left”、“right”或者“disable”。等效于桌面平台上“rollback side”特性。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.mobile_rollback_side">
+<code class="descname">preferences.mobile_rollback_side</code> = “disable”<a class="headerlink" href="#var-preferences.mobile_rollback_side" title="Permalink to this definition"> link</a></dt>
+<dd><p>在移动平台上，触摸或点击窗口边栏就能触发回滚。该项可以设置为“left”、“right”或者“disable”。等效于移动平台上“rollback side”特性。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.emphasize_audio">
+<code class="descname">preferences.emphasize_audio</code> = False<a class="headerlink" href="#var-preferences.emphasize_audio" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会通过降低 <a class="reference internal" href="config.html#var-config.emphasize_audio_channels"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.emphasize_audio_channels</span></code></a>
+列表中之外的音频通道音量，来加强那个列表中的通道。(例如，播放语音时降低音乐的音量)。若为False，就不做加强。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.fullscreen">
+<code class="descname">preferences.fullscreen</code> = False<a class="headerlink" href="#var-preferences.fullscreen" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py使用全屏模式时设置为True，以窗口模型运行时设置为False。等效于“display”环境设定。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.gl_framerate">
+<code class="descname">preferences.gl_framerate</code> = None<a class="headerlink" href="#var-preferences.gl_framerate" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项可能是一个整数，或者None。如果非None，这是Ren’Py希望达到的目标帧率。如果这项设置得比较低(例如，30)，而显示设备使用一个比较高的帧率，Ren’Py会每两帧绘制一次图像。</p>
+<p>若为None，Ren’Py会尝试使用显示设备的当前最高帧率绘制图像。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.gl_powersave">
+<code class="descname">preferences.gl_powersave</code> = “auto”<a class="headerlink" href="#var-preferences.gl_powersave" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项决定了Ren’Py对未改变过的界面的重绘频率。若为True，Ren’Py会每秒绘制界面5次。若为False，Ren’Py会尽可能以最高帧率绘制。若为“auto”，Ren’Py会在设备接通外置电源时使用最高帧率绘制，在设备使用电池运行时降低绘制频率到5Hz。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.gl_tearing">
+<code class="descname">preferences.gl_tearing</code> = False<a class="headerlink" href="#var-preferences.gl_tearing" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项决定了，无法使用预订的帧率运行时，是使用拖慢(设置为True)还是跳帧(设置为False)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.mouse_move">
+<code class="descname">preferences.mouse_move</code> = False<a class="headerlink" href="#var-preferences.mouse_move" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，鼠标指针会自动移动到选中的按钮上。若为False，则不执行这种操作。等效于环境设定的“automatic mouse move”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.show_empty_window">
+<code class="descname">preferences.show_empty_window</code> = True<a class="headerlink" href="#var-preferences.show_empty_window" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，widown show和window auto语句将起作用。若为False，这些语句将不生效。等效于环境设定的“show empty window”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.skip_after_choices">
+<code class="descname">preferences.skip_after_choices</code> = False<a class="headerlink" href="#var-preferences.skip_after_choices" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，在某个选项之后会恢复跳过(skipping)模式。若为False，选项就会停止Ren’Py的跳过(skipping)模式。等效于环境设定的“after choices”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.skip_unseen">
+<code class="descname">preferences.skip_unseen</code> = False<a class="headerlink" href="#var-preferences.skip_unseen" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会仅跳过未看过的文本。若为False，Ren’Py会跳过所有文本。等效于环境设定的“skip”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.text_cps">
+<code class="descname">preferences.text_cps</code> = 0<a class="headerlink" href="#var-preferences.text_cps" title="Permalink to this definition"> link</a></dt>
+<dd><p>文本显示速度。0表示立刻显示所有文本，否则表示每秒显示的字符数。等效于环境设定的“text speed”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.transitions">
+<code class="descname">preferences.transitions</code> = 2<a class="headerlink" href="#var-preferences.transitions" title="Permalink to this definition"> link</a></dt>
+<dd><p>决定显示何种转场(transition)。2表示显示所有转场，0表示不显示转场。(1是预留值。)等效于环境设定的“transitions”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.video_image_fallback">
+<code class="descname">preferences.video_image_fallback</code> = False<a class="headerlink" href="#var-preferences.video_image_fallback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，将使用图片代替视频精灵(videosprite)。若为False，视频精灵会正常显示。等效于环境设定的video sprites。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.voice_sustain">
+<code class="descname">preferences.voice_sustain</code> = False<a class="headerlink" href="#var-preferences.voice_sustain" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，语音会保持播放直到结束，或另一句语音播放代替它。若为False，当对话进入下一行则语音播放也结束。等效于环境设定的“voice sustain”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-preferences.wait_voice">
+<code class="descname">preferences.wait_voice</code> = True<a class="headerlink" href="#var-preferences.wait_voice" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，自动前进模式会等待语音文件或自动语音播放之后再进入下一句。若为False，则不等待。等效于环境设定的“wait for voice”。</p>
+</dd></dl>
+
+<div class="section" id="audio-channel-defaults">
+<span id="id2"></span><h2>音频通道默认配置<a class="headerlink" href="#audio-channel-defaults" title="Permalink to this headline"> link</a></h2>
+<p>这些配置项设置了各种音频混合器(mixer)的默认音量。</p>
+<dl class="var">
+<dt id="var-config.default_music_volume">
+define <code class="descname">config.default_music_volume</code> = 1.0<a class="headerlink" href="#var-config.default_music_volume" title="Permalink to this definition"> link</a></dt>
+<dd><p>音乐混合器的默认音量，用于音乐和视频中的音频通道。这项值位于0.0和1.0的闭区间内，1.0表示最大音量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.default_sfx_volume">
+define <code class="descname">config.default_sfx_volume</code> = 1.0<a class="headerlink" href="#var-config.default_sfx_volume" title="Permalink to this definition"> link</a></dt>
+<dd><p>sfx混合器的默认音量，用于音效的音频通道。这项值位于0.0和1.0的闭区间内，1.0表示最大音量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.default_voice_volume">
+define <code class="descname">config.default_voice_volume</code> = 1.0<a class="headerlink" href="#var-config.default_voice_volume" title="Permalink to this definition"> link</a></dt>
+<dd><p>语音混合器的默认音量，用于语音的音频通道(包括voice语句和自动语音)。这项值位于0.0和1.0的闭区间内，1.0表示最大音量。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>创作者定义的可视组件 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="创作者定义的语句" href="cds.html" />
+    <link rel="prev" title="模式" href="modes.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">创作者定义的可视组件</a><ul>
+<li><a class="reference internal" href="#udd-example">样例</a></li>
+<li><a class="reference internal" href="#renpy-displayable">renpy.Displayable</a></li>
+<li><a class="reference internal" href="#renpy-render">renpy.Render</a></li>
+<li><a class="reference internal" href="#utility-functions">功能函数</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="creator-defined-displayables">
+<span id="id1"></span><h1>创作者定义的可视组件<a class="headerlink" href="#creator-defined-displayables" title="Permalink to this headline"> link</a></h1>
+<p>最复杂也最强大，能够定制Ren’Py表现效果的方式，就是使用创作者定义的可视组件。
+一个创作者定义的可视组件允许使用任何pygame事件消息。
+其可以渲染其他可视组件，并将其他可视组件放置在界面的任何位置。
+这可是突破Ren’Py提供的工具限制，适合创建一些2D的迷你游戏。
+(但请参考 <a class="reference internal" href="sprites.html#sprites"><span class="std std-ref">sprites</span></a> 章节内容，那里相似地描述了生成同样物体的高阶方法。)</p>
+<p>创作者定义的可视组件完全使用Python代码编写，
+我们鼓励创作者在创建自己的可视组件之前具有一定程度的Python面向对象编程技能。</p>
+<div class="section" id="udd-example">
+<span id="id2"></span><h2>样例<a class="headerlink" href="#udd-example" title="Permalink to this headline"> link</a></h2>
+<p>这是一个创作者定义可视组件的样例。
+这个可视组件能根据子组件中心与鼠标指针的距离修改子组件的alpha值。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="kn">import</span> <span class="nn">math</span>
+
+    <span class="k">class</span> <span class="nc">Appearing</span><span class="p">(</span><span class="n">renpy</span><span class="o">.</span><span class="n">Displayable</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="na">child</span><span class="p">,</span> <span class="n">opaque_distance</span><span class="p">,</span> <span class="n">transparent_distance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+            <span class="c1"># 向renpy.Displayable构造器传入额外的特性(property)。</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">Appearing</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="c1"># 子组件。</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">child</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">displayable</span><span class="p">(</span><span class="na">child</span><span class="p">)</span>
+
+            <span class="c1"># 子组件完全不透明和完全透明的距离。</span>
+            <span class="c1"># 前者必须小于后者。</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">opaque_distance</span> <span class="o">=</span> <span class="n">opaque_distance</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transparent_distance</span> <span class="o">=</span> <span class="n">transparent_distance</span>
+
+            <span class="c1"># 子组件的alpha通道值。</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">alpha</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+            <span class="c1"># 子组件的宽度和高度。</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="na">width</span><span class="p">,</span> <span class="na">height</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="k">at</span><span class="p">):</span>
+
+            <span class="c1"># 创建一个变换(transform)，调整子组件的alpha通道值。</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">Transform</span><span class="p">(</span><span class="na">child</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="na">child</span><span class="p">,</span> <span class="na">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="na">alpha</span><span class="p">)</span>
+
+            <span class="c1"># 创建一个子组件的渲染器。</span>
+            <span class="n">child_render</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="na">width</span><span class="p">,</span> <span class="na">height</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="k">at</span><span class="p">)</span>
+
+            <span class="c1"># 或者子组件尺寸。</span>
+            <span class="bp">self</span><span class="o">.</span><span class="na">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">child_render</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
+
+            <span class="c1"># 创建返回的渲染器。</span>
+            <span class="n">render</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="na">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="na">height</span><span class="p">)</span>
+
+            <span class="c1"># 以blit方式将子组件的渲染器信息复制我们的渲染器。</span>
+            <span class="n">render</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">child_render</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+            <span class="c1"># 返回渲染器。</span>
+            <span class="k">return</span> <span class="n">render</span>
+
+        <span class="k">def</span> <span class="nf">event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">st</span><span class="p">):</span>
+
+            <span class="c1"># 继续按从可视组件中心到鼠标指针的距离。</span>
+            <span class="c1"># 鼠标指针位置为x和y，表示指针图案左上角为原点的坐标。</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="na">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="na">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+
+            <span class="c1"># 根据距离，计算alpha值。</span>
+            <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">opaque_distance</span><span class="p">:</span>
+                <span class="na">alpha</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="k">elif</span> <span class="n">distance</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transparent_distance</span><span class="p">:</span>
+                <span class="na">alpha</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="na">alpha</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">distance</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">opaque_distance</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transparent_distance</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">opaque_distance</span><span class="p">)</span>
+
+            <span class="c1"># 如果alpha值发生变化，触发redraw事件。</span>
+            <span class="k">if</span> <span class="na">alpha</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="na">alpha</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="na">alpha</span> <span class="o">=</span> <span class="na">alpha</span>
+                <span class="n">renpy</span><span class="o">.</span><span class="n">redraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># 将事件传给各子组件。</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="na">child</span><span class="o">.</span><span class="k">event</span><span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="na">child</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>使用创作者定义的可视组件时，我们可以创建对应的实例，并将实例添加至界面。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">alpha_magic</span><span class="p">:</span>
+    <span class="k">add</span> <span class="n">Appearing</span><span class="p">(</span><span class="s2">&quot;logo.png&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">):</span>
+        <span class="na">xalign</span> <span class="mf">0.5</span>
+        <span class="na">yalign</span> <span class="mf">0.5</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+    <span class="k">show</span> <span class="k">screen</span> <span class="n">alpha_magic</span>
+
+    <span class="s2">&quot;Can you find the logo?&quot;</span>
+
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="renpy-displayable">
+<span id="id3"></span><h2>renpy.Displayable<a class="headerlink" href="#renpy-displayable" title="Permalink to this headline"> link</a></h2>
+<p>创作者定义的可视组件是通过renpy.Displayable类的子类创建的。创作者定义的可视组件必须重写render方法，也可以重写其他方法。</p>
+<p>一个可视组件对象必须是可以被pickle的，这意味着其不含有不能被pickle的对象特性(reference)。特别需要注意的是，Render对象不能存储在创作者定义的可视组件中。</p>
+<p>由于需要重写Displayable类的很多方法，我们将这些方法都放在 <cite>self</cite> 参数中。</p>
+<dl class="class">
+<dt id="renpy.Displayable">
+<em class="property">class </em><code class="descclassname">renpy.</code><code class="descname">Displayable</code><a class="headerlink" href="#renpy.Displayable" title="Permalink to this definition"> link</a></dt>
+<dd><p>创作者定义可视组件的基类。</p>
+<dl class="method">
+<dt>
+<code class="descname">__init__(**properties):</code></dt>
+<dd><p>子类可能重写这个构造器，并添加新的参数。如果的确出现了新参数，需要把所有未知的关键词入参都传入到renpy.Displayable构造器，这样调用：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">(</span><span class="n">MyDisplayable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="na">properties</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Displayable.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>height</em>, <em>st</em>, <em>at</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Displayable.render" title="Permalink to this definition"> link</a></dt>
+<dd><p>子类必须重新这个方法，并返回一个 <a class="reference internal" href="#renpy.Render" title="renpy.Render"><code class="xref py py-class docutils literal notranslate"><span class="pre">renpy.Render</span></code></a>
+对象。渲染器对象决定了在界面的所有显示效果。</p>
+<dl class="docutils">
+<dt><cite>width</cite>, <cite>height</cite></dt>
+<dd>这个可视组件的有效区域范围，单位为像素。</dd>
+<dt><cite>st</cite></dt>
+<dd>一个浮点数，表示显示时间轴，单位为秒。可视组件在界面上首次显示的时间点，是显示时间轴的起始点。</dd>
+<dt><cite>at</cite></dt>
+<dd>一个浮点数，动画时间轴，单位为秒。带有同样标签(tag)的图像显示而不是隐藏的时间点，是动画时间轴的起始点。(当可视组件不使用标签显示，就与显示显示时间轴相同。)</dd>
+</dl>
+<p>可视组件首次显示时会调用render方法。在 <a class="reference internal" href="#renpy.redraw" title="renpy.redraw"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.redraw()</span></code></a>
+函数调用这个对象时，对象会再次调用render方法。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Displayable.event">
+<code class="descname">event</code><span class="sig-paren">(</span><em>self</em>, <em>ev</em>, <em>x</em>, <em>y</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Displayable.event" title="Permalink to this definition"> link</a></dt>
+<dd><p>将一个pygame事件消息传入创作者定义可视组件就会调用event方法。如果event方法返回一个非None的值，这个也会作为交互动作的结果并返回。</p>
+<p>event方法也存在于其他可视组件，允许创作者定义可视组件将事件消息传给其他可视组件。</p>
+<dl class="docutils">
+<dt><cite>ev</cite></dt>
+<dd>一个 <a class="reference external" href="http://www.pygame.org/docs/ref/event.html">event 对象</a></dd>
+<dt><cite>x</cite>, <cite>y</cite></dt>
+<dd>事件的x和y坐标值，以可视组件左上角为原点。这些信息会用在特性(preference)中定位pygame事件对象中的信息。</dd>
+<dt><cite>st</cite></dt>
+<dd>一个浮点数，显示时间轴，单位为秒。</dd>
+</dl>
+<p>每次交互动作的开头都会生成一个事件消息，
+<a class="reference internal" href="#renpy.timeout" title="renpy.timeout"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.timeout()</span></code></a> 函数可以用于触发另一个事件消息。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Displayable.per_interact">
+<code class="descname">per_interact</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Displayable.per_interact" title="Permalink to this definition"> link</a></dt>
+<dd><p>每次交互动作的开头都会调用这个方法。这个函数可以用于触发一次重新绘制，以及回滚过程中对象需要部分重新绘制的情况。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Displayable.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Displayable.visit" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果可视组件有子可视组件，就需要重写这个方法返回一个子可视组件的列表。这个方法确保那些可视组件的per_interact方法都被调用，并能预加载使用的图像。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="renpy-render">
+<h2>renpy.Render<a class="headerlink" href="#renpy-render" title="Permalink to this headline"> link</a></h2>
+<p>创作者定义的可视组件与renpy.Render对象一起运行。
+调用某个可视组件的 <a class="reference internal" href="#renpy.render" title="renpy.render"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.render()</span></code></a> 函数，可以返回一个Render对象。
+一个创作者定义的可视组件应该调用 <a class="reference internal" href="#renpy.Render" title="renpy.Render"><code class="xref py py-class docutils literal notranslate"><span class="pre">renpy.Render</span></code></a> 的render方法创建一个Render对象。</p>
+<p>由于Render对象不能派生子类，我们省略了显式 <cite>self</cite> 参数。</p>
+<dl class="class">
+<dt id="renpy.Render">
+<em class="property">class </em><code class="descclassname">renpy.</code><code class="descname">Render</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render" title="Permalink to this definition"> link</a></dt>
+<dd><p>创建一个新的Render对象。</p>
+<dl class="docutils">
+<dt><cite>width</cite>, <cite>height</cite></dt>
+<dd>Render对象的宽度和高度，单位为像素。</dd>
+</dl>
+<dl class="method">
+<dt id="renpy.Render.blit">
+<code class="descname">blit</code><span class="sig-paren">(</span><em>source</em>, <em>pos</em>, <em>main=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.blit" title="Permalink to this definition"> link</a></dt>
+<dd><p>在这个Render对象中绘制另一个Render对象。</p>
+<dl class="docutils">
+<dt><cite>source</cite></dt>
+<dd>待绘制的Render对象。</dd>
+<dt><cite>pos</cite></dt>
+<dd>绘制的位置。是一个(x, y)元组，表示从目标Render对象左上角为原点的坐标。</dd>
+<dt><cite>main</cite></dt>
+<dd>唯一的关键词参数。若为True， <cite>source</cite> will 会在样式检查器中显示。</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Render.place">
+<code class="descname">place</code><span class="sig-paren">(</span><em>d</em>, <em>x=0</em>, <em>y=0</em>, <em>width=None</em>, <em>height=None</em>, <em>st=None</em>, <em>at=None</em>, <em>render=None</em>, <em>main=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.place" title="Permalink to this definition"> link</a></dt>
+<dd><p>渲染 <cite>d</cite> 并将其放入由 <cite>x</cite>、 <cite>y</cite>、
+<cite>width</cite> 和 <cite>height</cite> 定义的矩形中，使用Ren’Py标准位置算法。</p>
+<dl class="docutils">
+<dt><cite>x</cite>, <cite>y</cite>, <cite>width</cite>, <cite>height</cite></dt>
+<dd>放入的矩形区域。如果 <cite>width</cite> 或 <cite>height</cite> 为None，就分别使用Render对象的宽或者高。</dd>
+<dt><cite>st</cite>, <cite>at</cite></dt>
+<dd>传入Render对象的两个时间。若为None，默认使用render方法调用这个方法时传入的时间。</dd>
+<dt><cite>render</cite></dt>
+<dd>若不是None，这项代替 <cite>d</cite> 成为渲染对象。</dd>
+<dt><cite>main</cite></dt>
+<dd>同 .blit()。</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Render.canvas">
+<code class="descname">canvas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.canvas" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个canvas对象。canvas对象有对应
+<a class="reference external" href="http://www.pygame.org/docs/ref/draw.html">pygame.draw</a>
+函数的方法，第一个参数(surface)省略。</p>
+<p>canvas对象也有一个get_surface()方法，能返回使用canvas的paygame Surface对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Render.get_size">
+<code class="descname">get_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.get_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>R返回一个(width, height)元组，表示Render对象的尺寸。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Render.subsurface">
+<code class="descname">subsurface</code><span class="sig-paren">(</span><em>rect</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.subsurface" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个Render对象，原Render对象的剪裁。</p>
+<dl class="docutils">
+<dt><cite>rect</cite></dt>
+<dd>一个 (x, y, width, height) 元组。</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.Render.zoom">
+<code class="descname">zoom</code><span class="sig-paren">(</span><em>xzoom</em>, <em>yzoom</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.Render.zoom" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置该可视组件子组件在水平和垂直方向上的缩放(zoom)等级。只有子组件会被缩放——宽度、高度和blit坐标都不会缩放。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="utility-functions">
+<span id="id4"></span><h2>功能函数<a class="headerlink" href="#utility-functions" title="Permalink to this headline"> link</a></h2>
+<p>这些函数管理渲染过程。</p>
+<dl class="function">
+<dt id="renpy.displayable">
+<code class="descclassname">renpy.</code><code class="descname">displayable</code><span class="sig-paren">(</span><em>d</em>, <em>scope=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.displayable" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数使用入参 <em>d</em> ，<em>d</em> 可能是一个可视组件对象或字符串。如果是一个字符串，使用常用的规则将其转换为一个可视组件。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.end_interaction">
+<code class="descclassname">renpy.</code><code class="descname">end_interaction</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.end_interaction" title="Permalink to this definition"> link</a></dt>
+<dd><p>若 <em>value</em> 不是None，立刻结束当前交互动作，并让交互动作返回 <em>value</em> 。若 <em>value</em> 是None，不做任何事。</p>
+<p>在创作者定义的可视组件内部的渲染器和事件消息处理方法中可以调用这个函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">renpy.load_image(im) link</code></dt>
+<dd><p>使用图像缓存加载图像操作器(manipulator) <em>im</em> ，返回一个纹理(texture)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.load_surface">
+<code class="descclassname">renpy.</code><code class="descname">load_surface</code><span class="sig-paren">(</span><em>im</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.load_surface" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用图像缓存加载图像操作器(manipulator) <em>im</em> ，返回一个pygame Surface对象。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.map_event">
+<code class="descclassname">renpy.</code><code class="descname">map_event</code><span class="sig-paren">(</span><em>ev</em>, <em>keysym</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.map_event" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果pygame事件 <em>ev</em> 匹配 <em>keysym</em> 就返回True。</p>
+<p><cite>keysym</cite></p>
+<blockquote>
+<div><p>下列情况之一：</p>
+<ul class="simple">
+<li>在 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.keymap()</span></code> 中配置的键盘绑定名称。</li>
+<li>在 <a class="reference internal" href="keymap.html#keymap"><span class="std std-ref">定制化快捷键</span></a> 章节中描述的keysym对象。</li>
+<li>包含一个或多个keysym的列表。</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.render">
+<code class="descclassname">renpy.</code><code class="descname">render</code><span class="sig-paren">(</span><em>d</em>, <em>width</em>, <em>height</em>, <em>st</em>, <em>at</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.render" title="Permalink to this definition"> link</a></dt>
+<dd><p>渲染一个可视组件，并返回一个renpy.Render对象。</p>
+<p><cite>d</cite></p>
+<blockquote>
+<div>待渲染的可视组件。</div></blockquote>
+<p><cite>width, height</cite></p>
+<blockquote>
+<div>可视组件渲染区域的宽度和高度。</div></blockquote>
+<p><cite>st, at</cite></p>
+<blockquote>
+<div>显示和动画时间轴。</div></blockquote>
+<p>这个对象返回的渲染器可以缓存，一旦恢复一次后就不该再修改渲染器。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.timeout">
+<code class="descclassname">renpy.</code><code class="descname">timeout</code><span class="sig-paren">(</span><em>seconds</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.timeout" title="Permalink to this definition"> link</a></dt>
+<dd><p>经过 <em>seconds</em> 秒后生成一个事件消息。这个函数确保了创作者定义可视组件的事件处理方法被调用到。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.load_image">
+<code class="descclassname">im.</code><code class="descname">load_image</code><span class="sig-paren">(</span><em>im</em><span class="sig-paren">)</span><a class="headerlink" href="#im.load_image" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用图像缓存加载图像操作器(manipulator) <em>im</em> ，并返回一个纹理(texture)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="im.load_surface">
+<code class="descclassname">im.</code><code class="descname">load_surface</code><span class="sig-paren">(</span><em>im</em><span class="sig-paren">)</span><a class="headerlink" href="#im.load_surface" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用图像缓存加载图像操作器(manipulator) <em>im</em> ，返回一个pygame Surface对象。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.redraw">
+<code class="descclassname">renpy.</code><code class="descname">redraw</code><span class="sig-paren">(</span><em>d</em>, <em>when</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.redraw" title="Permalink to this definition"> link</a></dt>
+<dd><p>经过 <em>when</em> 秒之后重新绘制可视组件 <em>d</em> 。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

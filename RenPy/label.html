@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>脚本标签(label)和主控流程 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="对话(dialogue)和旁白(narration)" href="dialogue.html" />
+    <link rel="prev" title="编程语言基础" href="language_basics.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">脚本标签(label)和主控流程</a><ul>
+<li><a class="reference internal" href="#label-statement">label语句</a></li>
+<li><a class="reference internal" href="#jump">jump语句</a></li>
+<li><a class="reference internal" href="#call">call语句</a></li>
+<li><a class="reference internal" href="#return">return语句</a></li>
+<li><a class="reference internal" href="#special-labels">特殊脚本标签(label)</a></li>
+<li><a class="reference internal" href="#labels-control-flow-functions">脚本标签(label)和主控流程函数</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="label">
+<span id="labels-control-flow"></span><h1>脚本标签(label)和主控流程<a class="headerlink" href="#label" title="Permalink to this headline"> link</a></h1>
+<div class="section" id="label-statement">
+<span id="id1"></span><h2>label语句<a class="headerlink" href="#label-statement" title="Permalink to this headline"> link</a></h2>
+<p>label语句允许使用自定义的标签名声明一个程序点位。这些标签仅仅用来被调用或者跳转，可以使用在Ren’Py脚本、python函数及各类界面中。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">sample1</span><span class="p">:</span>
+    <span class="s2">&quot;这是一个&#39;sample1&#39;脚本标签。&quot;</span>
+
+<span class="k">label</span> <span class="n">sample2</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+    <span class="s2">&quot;这是一个&#39;sample1&#39;脚本标签。&quot;</span>
+    <span class="s2">&quot;a = [a]&quot;</span>
+</pre></div>
+</div>
+<p>一个label语句可能只跟某一个语句块(block)关联。在那种情况下，主控流程遇到label语句就会进入关联语句块(block)，并顺序执行之后的语句。</p>
+<p>总共有两种脚本标签(label)：<em>global</em> 和 <em>local</em> 。global标签在所有项目文件中都生效，所以每个游戏中都不能重复定义。local标签在逻辑上比global标签有效范围小，仅限于声明local标签的文件。需要声明一个local标签的话，在标签名前缀一个英文句号“.”即可。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">global_label</span><span class="p">:</span>
+    <span class="s2">&quot;这是在一个global脚本标签里。&quot;</span>
+<span class="k">label</span> <span class="o">.</span><span class="n">local_name</span><span class="p">:</span>
+    <span class="s2">&quot;.这里属于local脚本标签。&quot;</span>
+    <span class="k">jump</span> <span class="o">.</span><span class="n">local_name</span>
+</pre></div>
+</div>
+<p>local脚本标签可以在global脚本标签中定义，并被被直接引用，引用时使用该local标签的完整名。一个关于global标签和local标签的例子如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">another_global</span><span class="p">:</span>
+    <span class="s2">&quot;现在让我们跳转进入其他地方的local脚本标签。&quot;</span>
+    <span class="k">jump</span> <span class="n">global_label</span><span class="o">.</span><span class="n">local_name</span>
+</pre></div>
+</div>
+<p>lable语句可以带一些可选参数。这些参数的处理在PEP 3102中有详细说明，这里仅说两种例外:</p>
+<ul class="simple">
+<li>语句被调用时，这些参数会被赋予默认值。</li>
+<li>变量是可以动态变化的，而不是仅限于语法中的定义。</li>
+</ul>
+</div>
+<div class="section" id="jump">
+<span id="jump-statement"></span><h2>jump语句<a class="headerlink" href="#jump" title="Permalink to this headline"> link</a></h2>
+<p>jump语句用于将主控流程转入给定的脚本标签(label)处。</p>
+<p>若出现了 <code class="docutils literal notranslate"><span class="pre">expression</span></code> (表达式)关键词，关键词后面的表达式将被赋值，而被计算后的对应字符串则会被用作跳转目标的标签语句。若未出现 <code class="docutils literal notranslate"><span class="pre">expression</span></code> (表达式)关键词，跳转目标的标签名字就必须精确指定。</p>
+<p>与call语句不同，jump语句不会将下一个语句放入栈(stack)中。因此，执行完跳转标签对应的语句块之后，主控流程不会回到跳转前的脚本位置。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">loop_start</span><span class="p">:</span>
+
+    <span class="n">e</span> <span class="s2">&quot;哦，不！看起来我们陷入了一个无限循环之中。&quot;</span>
+
+    <span class="k">jump</span> <span class="n">loop_start</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="call">
+<span id="call-statement"></span><h2>call语句<a class="headerlink" href="#call" title="Permalink to this headline"> link</a></h2>
+<p>call语句用于将主控流程转入给定的脚本标签(label)处。call语句会将下一条语句压入到调用栈(stack)中，并允许主控流程在执行完这次调用后，回到调用发生的脚本位置。</p>
+<p>若出现了 <code class="docutils literal notranslate"><span class="pre">expression</span></code> (表达式)关键词，关键词后面的表达式将被赋值，而被计算后的对应字符串则会被用作跳转目标的标签语句。若未出现 <code class="docutils literal notranslate"><span class="pre">expression</span></code> (表达式)关键词，跳转目标的标签名字就必须精确指定。</p>
+<p>若使用了可选项分句，传入的参数就可以在label语句后面的语句中使用传入的变量值。一个命名直白的标签(lable)有助于我们能利用栈(stack)回到脚本里合适的地方，就算加载的是修改过的脚本。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;首先，我们调用一个子程序(subroutine)。&quot;</span>
+
+<span class="k">call</span> <span class="n">subroutine</span>
+
+<span class="k">call</span> <span class="n">subroutine</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="k">expression</span> <span class="s2">&quot;subroutine&quot;</span> <span class="k">pass</span> <span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ...</span>
+
+<span class="k">label</span> <span class="n">subroutine</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+    <span class="n">e</span> <span class="s2">&quot;我来过这里 [count] 次了。&quot;</span>
+    <span class="n">e</span> <span class="s2">&quot;接着，我们会返回到子程序(subroutine)。&quot;</span>
+
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>call语句可以带入参的情况，在PEP 3102中有详细说明。</p>
+<p>当我们使用一个带入参列表的调用表达式时，必须在表达式和入参列表之间插入关键词 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 。否则，入参列表会被当作表达式的一部分，而不是call语句的一部分。</p>
+</div>
+<div class="section" id="return">
+<span id="return-statement"></span><h2>return语句<a class="headerlink" href="#return" title="Permalink to this headline"> link</a></h2>
+<p>return语句会在调用栈中弹出最顶层的那条语句，并将主控流程转到那条语句。若调用栈为空，返回语句将重启Ren’Py，将主控流程切换至主菜单。</p>
+<p>若返回语句带有可选项表达式，表达式会被计算求值，并且结果会被存储在_return变量中。_return变量依赖于各种场景动态变化。</p>
+</div>
+<div class="section" id="special-labels">
+<span id="id2"></span><h2>特殊脚本标签(label)<a class="headerlink" href="#special-labels" title="Permalink to this headline"> link</a></h2>
+<p>以下脚本标签(label)会在Ren’Py中使用：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">start</span></code></dt>
+<dd>默认情况下，Ren’Py在游戏启动后会跳转至这个标签。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">quit</span></code></dt>
+<dd>若该标签存在，当用户退出游戏时该标签内容会被调用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">after_load</span></code></dt>
+<dd>若该标签存在，当游戏读档后会调用这个标签内容。其可能被用于游戏内容更新后的数据修复。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">splashscreen</span></code></dt>
+<dd>若该标签存在，游戏首次运行时，在主菜单出现前，该标签内容会被调用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">before_main_menu</span></code></dt>
+<dd>若该标签存在，在主菜单出现前，该标签内容会被调用。在少数情况下，其用来设置主菜单，例如背景播放一段影片。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">main_menu</span></code></dt>
+<dd><p class="first">若该标签存在，标签内容会被调用，用来替代默认的主菜单。若其内容中包含return语句，Ren’Py将从start标签处开始游戏。例如，下面这段脚本在不显示主菜单的情况下开始游戏。</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> <span class="n">main_menu</span><span class="p">:</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">after_warp</span></code></dt>
+<dd>若该标签存在，则调用warp语句时，此标签至传送(warp)点前的语句都将被执行。详见 <a class="reference internal" href="developer_tools.html#warping-to-a-line"><span class="std std-ref">传送至某行</span></a></dd>
+</dl>
+</div>
+<div class="section" id="labels-control-flow-functions">
+<span id="id3"></span><h2>脚本标签(label)和主控流程函数<a class="headerlink" href="#labels-control-flow-functions" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.call_in_new_context">
+<code class="descclassname">renpy.</code><code class="descname">call_in_new_context</code><span class="sig-paren">(</span><em>label</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.call_in_new_context" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数创建一个新的上下文(context)，并从这个上下文(context)中给定的脚本标签(label)处开始执行Ren’Py脚本。新的上下文(context)中禁用了回滚功能，并且存档/读档会发生在顶层的上下文(context)中。</p>
+<p>使用该函数可以在原有交互中启动第二层交互。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_all_labels">
+<code class="descclassname">renpy.</code><code class="descname">get_all_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_all_labels" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回程序中定义所有标签(lable)的集合，包括在库(library)中定义为仅限内部引用的标签。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_return_stack">
+<code class="descclassname">renpy.</code><code class="descname">get_return_stack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_return_stack" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个当前返回(return)栈(stack)的列表。返回栈是一个语句名组成的列表。</p>
+<p>该语句名应是字符串(针对标签)，或者非空元组(针对非标签型语句)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.has_label">
+<code class="descclassname">renpy.</code><code class="descname">has_label</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.has_label" title="Permalink to this definition"> link</a></dt>
+<dd><p>若参数name是一个程序内的合法脚本标签(label)就返回True，否则返回False。</p>
+<dl class="docutils">
+<dt><strong>name</strong></dt>
+<dd>name应该是一个用于字符串，用于检查某个脚本标签(label)是否存在。name也可以是一个非空元组，元组给定了非标签型语句名。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.invoke_in_new_context">
+<code class="descclassname">renpy.</code><code class="descname">invoke_in_new_context</code><span class="sig-paren">(</span><em>callable</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.invoke_in_new_context" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数创建了一个新的上下文(context)，并在上下文(context)中显示调用了给定的python可调用内容(通常是函数)。当函数返回了值或者抛出异常时，主控流程会返回到原来的上下文(context)。当我们在同一个句柄(handle)中向玩家展示一些信息(比如确认提示)，就可以调用这个函数。</p>
+<p>某个上下文(context)包含显示(包括界面和图片)和音频系统的状态。当上下文(context)返回时，显示和音频状态都会被存储起来。</p>
+<p>附加参数和关键词参数会被传入可调用的(函数)。</p>
+<p>使用这个函数创建的上下文(context)无法执行Ren’Py脚本。会改变Ren’Py脚本流程的函数，比如renpy.jump()，只能在外层上下文(context)下被处理。如果你想要调用的是Ren’Py脚本而不是python函数，就应该使用renpy.call_in_new_context()函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.jump_out_of_context">
+<code class="descclassname">renpy.</code><code class="descname">jump_out_of_context</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.jump_out_of_context" title="Permalink to this definition"> link</a></dt>
+<dd><p>调用该函数会引起主控流程离开当前上下文(context)，并转换到父上下文(context)中指定的脚本标签(label)处。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.seen_label">
+<code class="descclassname">renpy.</code><code class="descname">seen_label</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.seen_label" title="Permalink to this definition"> link</a></dt>
+<dd><p>在当前用户系统内，名为label的标签语句至少被执行了一次，则返回True，否则返回False。该概述常用于解锁场景画廊(gallery)等。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.set_return_stack">
+<code class="descclassname">renpy.</code><code class="descname">set_return_stack</code><span class="sig-paren">(</span><em>stack</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.set_return_stack" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置当前返回(return)栈(stack)。返回栈是一个语句名组成的列表。</p>
+<p>语句名可能是字符串(针对标签)或者非空元组(针对非标签语句)。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

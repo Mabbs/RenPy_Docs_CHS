@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>样式特性(property) &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="界面和界面语言" href="screens.html" />
+    <link rel="prev" title="样式(style)" href="style.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">样式特性(property)</a><ul>
+<li><a class="reference internal" href="#style-property-prefixes">样式特性前缀</a></li>
+<li><a class="reference internal" href="#style-property-values">样式特性的值</a><ul>
+<li><a class="reference internal" href="#style-prefix-search">样式前缀搜索</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#list-of-all-style-properties">所有样式特性的列表</a><ul>
+<li><a class="reference internal" href="#position-style-properties">位置样式特性</a></li>
+<li><a class="reference internal" href="#text-style-properties">文本样式特性</a></li>
+<li><a class="reference internal" href="#window-style-properties">窗口样式特性</a></li>
+<li><a class="reference internal" href="#button-style-properties">按钮样式特性</a></li>
+<li><a class="reference internal" href="#bar">条(bar)样式特性</a></li>
+<li><a class="reference internal" href="#box">方框(box)样式特性</a></li>
+<li><a class="reference internal" href="#grid">网格(grid)样式特性</a></li>
+<li><a class="reference internal" href="#fixed-style-properties">固定布局的样式特性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="property">
+<span id="style-properties"></span><h1>样式特性(property)<a class="headerlink" href="#property" title="Permalink to this headline"> link</a></h1>
+<p>(译者注：property一词通常翻译成“属性”。鉴于文档中的attribute也可以翻译成“属性”。为了防止混淆，将property翻译为“特性”。)</p>
+<p>样式特性与 <a class="reference internal" href="style.html#styles"><span class="std std-ref">样式</span></a> 相关，控制可视组件的显示方式。样式特性出现时可以没有前缀，这种情况下样式特性应用于所有状态的可视组件；带前缀的样式特性则限制了应用组件的状态。</p>
+<div class="section" id="style-property-prefixes">
+<span id="id1"></span><h2>样式特性前缀<a class="headerlink" href="#style-property-prefixes" title="Permalink to this headline"> link</a></h2>
+<p>增加前缀可以从样式特性名称上就能看出作用于哪些状态的可视组件，比如得到焦点或者被选择状态。例如，某个按钮可以在鼠标悬停其上的时候改变颜色，或者提示按钮对应的选项就是目前使用的选项。</p>
+<p>可视组件总共有5种状态可用作样式特性前缀。</p>
+<dl class="docutils">
+<dt><em class="dfn">insensitive</em></dt>
+<dd>当用户与无法与可视组件互动时使用。</dd>
+<dt><em class="dfn">idle</em></dt>
+<dd>当可视组件即没有获得焦点也没有被选中时使用。</dd>
+<dt><em class="dfn">hover</em></dt>
+<dd>当可视组件获得焦点但没有被选中时使用。</dd>
+<dt><em class="dfn">selected_idle</em></dt>
+<dd>当可视组件美欧获得焦点但被选中时使用。</dd>
+<dt><em class="dfn">selected_hover</em></dt>
+<dd>当可视组件获得焦点且被选中时使用。</dd>
+</dl>
+<p>按钮和条类可视组件(包括他们的各类变种)在收到事件消息后，会更新自身和子组件的状态。例如，当用户把鼠标移动到某个未被选择的按钮上方，按钮及其子组件都会把状态改为hover。</p>
+<p>样式特性前缀名允许外延。这里是一个前缀状态及其能外延的所有可视组件状态映射关系。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">prefix</th>
+<th class="head">states implied by prefix</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>(no prefix)</td>
+<td>insensitive, idle, hover, selected_idle, selected_hover</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">idle_</span></code></td>
+<td>idle, selected_idle</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">hover_</span></code></td>
+<td>hover, selected_hover</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">selected_</span></code></td>
+<td>selected_idle, selected_hover</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">insensitive_</span></code></td>
+<td>insensitive</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">selected_idle_</span></code></td>
+<td>selected_idle</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">selected_hover_</span></code></td>
+<td>selected_hover</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">selected_insensitive_</span></code></td>
+<td>selected_insensitive</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以使用一个文本按钮实际演示一下。文本按钮使用两个默认的样式： <code class="docutils literal notranslate"><span class="pre">button</span></code> 用于按钮本身， <code class="docutils literal notranslate"><span class="pre">button_text</span></code> 用于按钮上的文本。 <a class="reference internal" href="#style-property-background"><code class="xref std std-propref docutils literal notranslate"><span class="pre">background</span></code></a> 样式特性设置按钮的背景， <a class="reference internal" href="#style-property-color"><code class="xref std std-propref docutils literal notranslate"><span class="pre">color</span></code></a> 特性设置文本颜色：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 当按钮为insensitive状态时，背景为灰色；hover状态是，背景为浅蓝；</span>
+<span class="c1"># 其他情况下，背景为深蓝。</span>
+<span class="k">style</span> <span class="k">button</span><span class="p">:</span>
+    <span class="na">background</span> <span class="s2">&quot;#006&quot;</span>
+    <span class="na">insensitive_background</span> <span class="s2">&quot;#444&quot;</span>
+    <span class="na">hover_background</span> <span class="s2">&quot;#00a&quot;</span>
+
+<span class="c1"># 当按钮为selected状态时，文本为黄色；其他情况下为白色。</span>
+<span class="k">style</span> <span class="n">button_text</span><span class="p">:</span>
+    <span class="na">color</span> <span class="s2">&quot;#fff&quot;</span>
+    <span class="na">selected_color</span> <span class="s2">&quot;#ff0&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="style-property-values">
+<span id="id2"></span><h2>样式特性的值<a class="headerlink" href="#style-property-values" title="Permalink to this headline"> link</a></h2>
+<p>每种样式特性对应每种特定类型的数据。许多特性值都是标准的python数据类型，有一些是novel类型。这里会对这些novel类型的数据进行详细说明。</p>
+<dl class="docutils">
+<dt><cite>position</cite></dt>
+<dd><p class="first">position用于指定以左上角为原点的坐标系中的位置。(对position来说，可用区域由可视组件所在的图层给定，如果没有图层就是整个界面。对anchor来说，可用区域是其自身可视组件的大小。)</p>
+<p>position值的解释方法取决于数据类型：</p>
+<dl class="last docutils">
+<dt>int (比如 0, 1, 37, or 42)</dt>
+<dd>整数被解释为像素数量，从可用区域最左边或顶边算起。</dd>
+<dt>float (比如 0.0, 0.5, or 1.0)</dt>
+<dd>浮点数被解释为可用区域的一个比例。例如，0.5表示区域类某条表的中点，1.0表示最右边或者底边。</dd>
+<dt>renpy.absolute (比如 renpy.absolute(100.25))</dt>
+<dd>当使用亚像素精度(subpixel-precise)渲染时，renpy.absolute数被解释为像素数量，从可用区域最左边或顶边算起。</dd>
+</dl>
+</dd>
+<dt><cite>displayable</cite></dt>
+<dd>任意可视组件。若某个可视组件名包含某个类似“[prefix_]”的子串，就会按照如下描述进行前缀搜索。</dd>
+<dt><cite>color</cite></dt>
+<dd><p class="first">Ren’Py中的color可以写作以符号(#)开头、后面接十六进制的字符串。十六进制字符串长度可以为3或4的整数倍，分别对应几种颜色。</p>
+<p>十六进制字符串为3的整数倍时，分别对应红、绿、蓝三种颜色。十六进制字符串为4的整数倍时，分别对应红、绿、蓝和alpha通道值。举例：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;#f00&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&quot;#ff0000&quot;</span></code> 表现为纯红。</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;#0f08&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">#00ff0080&quot;</span></code> 表现为某种半透明的绿色。</li>
+</ul>
+<p>颜色代码规律和用于HTML的颜色代码相同。</p>
+<p>color也可以用一个4元素的元组，每个元素都是介于0到255的整数，顺序对应红、绿、蓝和alpha通道值。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255)</span></code> 表现为完全不透明的蓝色。</li>
+</ul>
+<p class="last">最后，color可以是 <a class="reference internal" href="color_class.html#Color" title="Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> 类的一个实例。</p>
+</dd>
+</dl>
+<div class="section" id="style-prefix-search">
+<span id="id3"></span><h3>样式前缀搜索<a class="headerlink" href="#style-prefix-search" title="Permalink to this headline"> link</a></h3>
+<p>当某个样式特性包含“[prefix_]”可替换前缀，就会进行前缀搜索。前缀搜索会查找没一种状态前缀，根据原特性已经明确声明过的信息。</p>
+<p>举例，如果我们有如下脚本：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">style</span> <span class="k">button</span><span class="p">:</span>
+    <span class="na">hover_background</span> <span class="s2">&quot;[prefix_]background.png&quot;</span>
+</pre></div>
+</div>
+<p>样式前缀搜索会分别搜索hover和selected_hover状态。前缀的搜索基于样式特性定义语句中的state值。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">state</th>
+<th class="head">search order</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>idle</td>
+<td>“idle_”, “”</td>
+</tr>
+<tr class="row-odd"><td>hover</td>
+<td>“hover_”, “”,</td>
+</tr>
+<tr class="row-even"><td>insensitive</td>
+<td>“insensitive_”, “”, “idle_”</td>
+</tr>
+<tr class="row-odd"><td>selected_idle</td>
+<td>“selected_idle_”, “idle_”, “selected_”, “”</td>
+</tr>
+<tr class="row-even"><td>selected_hover</td>
+<td>“selected_hover_”, “hover_”, “selected_”, “”</td>
+</tr>
+<tr class="row-odd"><td>selected_insensitive</td>
+<td>“selected_insensitive_”, “hover_”, “selected_”, “”, “selected_idle_”, “idle_”</td>
+</tr>
+</tbody>
+</table>
+<p>样式前缀搜索按上面表格给出的顺序进行。然后Ren’Py会坚持是否有符合那个名称的可加载文件或者图像存在。如果文件或图像存在，样式前缀搜索就会结束，并且使用找到的可视组件。否则，搜索会继续尝试下一个前缀。</p>
+<p>样式前缀会传给可视组件，不需要用户输入。</p>
+<p>这里是一个样例，演示这个功能如何使用。假设文件“idel_button.png”和“hover_button.png”存在(并且不存在其他以“button.png”字符串结尾的其他文件)：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">style</span> <span class="k">button</span><span class="p">:</span>
+    <span class="na">background</span> <span class="s2">&quot;[prefix_]button.png&quot;</span>
+</pre></div>
+</div>
+<p>等效于：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">style</span> <span class="k">button</span><span class="p">:</span>
+    <span class="na">idle_background</span> <span class="s2">&quot;idle_button.png&quot;</span>
+    <span class="na">hover_background</span> <span class="s2">&quot;hover_button.png&quot;</span>
+    <span class="na">insensitive_background</span> <span class="s2">&quot;idle_button.png&quot;</span>
+
+    <span class="na">selected_idle_background</span> <span class="s2">&quot;idle_button.png&quot;</span>
+    <span class="na">selected_hover_background</span> <span class="s2">&quot;hover_button.png&quot;</span>
+    <span class="na">selected_insensitive_background</span> <span class="s2">&quot;idle_button.png&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-of-all-style-properties">
+<span id="id4"></span><h2>所有样式特性的列表<a class="headerlink" href="#list-of-all-style-properties" title="Permalink to this headline"> link</a></h2>
+<p>样式特性控制各种可视组件的外观。但并不是所有特性都能应用于所有可视组件，所以我们将特性分了几个组。</p>
+<div class="section" id="position-style-properties">
+<span id="id5"></span><h3>位置样式特性<a class="headerlink" href="#position-style-properties" title="Permalink to this headline"> link</a></h3>
+<p>这类特性可以应用于所有可视组件，大部分通过布局(layout)控制可视组件在区域内的位置，或者不使用布局(layout)时直接控制在整个界面的位置。</p>
+<dl class="style-property">
+<dt id="style-property-alt">
+<code class="descname">alt</code> -  string or None<a class="headerlink" href="#style-property-alt" title="Permalink to this definition"> link</a></dt>
+<dd><p>当self-voicing启用时，备选文本会用于可视组件。详见 <a class="reference internal" href="self_voicing.html#self-voicing"><span class="std std-ref">自动语音</span></a> 章节内容。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xpos">
+<code class="descname">xpos</code> -  position<a class="headerlink" href="#style-property-xpos" title="Permalink to this definition"> link</a></dt>
+<dd><p>可视组件相对于可选区域左端的位置。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ypos">
+<code class="descname">ypos</code> -  position<a class="headerlink" href="#style-property-ypos" title="Permalink to this definition"> link</a></dt>
+<dd><p>可视组件相对于可选区域顶端的位置。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-pos">
+<code class="descname">pos</code> -  tuple of (position, position)<a class="headerlink" href="#style-property-pos" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xpos和ypos放入一个元组，分别作为元组的第一个和第二个元素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xanchor">
+<code class="descname">xanchor</code> -  position<a class="headerlink" href="#style-property-xanchor" title="Permalink to this definition"> link</a></dt>
+<dd><p>锚点相对于可选区域左端的位置。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yanchor">
+<code class="descname">yanchor</code> -  position<a class="headerlink" href="#style-property-yanchor" title="Permalink to this definition"> link</a></dt>
+<dd><p>锚点相对于可选区域顶端的位置。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-anchor">
+<code class="descname">anchor</code> -  tuple of (position, position)<a class="headerlink" href="#style-property-anchor" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xanchor和yanchor放入一个元组，分别作为元组的第一个和第二个元素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xalign">
+<code class="descname">xalign</code> -  float<a class="headerlink" href="#style-property-xalign" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xpos和xanchor设置为相同值。根据该值将可视组件显示在界面的某个相对位置上，0.0表示左对齐，0.5表示居中，1.0表示右对齐。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yalign">
+<code class="descname">yalign</code> -  float<a class="headerlink" href="#style-property-yalign" title="Permalink to this definition"> link</a></dt>
+<dd><p>将ypos和yanchor设置为相同值。根据该值将可视组件显示在界面的某个相对位置上，0.0表示顶端对齐，0.5表示居中，1.0表示底端对齐。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-align">
+<code class="descname">align</code> -  tuple of (float, float)<a class="headerlink" href="#style-property-align" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xalign和yalign放入一个元组，分别作为元组的第一个和第二个元素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xcenter">
+<code class="descname">xcenter</code> -  position<a class="headerlink" href="#style-property-xcenter" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xpos设为该特性的值，将xanchor设为0.5。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ycenter">
+<code class="descname">ycenter</code> -  position<a class="headerlink" href="#style-property-ycenter" title="Permalink to this definition"> link</a></dt>
+<dd><p>将ypos设为该特性的值，将yanchor设为0.5。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xoffset">
+<code class="descname">xoffset</code> -  int<a class="headerlink" href="#style-property-xoffset" title="Permalink to this definition"> link</a></dt>
+<dd><p>给出了水平方向的偏移值，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yoffset">
+<code class="descname">yoffset</code> -  int<a class="headerlink" href="#style-property-yoffset" title="Permalink to this definition"> link</a></dt>
+<dd><p>给出了垂直方向的偏移值，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-offset">
+<code class="descname">offset</code> -  tuple of (position, position)<a class="headerlink" href="#style-property-offset" title="Permalink to this definition"> link</a></dt>
+<dd><p>同时给出水平和垂直方向的偏移值，分别使用元组的第一个和第二个元素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xmaximum">
+<code class="descname">xmaximum</code> -  int<a class="headerlink" href="#style-property-xmaximum" title="Permalink to this definition"> link</a></dt>
+<dd><p>指定可视组件水平方向尺寸最大值，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ymaximum">
+<code class="descname">ymaximum</code> -  int<a class="headerlink" href="#style-property-ymaximum" title="Permalink to this definition"> link</a></dt>
+<dd><p>指定可视组件垂直方向尺寸最大值，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-maximum">
+<code class="descname">maximum</code> -  tuple of (int, int)<a class="headerlink" href="#style-property-maximum" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用元组指定可视组件尺寸最大值，水平和垂直方向分别使用元组的第一个和第二个元素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xminimum">
+<code class="descname">xminimum</code> -  int<a class="headerlink" href="#style-property-xminimum" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置可视组件的最小宽度，单位为像素。仅对可以改变尺寸的可视组件有效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yminimum">
+<code class="descname">yminimum</code> -  int<a class="headerlink" href="#style-property-yminimum" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置可视组件的最小高度，单位为像素。仅对可以改变尺寸的可视组件有效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-minimum">
+<code class="descname">minimum</code> -  tuple of (int, int)<a class="headerlink" href="#style-property-minimum" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用元组设置xminimum和yminimum。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xsize">
+<code class="descname">xsize</code> -  int<a class="headerlink" href="#style-property-xsize" title="Permalink to this definition"> link</a></dt>
+<dd><p>将xminimum和xmaximum设置为相同值。该特性对可视组件的宽度生效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ysize">
+<code class="descname">ysize</code> -  int<a class="headerlink" href="#style-property-ysize" title="Permalink to this definition"> link</a></dt>
+<dd><p>将yminimum和ymaximum设置为相同值。该特性对可视组件的高度生效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xysize">
+<code class="descname">xysize</code> -  tuple of (int, int)<a class="headerlink" href="#style-property-xysize" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用元组第一个元素设置xminimum和xmaximum，使用元组的第二个元素设置yminimum和ymaximum。该特性对可视组件的尺寸生效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xfill">
+<code class="descname">xfill</code> -  boolean<a class="headerlink" href="#style-property-xfill" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，可视组件会在水平方向填满所有可用空间。若不为True，可视组件只占用包含所有子组件的空间。</p>
+<p>仅对可以改变尺寸的可视组件有效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yfill">
+<code class="descname">yfill</code> -  boolean<a class="headerlink" href="#style-property-yfill" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，可视组件会在垂直方向填满所有可用空间。若不为True，可视组件只占用包含所有子组件的空间。</p>
+<p>仅对可以改变尺寸的可视组件有效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-area">
+<code class="descname">area</code> -  tuple of (int, int, int, int)<a class="headerlink" href="#style-property-area" title="Permalink to this definition"> link</a></dt>
+<dd><p>元组内元素可解释为 (<cite>xpos</cite>, <cite>ypos</cite>, <cite>width</cite>, <cite>height</cite>)。如果把某个可视组件的左上角放在 <cite>xpos</cite> 和 <cite>ypos</cite> 对应的位置，那么它的尺寸就是 <cite>width</cite> 和 <cite>height</cite>。</p>
+<p>这个特性会把xpos、ypos、xanchor、yanchor、xmaximum、ymaximum、xminimum、yminimum、xfill和yfill自动设置为合适的值。</p>
+<p>但这个特性并不适用于所有的可视组件和布局(layout)。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="text-style-properties">
+<span id="id6"></span><h3>文本样式特性<a class="headerlink" href="#text-style-properties" title="Permalink to this headline"> link</a></h3>
+<dl class="style-property">
+<dt id="style-property-antialias">
+<code class="descname">antialias</code> -  boolean<a class="headerlink" href="#style-property-antialias" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，默认情况，全真字体(truetype font)文本会使用抗锯齿渲染。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-adjust_spacing">
+<code class="descname">adjust_spacing</code> -  boolean<a class="headerlink" href="#style-property-adjust_spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会调整绘制分辨率下文本间隙以匹配虚拟分辨率下渲染的文本间隙，确保frame和其他容器类内的文本不会被改变。</p>
+<p>若设置为False，文本不会改变字号，但确保在任何窗口大小下布局文本都有足够空间，这是创作者的职责。</p>
+<p>对大多数文本来说都是用默认值True，但在需要 <code class="docutils literal notranslate"><span class="pre">input</span></code> 输入的情况下使用False。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-altruby_style">
+<code class="descname">altruby_style</code> -  style or None<a class="headerlink" href="#style-property-altruby_style" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果为值非None，这应是一个样式对象。它是给可选上标文字使用的样式。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-black_color">
+<code class="descname">black_color</code> -  color<a class="headerlink" href="#style-property-black_color" title="Permalink to this definition"> link</a></dt>
+<dd><p>当渲染某个基于图像的字体时，黑色会被映射为需要的颜色。这个特性对全真(truetype)字体无效。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bold">
+<code class="descname">bold</code> -  boolean<a class="headerlink" href="#style-property-bold" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，使用粗体渲染。对全真(truetype)字体来说，这个特性会会综合提升字体的重量(weight)。这个特性也可能会触发字体映射，使用
+<a class="reference internal" href="config.html#var-config.font_replacement_map"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.font_replacement_map</span></code></a> 配置的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-caret">
+<code class="descname">caret</code> -  displayable or None<a class="headerlink" href="#style-property-caret" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，其应是一个可视组件。输入部件会使用这个可视组件显示在文本的末尾。若为空，1像素宽的行会用作一个占位符。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-color">
+<code class="descname">color</code> -  color<a class="headerlink" href="#style-property-color" title="Permalink to this definition"> link</a></dt>
+<dd><p>文本渲染使用的色彩。当使用某个全真(truetype)字体时，字体会直接使用色彩渲染。当使用基于图像的字体时，白色会映射为指定的色彩。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-first_indent">
+<code class="descname">first_indent</code> -  int<a class="headerlink" href="#style-property-first_indent" title="Permalink to this definition"> link</a></dt>
+<dd><p>首行缩进量，单位是像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-font">
+<code class="descname">font</code> -  string<a class="headerlink" href="#style-property-font" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于渲染文本的字体名称字符串。</p>
+<p>对于全真(truetype)字体文件来说，该字符串通常就是包含字体的文件名(例如 <code class="docutils literal notranslate"><span class="pre">&quot;DejaVuSans.ttf&quot;</span></code>)。如果需要使用字体集的第二种字体，就在字体名前面加一个数字和&#64;符号，(例如 <code class="docutils literal notranslate"><span class="pre">“0&#64;font.ttc”</span></code> 或 <code class="docutils literal notranslate"><span class="pre">“1&#64;font.ttc”</span></code>)。对于基于图像的字体来说，该字符串是字体注册时使用的名称。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-size">
+<code class="descname">size</code> -  int<a class="headerlink" href="#style-property-size" title="Permalink to this definition"> link</a></dt>
+<dd><p>界面中字体的字号。通常字号大小就是字体高度的像素值，字体文件中可能还会插入几个像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-italic">
+<code class="descname">italic</code> -  boolean<a class="headerlink" href="#style-property-italic" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，使用斜体渲染文本。对全真(truetype)字体来说，这个特性会会综合提升字体的倾斜度(slant)。这个特性也可能会触发字体映射，使用
+<a class="reference internal" href="config.html#var-config.font_replacement_map"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.font_replacement_map</span></code></a> 配置的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-justify">
+<code class="descname">justify</code> -  boolean<a class="headerlink" href="#style-property-justify" title="Permalink to this definition"> link</a></dt>
+<dd><p>若该值为True，单词之间会插入额外的空白，每行文字左右两端的空白也会增加。段落最后一行的结尾不会发生变化。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-kerning">
+<code class="descname">kerning</code> -  float<a class="headerlink" href="#style-property-kerning" title="Permalink to this definition"> link</a></dt>
+<dd><p>字偶距调整，任意两个字符之间的空白像素数会增加。(如果要缩小字符之间的空白，该值应该是负数。)</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-language">
+<code class="descname">language</code> -  string<a class="headerlink" href="#style-property-language" title="Permalink to this definition"> link</a></dt>
+<dd><p>控制语言文字族断行。合法值如下：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;unicode&quot;</span></code> (default)</dt>
+<dd>使用unicode断行算法，大多数语言的默认项。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;japanese-strict&quot;</span></code></dt>
+<dd>使用“strict”法格式化日语文本。禁止在小写的假名和延音记号前断行。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;japanese-normal&quot;</span></code></dt>
+<dd>使用“normal”法格式化日语文本。允许在小写的假名、延音标记和某些连字符号后断行。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;japanese-loose&quot;</span></code></dt>
+<dd>使用“loose”法格式化日语文本。允许在小写的假名、延音标记、叠字符号、不可分割字符、中心化标点符号和后缀的后面断行；也允许在前缀的前面断行。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;korean-with-spaces&quot;</span></code></dt>
+<dd>使用空白定界的韩语文本。防止临近的韩语字符之间出现断行。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;western&quot;</span></code></dt>
+<dd>只循序在空白处断行。适用于大多数语言。</dd>
+</dl>
+<p>三种日语的断行模式来源于 <a class="reference external" href="http://www.w3.org/TR/css3-text/#line-break">CSS3文本模块</a>。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-layout">
+<code class="descname">layout</code> -  string<a class="headerlink" href="#style-property-layout" title="Permalink to this definition"> link</a></dt>
+<dd><p>控制每行单词(字)的分配方式。合法值如下：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;tex&quot;</span></code> (default)</dt>
+<dd>使用Knuth-Plass断行算法。该算法能让除最后一行之外，各行的长度差异尽可能小。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;subtitle&quot;</span></code></dt>
+<dd>使用Knuth-Plass断行算法，但会使用空格尽可能让每行长度一致。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;greedy&quot;</span></code></dt>
+<dd>每行尽可能多得放入单词(字)。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;nobreak&quot;</span></code></dt>
+<dd>不断行。</dd>
+</dl>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-line_leading">
+<code class="descname">line_leading</code> -  int<a class="headerlink" href="#style-property-line_leading" title="Permalink to this definition"> link</a></dt>
+<dd><p>每行所占空间的像素数。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-line_overlap_split">
+<code class="descname">line_overlap_split</code> -  int<a class="headerlink" href="#style-property-line_overlap_split" title="Permalink to this definition"> link</a></dt>
+<dd><p>在慢速文本模式下两行文本有重叠部分，这部分重叠像素分配给上面那行文本。如果上面那行文本的底部出现了被裁减的情况，就增加该特性的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-line_spacing">
+<code class="descname">line_spacing</code> -  int<a class="headerlink" href="#style-property-line_spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>每一行下面空间的像素数。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-min_width">
+<code class="descname">min_width</code> -  int<a class="headerlink" href="#style-property-min_width" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置每行的最小宽度。如果某行的段度小于该值，会被填充至该值。text_align用于指定填充方式。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-newline_indent">
+<code class="descname">newline_indent</code> -  boolean<a class="headerlink" href="#style-property-newline_indent" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，  <a class="reference internal" href="#style-property-first_indent"><code class="xref std std-propref docutils literal notranslate"><span class="pre">first_indent</span></code></a> 的缩进量会应用于每个新行。否则使用 <a class="reference internal" href="#style-property-rest_indent"><code class="xref std std-propref docutils literal notranslate"><span class="pre">rest_indent</span></code></a>
+的缩进量。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-outlines">
+<code class="descname">outlines</code> -  list of tuple of (int, color, int, int)<a class="headerlink" href="#style-property-outlines" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个文本后绘制的轮廓线列表。每个元组指定一种轮廓线，轮廓线从后往前绘制。</p>
+<p>列表中包含 (<cite>size</cite>, <cite>color</cite>, <cite>xoffset</cite>, <cite>yoffset</cite>)
+形式的元组。 <cite>Size</cite> 是字体外沿尺寸，单位为像素。 <cite>Color</cite> 是轮廓线色彩。 <cite>xoffset</cite> 和
+<cite>yoffset</cite> 是轮廓线的位移，单位为像素。</p>
+<p>轮廓线功能可以用于给字体添加投影，方法是将size设为0，偏移量设为非0。</p>
+<p>默认情况下， <cite>size</cite>, <cite>xoffset</cite> 和 <cite>yoffset</cite> 会随文本一同拉伸。当我们给定absolute类型时，就能禁止拉伸。举例：</p>
+</dd></dl>
+
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span>    <span class="k">style</span> <span class="k">default</span><span class="p">:</span>
+        <span class="na">outlines</span> <span class="p">[</span> <span class="p">(</span><span class="n">absolute</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;#000&quot;</span><span class="p">,</span> <span class="n">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">absolute</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+
+<span class="err">这段脚本产生了</span><span class="mi">1</span><span class="err">像素宽的边界。</span>
+
+<span class="err">轮廓线只对全真</span><span class="p">(</span><span class="n">truetype</span><span class="p">)</span><span class="err">字体有效。</span>
+</pre></div>
+</div>
+<dl class="style-property">
+<dt id="style-property-rest_indent">
+<code class="descname">rest_indent</code> -  int<a class="headerlink" href="#style-property-rest_indent" title="Permalink to this definition"> link</a></dt>
+<dd><p>指定段落首行之外的缩进量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ruby_style">
+<code class="descname">ruby_style</code> -  style or None<a class="headerlink" href="#style-property-ruby_style" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果非None，该值是一个样式对象。该样式不能用于ruby文本。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-slow_abortable">
+<code class="descname">slow_abortable</code> -  boolean<a class="headerlink" href="#style-property-slow_abortable" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果为True，能传到文本对象的点击事件会触发退出慢速文本模式，这意味着后面部分的文本会立刻显示。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-slow_cps">
+<code class="descname">slow_cps</code> -  int or True<a class="headerlink" href="#style-property-slow_cps" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果是一个整数，表示每秒显示的字符速率。如果为True，使用个性化配置中的“文本速度”。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-slow_cps_multiplier">
+<code class="descname">slow_cps_multiplier</code> -  float<a class="headerlink" href="#style-property-slow_cps_multiplier" title="Permalink to this definition"> link</a></dt>
+<dd><p>文本显示速度会乘上该值。可以用于表现某个角色的说话速度比正常速率略快的情况。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-strikethrough">
+<code class="descname">strikethrough</code> -  boolean<a class="headerlink" href="#style-property-strikethrough" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，每行文字会添加删除线。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-text_align">
+<code class="descname">text_align</code> -  float<a class="headerlink" href="#style-property-text_align" title="Permalink to this definition"> link</a></dt>
+<dd><p>当一行文本的宽度比文本组件的宽度小时，该项起作用。其决定文本左边会有多少留白。(也就是文本的对齐。)</p>
+<p>0.0表示左对齐，0.5表示中央对齐，1.0表示右对齐。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-underline">
+<code class="descname">underline</code> -  boolean<a class="headerlink" href="#style-property-underline" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，文本会添加下划线。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-hyperlink_functions">
+<code class="descname">hyperlink_functions</code> -  tuple of (function, function, function)<a class="headerlink" href="#style-property-hyperlink_functions" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是由三个与超链接有关的函数构成的元组。</p>
+<p>第一个元素是超链接样式函数。当使用一个入参(超链接)调用函数时，会返回得到用于该超链接的样式对象，比如 <code class="docutils literal notranslate"><span class="pre">style.hyperlink_text</span></code> 。需要注意，样式对象并不是一个字符串。</p>
+<p>第二个元素是超链接点击函数。当超链接被用户选中的时候，该函数会被调用。如果该函数返回一个值并且不是None，这个值也会作为互动行为的返回值。</p>
+<p>第三个元素是超链接焦点函数。当超链接获取焦点时，该函数会被调用，并将超链接作为入参；当超链接失去焦点时，该函数也会被调用，入参使用空值(None)。如果该函数返回一个值并且非空，这个值也会作为互动行为的返回值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-vertical">
+<code class="descname">vertical</code> -  boolean<a class="headerlink" href="#style-property-vertical" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，文本内容会渲染为垂直文本。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-hinting">
+<code class="descname">hinting</code> -  str<a class="headerlink" href="#style-property-hinting" title="Permalink to this definition"> link</a></dt>
+<dd><p>控制字体如何进行微调。可以是以下几个字符串之一：</p>
+<dl class="docutils">
+<dt>“auto”</dt>
+<dd>默认值，使用Freetype自动微调。</dd>
+<dt>“bytecode”</dt>
+<dd>使用字体中的bytecode微调信息。</dd>
+<dt>“none”</dt>
+<dd>对字体不进行微调。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="window-style-properties">
+<span id="id7"></span><h3>窗口样式特性<a class="headerlink" href="#window-style-properties" title="Permalink to this headline"> link</a></h3>
+<p>窗口特性用于指定窗口、框架和按钮的外观。</p>
+<dl class="style-property">
+<dt id="style-property-background">
+<code class="descname">background</code> -  displayable or None<a class="headerlink" href="#style-property-background" title="Permalink to this definition"> link</a></dt>
+<dd><p>用作窗口背景的可视组件。通常是一个:func:<cite>Frame</cite>，能根据窗口大小拉伸背景的尺寸。</p>
+<p>若为None，不绘制背景。但其他特性函数会假设背景存在。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-foreground">
+<code class="descname">foreground</code> -  displayable or None<a class="headerlink" href="#style-property-foreground" title="Permalink to this definition"> link</a></dt>
+<dd><p>若不为None，该可视组件会在窗口内容上绘制并覆盖。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-left_margin">
+<code class="descname">left_margin</code> -  int<a class="headerlink" href="#style-property-left_margin" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景左端的透明空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-right_margin">
+<code class="descname">right_margin</code> -  int<a class="headerlink" href="#style-property-right_margin" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景右端的透明空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xmargin">
+<code class="descname">xmargin</code> -  int<a class="headerlink" href="#style-property-xmargin" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于将left_margin和right_margin设置为相同的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-top_margin">
+<code class="descname">top_margin</code> -  int<a class="headerlink" href="#style-property-top_margin" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景顶端的透明空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bottom_margin">
+<code class="descname">bottom_margin</code> -  int<a class="headerlink" href="#style-property-bottom_margin" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景底端的透明空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ymargin">
+<code class="descname">ymargin</code> -  int<a class="headerlink" href="#style-property-ymargin" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于将top_margin和bottom_margin设置为相同的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-margin">
+<code class="descname">margin</code> -  tuple<a class="headerlink" href="#style-property-margin" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果出现的是2个元素的元组，分别将xmargin和ymargin设置为对应的两个元素值。如果出现的是4元素元组，分别将left_margin、top_margin、right_margin和bottom_margin设置为对应的4个元素值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-left_padding">
+<code class="descname">left_padding</code> -  int<a class="headerlink" href="#style-property-left_padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景与窗口内容左边的空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-right_padding">
+<code class="descname">right_padding</code> -  int<a class="headerlink" href="#style-property-right_padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景与窗口内容右边的空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xpadding">
+<code class="descname">xpadding</code> -  int<a class="headerlink" href="#style-property-xpadding" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于将left_padding和right_padding设置为相同的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-top_padding">
+<code class="descname">top_padding</code> -  int<a class="headerlink" href="#style-property-top_padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景与窗口内容顶边的空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bottom_padding">
+<code class="descname">bottom_padding</code> -  int<a class="headerlink" href="#style-property-bottom_padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>背景与窗口内容底边的空间量，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-ypadding">
+<code class="descname">ypadding</code> -  int<a class="headerlink" href="#style-property-ypadding" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于将top_padding和bottom_padding设置为相同的值。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-padding">
+<code class="descname">padding</code> -  tuple<a class="headerlink" href="#style-property-padding" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果出现的是2个元素的元组，分别将xpadding和ypadding设置为对应的两个元素值。如果出现的是4元素元组，分别将left_padding、top_padding、right_padding和bottom_padding设置为对应的4个元素值</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-size_group">
+<code class="descname">size_group</code> -  string or None<a class="headerlink" href="#style-property-size_group" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，该值是一个字符串。Ren’Py会使用size_group值相同的尺寸渲染所有窗口。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="button-style-properties">
+<span id="id8"></span><h3>按钮样式特性<a class="headerlink" href="#button-style-properties" title="Permalink to this headline"> link</a></h3>
+<dl class="style-property">
+<dt id="style-property-child">
+<code class="descname">child</code> -  displayable or None<a class="headerlink" href="#style-property-child" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，给出的可视组件会替换按钮的子组件。例如，该可视组件(作为insensitive_child)可以用于替换insensitive的按钮图片内容，insensitive表示按钮被锁住无法使用。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-hover_sound">
+<code class="descname">hover_sound</code> -  string<a class="headerlink" href="#style-property-hover_sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>当按钮获取焦点时，一个音效会播放。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-activate_sound">
+<code class="descname">activate_sound</code> -  string<a class="headerlink" href="#style-property-activate_sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>当按钮被点击时，一个音效会播放。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-mouse">
+<code class="descname">mouse</code> -  string<a class="headerlink" href="#style-property-mouse" title="Permalink to this definition"> link</a></dt>
+<dd><p>鼠标样式用于按钮获得焦点状态。这是定义在 <a class="reference internal" href="config.html#var-config.mouse"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.mouse</span></code></a> 中的样式之一。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-focus_mask">
+<code class="descname">focus_mask</code> -  multiple<a class="headerlink" href="#style-property-focus_mask" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个mask遮罩，用于控制按钮哪些区域可以获得焦点，哪些区域不响应点击。该特性的类型决定了其如何被解释。</p>
+<dl class="docutils">
+<dt><strong>Displayable</strong></dt>
+<dd>可视组件的不透明区域，可以让按钮获得焦点。</dd>
+<dt><strong>True</strong></dt>
+<dd>按钮自身用作可视组件(按钮的非透明区域可以让按钮获得焦点)。</dd>
+<dt><strong>callable</strong></dt>
+<dd>如果一个不可视组件被调用(像函数、方法或者带有__call__方法的对象)，该该函数被使用两个入参调用，从对应可视组件左上角算起，x和y轴的两个偏移量。若函数返回结果为True，可视组件获得焦点。</dd>
+<dt><strong>None</strong></dt>
+<dd>如果该值为None，整个按钮都可以获得焦点。</dd>
+</dl>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-keyboard_focus">
+<code class="descname">keyboard_focus</code> -  boolean<a class="headerlink" href="#style-property-keyboard_focus" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，也是默认值，按钮可以通过键盘的焦点机制获得焦点，前提是这个按钮本身允许获得焦点。若为False，键盘焦点机制会跳过这个按钮。(键盘焦点机制使用键盘或者类似键盘的设备，比如游戏手柄。)</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-key_events">
+<code class="descname">key_events</code> -  boolean<a class="headerlink" href="#style-property-key_events" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，键盘生成的事件消息会传给键盘的子组件。若为False，这些事件就不会向下广播。默认样式中，按钮上有鼠标悬停时该值为True，其他情况下该值为False。</p>
+<p>将这个值设置为True可以用于广播键盘事件消息至某个按钮内的输入框，而那个按键并不需要获得焦点。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="bar">
+<span id="bar-style-properties"></span><h3>条(bar)样式特性<a class="headerlink" href="#bar" title="Permalink to this headline"> link</a></h3>
+<p>条(bar)是一个左右两边带有沟槽的组件，点击后触发条条内平移一小段距离。滑块与左右两端的间隔就是还允许移动的距离。</p>
+<p>滑块是条(bar)中允许用户拖拽的部分。</p>
+<p>当绘制一个条(bar)后，滑块的阴影首先被绘制。然后是滑块本身，最后是条(bar)的左/底边和右/顶边。</p>
+<p>需要注意条(bar)的边取决于bar_vertical特性的值。若bar_vertical为True，顶边和底边会实际绘制。否则，只有左边和右边。</p>
+<dl class="style-property">
+<dt id="style-property-bar_vertical">
+<code class="descname">bar_vertical</code> -  boolean<a class="headerlink" href="#style-property-bar_vertical" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，纵向条(bar)。若为False，横向条(bar)。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bar_invert">
+<code class="descname">bar_invert</code> -  boolean<a class="headerlink" href="#style-property-bar_invert" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，条(bar)上滑块对应的值显示在右/上侧；否则，显示在左/下侧。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bar_resizing">
+<code class="descname">bar_resizing</code> -  boolean<a class="headerlink" href="#style-property-bar_resizing" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，重新调整条(bar)的尺寸。若为False，使用全尺寸渲染各条边，然后裁剪。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-left_gutter">
+<code class="descname">left_gutter</code> -  int<a class="headerlink" href="#style-property-left_gutter" title="Permalink to this definition"> link</a></dt>
+<dd><p>左边沟槽尺寸，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-right_gutter">
+<code class="descname">right_gutter</code> -  int<a class="headerlink" href="#style-property-right_gutter" title="Permalink to this definition"> link</a></dt>
+<dd><p>右边沟槽尺寸，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-top_gutter">
+<code class="descname">top_gutter</code> -  int<a class="headerlink" href="#style-property-top_gutter" title="Permalink to this definition"> link</a></dt>
+<dd><p>顶边沟槽尺寸，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bottom_gutter">
+<code class="descname">bottom_gutter</code> -  int<a class="headerlink" href="#style-property-bottom_gutter" title="Permalink to this definition"> link</a></dt>
+<dd><p>底边沟槽尺寸，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-left_bar">
+<code class="descname">left_bar</code> -  displayable<a class="headerlink" href="#style-property-left_bar" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于左边的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-right_bar">
+<code class="descname">right_bar</code> -  displayable<a class="headerlink" href="#style-property-right_bar" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于右边的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-top_bar">
+<code class="descname">top_bar</code> -  displayable<a class="headerlink" href="#style-property-top_bar" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于顶边的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-bottom_bar">
+<code class="descname">bottom_bar</code> -  displayable<a class="headerlink" href="#style-property-bottom_bar" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于底边的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-base_bar">
+<code class="descname">base_bar</code> -  displayable<a class="headerlink" href="#style-property-base_bar" title="Permalink to this definition"> link</a></dt>
+<dd><p>单个可视组件用于left_bar/right_bar或者top_bar/bottom_bar，自动适配。(带滑块的情况下，还可以用作滑动条或者滑动栏。)</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-thumb">
+<code class="descname">thumb</code> -  displayable or None<a class="headerlink" href="#style-property-thumb" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个绘制在条(bar)的各条边空间内的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-thumb_shadow">
+<code class="descname">thumb_shadow</code> -  displayable or None<a class="headerlink" href="#style-property-thumb_shadow" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个绘制在条(bar)的各条边空间内的可视组件。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-thumb_offset">
+<code class="descname">thumb_offset</code> -  int<a class="headerlink" href="#style-property-thumb_offset" title="Permalink to this definition"> link</a></dt>
+<dd><p>滑块与条(bar)重叠部分的大小，单位为像素。如果想让条(bar)的左右两边看起来不像被截断的样子，就把滑块的宽度设为条(bar)宽度的一半。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-mouse_alt">
+<code class="descname">mouse</code> -  string<a class="headerlink" href="#style-property-mouse_alt" title="Permalink to this definition"> link</a></dt>
+<dd><p>鼠标样式，用于按钮获得焦点时。该字符串应是 <a class="reference internal" href="config.html#var-config.mouse"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.mouse</span></code></a> 定义的样式之一。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-unscrollable">
+<code class="descname">unscrollable</code> -  string or None<a class="headerlink" href="#style-property-unscrollable" title="Permalink to this definition"> link</a></dt>
+<dd><p>当无法滚动时，控制条(bar)的行为表现(如果滚动范围设置为0，视点范围内的可视组件小于其自身)。总共有3种可能的值：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">None</span></code></dt>
+<dd>正常渲染条(bar)。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;insensitive&quot;</span></code></dt>
+<dd>渲染insensitive状态下条(bar)。这个值允许条(bar)改变自身样式，尽管那很少使用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;hide&quot;</span></code></dt>
+<dd>不渲染条(bar)。空间会预留给条(bar)，不会那段空间不绘制任何东西。</dd>
+</dl>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-keyboard_focus_alt">
+<code class="descname">keyboard_focus</code> -  boolean<a class="headerlink" href="#style-property-keyboard_focus_alt" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，也是默认值，按钮可以通过键盘的焦点机制获得焦点，前提是这个按钮本身允许获得焦点。若为False，键盘焦点机制会跳过这个按钮。(键盘焦点机制使用键盘或者类似键盘的设备，比如游戏手柄。)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="box">
+<span id="box-style-properties"></span><h3>方框(box)样式特性<a class="headerlink" href="#box" title="Permalink to this headline"> link</a></h3>
+<p>这些样式特性用于横向和纵向的方块布局。</p>
+<dl class="style-property">
+<dt id="style-property-spacing">
+<code class="descname">spacing</code> -  int<a class="headerlink" href="#style-property-spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>方块内成员之间的空间距离，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-first_spacing">
+<code class="descname">first_spacing</code> -  int<a class="headerlink" href="#style-property-first_spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，表示，方框内的第一个跟第二个成员间的空间距离，单位为像素。该值覆盖spacing特性。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-box_reverse">
+<code class="descname">box_reverse</code> -  boolean<a class="headerlink" href="#style-property-box_reverse" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，方块内物品位置将被翻转。hbox左右镜像翻转，vbox上线镜像翻转。默认情况下的值为False。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-box_wrap">
+<code class="descname">box_wrap</code> -  boolean<a class="headerlink" href="#style-property-box_wrap" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，当到达方块最后一行或列时会发生扭转(warp)。若为False，会在每一行的结尾扩展。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="grid">
+<span id="grid-style-properties"></span><h3>网格(grid)样式特性<a class="headerlink" href="#grid" title="Permalink to this headline"> link</a></h3>
+<p>这些特性用于网格(grid)和虚拟样机网格(vpgrid)可视组件中。</p>
+<dl class="style-property">
+<dt id="style-property-spacing_alt">
+<code class="descname">spacing</code> -  int<a class="headerlink" href="#style-property-spacing_alt" title="Permalink to this definition"> link</a></dt>
+<dd><p>各网格单元之间的空间，单位为像素。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xspacing">
+<code class="descname">xspacing</code> -  int or None<a class="headerlink" href="#style-property-xspacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>各网格单元之间水平方向的空间，单位为像素。当这个值不是None时，优先级比spacing特性高。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yspacing">
+<code class="descname">yspacing</code> -  int or None<a class="headerlink" href="#style-property-yspacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>各网格单元之间垂直方向的空间，单位为像素。当这个值不是None时，优先级比spacing特性高。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="fixed-style-properties">
+<span id="id9"></span><h3>固定布局的样式特性<a class="headerlink" href="#fixed-style-properties" title="Permalink to this headline"> link</a></h3>
+<p>这些特性用于固定布局(layout)。</p>
+<dl class="style-property">
+<dt id="style-property-fit_first">
+<code class="descname">fit_first</code> -  boolean or “width” or “height”<a class="headerlink" href="#style-property-fit_first" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，固定宽度的布局所有单元尺寸都会严格等于第一个单元内元素的尺寸。如果是“width”，只有单元格宽度能改变(固定布局会在垂直方向上填满界面)。类似的，“height”值能改变单元跟高度。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-xfit">
+<code class="descname">xfit</code> -  boolean<a class="headerlink" href="#style-property-xfit" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，固定布局的尺寸在水平方向会严格匹配最右侧子组件的尺寸。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-yfit">
+<code class="descname">yfit</code> -  boolean<a class="headerlink" href="#style-property-yfit" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，固定布局的尺寸在垂直方向会严格匹配最底部子组件的尺寸。</p>
+</dd></dl>
+
+<dl class="style-property">
+<dt id="style-property-order_reverse">
+<code class="descname">order_reverse</code> -  boolean<a class="headerlink" href="#style-property-order_reverse" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为False，也就是默认值，方框内元素会从前往后绘制，第一个元素下面是第二个元素。若为True，顺序会倒过来，第一个元素会在方框最底层。</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

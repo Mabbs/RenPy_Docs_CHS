@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>界面动作(action)、值(value)和函数 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="特殊界面名称" href="screen_special.html" />
+    <link rel="prev" title="界面和界面语言" href="screens.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">界面动作(action)、值(value)和函数</a><ul>
+<li><a class="reference internal" href="#action">动作(action)</a><ul>
+<li><a class="reference internal" href="#control-actions">控制动作</a></li>
+<li><a class="reference internal" href="#data-acitons">数据动作</a></li>
+<li><a class="reference internal" href="#menu-actions">菜单动作</a></li>
+<li><a class="reference internal" href="#file-actions">文件动作</a></li>
+<li><a class="reference internal" href="#audio-acitons">音频动作</a></li>
+<li><a class="reference internal" href="#other-actions">其他动作</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bar">条(bar)值</a></li>
+<li><a class="reference internal" href="#input">输入(input)值</a></li>
+<li><a class="reference internal" href="#functions-and-classes">函数和类</a><ul>
+<li><a class="reference internal" href="#preference">环境设定(preference)</a></li>
+<li><a class="reference internal" href="#gamepad">游戏手柄</a></li>
+<li><a class="reference internal" href="#file-functions">文件函数</a></li>
+<li><a class="reference internal" href="#side-image-functions">头像函数</a></li>
+<li><a class="reference internal" href="#tooltips">Tooltips</a><ul>
+<li><a class="reference internal" href="#legacy">传统方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="action-value">
+<span id="screen-actions"></span><h1>界面动作(action)、值(value)和函数<a class="headerlink" href="#action-value" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py带来了一大堆动作、值和函数，与界面和界面语言协同作用。</p>
+<div class="section" id="action">
+<span id="screen-action"></span><h2>动作(action)<a class="headerlink" href="#action" title="Permalink to this headline"> link</a></h2>
+<p>当某个按钮(包括图片按钮、文本按钮和hotspot按钮)被激活、被鼠标悬停或失去鼠标悬停状态时，某个动作(action)就会被唤起。当某个按钮被选中或者非启用时，行为(action)就可能已经决定了。</p>
+<p>与这些动作一样，某个动作可以是一个不带任何入参的函数。当动作被唤起时，对应的函数就会调用。如果那个动作返回某个值，返回的值就会传到来源交互动作。</p>
+<p>一个动作也可能是个动作(action)列表，列表内的动作会顺序运行。</p>
+<div class="section" id="control-actions">
+<span id="id1"></span><h3>控制动作<a class="headerlink" href="#control-actions" title="Permalink to this headline"> link</a></h3>
+<p>这些动作用于管理界面，交互结果和流程控制。</p>
+<dl class="function">
+<dt id="Call">
+<code class="descname">Call</code><span class="sig-paren">(</span><em>label</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Call" title="Permalink to this definition"> link</a></dt>
+<dd><p>结束当前语句，并调用某个脚本标签(label)。入参和关键词参数会传给 <a class="reference internal" href="statement_equivalents.html#renpy.call" title="renpy.call"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.call()</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Hide">
+<code class="descname">Hide</code><span class="sig-paren">(</span><em>screen</em>, <em>transition=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Hide" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果名为 <em>screen</em> 的界面已经显示，则隐藏这个界面。</p>
+<dl class="docutils">
+<dt><cite>transition</cite></dt>
+<dd>如果非None，隐藏界面时使用转场(transition)。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Jump">
+<code class="descname">Jump</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#Jump" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发主控流程转到脚本标签 <em>label</em> 处。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="NullAction">
+<code class="descname">NullAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#NullAction" title="Permalink to this definition"> link</a></dt>
+<dd><p>不做任何事。</p>
+<p>可以用作某个按钮的“鼠标悬停/鼠标离开”事件响应，不执行任何动作。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Return">
+<code class="descname">Return</code><span class="sig-paren">(</span><em>value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Return" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用提供的值返回给当前的互动行为，提供的值不可以为None。常用于菜单和imagemap，用来选择交互行为的返回值。如果使用的是 <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">screen</span></code> 语句调用界面，返回值就会放置在 <em>_return</em> 变量中。</p>
+<p>如果出现在某个菜单中，值会返回给来源菜单。(这种情况下就需要返回None。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Show">
+<code class="descname">Show</code><span class="sig-paren">(</span><em>screen</em>, <em>transition=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Show" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发另一个界面的显示。 <em>screen</em> 是给定待显示的界面名。入参会传给正在显示的界面。</p>
+<p>如果 <em>transition</em> 非空，则会用作新界面显示时的转场效果。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ShowTransient">
+<code class="descname">ShowTransient</code><span class="sig-paren">(</span><em>screen</em>, <em>transition=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ShowTransient" title="Permalink to this definition"> link</a></dt>
+<dd><p>显示一个临时界面。临时界面会在当前交互完成后隐藏。入参会传给当前显示的界面。</p>
+<p>如果 <em>transition</em> 非空，则会用作新界面显示时的转场效果。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleScreen">
+<code class="descname">ToggleScreen</code><span class="sig-paren">(</span><em>screen</em>, <em>transition=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleScreen" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换界面的可视性。如果某个界面当前没有显示，则会使用提供的入参显示那个界面。相反，则隐藏那个界面。</p>
+<p>如果 <em>transition</em> 非空，则会用作新界面显示时的转场效果。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="data-acitons">
+<span id="id2"></span><h3>数据动作<a class="headerlink" href="#data-acitons" title="Permalink to this headline"> link</a></h3>
+<p>这些动作设置或者切换数据。</p>
+<dl class="function">
+<dt id="AddToSet">
+<code class="descname">AddToSet</code><span class="sig-paren">(</span><em>set</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#AddToSet" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>value</em> 添加到 <em>set</em> 中。</p>
+<dl class="docutils">
+<dt><cite>set</cite></dt>
+<dd>待添加元素的集合。其可以是一个Python的集合或者列表数据列表。如果是列表的话，新增的值会追加到列表结尾。</dd>
+<dt><cite>value</cite></dt>
+<dd>待添加或追加的值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="RemoveFromSet">
+<code class="descname">RemoveFromSet</code><span class="sig-paren">(</span><em>set</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#RemoveFromSet" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>value</em> 从 <em>set</em> 中移除。</p>
+<dl class="docutils">
+<dt><cite>set</cite></dt>
+<dd>待移除元素的集合，可以是一个集(set)或者列表(list)型数据。</dd>
+<dt><cite>value</cite></dt>
+<dd>待移除的元素。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetDict">
+<code class="descname">SetDict</code><span class="sig-paren">(</span><em>dict</em>, <em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetDict" title="Permalink to this definition"> link</a></dt>
+<dd><p>将字典型数据 <em>dict</em> 中键值 <em>key</em> 对应的值设置为 <em>value</em> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetField">
+<code class="descname">SetField</code><span class="sig-paren">(</span><em>object</em>, <em>field</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetField" title="Permalink to this definition"> link</a></dt>
+<dd><p>将某个对象的字段(field)设置为给定的值。 <em>object</em> 是目标对象， <em>field</em> 是待设置的域的名称的字符串， <em>value</em> 是需要设置成的值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetScreenVariable">
+<code class="descname">SetScreenVariable</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetScreenVariable" title="Permalink to this definition"> link</a></dt>
+<dd><p>将与当前界面关联的变量 <em>name</em> 值设置为 <em>value</em> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetVariable">
+<code class="descname">SetVariable</code><span class="sig-paren">(</span><em>variable</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetVariable" title="Permalink to this definition"> link</a></dt>
+<dd><p>将变量 <em>variable</em> 设置为 <em>value</em> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleDict">
+<code class="descname">ToggleDict</code><span class="sig-paren">(</span><em>dict</em>, <em>key</em>, <em>true_value=None</em>, <em>false_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleDict" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换 <em>dict</em> 中键 <em>key</em> 的值。“切换”的意思是，当对应的动作执行后，原布尔值取反。</p>
+<dl class="docutils">
+<dt><cite>true_value</cite></dt>
+<dd>如果非None，这就是我们使用的True值。</dd>
+<dt><cite>false_value</cite></dt>
+<dd>如果非None，这就是我们使用的False值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleField">
+<code class="descname">ToggleField</code><span class="sig-paren">(</span><em>object</em>, <em>field</em>, <em>true_value=None</em>, <em>false_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleField" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换 <em>object</em> 上 <em>field</em> 的值。“切换”的意思是，当对应的动作执行后，原字段(field)上所有布尔值取反。</p>
+<dl class="docutils">
+<dt><cite>true_value</cite></dt>
+<dd>如果非None，这就是我们使用的True值。</dd>
+<dt><cite>false_value</cite></dt>
+<dd>如果非None，这就是我们使用的False值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleScreenVariable">
+<code class="descname">ToggleScreenVariable</code><span class="sig-paren">(</span><em>name</em>, <em>true_value=None</em>, <em>false_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleScreenVariable" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换当前界面变量 <em>name</em> 的值。</p>
+<dl class="docutils">
+<dt><cite>true_value</cite></dt>
+<dd>如果非None，这就是我们使用的True值。</dd>
+<dt><cite>false_value</cite></dt>
+<dd>如果非None，这就是我们使用的False值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleSetMembership">
+<code class="descname">ToggleSetMembership</code><span class="sig-paren">(</span><em>set</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleSetMembership" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换集 <em>set</em> 中 <em>value</em> 的成员。如果对应的值在集里不存在，会添加那个值到集合中。否则，就会移动那个值。</p>
+<p>带有这个动作的按钮会被标记为被选中(selected)状态，仅当那个值存在于集 <em>set</em> 中。</p>
+<dl class="docutils">
+<dt><cite>set</cite></dt>
+<dd>待添加或移除成员的集合。其可以是一个集(set)或列表(list)。如果是列表，就会在列表中结尾添加新元素。</dd>
+<dt><cite>value</cite></dt>
+<dd>需要添加的值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleVariable">
+<code class="descname">ToggleVariable</code><span class="sig-paren">(</span><em>variable</em>, <em>true_value=None</em>, <em>false_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleVariable" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换 <em>variable</em> 。</p>
+<dl class="docutils">
+<dt><cite>true_value</cite></dt>
+<dd>如果非None，这就是我们使用的True值。</dd>
+<dt><cite>false_value</cite></dt>
+<dd>如果非None，这就是我们使用的False值。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="menu-actions">
+<span id="id3"></span><h3>菜单动作<a class="headerlink" href="#menu-actions" title="Permalink to this headline"> link</a></h3>
+<p>以下动作(action)会唤起菜单，或者主要用在主菜单和游戏菜单中。</p>
+<dl class="function">
+<dt id="MainMenu">
+<code class="descname">MainMenu</code><span class="sig-paren">(</span><em>confirm=True</em><span class="sig-paren">)</span><a class="headerlink" href="#MainMenu" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发Ren’Py回到主菜单。</p>
+<dl class="docutils">
+<dt><cite>confirm</cite></dt>
+<dd>若为True，触发Ren’Py询问用户是否希望返回主菜单，而不是直接返回。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Quit">
+<code class="descname">Quit</code><span class="sig-paren">(</span><em>confirm=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Quit" title="Permalink to this definition"> link</a></dt>
+<dd><p>退出游戏。</p>
+<dl class="docutils">
+<dt><cite>confirm</cite></dt>
+<dd>若为True，提示用户是否希望退出，而不是直接退出。若为None，仅当用户不处于主菜单时才询问。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ShowMenu">
+<code class="descname">ShowMenu</code><span class="sig-paren">(</span><em>screen=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ShowMenu" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果不在游戏菜单中的话，就进入游戏菜单。如果已经处于游戏菜单，就显示某个界面或跳转到某个脚本标签(label)。</p>
+<p><em>screen</em> 通常是某个界面的名称，使用界面机制显示。如果界面不存在，就会在 <em>screen</em> 后面加上“_screen”，并跳转到对应的脚本标签(label)处。</p>
+<ul class="simple">
+<li>ShowMenu(“load”)</li>
+<li>ShowMenu(“save”)</li>
+<li>ShowMenu(“preferences”)</li>
+</ul>
+<p>也可以用来显示用户自定义的菜单界面。例如，创作者定义了一个名为“state”的界面，可以把“state”界面显示为游戏菜单的一部分，使用如下语句：</p>
+<ul class="simple">
+<li>ShowMenu(“stats”)</li>
+</ul>
+<p>不带入参的ShowMenu语句默认进入游戏菜单。</p>
+<p>额外的入参和关键词参数会传给对应的界面。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Start">
+<code class="descname">Start</code><span class="sig-paren">(</span><em>label=u'start'</em><span class="sig-paren">)</span><a class="headerlink" href="#Start" title="Permalink to this definition"> link</a></dt>
+<dd><p>让Ren’Py从菜单上下文跳转到目标名的脚本标签(label)处。主要用处是从主菜单开始新游戏。通常的用法如下：</p>
+<ul class="simple">
+<li>Start() - 从start脚本标签(label)处开始。</li>
+<li>Start(“foo”) - 从“foo”脚本标签(label)处开始。</li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="file-actions">
+<span id="id4"></span><h3>文件动作<a class="headerlink" href="#file-actions" title="Permalink to this headline"> link</a></h3>
+<p>这些动作会处理文件的保存、读取和删除。其中很多都是用 <cite>name</cite> 和 <cite>page</cite> 入参。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>待保存内容的文件名。其可以是一个字符串或者一个整数。与 <cite>page</cite> 一起创建文件名。</dd>
+<dt><cite>page</cite></dt>
+<dd>动作实际执行的页面(page)。其值是“auto”、“quick”或者一个正整数。若为None，page的值会根据持久化页面编号自动确定。</dd>
+</dl>
+<dl class="function">
+<dt id="FileAction">
+<code class="descname">FileAction</code><span class="sig-paren">(</span><em>name</em>, <em>page=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#FileAction" title="Permalink to this definition"> link</a></dt>
+<dd><p>对文件“进行正确操作”。这意味着在load界面显示时进行文件读取操作，相反在save界面显示时进行文件保存操作。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>存档或读档时，槽位的名称。如果为None，一个未被使用的槽位(基于当前时间的巨大数字)就会被使用。</dd>
+<dt><cite>page</cite></dt>
+<dd>存档或读档时使用的页面编号(page)。若为None，就使用当前页面。</dd>
+</dl>
+<p>其他关键词入参会传给FileLoad或者FileSave。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileDelete">
+<code class="descname">FileDelete</code><span class="sig-paren">(</span><em>name</em>, <em>confirm=True</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileDelete" title="Permalink to this definition"> link</a></dt>
+<dd><p>删除文件。</p>
+<dl class="docutils">
+<dt><cite>confirm</cite></dt>
+<dd>若为True，删除文件前提示用户确认。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileLoad">
+<code class="descname">FileLoad</code><span class="sig-paren">(</span><em>name</em>, <em>confirm=True</em>, <em>page=None</em>, <em>newest=True</em><span class="sig-paren">)</span><a class="headerlink" href="#FileLoad" title="Permalink to this definition"> link</a></dt>
+<dd><p>读取文件。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>读取的槽位名称。若为None，an unused slot the file will not be loadable。</dd>
+<dt><cite>confirm</cite></dt>
+<dd>如果为True且当前不在主菜单，在读取文件前提是用户确认。</dd>
+<dt><cite>page</cite></dt>
+<dd>文件读取的页面编号。如果为None，就是用当前页面。</dd>
+<dt><cite>newest</cite></dt>
+<dd>如果为True，按钮会被选中，前提是其为最新的文件。</dd>
+<dt><cite>cycle</cite></dt>
+<dd>忽略。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FilePage">
+<code class="descname">FilePage</code><span class="sig-paren">(</span><em>page</em><span class="sig-paren">)</span><a class="headerlink" href="#FilePage" title="Permalink to this definition"> link</a></dt>
+<dd><p>将文件页面设置为 <em>page</em> ，其可以是“auto”、“quick”或一个整数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FilePageNext">
+<code class="descname">FilePageNext</code><span class="sig-paren">(</span><em>max=None</em>, <em>wrap=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FilePageNext" title="Permalink to this definition"> link</a></dt>
+<dd><p>前往下一个文件页面(page)。</p>
+<dl class="docutils">
+<dt><cite>max</cite></dt>
+<dd>若该值存在，应该是整数，给定了我们前往的文件最大页面编号。</dd>
+<dt><cite>wrap</cite></dt>
+<dd>若为True，我们可以从文件最后的页面前往第一页面，前提是设置了页面最大编号。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FilePagePrevious">
+<code class="descname">FilePagePrevious</code><span class="sig-paren">(</span><em>max=None</em>, <em>wrap=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FilePagePrevious" title="Permalink to this definition"> link</a></dt>
+<dd><p>前往上一个文件页面，前提是上一个页面存在的话。</p>
+<dl class="docutils">
+<dt><cite>max</cite></dt>
+<dd>若该值存在，应该是整数，给定了我们前往的文件最大页面编号。需要启用wrap。</dd>
+<dt><cite>wrap</cite></dt>
+<dd>若为True，我们可以从文件第一页面前往最后的页面，前提是设置了页面最大编号。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileSave">
+<code class="descname">FileSave</code><span class="sig-paren">(</span><em>name</em>, <em>confirm=True</em>, <em>newest=True</em>, <em>page=None</em>, <em>cycle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FileSave" title="Permalink to this definition"> link</a></dt>
+<dd><p>保存文件。</p>
+<p>带槽位的按钮被选中，如果其被标记为最新存档文件。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>待存档的槽位名。如果为None，一个未被使用的槽位(基于当前时间的巨大数字)就会被使用。</dd>
+<dt><cite>confirm</cite></dt>
+<dd>若为True，覆盖文件前提示用户确认。</dd>
+<dt><cite>newest</cite></dt>
+<dd>忽略。</dd>
+<dt><cite>page</cite></dt>
+<dd>槽位所在页面名称。若为None，使用当前页面。</dd>
+<dt><cite>cycle</cite></dt>
+<dd>如果为True，在提供的页面上存档会循环使用而并不会显示给用户看。config.quicksave_slots配置了循环使用的槽位。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileTakeScreenshot">
+<code class="descname">FileTakeScreenshot</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#FileTakeScreenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>当游戏存档时，截取屏幕快照并使用。通常使用存档界面显示之前的界面截图，用作存档的快照。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QuickLoad">
+<code class="descname">QuickLoad</code><span class="sig-paren">(</span><em>confirm=True</em><span class="sig-paren">)</span><a class="headerlink" href="#QuickLoad" title="Permalink to this definition"> link</a></dt>
+<dd><p>快速读档。</p>
+<dl class="docutils">
+<dt><cite>confirm</cite></dt>
+<dd>若为True，且目前不在主菜单界面，读档前提是用户确认。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="QuickSave">
+<code class="descname">QuickSave</code><span class="sig-paren">(</span><em>message=u'Quick save complete.'</em>, <em>newest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#QuickSave" title="Permalink to this definition"> link</a></dt>
+<dd><p>快速存档。</p>
+<dl class="docutils">
+<dt><cite>message</cite></dt>
+<dd>当快速存档完成时向用户显示的一条信息。</dd>
+<dt><cite>newest</cite></dt>
+<dd>设置为True用于标记快速存档为最新的存档。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="audio-acitons">
+<span id="id5"></span><h3>音频动作<a class="headerlink" href="#audio-acitons" title="Permalink to this headline"> link</a></h3>
+<dl class="function">
+<dt id="PauseAudio">
+<code class="descname">PauseAudio</code><span class="sig-paren">(</span><em>channel</em>, <em>value=True</em><span class="sig-paren">)</span><a class="headerlink" href="#PauseAudio" title="Permalink to this definition"> link</a></dt>
+<dd><p>音频通道 <em>channel</em> 设置暂停标识(flag)。</p>
+<p>如果 <em>value</em> 为True，通道channel会暂停。相反，通道channel会从暂停恢复。如果值为“toggle”，暂停标识会进行切换，即布尔值进行“逻辑非”操作。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Play">
+<code class="descname">Play</code><span class="sig-paren">(</span><em>channel</em>, <em>file</em>, <em>selected=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Play" title="Permalink to this definition"> link</a></dt>
+<dd><p>给定通道(channel)播放一个音频文件。</p>
+<dl class="docutils">
+<dt><cite>channel</cite></dt>
+<dd>播放使用的通道(channel)。</dd>
+<dt><cite>file</cite></dt>
+<dd>播放的文件。</dd>
+<dt><cite>selected</cite></dt>
+<dd>若为True，当文件在通道上播放时，使用这个动作的按钮会被标记为“被选中”。若为False，这个动作不会触发按钮启动播放。若为None，当通道是一个音乐(music)通道时按钮会被标记为“被选中”。</dd>
+</dl>
+<p>其他关键词参数会被传给renpy.music.play()。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Queue">
+<code class="descname">Queue</code><span class="sig-paren">(</span><em>channel</em>, <em>file</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Queue" title="Permalink to this definition"> link</a></dt>
+<dd><p>在给定的通道上将音频文件队列化。</p>
+<dl class="docutils">
+<dt><cite>channel</cite></dt>
+<dd>播放使用的通道(channel)。</dd>
+<dt><cite>file</cite></dt>
+<dd>播放的文件。</dd>
+</dl>
+<p>其他关键词参数会被传给renpy.music.queue()。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetMixer">
+<code class="descname">SetMixer</code><span class="sig-paren">(</span><em>mixer</em>, <em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#SetMixer" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>mixer</em> 的音量设置为 <em>value</em> 。</p>
+<dl class="docutils">
+<dt><cite>mixer</cite></dt>
+<dd>需要调整音量的混合器(mixer)。这个字符串通常是“music”、“sfx”或“voice”。</dd>
+<dt><cite>value</cite></dt>
+<dd>调整的目标音量值。是一个位于0.0至1.0闭区间内的数值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="SetMute">
+<code class="descname">SetMute</code><span class="sig-paren">(</span><em>mixer</em>, <em>mute</em><span class="sig-paren">)</span><a class="headerlink" href="#SetMute" title="Permalink to this definition"> link</a></dt>
+<dd><p>将一个或多个混合器设置为静音状态。当混合器静音时，与混合器关联的音频通道会停止播放音频。</p>
+<dl class="docutils">
+<dt><cite>mixer</cite></dt>
+<dd>给出单个混合器名称的字符串，或一个混合器列表名称的字符串列表。混合器名称通常是“music”、“sfx”或“voice”。</dd>
+<dt><cite>mute</cite></dt>
+<dd>若为True则静音混合器，若为False则取消混合器静音。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Stop">
+<code class="descname">Stop</code><span class="sig-paren">(</span><em>channel</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Stop" title="Permalink to this definition"> link</a></dt>
+<dd><p>停用某个音频通道。</p>
+<dl class="docutils">
+<dt><cite>channel</cite></dt>
+<dd>停用的音频通道名。</dd>
+</dl>
+<p>关键词参数会传给renpy.music.stop()。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ToggleMute">
+<code class="descname">ToggleMute</code><span class="sig-paren">(</span><em>mixer</em><span class="sig-paren">)</span><a class="headerlink" href="#ToggleMute" title="Permalink to this definition"> link</a></dt>
+<dd><p>切换混合器的静音状态。</p>
+<dl class="docutils">
+<dt><cite>mixer</cite></dt>
+<dd>单个混合器名称的字符串，或一个混合器列表名称的字符串列表。混合器名称通常是“music”、“sfx”或“voice”。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="other-actions">
+<span id="id6"></span><h3>其他动作<a class="headerlink" href="#other-actions" title="Permalink to this headline"> link</a></h3>
+<p>这些是其他地方找不到的一些动作。</p>
+<dl class="function">
+<dt id="Confirm">
+<code class="descname">Confirm</code><span class="sig-paren">(</span><em>prompt</em>, <em>yes</em>, <em>no=None</em>, <em>confirm_selected=False</em><span class="sig-paren">)</span><a class="headerlink" href="#Confirm" title="Permalink to this definition"> link</a></dt>
+<dd><p>提示用户进行确认的一种动作。如果用户点击了“是”，将执行 <em>yes</em> 动作。否则，执行 <em>no</em> 动作。</p>
+<dl class="docutils">
+<dt><cite>prompt</cite></dt>
+<dd>向用户显示的提示内容。</dd>
+<dt><cite>confirm_selected</cite></dt>
+<dd>若为True，当yes动作被色泽后，提示 <em>prompt</em> 依然会显示。若为False，也是默认值， <em>yes</em> 动作选中后提示就不再显示。</dd>
+</dl>
+<p>这个动作的可用性和可选择性与 <em>yes</em> 动作相匹配。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="DisableAllInputValues">
+<code class="descname">DisableAllInputValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DisableAllInputValues" title="Permalink to this definition"> link</a></dt>
+<dd><p>禁用所有活动的输入项。如果存在默认输入项的话，它将重新获得焦点。否则，任何输入项都不会获得焦点。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Function">
+<code class="descname">Function</code><span class="sig-paren">(</span><em>callable</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Function" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作会使用 <em>args</em> 和 <em>kwargs</em> 调用 <em>callable</em> 。</p>
+<dl class="docutils">
+<dt><cite>callable</cite></dt>
+<dd>可调用的对象。</dd>
+<dt><cite>args</cite></dt>
+<dd>传给 <em>callable`</em> 的固定位置入参。</dd>
+<dt><cite>kwargs</cite></dt>
+<dd>传给 <em>callable</em> 的关键词入参。</dd>
+</dl>
+<p>这个动作使用一个可选的 _update_screens 关键词参数，而且这个参数默认为True。参数为True时，函数返回后，互动行动会重新开始，各界面会更新。</p>
+<p>如果函数返回一个非空值，互动行为会停止并返回那个值。(使用call screen语句得到的返回值放置在 <em>_return</em> 变量中。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Help">
+<code class="descname">Help</code><span class="sig-paren">(</span><em>help=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Help" title="Permalink to this definition"> link</a></dt>
+<dd><p>显示帮助。</p>
+<p>如果定义过一个名为 <code class="docutils literal notranslate"><span class="pre">help</span></code> 的界面，使用 <a class="reference internal" href="#ShowMenu" title="ShowMenu"><code class="xref py py-func docutils literal notranslate"><span class="pre">ShowMenu()</span></code></a> 就可以显示那个界面，并且 <em>help</em> 参数会被省略。</p>
+<dl class="docutils">
+<dt><cite>help</cite></dt>
+<dd><p class="first">用于提供帮助的字符串。其被用于以下两种情况：</p>
+<ul class="last simple">
+<li>如果存在一个对应名称的文本标签(label)，对应的标签会在新的上下文中被调用。</li>
+<li>否则，内嵌某个给定文件名称，并使用web浏览器打开。</li>
+</ul>
+</dd>
+</dl>
+<p>若 <em>help</em> 为None， <code class="xref py py-func docutils literal notranslate"><span class="pre">config.help()</span></code> 配置项会被用作默认值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HideInterface">
+<code class="descname">HideInterface</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#HideInterface" title="Permalink to this definition"> link</a></dt>
+<dd><p>隐藏用户接口，直到出现用户点击事件。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="If">
+<code class="descname">If</code><span class="sig-paren">(</span><em>expression</em>, <em>true=None</em>, <em>false=None</em><span class="sig-paren">)</span><a class="headerlink" href="#If" title="Permalink to this definition"> link</a></dt>
+<dd><p>根据 <em>expression</em> 的结果选择使用 <em>true</em> 或 <em>false</em> 的动作。这个函数用在基于某个表达式的结果选择执行动作。注意入参的默认值None，也可以用作一个动作，禁用某个按钮。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="InvertSelected">
+<code class="descname">InvertSelected</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#InvertSelected" title="Permalink to this definition"> link</a></dt>
+<dd><p>该动作将提供动作的选项状态反转，可以应用在别的方法上。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="MouseMove">
+<code class="descname">MouseMove</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>duration=0</em><span class="sig-paren">)</span><a class="headerlink" href="#MouseMove" title="Permalink to this definition"> link</a></dt>
+<dd><p>将鼠标指针移动到坐标 <em>x, y</em> 。如果设备没有鼠标指针，或者_preferences.mouse_move的值是False，那什么都不会发生。</p>
+<dl class="docutils">
+<dt><cite>duration</cite></dt>
+<dd>移动鼠标指针行为消耗的时间，单位为秒。这个时间段内，鼠标可能不会响应用户操作。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Notify">
+<code class="descname">Notify</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#Notify" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用 <a class="reference internal" href="other.html#renpy.notify" title="renpy.notify"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.notify()</span></code></a> 函数显示 <em>message</em> 内容。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="OpenURL">
+<code class="descname">OpenURL</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#OpenURL" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发 <em>url</em> 在web浏览器中打开。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="QueueEvent">
+<code class="descname">QueueEvent</code><span class="sig-paren">(</span><em>event</em>, <em>up=False</em><span class="sig-paren">)</span><a class="headerlink" href="#QueueEvent" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用 <a class="reference internal" href="other.html#renpy.queue_event" title="renpy.queue_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.queue_event()</span></code></a> 将给定的事件消息加入到事件队列中。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="RestartStatement">
+<code class="descname">RestartStatement</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#RestartStatement" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作会触发Ren’Py回滚到当前语句之前，并再次执行当前语句。可以用在某些持久化变量改变后影响语句显示效果的情况。</p>
+<p>在菜单语境运行的话，等到用户退出并回到上一层语境时才会执行回滚动作。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="RollForward">
+<code class="descname">RollForward</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#RollForward" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作触发前滚，前提是前滚可行。否则，该动作是禁用状态。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Rollback">
+<code class="descname">Rollback</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作触发回滚，前提是回滚可行。否则，不会发生任何事。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="RollbackToIdentifier">
+<code class="descname">RollbackToIdentifier</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="headerlink" href="#RollbackToIdentifier" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作触发回滚至某个标识符(identifier)。回滚标识符会作为HistoryEntry对象的一部分返回。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Screenshot">
+<code class="descname">Screenshot</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Screenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>屏幕截图。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SelectedIf">
+<code class="descname">SelectedIf</code><span class="sig-paren">(</span><em>expression</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectedIf" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作允许某个表达式控制一个按钮是否被标记为选中状态。其应被用作包含一个或多个动作的列表的一部分。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 如果mars_flag为True时，按钮会被选中</span>
+<span class="k">textbutton</span> <span class="s2">&quot;Marsopolis&quot;</span><span class="p">:</span>
+    <span class="na">action</span> <span class="p">[</span> <span class="n">Jump</span><span class="p">(</span><span class="s2">&quot;mars&quot;</span><span class="p">),</span> <span class="n">SelectedIf</span><span class="p">(</span><span class="n">mars_flag</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="SensitiveIf">
+<code class="descname">SensitiveIf</code><span class="sig-paren">(</span><em>expression</em><span class="sig-paren">)</span><a class="headerlink" href="#SensitiveIf" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作允许某个表达式控制一个按钮是否被标记为可用状态。其应被用作包含一个或多个动作的列表的一部分。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 如果mars_flag为True时，按钮是可用的</span>
+<span class="k">textbutton</span> <span class="s2">&quot;Marsopolis&quot;</span><span class="p">:</span>
+    <span class="na">action</span> <span class="p">[</span> <span class="n">Jump</span><span class="p">(</span><span class="s2">&quot;mars&quot;</span><span class="p">),</span> <span class="n">SensitiveIf</span><span class="p">(</span><span class="n">mars_flag</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Skip">
+<code class="descname">Skip</code><span class="sig-paren">(</span><em>fast=False</em>, <em>confirm=False</em><span class="sig-paren">)</span><a class="headerlink" href="#Skip" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发游戏开始使用跳过(skipping)。如果游戏处于菜单语境下，这个动作导致回到游戏界面。否则，这个动作启用跳过(skipping)。</p>
+<dl class="docutils">
+<dt><cite>fast</cite></dt>
+<dd>若该值为True，直接跳到下一个菜单选项。</dd>
+<dt><cite>confirm</cite></dt>
+<dd>若该值为True，在使用跳过(skipping)前需要用户确认。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="With">
+<code class="descname">With</code><span class="sig-paren">(</span><em>transition</em><span class="sig-paren">)</span><a class="headerlink" href="#With" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发 <em>transition</em> 生效。</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="bar">
+<span id="bar-values"></span><h2>条(bar)值<a class="headerlink" href="#bar" title="Permalink to this headline"> link</a></h2>
+<p>条(bar)值与条(bar)一同使用，设置条(bar)的值，且允许条(bar)调整某个潜在特性。可以通过创建 <a class="reference internal" href="screen_python.html#BarValue" title="BarValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">BarValue</span></code></a> 类的子类创建一个新的条值。</p>
+<dl class="function">
+<dt id="AnimatedValue">
+<code class="descname">AnimatedValue</code><span class="sig-paren">(</span><em>value=0.0</em>, <em>range=1.0</em>, <em>delay=1.0</em>, <em>old_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#AnimatedValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>将某个值序列化，使用 <em>delay</em> 秒的时间将 <em>old_value</em> 的值转为 <em>value</em> 的值。</p>
+<dl class="docutils">
+<dt><cite>value</cite></dt>
+<dd>value值自身，是一个数值。</dd>
+<dt><cite>range</cite></dt>
+<dd>value值的范围，是一个数值。</dd>
+<dt><cite>delay</cite></dt>
+<dd>序列化value值的时间，单位为秒。默认值是1.0。</dd>
+<dt><cite>old_value</cite></dt>
+<dd>旧的value值。若为None，我们使用AnimatedValue想要替换的value值。否则，其会初始化为 <em>value</em> 的值。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="AudioPositionValue">
+<code class="descname">AudioPositionValue</code><span class="sig-paren">(</span><em>channel=u'music'</em>, <em>update_interval=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#AudioPositionValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>显示在 <em>channel</em> 通道播放音频文件播放位置的值。</p>
+<dl class="docutils">
+<dt><cite>update_interval</cite></dt>
+<dd>值的更新频率，单位为秒。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="DictValue">
+<code class="descname">DictValue</code><span class="sig-paren">(</span><em>dict</em>, <em>key</em>, <em>range</em>, <em>max_is_zero=False</em>, <em>style=u'bar'</em>, <em>offset=0</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DictValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>允许用户使用字典型数据的键调整对应的值。</p>
+<dl class="docutils">
+<dt><cite>dict</cite></dt>
+<dd>字典。</dd>
+<dt><cite>key</cite></dt>
+<dd>键。</dd>
+<dt><cite>range</cite></dt>
+<dd>调整的数值范围。</dd>
+<dt><cite>max_is_zero</cite></dt>
+<dd>若为True，当键对应的值为0时，条(bar)值范围会调整为从1到0，所有其他值都会被降低到1。同样的，当条(bar)被设置成最大值时，键的值将设置为0。</dd>
+<dt><cite>style</cite></dt>
+<dd>创建的条(bar)的样式。</dd>
+<dt><cite>offset</cite></dt>
+<dd>添加到条值的一个偏移量。</dd>
+<dt><cite>step</cite></dt>
+<dd>调整条(bar)值的步进大小。若为空，默认为条(bar)的十分之一。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FieldValue">
+<code class="descname">FieldValue</code><span class="sig-paren">(</span><em>object</em>, <em>field</em>, <em>range</em>, <em>max_is_zero=False</em>, <em>style=u'bar'</em>, <em>offset=0</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FieldValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>允许用户调整某个对象上字段(field)的条(bar)值。</p>
+<dl class="docutils">
+<dt><cite>object</cite></dt>
+<dd>调整的对象。</dd>
+<dt><cite>field</cite></dt>
+<dd>域(filed)名称的字符串。</dd>
+<dt><cite>range</cite></dt>
+<dd>可调整的范围。</dd>
+<dt><cite>max_is_zero</cite></dt>
+<dd><p class="first">若为True，当键对应的值为0时，条(bar)值范围会调整为从1到0，所有其他值都会被降低到1。同样的，当条(bar)被设置成最大值时，域(filed)的值将设置为0。</p>
+<p class="last">这偏向于某些内部使用。</p>
+</dd>
+<dt><cite>style</cite></dt>
+<dd>创建的条(bar)的样式。</dd>
+<dt><cite>offset</cite></dt>
+<dd>添加到条值的一个偏移量。</dd>
+<dt><cite>step</cite></dt>
+<dd>调整条(bar)值的步进大小。若为空，默认为条(bar)的十分之一。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="MixerValue">
+<code class="descname">MixerValue</code><span class="sig-paren">(</span><em>mixer</em><span class="sig-paren">)</span><a class="headerlink" href="#MixerValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>音频混合器的值。</p>
+<dl class="docutils">
+<dt><cite>mixer</cite></dt>
+<dd>待调整的混合器名。通常是“music”、“sfx”或“voice”，创作者也可以创建新的混合器。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ScreenVariableValue">
+<code class="descname">ScreenVariableValue</code><span class="sig-paren">(</span><em>variable</em>, <em>range</em>, <em>max_is_zero=False</em>, <em>style=u'bar'</em>, <em>offset=0</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ScreenVariableValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于调整界面变量值的条(bar)值。</p>
+<dl class="docutils">
+<dt><cite>variable</cite></dt>
+<dd>一个字符串，给出了待调整的变量名。</dd>
+<dt><cite>range</cite></dt>
+<dd>可调整的范围。</dd>
+<dt><cite>max_is_zero</cite></dt>
+<dd><p class="first">若为True，当键对应的值为0时，条(bar)值范围会调整为从1到0，所有其他值都会被降低到1。同样的，当条(bar)被设置成最大值时，variable的值将设置为0。</p>
+<p class="last">这偏向于某些内部使用。</p>
+</dd>
+<dt><cite>style</cite></dt>
+<dd>创建的条(bar)的样式。</dd>
+<dt><cite>offset</cite></dt>
+<dd>添加到条值的一个偏移量。</dd>
+<dt><cite>step</cite></dt>
+<dd>调整条(bar)值的步进大小。若为空，默认为条(bar)的十分之一。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="StaticValue">
+<code class="descname">StaticValue</code><span class="sig-paren">(</span><em>value=0.0</em>, <em>range=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#StaticValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个动作允许某个值被指定为静态。</p>
+<dl class="docutils">
+<dt><cite>value</cite></dt>
+<dd>值自身，一个数值。</dd>
+<dt><cite>range</cite></dt>
+<dd>数值范围。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="VariableValue">
+<code class="descname">VariableValue</code><span class="sig-paren">(</span><em>variable</em>, <em>range</em>, <em>max_is_zero=False</em>, <em>style=u'bar'</em>, <em>offset=0</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#VariableValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>允许用户调整默认存储区变量值的条(bar)值。</p>
+<dl class="docutils">
+<dt><cite>variable</cite></dt>
+<dd>一个字符串，给出了待调整的变量名。</dd>
+<dt><cite>range</cite></dt>
+<dd>可调整的范围。</dd>
+<dt><cite>max_is_zero</cite></dt>
+<dd><p class="first">若为True，当键对应的值为0时，条(bar)值范围会调整为从1到0，所有其他值都会被降低到1。同样的，当条(bar)被设置成最大值时，variable的值将设置为0。</p>
+<p class="last">这偏向于某些内部使用。</p>
+</dd>
+<dt><cite>style</cite></dt>
+<dd>创建的条(bar)的样式。</dd>
+<dt><cite>offset</cite></dt>
+<dd>添加到条值的一个偏移量。</dd>
+<dt><cite>step</cite></dt>
+<dd>调整条(bar)值的步进大小。若为空，默认为条(bar)的十分之一。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="XScrollValue">
+<code class="descname">XScrollValue</code><span class="sig-paren">(</span><em>viewport</em><span class="sig-paren">)</span><a class="headerlink" href="#XScrollValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>根据给定的id，在当前界面水平滚动视口(viewport)的可调整值。视口(viewport)必须在条(bar)值出现前定义。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="YScrollValue">
+<code class="descname">YScrollValue</code><span class="sig-paren">(</span><em>viewport</em><span class="sig-paren">)</span><a class="headerlink" href="#YScrollValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>根据给定的id，在当前界面垂直滚动视口(viewport)的可调整值。视口(viewport)必须在条(bar)值出现前定义。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="input">
+<span id="input-values"></span><h2>输入(input)值<a class="headerlink" href="#input" title="Permalink to this headline"> link</a></h2>
+<p>输入(input)值与文本输入一起使用，用于设置默认文本、接受改变文本、响应回车键、决定文本是否可编辑。要创建新的输入(input)值，可以使用 <a class="reference internal" href="screen_python.html#InputValue" title="InputValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputValue</span></code></a> 类的子类。</p>
+<p>Ren’Py定义的输入(input)值继承自InputValue类，这意味着所有输入值均含有Enable()、Disable()和Toggle()方法，分别执行启用(enable)、禁用(disable)和切换编辑(toggle edit)动作。可以参考 <a class="reference internal" href="#DisableAllInputValues" title="DisableAllInputValues"><code class="xref py py-func docutils literal notranslate"><span class="pre">DisableAllInputValues()</span></code></a> 动作。</p>
+<dl class="function">
+<dt id="DictInputValue">
+<code class="descname">DictInputValue</code><span class="sig-paren">(</span><em>dict</em>, <em>key</em>, <em>default=True</em>, <em>returnable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#DictInputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>将字典 <em>dict</em> 中键 <em>key</em> 的值更新的输入(input)值。</p>
+<dl class="docutils">
+<dt><cite>default</cite></dt>
+<dd>若为True，默认情况下输入可以被编辑。</dd>
+<dt><cite>returnable</cite></dt>
+<dd>若为True，当用户按下回车键，输入的值就会被返回。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FieldInputValue">
+<code class="descname">FieldInputValue</code><span class="sig-paren">(</span><em>object</em>, <em>field</em>, <em>default=True</em>, <em>returnable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FieldInputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个更新某个对象上字段(field)值的输入值。</p>
+<dl class="docutils">
+<dt><cite>field</cite></dt>
+<dd>域(filed)名称的字符串。</dd>
+<dt><cite>default</cite></dt>
+<dd>若为True，输入默认是可以被编辑的。</dd>
+<dt><cite>returnable</cite></dt>
+<dd>若为True，当用户按下回车键，输入的值就会被返回。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FilePageNameInputValue">
+<code class="descname">FilePageNameInputValue</code><span class="sig-paren">(</span><em>pattern=u'Page {}'</em>, <em>auto=u'Automatic saves'</em>, <em>quick=u'Quick saves'</em>, <em>page=None</em>, <em>default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FilePageNameInputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个输入值用于更新文件页面(page)名。</p>
+<dl class="docutils">
+<dt><cite>pattern</cite></dt>
+<dd>用于页面(page)的默认名。使用Python风格的替换，例如花括号{}里的内容可以替换为页面(page)的编号。</dd>
+<dt><cite>auto</cite></dt>
+<dd>自动保存页面(page)的名称。</dd>
+<dt><cite>quick</cite></dt>
+<dd>快速保存页面(page)的名称。</dd>
+<dt><cite>page</cite></dt>
+<dd>若该参数存在，给出了要显示的页面(page)编号。通常该值设定为None，表示当前页面。</dd>
+<dt><cite>default</cite></dt>
+<dd>若为True，该输入默认可以被编辑。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ScreenVariableInputValue">
+<code class="descname">ScreenVariableInputValue</code><span class="sig-paren">(</span><em>variable</em>, <em>default=True</em>, <em>returnable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ScreenVariableInputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个更新变量的输入(input)值。</p>
+<dl class="docutils">
+<dt><cite>variable</cite></dt>
+<dd>待更新变量名，一个字符串。</dd>
+<dt><cite>default</cite></dt>
+<dd>若为True，该输入默认可以被编辑。</dd>
+<dt><cite>returnable</cite></dt>
+<dd>若为True，当用户按下回车键，输入的值就会被返回。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="VariableInputValue">
+<code class="descname">VariableInputValue</code><span class="sig-paren">(</span><em>variable</em>, <em>default=True</em>, <em>returnable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#VariableInputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个更新变量的输入(input)值。</p>
+<dl class="docutils">
+<dt><cite>variable</cite></dt>
+<dd>待更新变量名，一个字符串。</dd>
+<dt><cite>default</cite></dt>
+<dd>若为True，该输入默认可以被编辑。</dd>
+<dt><cite>returnable</cite></dt>
+<dd>若为True，当用户按下回车键，输入的值就会被返回。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="functions-and-classes">
+<span id="id7"></span><h2>函数和类<a class="headerlink" href="#functions-and-classes" title="Permalink to this headline"> link</a></h2>
+<p>这些函数和类在界面方面很有用。</p>
+<div class="section" id="preference">
+<span id="preferences"></span><h3>环境设定(preference)<a class="headerlink" href="#preference" title="Permalink to this headline"> link</a></h3>
+<p>所有环境设定都可以基于上面给出的动作Action和值Value来定义。这需要一些Ren’Py方面的知识，才能选择正确的环境设定并运用。环境设定构造器(constructor)让这件事变得简单，通过创建一个动作或值，就能基于名称应用在默认的环境设定界面上。</p>
+<dl class="function">
+<dt id="Preference">
+<code class="descname">Preference</code><span class="sig-paren">(</span><em>name</em>, <em>value=None</em>, <em>range=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Preference" title="Permalink to this definition"> link</a></dt>
+<dd><p>其从某项环境设定构造了合适的动作或者值。环境设定名称应该是在变准菜单中出现的名称，值应该是选项名、“toggle”轮询选项、一个指定的值，或者按钮的名称。</p>
+<p>可以与按钮和热区一起使用的动作如下：</p>
+<ul class="simple">
+<li>Preference(“display”, “fullscreen”) - 全屏模式显示。</li>
+<li>Preference(“display”, “window”) - 窗口模式显示，1倍大小。</li>
+<li>Preference(“display”, 2.0) - 窗口模式显示，2倍大小。</li>
+<li>Preference(“display”, “any window”) - 用前一种窗口尺寸显示。</li>
+<li>Preference(“display”, “toggle”) - 切换显示模式。</li>
+<li>Preference(“transitions”, “all”) - 显示所有转场(transition)效果。</li>
+<li>Preference(“transitions”, “none”) - 不显示转场(transition)效果。</li>
+<li>Preference(“transitions”, “toggle”) - 切换转场(transition)效果。</li>
+<li>Preference(“video sprites”, “show”) - 显示所有视频精灵(sprite)。</li>
+<li>Preference(“video sprites”, “hide”) - 可能的话，将视频精灵(sprite)降格为图片显示。</li>
+<li>Preference(“video sprites”, “toggle”) - 切换图像降格行为。</li>
+<li>Preference(“show empty window”, “show”) - 允许“window show”和“window auto”语句在say语句之外显示一个空窗口。</li>
+<li>Preference(“show empty window”, “hide”) - 不允许“window show”和“window auto”语句在say语句之外显示一个空窗口。</li>
+<li>Preference(“show empty window”, “toggle”) - 切换上面两种情况。</li>
+<li>Preference(“text speed”, 0) - 文本立刻显示。</li>
+<li>Preference(“text speed”, 142) - 设置文本显示速度为每秒142字符。</li>
+<li>Preference(“joystick”) - 显示joystick环境设定。</li>
+<li>Preference(“skip”, “seen”) - 只跳过看过的信息。</li>
+<li>Preference(“skip”, “all”) - 跳过所有信息，无论是否看过。</li>
+<li>Preference(“skip”, “toggle”) - 切换上面两种情况。</li>
+<li>Preference(“begin skipping”) - 开始跳过(skipping)。</li>
+<li>Preference(“after choices”, “skip”) - 在选项后跳过。</li>
+<li>Preference(“after choices”, “stop”) - 在选项后停止跳过。</li>
+<li>Preference(“after choices”, “toggle”) - 切换上面两种情况。</li>
+<li>Preference(“auto-forward time”, 0) - 将自动前进的时间设置为无限。</li>
+<li>Preference(“auto-forward time”, 10) - 设置自动前进时间(单位为每秒250个字符)。</li>
+<li>Preference(“auto-forward”, “enable”) - 启用自动前进模式。</li>
+<li>Preference(“auto-forward”, “disable”) - 禁用自动前进模式。</li>
+<li>Preference(“auto-forward”, “toggle”) - 切换自动前进模式。</li>
+<li>Preference(“auto-forward after click”, “enable”) - 在一次点击后维持自动前进模式。</li>
+<li>Preference(“auto-forward after click”, “disable”) - 在一次点击后禁用自动前进模式。</li>
+<li>Preference(“auto-forward after click”, “toggle”) - 切换上面两种情况。</li>
+<li>Preference(“automatic move”, “enable”) - 启用自动鼠标模式。</li>
+<li>Preference(“automatic move”, “disable”) - 禁用自动鼠标模式。</li>
+<li>Preference(“automatic move”, “toggle”) - 切换自动鼠标模式。</li>
+<li>Preference(“wait for voice”, “enable”) - 自动前进时，等待当前语音播放完毕。</li>
+<li>Preference(“wait for voice”, “disable”) - 自动前进时，不等待当前语音播放完毕。</li>
+<li>Preference(“wait for voice”, “toggle”) - 切换语音等待模式。</li>
+<li>Preference(“voice sustain”, “enable”) - 当前互动行为中维持语音。</li>
+<li>Preference(“voice sustain”, “disable”) - 当前互动行为中不维持语音。</li>
+<li>Preference(“voice sustain”, “toggle”) - 切换语音维持模式。</li>
+<li>Preference(“music mute”, “enable”) - 音乐混合器静音。</li>
+<li>Preference(“music mute”, “disable”) - 取消音乐混合器静音。</li>
+<li>Preference(“music mute”, “toggle”) - 切换音乐静音状态。</li>
+<li>Preference(“sound mute”, “enable”) - 音效混合器静音。</li>
+<li>Preference(“sound mute”, “disable”) - 取消音效混合器静音。</li>
+<li>Preference(“sound mute”, “toggle”) - 切换音效静音状态。</li>
+<li>Preference(“voice mute”, “enable”) - 语音混合器静音。</li>
+<li>Preference(“voice mute”, “disable”) - 取消语音混合器静音。</li>
+<li>Preference(“voice mute”, “toggle”) - 切换语音静音状态。</li>
+<li>Preference(“mixer &lt;mixer&gt; mute”, “enable”) - 将指定的混合器静音。</li>
+<li>Preference(“mixer &lt;mixer&gt; mute”, “disable”) - 取消指定的混合器静音。</li>
+<li>Preference(“mixer &lt;mixer&gt; mute”, “toggle”) - 切换指定的混合器静音状态。</li>
+<li>Preference(“all mute”, “enable”) - 所有混合器静音。</li>
+<li>Preference(“all mute”, “disable”) - 取消所有混合器静音。</li>
+<li>Preference(“all mute”, “toggle”) - 切换所有混合器静音状态。</li>
+<li>Preference(“music volume”, 0.5) - 设置音乐音量。</li>
+<li>Preference(“sound volume”, 0.5) - 设置音效音量。</li>
+<li>Preference(“voice volume”, 0.5) - 设置语音音量。</li>
+<li>Preference(“mixer &lt;mixer&gt; volume”, 0.5) - 设置指定混合器音量。</li>
+<li>Preference(“emphasize audio”, “enable”) - 加强在config.emphasize_audio_channels中定义的音频通道。</li>
+<li>Preference(“emphasize audio”, “disable”) - 取消加强在config.emphasize_audio_channels中定义的音频通道。</li>
+<li>Preference(“emphasize audio”, “toggle”) - 切换音频加强状态。</li>
+<li>Preference(“self voicing”, “enable”) - 启用自动语音。</li>
+<li>Preference(“self voicing”, “disable”) - 禁用自动语音。</li>
+<li>Preference(“self voicing”, “toggle”) - 切换自动语音模式。</li>
+<li>Preference(“clipboard voicing”, “enable”) - 启用剪贴板语音。</li>
+<li>Preference(“clipboard voicing”, “disable”) - 禁用剪贴板语音。</li>
+<li>Preference(“clipboard voicing”, “toggle”) - 切换剪贴板语音状态。</li>
+<li>Preference(“debug voicing”, “enable”) - 启用自动语音debug。</li>
+<li>Preference(“debug voicing”, “disable”) - 禁用自动语音debug。</li>
+<li>Preference(“debug voicing”, “toggle”) - 切换自动语音debug状态。</li>
+<li>Preference(“rollback side”, “left”) - 触摸屏幕左侧触发回滚。</li>
+<li>Preference(“rollback side”, “right”) - 触摸屏幕右侧触发回滚。</li>
+<li>Preference(“rollback side”, “disable”) - 触摸屏幕不触发回滚。</li>
+<li>Preference(“gl powersave”, True) - 使用省电模式降低帧率。</li>
+<li>Preference(“gl powersave”, False) - 不使用省电模式降低帧率。</li>
+<li>Preference(“gl powersave”, “auto”) - 使用电池情况下自动启用省电模式。</li>
+<li>Preference(“gl framerate”, None) - 运行时显示帧率。</li>
+<li>Preference(“gl framerate”, 60) - 在给定的帧率下运行。</li>
+<li>Preference(“gl tearing”, True) - (设备性能不足时)拖慢而不是跳帧。</li>
+<li>Preference(“gl tearing”, False) - (设备性能不足时)跳帧而不是拖慢。</li>
+</ul>
+<p>可以与条(bar)一起使用的值如下：</p>
+<ul class="simple">
+<li>Preference(“text speed”)</li>
+<li>Preference(“auto-forward time”)</li>
+<li>Preference(“music volume”)</li>
+<li>Preference(“sound volume”)</li>
+<li>Preference(“voice volume”)</li>
+<li>Preference(“mixer &lt;mixer&gt; volume”)</li>
+</ul>
+<p><em>range</em> 参数可以给出某个条(bar)的数值范围。“text speed”的默认值是200cps。“auto-forward time”的默认值是每段文本30秒。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="gamepad">
+<span id="id8"></span><h3>游戏手柄<a class="headerlink" href="#gamepad" title="Permalink to this headline"> link</a></h3>
+<p>这些函数和动作跟游戏手柄一起工作。</p>
+<dl class="function">
+<dt id="GamepadCalibrate">
+<code class="descname">GamepadCalibrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GamepadCalibrate" title="Permalink to this definition"> link</a></dt>
+<dd><p>调用手柄校正的动作。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="GamepadExists">
+<code class="descname">GamepadExists</code><span class="sig-paren">(</span><em>developer=True</em><span class="sig-paren">)</span><a class="headerlink" href="#GamepadExists" title="Permalink to this definition"> link</a></dt>
+<dd><p>检测手柄是否存在的函数。存在返回True，不存在返回False。</p>
+<dl class="docutils">
+<dt><cite>developer</cite></dt>
+<dd>强制该函数返回True，config.developer必须配置为True。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="file-functions">
+<span id="id9"></span><h3>文件函数<a class="headerlink" href="#file-functions" title="Permalink to this headline"> link</a></h3>
+<p>这些函数返回关于文件的有用信息。它们使用相同的默认页面(page)相关的文件动作。</p>
+<dl class="function">
+<dt id="FileCurrentPage">
+<code class="descname">FileCurrentPage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FileCurrentPage" title="Permalink to this definition"> link</a></dt>
+<dd><p>将当前文件页面(page)以字符串返回。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileCurrentScreenshot">
+<code class="descname">FileCurrentScreenshot</code><span class="sig-paren">(</span><em>empty=None</em>, <em>**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#FileCurrentScreenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个显示屏幕截图的可显示控件。其将保存你在当前文件中，前提是进入了菜单或使用 <a class="reference internal" href="#FileTakeScreenshot" title="FileTakeScreenshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">FileTakeScreenshot()</span></code></a> 采集了屏幕截图。</p>
+<p>如果没有当前屏幕截图，对应的位置上显示 <em>empty</em> 的图像。(如果 <em>empty</em> 是空值None，默认为 <a class="reference internal" href="displayables.html#Null" title="Null"><code class="xref py py-func docutils literal notranslate"><span class="pre">Null()</span></code></a> 。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileJson">
+<code class="descname">FileJson</code><span class="sig-paren">(</span><em>name</em>, <em>key=None</em>, <em>empty=None</em>, <em>missing=None</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileJson" title="Permalink to this definition"> link</a></dt>
+<dd><p>截图与文件 <em>name</em> 关联的Json信息。</p>
+<p>如果 <em>key</em> 为None，返回整个Json对象。如果存档槽位为空，则返回 <em>empty</em> 。</p>
+<p>如果 <em>key</em> 不为空，则返回json[key]，前提是 <em>key</em> 在存档json对象中有定义。如果存档存在但不包含 <em>key</em> ，就返回 <em>missing</em> 。如果存档槽位为空，则返回 <em>empty</em> 。</p>
+<p>使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.save_json_callbacks()</span></code> 注册的回调函数可以用于在存档槽位中添加Json。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileLoadable">
+<code class="descname">FileLoadable</code><span class="sig-paren">(</span><em>name</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileLoadable" title="Permalink to this definition"> link</a></dt>
+<dd><p>该函数在文件可加载的情况下返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileNewest">
+<code class="descname">FileNewest</code><span class="sig-paren">(</span><em>name</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileNewest" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果文件是最新版本返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FilePageName">
+<code class="descname">FilePageName</code><span class="sig-paren">(</span><em>auto=u'a'</em>, <em>quick=u'q'</em><span class="sig-paren">)</span><a class="headerlink" href="#FilePageName" title="Permalink to this definition"> link</a></dt>
+<dd><p>以字符串形式返回当前文件页面(page)名称。如果是一个普通页面(page)，该函数返回页面编号。否则，返回 <em>auto</em> 或 <em>quick</em> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileSaveName">
+<code class="descname">FileSaveName</code><span class="sig-paren">(</span><em>name</em>, <em>empty=u''</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileSaveName" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回文件保存时生效的存档名，如果文件不存在则返回 <em>empty</em> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileScreenshot">
+<code class="descname">FileScreenshot</code><span class="sig-paren">(</span><em>name</em>, <em>empty=None</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileScreenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回给定那个文件相关的屏幕截图。如果文件不能加载，返回 <em>empty</em> ，前提 <em>empty</em> 的值不是None。在文件不能加载且 <em>empty</em> 为空的情况下，一个空的可视组件会被创建。</p>
+<p>返回值是一个可显示对象。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileSlotName">
+<code class="descname">FileSlotName</code><span class="sig-paren">(</span><em>slot</em>, <em>slots_per_page</em>, <em>auto=u'a'</em>, <em>quick=u'q'</em>, <em>format=u'%s%d'</em><span class="sig-paren">)</span><a class="headerlink" href="#FileSlotName" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回编号后的槽位名。前提是普通页面(page)下的槽位都按顺序从1开始编号，并且页面也从1开始编号。当槽位编号为2，每个页面槽位数(slots_per_page)为10，其他变量都是默认值的情况下：</p>
+<ul class="simple">
+<li>显示第一页面时，返回“2”。</li>
+<li>显示第二页面时，返回“12”。</li>
+<li>显示自动页面时，返回“a2”。</li>
+<li>显示快速存档页面时，返回“q2”。</li>
+</ul>
+<dl class="docutils">
+<dt><cite>slot</cite></dt>
+<dd>接入的槽位编号。</dd>
+<dt><cite>slots_per_page</cite></dt>
+<dd>每页槽位数量。</dd>
+<dt><cite>auto</cite></dt>
+<dd>自动存档页面的前缀。</dd>
+<dt><cite>quick</cite></dt>
+<dd>快速存档页面的前缀。</dd>
+<dt><cite>format</cite></dt>
+<dd>格式代码。包含两部分：一个页面前缀字符串，一个槽位编号整数。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileTime">
+<code class="descname">FileTime</code><span class="sig-paren">(</span><em>name</em>, <em>format=u'%b %d</em>, <em>%H:%M'</em>, <em>empty=u''</em>, <em>page=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FileTime" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回文件保存时间，格式根据 <em>format</em> 显示。如果未找到文件，返回 <em>empty</em> 。</p>
+<p>返回值是一个字符串。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FileUsedSlots">
+<code class="descname">FileUsedSlots</code><span class="sig-paren">(</span><em>page=None</em>, <em>highest_first=True</em><span class="sig-paren">)</span><a class="headerlink" href="#FileUsedSlots" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回页面上所有可用的经过编号的文件列表。</p>
+<dl class="docutils">
+<dt><cite>page</cite></dt>
+<dd>待扫描的页面名。若为None，就使用当前页面。</dd>
+<dt><cite>highest_first</cite></dt>
+<dd>若为True，列表内文件按编号从大到小排序。否则，列表内文件按编号从小到大排序。</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="side-image-functions">
+<span id="id10"></span><h3>头像函数<a class="headerlink" href="#side-image-functions" title="Permalink to this headline"> link</a></h3>
+<p>该函数返回使用的头像。</p>
+<dl class="function">
+<dt id="SideImage">
+<code class="descname">SideImage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SideImage" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回与当前发言角色相关的头像。如果头像不存在则返回一个空的可视组件。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="tooltips">
+<span id="id11"></span><h3>Tooltips<a class="headerlink" href="#tooltips" title="Permalink to this headline"> link</a></h3>
+<p>所有可视组件上可用的tooltip特性和GetTooltip函数都可以接入tooltip。当可视组件获得焦点时，GetTooltip函数会返回这个组件的tooltip特性的值。</p>
+<p>这里是一个样例：:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">tooltip_example</span><span class="p">():</span>
+    <span class="k">vbox</span><span class="p">:</span>
+        <span class="k">textbutton</span> <span class="s2">&quot;北&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+            <span class="na">tooltip</span> <span class="s2">&quot;去约见北极熊。&quot;</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;南&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+            <span class="na">tooltip</span> <span class="s2">&quot;前往热带。&quot;</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;东&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
+            <span class="na">tooltip</span> <span class="s2">&quot;我们可以拥抱黎明。&quot;</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;西&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+            <span class="na">tooltip</span> <span class="s2">&quot;去欣赏最美的日落。&quot;</span>
+
+        <span class="k">$</span> <span class="na">tooltip</span> <span class="o">=</span> <span class="n">GetTooltip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="na">tooltip</span><span class="p">:</span>
+            <span class="k">text</span> <span class="s2">&quot;[tooltip]&quot;</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="GetTooltip">
+<code class="descname">GetTooltip</code><span class="sig-paren">(</span><em>screen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#GetTooltip" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回当前获得焦点的可视组件的tooltip，如果可视组件未获得焦点则返回None。</p>
+<dl class="docutils">
+<dt><cite>screen</cite></dt>
+<dd>如果非空，这个参数应该是某个界面的名称或者标签(tag)。如果获得焦点的可视组件是界面的一部分，则该函数只返回tooltip。</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="legacy">
+<span id="id12"></span><h4>传统方法<a class="headerlink" href="#legacy" title="Permalink to this headline"> link</a></h4>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">这种传统方法已被废弃，并使用上面说的方法替代。不过你可能会在一些老版本的项目中见到它。</p>
+</div>
+<p>当按钮处于指针悬停状态时，tooltip类会改变界面。</p>
+<dl class="class">
+<dt id="Tooltip">
+<em class="property">class </em><code class="descname">Tooltip</code><span class="sig-paren">(</span><em>default</em><span class="sig-paren">)</span><a class="headerlink" href="#Tooltip" title="Permalink to this definition"> link</a></dt>
+<dd><p>当鼠标指针悬停在某个区域上时，一个tooltip对象可以用于提示对应界面的功能。</p>
+<p>tooltip对象有一个 <code class="docutils literal notranslate"><span class="pre">value</span></code> 域，当tooltip对象被创建时会通过构造器传入 <em>default</em> 作为默认值。当通过tooltip创建的某个按钮动作被使用时，value域就会根据关联的动作改变对应值。</p>
+<dl class="method">
+<dt id="Tooltip.Action">
+<code class="descname">Action</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Tooltip.Action" title="Permalink to this definition"> link</a></dt>
+<dd><p>将按钮的hovered特性对应的动作返回。当按钮处于指针悬停状态时，tooltip的value域会被设置为 <em>value</em> 。当按钮失去焦点时，tooltip的value域会恢复为默认值。</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>在某个界面使用tooltip时，常用做法是在default语句中创建tooltip对象。tooltip的值和动作的方法可以在界面中使用。使用时可以按任何顺序——在动作执行前就可以使用tooltip的值。</p>
+<p>tooltip可以使用任何类型的值。在下面的样例中，我们使用text语句在界面中显示字符串，使用add语句添加可视组件也是可行的。还可以设计更多复杂的行为。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">tooltip_test</span><span class="p">:</span>
+
+    <span class="k">default</span> <span class="n">tt</span> <span class="o">=</span> <span class="n">Tooltip</span><span class="p">(</span><span class="s2">&quot;没有选择任何按钮。&quot;</span><span class="p">)</span>
+
+    <span class="k">frame</span><span class="p">:</span>
+        <span class="na">xfill</span> <span class="bp">True</span>
+
+        <span class="k">has</span> <span class="k">vbox</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;One.&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="na">hovered</span> <span class="n">tt</span><span class="o">.</span><span class="n">Action</span><span class="p">(</span><span class="s2">&quot;The loneliest number.&quot;</span><span class="p">)</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;Two.&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="na">hovered</span> <span class="n">tt</span><span class="o">.</span><span class="n">Action</span><span class="p">(</span><span class="s2">&quot;Is what it takes.&quot;</span><span class="p">)</span>
+
+        <span class="k">textbutton</span> <span class="s2">&quot;Three.&quot;</span><span class="p">:</span>
+            <span class="na">action</span> <span class="n">Return</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="na">hovered</span> <span class="n">tt</span><span class="o">.</span><span class="n">Action</span><span class="p">(</span><span class="s2">&quot;A crowd.&quot;</span><span class="p">)</span>
+
+        <span class="k">text</span> <span class="n">tt</span><span class="o">.</span><span class="na">value</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

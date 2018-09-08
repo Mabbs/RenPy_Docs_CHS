@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>定制按键映射 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="成就" href="achievement.html" />
+    <link rel="prev" title="精灵(sprite)" href="sprites.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">定制按键映射</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="keymap">
+<span id="id1"></span><h1>定制按键映射<a class="headerlink" href="#keymap" title="Permalink to this headline"> link</a></h1>
+<p>配置项 <a class="reference internal" href="config.html#var-config.keymap"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.keymap</span></code></a> 中包含一个事件名称与触发事件的快捷键系统的映射关系。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">许多用户已经学会了Ren’Py的默认按键绑定，并希望各游戏保持一致。</p>
+</div>
+<p>在Ren’Py快捷键系统中，使用字符串表示鼠标按键、游戏手柄按键和键盘按键。</p>
+<p>鼠标按键的快捷键格式是‘mouseup_#’或‘mousedown_#’，其中的 # 符号代表按键的编号。Ren’Py假设鼠标有5个按键，其中按键1、2、3分别表示左、中、右键，按键4和5分别表示滚轮的上滑和下滑。例如，“mousedown_1”代表鼠标左键按下，“mouseup_1”表示鼠标左键弹起，“mousedown_4”表示滚轮上滑。</p>
+<p>总共有两种键盘的快捷键。第一种是字符串里只有一个字符，有某个按键被按下时生成。通常用于绑定字母或数字按键。典型的快捷键包括“a”、“A”和“7”等。</p>
+<p>键盘快捷键也可以是符号或者功能按键。可以是pygame.constants中定义的任意 K_ 形式常量。这种快捷键字符串类似于
+“K_BACKSPACE”、 “K_RETURN”和 “K_TAB”；完整的快捷键定义详见 <a class="reference external" href="http://www.pygame.org/docs/ref/key.html">这里</a>。</p>
+<p>键盘快捷键可以使用下列前缀，与后面的字符用下划线分割：</p>
+<dl class="docutils">
+<dt>alt</dt>
+<dd>当alt键被同时按下时匹配。不同时按下alt键的快捷键与不带前缀的匹配。</dd>
+<dt>meta</dt>
+<dd>当meta、command或windows键被同时按下时匹配。不同时按下那些键的快捷键与不带前缀的匹配。</dd>
+<dt>ctrl</dt>
+<dd>当ctrl键被同时按下时匹配。不同时按下ctrl键的快捷键与不带前缀的匹配。(ctrl键很少用，因为它通常会触发跳过。)</dd>
+<dt>shift</dt>
+<dd>当shift键被同时按下时匹配。</dd>
+<dt>noshift</dt>
+<dd>当shift键没有被按下时匹配。一个 K_ 形式快捷键忽略shift按键状态。</dd>
+<dt>repeat</dt>
+<dd>由于按键始终处于按下状态时，则匹配为repeat。不带这个前缀的快捷键不会匹配到repeat。</dd>
+</dl>
+<p>例如，快捷键“shift_alt_K_F5”，当shift和alt键一直按下时，按下F5可以匹配到。</p>
+<p>要修改快捷键和事件的绑定关系，就需要修改 <a class="reference internal" href="config.html#var-config.keymap"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.keymap</span></code></a>。下面的脚本将“t”键添加到按键列表中，作用是dismiss某say语句，并从列表中移除了空格键。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span><span class="p">:</span>
+    <span class="k">$</span> <span class="n">config</span><span class="o">.</span><span class="n">keymap</span><span class="p">[</span><span class="s1">&#39;dismiss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+    <span class="k">$</span> <span class="n">config</span><span class="o">.</span><span class="n">keymap</span><span class="p">[</span><span class="s1">&#39;dismiss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;K_SPACE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>默认的按键映射放在renpy/common/00keymap.rpy文件中，下面是6.99版本的配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">keymap</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+
+    <span class="c1"># 除非明确禁用，各处都能使用的绑定快捷键。</span>
+    <span class="n">rollback</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_PAGEUP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_PAGEUP&#39;</span><span class="p">,</span> <span class="s1">&#39;K_AC_BACK&#39;</span><span class="p">,</span> <span class="s1">&#39;mousedown_4&#39;</span> <span class="p">],</span>
+    <span class="n">screenshot</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;s&#39;</span> <span class="p">],</span>
+    <span class="n">toggle_afm</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+    <span class="n">toggle_fullscreen</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;alt_K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;alt_K_KP_ENTER&#39;</span><span class="p">,</span> <span class="s1">&#39;K_F11&#39;</span> <span class="p">],</span>
+    <span class="n">game_menu</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_ESCAPE&#39;</span><span class="p">,</span> <span class="s1">&#39;K_MENU&#39;</span><span class="p">,</span> <span class="s1">&#39;mouseup_3&#39;</span> <span class="p">],</span>
+    <span class="n">hide_windows</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_2&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span> <span class="p">],</span>
+    <span class="n">launch_editor</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;E&#39;</span> <span class="p">],</span>
+    <span class="n">dump_styles</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+    <span class="n">reload_game</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;R&#39;</span> <span class="p">],</span>
+    <span class="n">inspector</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;I&#39;</span> <span class="p">],</span>
+    <span class="n">full_inspector</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;alt_I&#39;</span> <span class="p">],</span>
+    <span class="n">developer</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;D&#39;</span> <span class="p">],</span>
+    <span class="n">quit</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+    <span class="n">iconify</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+    <span class="n">help</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_F1&#39;</span><span class="p">,</span> <span class="s1">&#39;meta_shift_/&#39;</span> <span class="p">],</span>
+    <span class="n">choose_renderer</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;G&#39;</span> <span class="p">],</span>
+    <span class="n">progress_screen</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;alt_shift_K_p&#39;</span><span class="p">,</span> <span class="s1">&#39;meta_shift_K_p&#39;</span><span class="p">,</span> <span class="s1">&#39;K_F2&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 数据接入能力。</span>
+    <span class="n">self_voicing</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span> <span class="p">],</span>
+    <span class="n">clipboard_voicing</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;C&#39;</span> <span class="p">],</span>
+    <span class="n">debug_voicing</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;alt_V&#39;</span><span class="p">,</span> <span class="s1">&#39;meta_V&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># say相关。</span>
+    <span class="n">rollforward</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_5&#39;</span><span class="p">,</span> <span class="s1">&#39;K_PAGEDOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_PAGEDOWN&#39;</span> <span class="p">],</span>
+    <span class="n">dismiss</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_1&#39;</span><span class="p">,</span> <span class="s1">&#39;K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;K_SPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;K_KP_ENTER&#39;</span><span class="p">,</span> <span class="s1">&#39;K_SELECT&#39;</span> <span class="p">],</span>
+    <span class="n">dismiss_unfocused</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+
+    <span class="c1"># 暂停。</span>
+    <span class="n">dismiss_hard_pause</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+
+    <span class="c1"># 焦点相关。</span>
+    <span class="n">focus_left</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_LEFT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_LEFT&#39;</span> <span class="p">],</span>
+    <span class="n">focus_right</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_RIGHT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_RIGHT&#39;</span> <span class="p">],</span>
+    <span class="n">focus_up</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_UP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_UP&#39;</span> <span class="p">],</span>
+    <span class="n">focus_down</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DOWN&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 按钮。</span>
+    <span class="n">button_ignore</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_1&#39;</span> <span class="p">],</span>
+    <span class="n">button_select</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_1&#39;</span><span class="p">,</span> <span class="s1">&#39;K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;K_KP_ENTER&#39;</span><span class="p">,</span> <span class="s1">&#39;K_SELECT&#39;</span> <span class="p">],</span>
+    <span class="n">button_alternate</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_3&#39;</span> <span class="p">],</span>
+    <span class="n">button_alternate_ignore</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_3&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 输入。</span>
+    <span class="n">input_backspace</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_BACKSPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_BACKSPACE&#39;</span> <span class="p">],</span>
+    <span class="n">input_enter</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;K_KP_ENTER&#39;</span> <span class="p">],</span>
+    <span class="n">input_left</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_LEFT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_LEFT&#39;</span> <span class="p">],</span>
+    <span class="n">input_right</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_RIGHT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_RIGHT&#39;</span> <span class="p">],</span>
+    <span class="n">input_up</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_UP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_UP&#39;</span> <span class="p">],</span>
+    <span class="n">input_down</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DOWN&#39;</span> <span class="p">],</span>
+    <span class="n">input_delete</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DELETE&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DELETE&#39;</span> <span class="p">],</span>
+    <span class="n">input_home</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_HOME&#39;</span> <span class="p">],</span>
+    <span class="n">input_end</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_END&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 视口。</span>
+    <span class="n">viewport_leftarrow</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_LEFT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_LEFT&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_rightarrow</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_RIGHT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_RIGHT&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_uparrow</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_UP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_UP&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_downarrow</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DOWN&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_wheelup</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_4&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_wheeldown</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_5&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_drag_start</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_1&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_drag_end</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_1&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 这些按键控制跳过。</span>
+    <span class="n">skip</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_LCTRL&#39;</span><span class="p">,</span> <span class="s1">&#39;K_RCTRL&#39;</span> <span class="p">],</span>
+    <span class="n">stop_skipping</span> <span class="o">=</span> <span class="p">[</span> <span class="p">],</span>
+    <span class="n">toggle_skip</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_TAB&#39;</span> <span class="p">],</span>
+    <span class="n">fast_skip</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;&gt;&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># Bar。</span>
+    <span class="n">bar_activate</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_1&#39;</span><span class="p">,</span> <span class="s1">&#39;K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;K_KP_ENTER&#39;</span><span class="p">,</span> <span class="s1">&#39;K_SELECT&#39;</span> <span class="p">],</span>
+    <span class="n">bar_deactivate</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_1&#39;</span><span class="p">,</span> <span class="s1">&#39;K_RETURN&#39;</span><span class="p">,</span> <span class="s1">&#39;K_KP_ENTER&#39;</span><span class="p">,</span> <span class="s1">&#39;K_SELECT&#39;</span> <span class="p">],</span>
+    <span class="n">bar_left</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_LEFT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_LEFT&#39;</span> <span class="p">],</span>
+    <span class="n">bar_right</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_RIGHT&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_RIGHT&#39;</span> <span class="p">],</span>
+    <span class="n">bar_up</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_UP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_UP&#39;</span> <span class="p">],</span>
+    <span class="n">bar_down</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DOWN&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 删除存档。</span>
+    <span class="n">save_delete</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DELETE&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 可拖拽组件。</span>
+    <span class="n">drag_activate</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_1&#39;</span> <span class="p">],</span>
+    <span class="n">drag_deactivate</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mouseup_1&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># 调试控制台。</span>
+    <span class="n">console</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;shift_O&#39;</span> <span class="p">],</span>
+    <span class="n">console_older</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_UP&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_UP&#39;</span> <span class="p">],</span>
+    <span class="n">console_newer</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_DOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;repeat_K_DOWN&#39;</span><span class="p">],</span>
+
+    <span class="c1"># 忽略(保持后向兼容)。</span>
+    <span class="n">toggle_music</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;m&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_up</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_4&#39;</span> <span class="p">],</span>
+    <span class="n">viewport_down</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;mousedown_5&#39;</span> <span class="p">],</span>
+
+    <span class="c1"># Profile命令。</span>
+    <span class="n">profile_once</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_F8&#39;</span> <span class="p">],</span>
+    <span class="n">memory_profile</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;K_F7&#39;</span> <span class="p">],</span>
+
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>手柄的绑定工作会有一点不同。手柄绑定会将一个事件映射为一个或多个Ren’Py事件名。默认的手柄绑定设置如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">pad_bindings</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;pad_leftshoulder_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;rollback&quot;</span><span class="p">,</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_lefttrigger_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;rollback&quot;</span><span class="p">,</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_back_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;rollback&quot;</span><span class="p">,</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_guide_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;game_menu&quot;</span><span class="p">,</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_start_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;game_menu&quot;</span><span class="p">,</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_y_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;hide_windows&quot;</span><span class="p">,</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_rightshoulder_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;rollforward&quot;</span><span class="p">,</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_righttrigger_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;dismiss&quot;</span><span class="p">,</span> <span class="s2">&quot;button_select&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_activate&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_deactivate&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_a_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;dismiss&quot;</span><span class="p">,</span> <span class="s2">&quot;button_select&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_activate&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_deactivate&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;pad_b_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;button_alternate&quot;</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_dpleft_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_left&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_left&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_leftarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_leftx_neg&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_left&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_left&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_leftarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_rightx_neg&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_left&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_left&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_leftarrow&quot;</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_dpright_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_right&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_right&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_rightarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_leftx_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_right&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_right&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_rightarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_rightx_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_right&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_right&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_rightarrow&quot;</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_dpup_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_up&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_up&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_uparrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_lefty_neg&quot;</span> <span class="p">:</span>  <span class="p">[</span> <span class="s2">&quot;focus_up&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_up&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_uparrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_righty_neg&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_up&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_up&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_uparrow&quot;</span> <span class="p">],</span>
+
+    <span class="s2">&quot;pad_dpdown_press&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_down&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_down&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_downarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_lefty_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_down&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_down&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_downarrow&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;pad_righty_pos&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;focus_down&quot;</span><span class="p">,</span> <span class="s2">&quot;bar_down&quot;</span><span class="p">,</span> <span class="s2">&quot;viewport_downarrow&quot;</span> <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>手柄按键的事件名格式是“pad_*button*_press”和“pad_*button*_release”。模拟摇杆事件格式是“pad_*axis*_pos”、“pad_*axis*_neg”和“pad_*axis*_zero”。</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

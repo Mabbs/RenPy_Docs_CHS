@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>配置项变量 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="环境设定配置" href="preferences.html" />
+    <link rel="prev" title="界面语言优化" href="screen_optimization.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">配置项变量</a><ul>
+<li><a class="reference internal" href="#commonly-used">常用配置项</a></li>
+<li><a class="reference internal" href="#config-transitions">转场</a></li>
+<li><a class="reference internal" href="#preference-defaults">环境设定默认值</a></li>
+<li><a class="reference internal" href="#occasionally-used">偶尔用到的配置项</a></li>
+<li><a class="reference internal" href="#rarely-or-internally-used">极少使用或内部使用</a></li>
+<li><a class="reference internal" href="#gc">垃圾回收(GC)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="configuration-variables">
+<span id="id1"></span><h1>配置项变量<a class="headerlink" href="#configuration-variables" title="Permalink to this headline"> link</a></h1>
+<p>配置项变量控制Ren’Py的执行器行为，允许Ren’Py自身使用多种方式的定制化。配置项囊括了常见变量(比如改变界面尺寸)到罕见变量(添加新类型的归档文件)。</p>
+<p>Ren’Py执行器会假设，GUI系统已完成初始化，配置项变量不会发生改变。在初始化语句块(block)之外修改配置项变量会导致未定义的行为。配置项变量不是存档文件的一部分。</p>
+<p>配置项变量通常是初始化Python语句块(block)中修改：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="c1"># 使用宽屏分辨率。</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">screen_width</span> <span class="o">=</span> <span class="mi">1024</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">screen_height</span> <span class="o">=</span> <span class="mi">600</span>
+</pre></div>
+</div>
+<div class="section" id="commonly-used">
+<span id="id2"></span><h2>常用配置项<a class="headerlink" href="#commonly-used" title="Permalink to this headline"> link</a></h2>
+<dl class="var">
+<dt id="var-config.name">
+define <code class="descname">config.name</code> = “”<a class="headerlink" href="#var-config.name" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字符串给定了游戏名。这个配置项还会用作回溯等日志文件名的一部分，与版本号一起使用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.save_directory">
+define <code class="descname">config.save_directory</code> = “…”<a class="headerlink" href="#var-config.save_directory" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于生成游戏和保存持久化信息使用的目录。具体的游戏目录取决于不同的平台：</p>
+<dl class="docutils">
+<dt>Windows</dt>
+<dd>%APPDATA%/RenPy/<cite>save_directory</cite></dd>
+<dt>Mac OS X</dt>
+<dd>~/Library/RenPy/<cite>save_directory</cite></dd>
+<dt>Linux/Other</dt>
+<dd>~/.renpy/<cite>save_directory</cite></dd>
+</dl>
+<p>这项设置为None的话，将在game目录下创建一个“saves”文件夹。不推荐这样做，因为这无法防止game目录被系统的多用户共享。当某个游戏以管理员身份安装，以普通用户运行时，这种配置也会导致运行问题。</p>
+<p>配置这项时，必须使用define语句或者Python语句块。无论使用哪种，配置项的语句都会在其他任何语句之前运行，所以其应该是一个字符串而不能是表达式。</p>
+<p>需要打开存档目录时，使用 <a class="reference internal" href="#var-config.savedir"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.savedir</span></code></a> 而不是config.save_directory。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.version">
+define <code class="descname">config.version</code> = “”<a class="headerlink" href="#var-config.version" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字符串给定了游戏版本号。这个配置项还会用作回溯等日志文件名的一部分。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window">
+define <code class="descname">config.window</code> = None<a class="headerlink" href="#var-config.window" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个配置项控制对话窗口管理的默认方法。若不为空值(None)，该项应该是“show”、“hide”或者“auto”。</p>
+<p>当设置为“show”的情况下，对话窗口始终会显示。当设置为“hide”的情况下，除了say语句等需要显示对话内容之外，对话窗口会隐藏。当设置为“auto”的情况下，对话窗口会在scene语句前隐藏，显示对话时再出现。</p>
+<p>这个配置项设置了默认值。默认值可以使用 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">show</span></code> 、 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">hide</span></code> 和 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">auto</span></code> 语句改变。详见
+<a class="reference internal" href="dialogue.html#dialogue-window-management"><span class="std std-ref">对话窗口管理</span></a>。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="config-transitions">
+<span id="id3"></span><h2>转场<a class="headerlink" href="#config-transitions" title="Permalink to this headline"> link</a></h2>
+<p>这些配置项控制各种场景的转场效果。</p>
+<dl class="var">
+<dt id="var-config.adv_nvl_transition">
+define <code class="descname">config.adv_nvl_transition</code> = None<a class="headerlink" href="#var-config.adv_nvl_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>在ADV模式文本后直接显示NVL模式文本使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.after_load_transition">
+define <code class="descname">config.after_load_transition</code> = None<a class="headerlink" href="#var-config.after_load_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>loading之后使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.end_game_transition">
+define <code class="descname">config.end_game_transition</code> = None<a class="headerlink" href="#var-config.end_game_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>游戏正常结束后返回到主菜单使用的转场效果，比如调用return却没有明确的返回点，或者调用 <a class="reference internal" href="other.html#renpy.full_restart" title="renpy.full_restart"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.full_restart()</span></code></a>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.end_splash_transition">
+define <code class="descname">config.end_splash_transition</code> = None<a class="headerlink" href="#var-config.end_splash_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>在splashscreen后显示主菜单时使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.enter_replay_transition">
+define <code class="descname">config.enter_replay_transition</code> = None<a class="headerlink" href="#var-config.enter_replay_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，回放(replay)使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.enter_transition">
+define <code class="descname">config.enter_transition</code> = None<a class="headerlink" href="#var-config.enter_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，进入游戏菜单时使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.enter_yesno_transition">
+define <code class="descname">config.enter_yesno_transition</code> = None<a class="headerlink" href="#var-config.enter_yesno_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，进入yes/no提示界面的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.exit_replay_transition">
+define <code class="descname">config.exit_replay_transition</code> = None<a class="headerlink" href="#var-config.exit_replay_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，退出回放(replay)时使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.exit_transition">
+define <code class="descname">config.exit_transition</code> = None<a class="headerlink" href="#var-config.exit_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，退出游戏菜单使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.exit_yesno_transition">
+define <code class="descname">config.exit_yesno_transition</code> = None<a class="headerlink" href="#var-config.exit_yesno_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，退出yes/no提示界面使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.game_main_transition">
+define <code class="descname">config.game_main_transition</code> = None<a class="headerlink" href="#var-config.game_main_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>从游戏菜单离开显示主菜单时使用的转场效果。从主菜单调用读档和环境设定界面，以及用户在游戏菜单选择返回主菜单也使用这个转场。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.intra_transition">
+define <code class="descname">config.intra_transition</code> = None<a class="headerlink" href="#var-config.intra_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>在游戏菜单的各界面之间使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.main_game_transition">
+define <code class="descname">config.main_game_transition</code> = None<a class="headerlink" href="#var-config.main_game_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>从主菜单进入游戏菜单，以及点击“Load Game”或“Preferences”后使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.nvl_adv_transition">
+define <code class="descname">config.nvl_adv_transition</code> = None<a class="headerlink" href="#var-config.nvl_adv_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>在NVL模式文本后直接显示ADV模式文本使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_attribute_transition">
+define <code class="descname">config.say_attribute_transition</code> = None<a class="headerlink" href="#var-config.say_attribute_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，用image属性(attribute)的say语句改变图像时使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_attribute_transition_layer">
+define <code class="descname">config.say_attribute_transition_layer</code> = None<a class="headerlink" href="#var-config.say_attribute_transition_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这必须是给定图层(layer)名的字符串。(大多数情况都是“master”。)say属性(attribute)会应用于命名的那个图层，且Ren’Py不会暂停等待转场效果发生。在对话显示时，这也会对属性(attribute)中的转场生效。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_hide_transition">
+define <code class="descname">config.window_hide_transition</code> = None<a class="headerlink" href="#var-config.window_hide_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>没有显示指定转场效果时，window hide语句使用的转场效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_show_transition">
+define <code class="descname">config.window_show_transition</code> = None<a class="headerlink" href="#var-config.window_show_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>没有显示指定转场效果时，window show语句使用的转场效果。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="preference-defaults">
+<span id="id4"></span><h2>环境设定默认值<a class="headerlink" href="#preference-defaults" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py有一些变量设置了环境设定的默认值。请查看 <code class="xref std std-var docutils literal notranslate"><span class="pre">环境设定变量</span></code> 部分的内容。</p>
+</div>
+<div class="section" id="occasionally-used">
+<span id="id5"></span><h2>偶尔用到的配置项<a class="headerlink" href="#occasionally-used" title="Permalink to this headline"> link</a></h2>
+<dl class="var">
+<dt id="var-config.after_load_callbacks">
+define <code class="descname">config.after_load_callbacks</code> = [ … ]<a class="headerlink" href="#var-config.after_load_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>读档时，(无入参)调用的参数列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.after_replay_callback">
+define <code class="descname">config.after_replay_callback</code> = None<a class="headerlink" href="#var-config.after_replay_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项是回放(replay)结束后，不使用入参那调用的函数。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.auto_channels">
+define <code class="descname">config.auto_channels</code> = { “audio” : ( “sfx”, “”, “”  ) }<a class="headerlink" href="#var-config.auto_channels" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项是用于定义自动音频通道。它将通道名映射为一个3元的元组：</p>
+<ul class="simple">
+<li>混合器使用的通道名。</li>
+<li>通道上播放文件的前缀。</li>
+<li>通道上播放文件的后缀。</li>
+</ul>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.auto_load">
+define <code class="descname">config.auto_load</code> = None<a class="headerlink" href="#var-config.auto_load" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，该项表示Ren’Py启动时自动加载的一个存档文件名。这项是提供给针对开发者用户，而不是终端用户用的。将这项设置为1的话，就会自动读取槽位1的存档。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.auto_voice">
+define <code class="descname">config.auto_voice</code> = None<a class="headerlink" href="#var-config.auto_voice" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项可以是一个字符串、一个函数或者空值(None)。若为None，自动语音功能就被禁用。</p>
+<p>若是一个字符串，字符串格式带有与表示对话当前行标识绑定的变量 <code class="docutils literal notranslate"><span class="pre">id</span></code> 。如果该项给出了一个存在的文件，那个文件就被作为语音播放。</p>
+<p>若是一个函数，该函数会带一个入参被调用，即对话当前行标识号。该函数应该返回一个字符串，这个字符串给出的文件存在的情况下，文件就会作为语音播放。</p>
+<p>更多细节详见 <a class="reference internal" href="voice.html#automatic-voice"><span class="std std-ref">自动语音</span></a> 。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.automatic_images">
+define <code class="descname">config.automatic_images</code> = None<a class="headerlink" href="#var-config.automatic_images" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，则允许Ren’Py自动定义图像。</p>
+<p>非空的情况下，这项应该设置为一个分隔符列表。(例如， <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'</span> <span class="pre">',</span> <span class="pre">'_',</span> <span class="pre">'/'</span> <span class="pre">]</span></code> 。)</p>
+<p>Ren’Py会扫描磁盘和归档的文件列表。当找到后缀名是“.png”或“.jpg”文件，Ren’Py会省略这些后缀，并根据文件名创建新的图像名。如果文件名至少包含两部分，并且没有同名的图像被定义过，Ren’Py会根据文件名匹配文件名。</p>
+<p>根据分隔符列表样例，如果你的游戏目录中包含：</p>
+<ul class="simple">
+<li>eileen_happy.png， Ren’Py 会定义图像 “eileen happy”.</li>
+<li>lucy/mad.png，Ren’Py会定义图像”lucy mad”.</li>
+<li>mary.png，Ren’Py不会做任何事。(因为图片文件名不包含两部分。)</li>
+</ul>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.automatic_images_strip">
+define <code class="descname">config.automatic_images_strip</code> = [ ]<a class="headerlink" href="#var-config.automatic_images_strip" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字符串列表，给定了自动定义图像时省略的前缀。当某些目录下包含图片，可以用来删除目录名称。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.autosave_slots">
+define <code class="descname">config.autosave_slots</code> = 10<a class="headerlink" href="#var-config.autosave_slots" title="Permalink to this definition"> link</a></dt>
+<dd><p>自动存档使用的槽位编号。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.cache_surfaces">
+define <code class="descname">config.cache_surfaces</code> = True<a class="headerlink" href="#var-config.cache_surfaces" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，图像的底层数据存储在RAM中，允许图像操作器(manipulator)使用时不需要从磁盘加载。若为False，数据会从缓存中删除，但会在显存中存为一份纹理(texture)，降低RAM使用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.character_id_prefixes">
+define <code class="descname">config.character_id_prefixes</code> = [ ]<a class="headerlink" href="#var-config.character_id_prefixes" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项指定了一个可以用于 <a class="reference internal" href="dialogue.html#Character" title="Character"><code class="xref py py-func docutils literal notranslate"><span class="pre">Character()</span></code></a> 对象的样式特性(property)前缀列表。当某个样式前缀与列表中的前缀匹配，带有那个前缀的可视组件就会应用对应的样式。</p>
+<p>例如，给默认GUI添加“namebox”前缀。当某个角色给定了namebox_background特性时，它会将带有id“namebox”的可视组件设置为say界面的 <a class="reference internal" href="style_properties.html#style-property-background"><code class="xref std std-propref docutils literal notranslate"><span class="pre">background</span></code></a>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.config.conditionswitch_predict_all">
+define <code class="descname">config.config.conditionswitch_predict_all</code> = False<a class="headerlink" href="#var-config.config.conditionswitch_predict_all" title="Permalink to this definition"> link</a></dt>
+<dd><p>针对  <a class="reference internal" href="displayables.html#ConditionSwitch" title="ConditionSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConditionSwitch()</span></code></a>
+和 <a class="reference internal" href="displayables.html#ShowingSwitch" title="ShowingSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ShowingSwitch()</span></code></a> 的predict_all入参默认值，决定是否所有可用的可视组件都显示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.debug">
+define <code class="descname">config.debug</code> = False<a class="headerlink" href="#var-config.debug" title="Permalink to this definition"> link</a></dt>
+<dd><p>启用调试功能(大多数时候将文件丢失问题转成错误信息)。在发布版本中，这项应该是关闭的。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.debug_image_cache">
+define <code class="descname">config.debug_image_cache</code> = False<a class="headerlink" href="#var-config.debug_image_cache" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会把关于 <a class="reference internal" href="displayables.html#images"><span class="std std-ref">图像缓存</span></a>
+的信息写入到image_cache.txt文件中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.debug_sound">
+define <code class="descname">config.debug_sound</code> = False<a class="headerlink" href="#var-config.debug_sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>启用声音调试功能。这项禁用了声音生成过程中的错误抑制机制。不过，如果声卡丢失或者故障，这样的错误是正常的，启用这个调试项可能会导致Ren’Py的正常功能无法工作。在发布版本中，这项应该是关闭的。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.debug_text_overflow">
+define <code class="descname">config.debug_text_overflow</code> = False<a class="headerlink" href="#var-config.debug_text_overflow" title="Permalink to this definition"> link</a></dt>
+<dd><p>当这项为True时，Ren’Py会把文本溢出记录到text_overflow.txt文件中。文本组件渲染一个比其自身更大尺寸的区域时，会产生一个文本溢出。该项设置为True，并把样式特性中的 <a class="reference internal" href="style_properties.html#style-property-xmaximum"><code class="xref std std-propref docutils literal notranslate"><span class="pre">xmaximum</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-ymaximum"><code class="xref std std-propref docutils literal notranslate"><span class="pre">ymaximum</span></code></a> 设置为对话窗口尺寸，就能在对话长度相对窗口过大时生成溢出报告。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.default_tag_layer">
+define <code class="descname">config.default_tag_layer</code> = “master”<a class="headerlink" href="#var-config.default_tag_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>图像显示的默认图层(layer)，前提是图像标签(tag)在config.tag_layer不存在。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.default_transform">
+define <code class="descname">config.default_transform</code> = …<a class="headerlink" href="#var-config.default_transform" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用show或scene语句显示某个可视组件时，从此项配置的transform获取并初始化可视组件transform特性(property)的值。</p>
+<p>默认的default_transform是 <a class="reference internal" href="transforms.html#var-center"><code class="xref std std-var docutils literal notranslate"><span class="pre">center</span></code></a>，居中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.defer_styles">
+define <code class="descname">config.defer_styles</code> = False<a class="headerlink" href="#var-config.defer_styles" title="Permalink to this definition"> link</a></dt>
+<dd><p>当该项为True时，style语句的执行会推迟到所有“translate python”语句块(block)执行后。这允许多语言支持python语句块更新某些变量。这些变量会用于多语言支持样式之外的style语句中。</p>
+<p>该项默认值是False， <a class="reference internal" href="gui_advanced.html#gui.init" title="gui.init"><code class="xref py py-func docutils literal notranslate"><span class="pre">gui.init()</span></code></a> 被调用时会将这项设置为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.developer">
+define <code class="descname">config.developer</code> = “auto”<a class="headerlink" href="#var-config.developer" title="Permalink to this definition"> link</a></dt>
+<dd><p>若设置为True，启用开发者模式。开发者模式下能使用shift+D进入开发者菜单，使用shift+R重新加载脚本，以及各种不支持终端用户的功能特性。</p>
+<p>该项可以是True、False或“auto”。若设置为“auto”，Ren’Py会检查整个游戏是否已经构建打包，并设置合适的config.developer值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.displayable_prefix">
+define <code class="descname">config.displayable_prefix</code> = { }<a class="headerlink" href="#var-config.displayable_prefix" title="Permalink to this definition"> link</a></dt>
+<dd><p>请见 <a class="reference internal" href="displayables.html#displayable-prefix"><span class="std std-ref">可视组件前缀</span></a>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.emphasize_audio_channels">
+define <code class="descname">config.emphasize_audio_channels</code> = [ ‘voice’ ]<a class="headerlink" href="#var-config.emphasize_audio_channels" title="Permalink to this definition"> link</a></dt>
+<dd><p>给出音频通道名的字符串列表。</p>
+<p>如果启用了“emphasize audio”环境设定，当列表内某个音频通道开始播放一个声音时，所有不在列表内的通道都将在 <a class="reference internal" href="#var-config.emphasize_audio_volume"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.emphasize_audio_volume</span></code></a> 定义的时间(单位为秒)内将自身的音量中值降低到 <a class="reference internal" href="#var-config.emphasize_audio_time"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.emphasize_audio_time</span></code></a>
+的值。</p>
+<p>当没有列表内的通道播放声音时，所有不在列表内的通道将在
+<a class="reference internal" href="#var-config.emphasize_audio_time"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.emphasize_audio_time</span></code></a> 定义的时间(单位为秒)内将自身的音量中值提高到1.0。</p>
+<p>例如，将这项设置为 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'voice'</span> <span class="pre">]</span></code> 的话，播放语音时所有非语音通道的音量都会被降低。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.emphasize_audio_time">
+define <code class="descname">config.emphasize_audio_time</code> = 0.5<a class="headerlink" href="#var-config.emphasize_audio_time" title="Permalink to this definition"> link</a></dt>
+<dd><p>见上面的说明。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.emphasize_audio_volume">
+define <code class="descname">config.emphasize_audio_volume</code> = 0.5<a class="headerlink" href="#var-config.emphasize_audio_volume" title="Permalink to this definition"> link</a></dt>
+<dd><p>见上面的说明。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.empty_window">
+define <code class="descname">config.empty_window</code> = …<a class="headerlink" href="#var-config.empty_window" title="Permalink to this definition"> link</a></dt>
+<dd><p>当_window项为True且界面上不显示任何窗口时，这项会被调用。(那表示， <a class="reference internal" href="other.html#renpy.shown_window" title="renpy.shown_window"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.shown_window()</span></code></a> 函数没有被调用。)通常用于在界面上显示一个空的窗口，返回后不会触发互动行为。</p>
+<p>这项的默认用法是，叙述者角色显示一个空白行不使用互动行为。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.enter_sound">
+define <code class="descname">config.enter_sound</code> = None<a class="headerlink" href="#var-config.enter_sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是进入游戏菜单播放的音效文件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.exit_sound">
+define <code class="descname">config.exit_sound</code> = None<a class="headerlink" href="#var-config.exit_sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是离开游戏菜单播放的音效文件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.fix_rollback_without_choice">
+define <code class="descname">config.fix_rollback_without_choice</code> = False<a class="headerlink" href="#var-config.fix_rollback_without_choice" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项决定了回退时，菜单和imagemap的构建方式。该项默认值是False，表示只有之前选择的菜单选项是可以点击的。若设置为真(False)，之前的选择会被标记，但所有选项都不是可点击的。用户可以使用点击在回退缓存中处理随意向前。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.font_replacement_map">
+define <code class="descname">config.font_replacement_map</code> = { }<a class="headerlink" href="#var-config.font_replacement_map" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项是一个从(font, bold, italics)到(font, bold, italics)映射，用来使用指定的粗体或斜体替换默认字体。例如，如果想要“Vera.ttf”版本的斜体使用“VeraIt.ttf”代替，可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">font_replacement_map</span><span class="p">[</span><span class="s2">&quot;Vera.ttf&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;VeraIt.ttf&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>请注意，这种映射只能用于字体的特定变化。也就是说，请求“Vera”字体的粗体兼斜体版本，会得到一个粗体兼斜体版本的“Vera”字体，而不是斜体“Vera”的粗体版本。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.game_menu">
+define <code class="descname">config.game_menu</code> = [ … ]<a class="headerlink" href="#var-config.game_menu" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项用于定制化游戏菜单选项。详见主菜单和游戏菜单的中关于此配置项的内容。</p>
+<p>使用界面定义游戏菜单的情况下，这项不会被使用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.game_menu_music">
+define <code class="descname">config.game_menu_music</code> = None<a class="headerlink" href="#var-config.game_menu_music" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项是在游戏菜单时播放的音乐文件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.gl_clear_color">
+define <code class="descname">config.gl_clear_color</code> = “#000”<a class="headerlink" href="#var-config.gl_clear_color" title="Permalink to this definition"> link</a></dt>
+<dd><p>在有意义的图像绘制前，用于清理窗口使用的颜色。当游戏在窗口或显示器全屏模式下的高宽比与游戏定义的高宽比不匹配时，letterbox或pillarbox的边框就是用的这种颜色。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.gl_test_image">
+define <code class="descname">config.gl_test_image</code> = “black”<a class="headerlink" href="#var-config.gl_test_image" title="Permalink to this definition"> link</a></dt>
+<dd><p>运行OpenGL性能测试时使用的图片名称。这个图片会在启动时显示5帧或者0.25秒，然后自动隐藏。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.has_autosave">
+define <code class="descname">config.has_autosave</code> = True<a class="headerlink" href="#var-config.has_autosave" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，游戏会启动自动保存。若为False，禁用自动保存。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.history_callbacks">
+define <code class="descname">config.history_callbacks</code> = [ … ]<a class="headerlink" href="#var-config.history_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>该项包含一个回调(callback)函数列表，其中的回调函数会在Ren’Py在_history_list中添加新对象之前被调用。调用回调函数时，新增的HistoryEntry对象会作为第一个入参，还可以在那个对象中添加新的字段(field)。</p>
+<p>Ren’Py使用内置的历史回调函数，所以创作者应该将自己的回调函数添加到这个列表中，而不是替换整个列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.history_length">
+define <code class="descname">config.history_length</code> = None<a class="headerlink" href="#var-config.history_length" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py保存的对话历史层的数量。该项被默认GUI设置为250。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.hw_video">
+define <code class="descname">config.hw_video</code> = False<a class="headerlink" href="#var-config.hw_video" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，在移动平台播放视频启用硬件解码。硬件解码视频更快，但受到某些格式和全屏播放的限制。若为False，使用软解解码播放，但效率堪忧。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.hyperlink_handlers">
+define <code class="descname">config.hyperlink_handlers</code> = { … }<a class="headerlink" href="#var-config.hyperlink_handlers" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字典，建立超链接协议与协议处理器(handler)之间的映射关系。处理器(handler)是一个函数，使用超链接做为值(在英文冒号之后的内容)，并执行一些动作。如果有返回值，互动行为就停止。否则，点击操作会被忽略，互动行动继续。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.hyperlink_protocol">
+define <code class="descname">config.hyperlink_protocol</code> = “call_in_new_context”<a class="headerlink" href="#var-config.hyperlink_protocol" title="Permalink to this definition"> link</a></dt>
+<dd><p>没有关联任何协议的超链接所使用的协议。详见 <a class="reference internal" href="text.html#a-tag"><span class="std std-ref">文本标签</span></a> 中关于可用协议部分。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.image_cache_size">
+define <code class="descname">config.image_cache_size</code> = None<a class="headerlink" href="#var-config.image_cache_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果非None，该项用于设置 <a class="reference internal" href="displayables.html#images"><span class="std std-ref">图像缓存</span></a> 的大小，是界面尺寸的整倍数，单位为像素。</p>
+<p>如果设置过大，是浪费内存的行为。如果设置过小，图像从磁盘直接加载，会降低性能。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.image_cache_size_mb">
+define <code class="descname">config.image_cache_size_mb</code> = 300<a class="headerlink" href="#var-config.image_cache_size_mb" title="Permalink to this definition"> link</a></dt>
+<dd><p>该项用于设置 <a class="reference internal" href="displayables.html#images"><span class="std std-ref">图像缓存</span></a> 的大小，单位是MB。如果 <a class="reference internal" href="#var-config.cache_surfaces"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.cache_surfaces</span></code></a> 的值是False，每个图像的一个像素占用4 byte的存储空间；否则，每个图像的一个像素占用8 byte的存储空间.</p>
+<p>如果设置过大，是浪费内存的行为。如果设置过小，图像从磁盘直接加载，会降低性能。只要
+<a class="reference internal" href="#var-config.image_cache_size"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.image_cache_size</span></code></a> 的配置不是空值(None)，就不使用config.image_cache_size_mb。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.key_repeat">
+define <code class="descname">config.key_repeat</code> = (.3, .03)<a class="headerlink" href="#var-config.key_repeat" title="Permalink to this definition"> link</a></dt>
+<dd><p>控制按键重复频率。如果启用了按键重复，这项应该是一个元组。元组内第一个元素是首次重复的延迟，第二个元素是之后每次重复的延迟。两个元素单位都是秒。如果这项是None，键盘重复功能被禁用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.language">
+define <code class="descname">config.language</code> = None<a class="headerlink" href="#var-config.language" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应是一个字符串，指定了多语言支持框架下的默认语言。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.main_menu">
+define <code class="descname">config.main_menu</code> = [ … ]<a class="headerlink" href="#var-config.main_menu" title="Permalink to this definition"> link</a></dt>
+<dd><p>不使用界面的情况下，默认的主菜单。详见主菜单和游戏菜单章节。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.main_menu_music">
+define <code class="descname">config.main_menu_music</code> = None<a class="headerlink" href="#var-config.main_menu_music" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，就是一个在主菜单播放的音乐文件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.menu_clear_layers">
+define <code class="descname">config.menu_clear_layers</code> = []<a class="headerlink" href="#var-config.menu_clear_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>图层名(以字符串形式)列表，列表中的图层在进入游戏菜单时会清空。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.menu_window_subtitle">
+define <code class="descname">config.menu_window_subtitle</code> = “”<a class="headerlink" href="#var-config.menu_window_subtitle" title="Permalink to this definition"> link</a></dt>
+<dd><p>进入主菜单或游戏菜单时， <a class="reference internal" href="store_variables.html#var-_window_subtitle"><code class="xref std std-var docutils literal notranslate"><span class="pre">_window_subtitle</span></code></a> （窗口标题）变量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.minimum_presplash_time">
+define <code class="descname">config.minimum_presplash_time</code> = 0.0<a class="headerlink" href="#var-config.minimum_presplash_time" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置了一个时间值，单位为秒。表示presplash、安卓presplash或iOS的启动画面最短显示的时间。如果Ren’Py在这段时间内完成初始化，它将会休眠，确保图像至少显示配置的时间。如果Ren’Py启动耗时较长，启动画面也可以显示更久。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.missing_background">
+define <code class="descname">config.missing_background</code> = “black”<a class="headerlink" href="#var-config.missing_background" title="Permalink to this definition"> link</a></dt>
+<dd><p>当 <a class="reference internal" href="#var-config.developer"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.developer</span></code></a> 为True且某个之前 <a class="reference internal" href="displaying_images.html#scene-statement"><span class="std std-ref">scene语句</span></a> 使用了未定义的图像时，该项就会作为背景使用。这项的值应该是一个图像名(字符串)，而不是可视组件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.mode_callbacks">
+define <code class="descname">config.mode_callbacks</code> = [ … ]<a class="headerlink" href="#var-config.mode_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>进入某个模式(mode)时调用的回调函数列表。详见 <a class="reference internal" href="modes.html#modes"><span class="std std-ref">模式(mode)</span></a> 章节的内容。</p>
+<p>默认值是定义在 <a class="reference internal" href="#var-config.adv_nvl_transition"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.adv_nvl_transition</span></code></a>
+and <a class="reference internal" href="#var-config.nvl_adv_transition"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.nvl_adv_transition</span></code></a>.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.mouse">
+define <code class="descname">config.mouse</code> = None<a class="headerlink" href="#var-config.mouse" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个配置项控制用于定义的鼠标指针。若为空，使用系统鼠标，也就是一个黑白色的光标指针。</p>
+<p>否则，这项应该是一个给定多种鼠标类型动画的字典。默认库中使用的键(key)包括“default”、“say”、“with”、“menu”、“prompt”、“imagemap”、“pause”、“mainmenu”和“gamemenu”。键“default”必须存在，它会在其他特定键不存在的情况下使用。</p>
+<p>字典中的每个键对应的值都是一个(<em>image, xoffset, yoffset</em>)形式元组的列表，按帧排序。</p>
+<dl class="docutils">
+<dt><cite>image</cite></dt>
+<dd>鼠标指针图像。</dd>
+<dt><cite>xoffset</cite></dt>
+<dd>从指针左端开始算的热站(hotspot)偏移量，单位是像素。</dd>
+<dt><cite>yoffset</cite></dt>
+<dd>从指针顶端开始算的热站(hotspot)偏移量，单位是像素。</dd>
+</dl>
+<p>序列帧以20Hz的频率循环播放。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.narrator_menu">
+define <code class="descname">config.narrator_menu</code> = False<a class="headerlink" href="#var-config.narrator_menu" title="Permalink to this definition"> link</a></dt>
+<dd><p>(默认情况下screen.ryp文件会将这项设置为True。)若为True，菜单内的叙述会使用旁白(narrator)角色。否则，叙述会显示为菜单内的文字说明。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.nearest_neighbor">
+define <code class="descname">config.nearest_neighbor</code> = False<a class="headerlink" href="#var-config.nearest_neighbor" title="Permalink to this definition"> link</a></dt>
+<dd><p>默认使用近邻过滤，支持像素化和弄瞎钛合金狗眼。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.optimize_texture_bounds">
+define <code class="descname">config.optimize_texture_bounds</code> = False<a class="headerlink" href="#var-config.optimize_texture_bounds" title="Permalink to this definition"> link</a></dt>
+<dd><p>当该项为True，Ren’Py会扫描图像并找到所有不透明像素的绑定框(box)，并加载这些像素转为一张纹理(texture)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.overlay_functions">
+define <code class="descname">config.overlay_functions</code> = [ ]<a class="headerlink" href="#var-config.overlay_functions" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个函数列表。当被调用时，每个函数都会用ui函数在overlay图层上添加可视组件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.overlay_screens">
+define <code class="descname">config.overlay_screens</code> = [ … ]<a class="headerlink" href="#var-config.overlay_screens" title="Permalink to this definition"> link</a></dt>
+<dd><p>当覆盖(overlay)启用时，显示的界面列表；当覆盖(overlay)被阻止时，隐藏界面列表。(界面在screen图层上显示，而不是overlay图层。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.preload_fonts">
+define <code class="descname">config.preload_fonts</code> = [ ]<a class="headerlink" href="#var-config.preload_fonts" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py启动时加载的TrueType和OpenType字体名列表。添加在这个列表中的字体名称可以防止引入新字体Ren’Py出现暂停。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.python_callbacks">
+define <code class="descname">config.python_callbacks</code> = [ ]<a class="headerlink" href="#var-config.python_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个函数列表。列表中的函数会在初始化阶段之外的任何时候被调用，不使用任何入参。</p>
+<p>这种函数的可能用途之一，是某个变量每次调整后，都需要使用一个函数将其值限制在某个范围内的情况。</p>
+<p>当Ren’Py启动时游戏未启动前，这些函数就可以被调用，而且可能这些函数相关的变量还未进行初始化。这些函数被要求处理这种情况，通过使用 <code class="docutils literal notranslate"><span class="pre">hasattr(store,</span> <span class="pre">'varname')</span></code> 检查某个变量是否定义过。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.quicksave_slots">
+define <code class="descname">config.quicksave_slots</code> = 10<a class="headerlink" href="#var-config.quicksave_slots" title="Permalink to this definition"> link</a></dt>
+<dd><p>快速存档使用的槽位编号。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.quit_action">
+define <code class="descname">config.quit_action</code> = …<a class="headerlink" href="#var-config.quit_action" title="Permalink to this definition"> link</a></dt>
+<dd><p>当用户点击程序窗口的退出按钮时调用的动作。默认的动作会提示用户确认是否真的想要退出。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.replace_text">
+define <code class="descname">config.replace_text</code> = None<a class="headerlink" href="#var-config.replace_text" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个使用一个入参的函数，函数向用户展示一段文本。该函数可以将传入的文本原样返回，也可以返回某些数据被替换后的文本。</p>
+<p>只有文本替代执行后且文本已经使用标签(tag)分割，这个函数才会被调用，所以入参就是实际文本。所有可视文本都可以传入这个函数：不限于对话文本，还包括用户接口文本。</p>
+<p>这个函数可以用来把特定的ASCII编码序列替换为Unicode字符，样例如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_text</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\u2019</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># apostrophe</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\u2014</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># em dash</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\u2026</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># ellipsis</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="n">config</span><span class="o">.</span><span class="n">replace_text</span> <span class="o">=</span> <span class="n">replace_text</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.replay_scope">
+define <code class="descname">config.replay_scope</code> = { “_game_menu_screen” : “preferences” }<a class="headerlink" href="#var-config.replay_scope" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字典，在回放时将默认存储区的变量映射到指定的变量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.save_json_callbacks">
+define <code class="descname">config.save_json_callbacks</code> = [ ]<a class="headerlink" href="#var-config.save_json_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于创建json对象的一个回调函数列表，创建的json对象可以通过 <a class="reference internal" href="screen_actions.html#FileJson" title="FileJson"><code class="xref py py-func docutils literal notranslate"><span class="pre">FileJson()</span></code></a>
+和 <a class="reference internal" href="save_load_rollback.html#renpy.slot_json" title="renpy.slot_json"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.slot_json()</span></code></a> 接入并执行存储和标记操作。</p>
+<p>每个回调函数都是用某个保存过的Python字典调用。回调函数修改字典内容时，应使用适配json的Python数据类型，比如数值、字符串、列表和字典。在字典结尾的回调函数会作为存档槽位的一部分保存。</p>
+<p>字典中的键值可能开始是一个下划线符号(_)。这些键是Ren’Py使用的，并且不应该修改。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_arguments_callback">
+define <code class="descname">config.say_arguments_callback</code> = None<a class="headerlink" href="#var-config.say_arguments_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这个函数使用当前发言角色作为第一个参数，参数列表后面是其他固定位置参数和关键词参数。任何时候使用say语句都会调用该函数。调用时通常包含一个interact入参，还可以使用其他在say语句中提供的参数。</p>
+<p>该函数会返回一对结果，包含一个固定位置入参的元组(大多数情况下是空的)，以及一个关键词入参的字典(大多数情况只包含interact)。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_arguments_callback</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">interact</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="na">color</span><span class="o">=</span><span class="s2">&quot;#fff&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(),</span> <span class="p">{</span> <span class="s2">&quot;interact&quot;</span> <span class="p">:</span> <span class="n">interact</span><span class="p">,</span> <span class="s2">&quot;what_color&quot;</span> <span class="p">:</span> <span class="na">color</span> <span class="p">}</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">say_arguments_callback</span> <span class="o">=</span> <span class="n">say_arguments_callback</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.screen_height">
+define <code class="descname">config.screen_height</code> = 600<a class="headerlink" href="#var-config.screen_height" title="Permalink to this definition"> link</a></dt>
+<dd><p>界面高度。通常使用 <a class="reference internal" href="gui_advanced.html#gui.init" title="gui.init"><code class="xref py py-func docutils literal notranslate"><span class="pre">gui.init()</span></code></a> 进行设置。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.screen_width">
+define <code class="descname">config.screen_width</code> = 800<a class="headerlink" href="#var-config.screen_width" title="Permalink to this definition"> link</a></dt>
+<dd><p>界面宽度。通常使用 <a class="reference internal" href="gui_advanced.html#gui.init" title="gui.init"><code class="xref py py-func docutils literal notranslate"><span class="pre">gui.init()</span></code></a> 进行设置。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.speaking_attribute">
+define <code class="descname">config.speaking_attribute</code> = None<a class="headerlink" href="#var-config.speaking_attribute" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项是一个字符串，给出了图像属性(attribute)名。图像属性(attribute)会在角色发言时添加到图像上，在角色停止发言时移除。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.tag_layer">
+define <code class="descname">config.tag_layer</code> = { }<a class="headerlink" href="#var-config.tag_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字典，将图像标签(tag)字符串映射为图层(layer)名称字符串。当某个图像显示时没有指定图层，就可以根据图像标签在这个字典中找对应的图层。如果图像标签没有在字典中找到，就是用 <code class="xref std std-var docutils literal notranslate"><span class="pre">config.default_tag_name</span></code> 配置的值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.tag_transform">
+define <code class="descname">config.tag_transform</code> = { }<a class="headerlink" href="#var-config.tag_transform" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字段，将图像标签(tag)字符串映射为transform或者transform的列表。当某个不带at分句的新显示图像出现时，就会根据图像标签在这个字典中找对应的transform或transform列表并应用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.tag_zorder">
+define <code class="descname">config.tag_zorder</code> = { }<a class="headerlink" href="#var-config.tag_zorder" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个字典，将图像标签(tag)字符串映射为zorder值。当某个不带zorder分句的新鲜事图像出现时，就会根据图像标签在这个字典中找对应的zorder值并应用。如果没有找到zorder值，就是用0。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.thumbnail_height">
+define <code class="descname">config.thumbnail_height</code> = 75<a class="headerlink" href="#var-config.thumbnail_height" title="Permalink to this definition"> link</a></dt>
+<dd><p>游戏存档使用的缩略图高度。读档时，这些缩略图也会显示。请注意，缩略图的会以其生成的尺寸显示，而不是缩略图向用户显示时设置的值。</p>
+<p>默认GUI可以改变这项值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.thumbnail_width">
+define <code class="descname">config.thumbnail_width</code> = 100<a class="headerlink" href="#var-config.thumbnail_width" title="Permalink to this definition"> link</a></dt>
+<dd><p>游戏存档使用的缩略图宽度。读档时，这些缩略图也会显示。请注意，缩略图的会以其生成的尺寸显示，而不是缩略图向用户显示时设置的值。</p>
+<p>默认GUI可以改变这项值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.tts_voice">
+define <code class="descname">config.tts_voice</code> = None<a class="headerlink" href="#var-config.tts_voice" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个字符串，表示自动语音模式下播放tts语音时使用的非默认声音。可用的选项跟运行的平台有关联，并且需要设置成特定平台对应特定语音的形式。(在多语言支持的情况下最好也修改这项。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_auto_hide">
+define <code class="descname">config.window_auto_hide</code> = [ ‘scene’, ‘call screen’ ]<a class="headerlink" href="#var-config.window_auto_hide" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个语句名称列表，列表内的语句会触发 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">auto</span></code> 隐藏空的对话窗口。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_auto_show">
+define <code class="descname">config.window_auto_show</code> = [ ‘say’ ]<a class="headerlink" href="#var-config.window_auto_show" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个语句名称列表，列表内的语句会触发 <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">auto</span></code> 隐藏空的对话窗口。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_icon">
+define <code class="descname">config.window_icon</code> = None<a class="headerlink" href="#var-config.window_icon" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应该是一个图片的文件名。这个图片用作主窗口的图标。这项不会用作windows平台的执行程序和mac电脑的app缩略图，那些使用 <a class="reference internal" href="build.html#special-files"><span class="std std-ref">特殊文件</span></a>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_overlay_functions">
+define <code class="descname">config.window_overlay_functions</code> = []<a class="headerlink" href="#var-config.window_overlay_functions" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个覆盖(overlay)函数列表，仅当窗口显示时会被调用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.window_title">
+define <code class="descname">config.window_title</code> = None<a class="headerlink" href="#var-config.window_title" title="Permalink to this definition"> link</a></dt>
+<dd><p>包含Ren’Py游戏的窗口标题的静态部分。后面加上 <a class="reference internal" href="store_variables.html#var-_window_subtitle"><code class="xref std std-var docutils literal notranslate"><span class="pre">_window_subtitle</span></code></a> 就是窗口的完整标题名。</p>
+<p>若为None，也就是默认情况，默认值取 <a class="reference internal" href="#var-config.name"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.name</span></code></a>。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="rarely-or-internally-used">
+<span id="id6"></span><h2>极少使用或内部使用<a class="headerlink" href="#rarely-or-internally-used" title="Permalink to this headline"> link</a></h2>
+<dl class="var">
+<dt id="var-config.adjust_view_size">
+define <code class="descname">config.adjust_view_size</code> = None<a class="headerlink" href="#var-config.adjust_view_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应该是一个函数，使用两个入参：物理窗口的宽度和高度。它会返回一个元组，给出OpenGL视点(viewport)的宽度和高度，也就是Ren’Py会绘制图片的一块屏幕区域。</p>
+<p>该项配置用于配置Ren’Py只允许使用某些尺寸的屏幕。例如，下列配置值允许使用原始屏幕的整数倍大小(保持宽高比)：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">force_integer_multiplier</span><span class="p">(</span><span class="na">width</span><span class="p">,</span> <span class="na">height</span><span class="p">):</span>
+        <span class="n">multiplier</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="na">width</span> <span class="o">/</span> <span class="n">config</span><span class="o">.</span><span class="n">screen_width</span><span class="p">,</span> <span class="na">height</span> <span class="o">/</span> <span class="n">config</span><span class="o">.</span><span class="n">screen_height</span><span class="p">)</span>
+        <span class="n">multiplier</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">multiplier</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">multiplier</span> <span class="o">*</span> <span class="n">config</span><span class="o">.</span><span class="n">screen_width</span><span class="p">,</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">config</span><span class="o">.</span><span class="n">screen_height</span><span class="p">)</span>
+
+    <span class="n">config</span><span class="o">.</span><span class="n">adjust_view_size</span> <span class="o">=</span> <span class="n">force_integer_multiplier</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.afm_bonus">
+define <code class="descname">config.afm_bonus</code> = 25<a class="headerlink" href="#var-config.afm_bonus" title="Permalink to this definition"> link</a></dt>
+<dd><p>自动前进模式生效的情况下，添加到每个字符串的bonus角色数量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.afm_callback">
+define <code class="descname">config.afm_callback</code> = None<a class="headerlink" href="#var-config.afm_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个Python函数，用于判断启用自动前进是否安全。这项的意义在于，语音系统中播放某个语音途中禁用自动前进功能。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.afm_characters">
+define <code class="descname">config.afm_characters</code> = 250<a class="headerlink" href="#var-config.afm_characters" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个由数字字符组成的字符串，表示在自动前进模式生效前，环境设定设置中自动前进模式延迟时间。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.afm_voice_delay">
+define <code class="descname">config.afm_voice_delay</code> = .5<a class="headerlink" href="#var-config.afm_voice_delay" title="Permalink to this definition"> link</a></dt>
+<dd><p>语音文件播放完成后，在AFM能进入下一段文本之前，等待的时间值，单位为秒。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.all_character_callbacks">
+define <code class="descname">config.all_character_callbacks</code> = [ ]<a class="headerlink" href="#var-config.all_character_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>可以通过所有角色调用的回调函数列表。这个列表会前向添加到指定角色回调函数列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.allow_skipping">
+define <code class="descname">config.allow_skipping</code> = True<a class="headerlink" href="#var-config.allow_skipping" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果设置为False，用户就不能跳过游戏的文本内容。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.archives">
+define <code class="descname">config.archives</code> = [ ]<a class="headerlink" href="#var-config.archives" title="Permalink to this definition"> link</a></dt>
+<dd><p>用于搜索图片和其他数据的归档文件列表。所有归档文件的入口应该是包含归档文件基本名的字符串，不包含.rpa扩展名。</p>
+<p>归档文件的搜索按照列表中的顺序进行。第一个搜索到的归档文件会被使用。</p>
+<p>在启动阶段，Ren’Py会检索game目录内的所有归档文件，按照ascii码排序，自动插入到这个列表中。例如，如果Ren’Py找到了文件data.rpa、patch01.rpa和patch02.rpa，最终生成的列表为 <code class="docutils literal notranslate"><span class="pre">['patch02',</span> <span class="pre">'patch01',</span> <span class="pre">'data']</span></code> 。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.auto_choice_delay">
+define <code class="descname">config.auto_choice_delay</code> = None<a class="headerlink" href="#var-config.auto_choice_delay" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这个变量给定了一个时间值(单位为秒)，这个时间值内Ren’Py会暂停，之后会在游戏内选项中随机选择一个。我们希望这个配置项在发布版本中始终设置为None，不过没有什么人工做互动的情况下可以用来自动演示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.autoreload">
+define <code class="descname">config.autoreload</code> = True<a class="headerlink" href="#var-config.autoreload" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，使用shift+R组合键可以自动重新加载脚本。并且，当自动重加载功能启用后，Ren’Py一旦发现使用的文件发生修改就会自动重加载。</p>
+<p>若为False，Ren’Py值在每次按下shift+R时才会重新加载脚本。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.autosave_frequency">
+define <code class="descname">config.autosave_frequency</code> = 200<a class="headerlink" href="#var-config.autosave_frequency" title="Permalink to this definition"> link</a></dt>
+<dd><p>表示经过多少次互动行为后会发生自动存档。如果要禁用自动存档，将 <a class="reference internal" href="#var-config.has_autosave"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.has_autosave</span></code></a> 设置为False，不需要修改这项的值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.autosave_on_choice">
+define <code class="descname">config.autosave_on_choice</code> = True<a class="headerlink" href="#var-config.autosave_on_choice" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会在每次游戏内选项后自动存档。(当:func:<cite>renpy.choice_for_skipping</cite> 调用时。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.autosave_on_quit">
+define <code class="descname">config.autosave_on_quit</code> = True<a class="headerlink" href="#var-config.autosave_on_quit" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会在用户做出以下操作时尝试自动存档：退出、返回主菜单、游戏中读取其他存档。(存档时，当用户被提示确认就会执行自动存档。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.character_callback">
+define <code class="descname">config.character_callback</code> = None<a class="headerlink" href="#var-config.character_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>Character对象回调参数的默认值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.choice_layer">
+define <code class="descname">config.choice_layer</code> = “screens”<a class="headerlink" href="#var-config.choice_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>选择界面(使用menu语句)显示的图层(layer)名。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.clear_layers">
+define <code class="descname">config.clear_layers</code> = []<a class="headerlink" href="#var-config.clear_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个图层(layer)名的列表，当进入主菜单和游戏菜单时，就会清除列表上所有图层的图像。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.context_clear_layers">
+define <code class="descname">config.context_clear_layers</code> = [ ‘screens’ ]<a class="headerlink" href="#var-config.context_clear_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个图层(layer)名的列表，当进入一个新的上下文(context)时，会清除列表上所有图层的图像。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.fade_music">
+define <code class="descname">config.fade_music</code> = 0.0<a class="headerlink" href="#var-config.fade_music" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个单位为秒的时间值，表示在一个新的音轨开始前，旧音轨渐出的时间。这个值应该比较短，这样旧音乐不会播放过久。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.fast_skipping">
+define <code class="descname">config.fast_skipping</code> = False<a class="headerlink" href="#var-config.fast_skipping" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项设置为True的话，允许在开发者模式之外也使用快速跳过。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.file_open_callback">
+define <code class="descname">config.file_open_callback</code> = None<a class="headerlink" href="#var-config.file_open_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项是一个函数，当某个文件需要被打开是会调用该函数。函数会返回一个类似文件的对象，或者使用Ren’Py的文件加载机制时返回None。类似文件的对象必须能用使用read、seed、tell和close方法。</p>
+<p>对应的，还需要定义 <a class="reference internal" href="#var-config.loadable_callback"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.loadable_callback</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.focus_crossrange_penalty">
+define <code class="descname">config.focus_crossrange_penalty</code> = 1024<a class="headerlink" href="#var-config.focus_crossrange_penalty" title="Permalink to this definition"> link</a></dt>
+<dd><p>当用键盘移动焦点时，这是应用于垂直于所选运动方向的移动的惩罚量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.gl_enable">
+define <code class="descname">config.gl_enable</code> = True<a class="headerlink" href="#var-config.gl_enable" title="Permalink to this definition"> link</a></dt>
+<dd><p>将这项设置为False即禁用OpenGL加速。如果检测系统不支持OpenGL加速时，OpenGL加速会自动关闭，所以通常没有必要将这项设置为False。</p>
+<p>启动时持续按住shift键也能手工禁用OpenGL。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.gl_resize">
+define <code class="descname">config.gl_resize</code> = True<a class="headerlink" href="#var-config.gl_resize" title="Permalink to this definition"> link</a></dt>
+<dd><p>决定是否允许用户调整OpenGL绘制窗口的大小。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.hard_rollback_limit">
+define <code class="descname">config.hard_rollback_limit</code> = 100<a class="headerlink" href="#var-config.hard_rollback_limit" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py允许用会回滚的最大步数。这项设置为0则完全不允许回滚。我们不推荐这样做，因为回滚是用户错误使用跳过功能后，回看之前文本的有效途径。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.help">
+define <code class="descname">config.help</code> = “README.html”<a class="headerlink" href="#var-config.help" title="Permalink to this definition"> link</a></dt>
+<dd><p>在主菜单和游戏菜单，或者按下f1，或者在命令行界面输入“?”，都会调用配置的帮助页面文件。</p>
+<p>若为None，帮助系统会禁用，不会显示在菜单中。如果在脚本中有一个help脚本标签(label)，调用标签时会使用另一个新的上下文(context)。这允许创作者定义自己的游戏内帮助界面。否则的话，help文本标签(label)会关联一个在基础目录中的文件，能够在web浏览器中打开。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.hide">
+define <code class="descname">config.hide</code> = renpy.hide<a class="headerlink" href="#var-config.hide" title="Permalink to this definition"> link</a></dt>
+<dd><p>当 <a class="reference internal" href="displaying_images.html#hide-statement"><span class="std std-ref">hide语句</span></a>
+执行时调用的函数。这项使用与renpy.hide一样的入参。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.imagemap_auto_function">
+define <code class="descname">config.imagemap_auto_function</code> = …<a class="headerlink" href="#var-config.imagemap_auto_function" title="Permalink to this definition"> link</a></dt>
+<dd><p>将界面语言中
+<a class="reference internal" href="screens.html#sl-imagebutton"><span class="std std-ref">imagebutton</span></a> 或 <a class="reference internal" href="screens.html#sl-imagemap"><span class="std std-ref">imagemap</span></a>
+<cite>auto</cite> 特性(property)扩展为可视组件。这个函数使用auto特性(property)值和使用的图像，以及下列状态之一：“insensitive”、“idle”、“hover”、“selected_idle”、“selected_hover”、“ground”。函数返回一个可视组件对象或None。</p>
+<p>默认的使用方法是使用图像格式化 <cite>auto</cite> 特性，并检查得到的文件名是否存在。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.imagemap_cache">
+define <code class="descname">config.imagemap_cache</code> = True<a class="headerlink" href="#var-config.imagemap_cache" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，imagemap的热点(hotspot)会缓存到PNG文件中，减少时间和内存消耗，但会增加整个游戏的磁盘空间大小。设置为False可以禁用该功能。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.implicit_with_none">
+define <code class="descname">config.implicit_with_none</code> = True<a class="headerlink" href="#var-config.implicit_with_none" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，也就是默认值，等效于每次通过对话、菜单输入和imagemap等互动行为之后都使用了 <a class="reference internal" href="displaying_images.html#with-none"><span class="std std-ref">with None</span></a>
+语句。这项用于确保在转场之后旧的界面不再显示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.interact_callbacks">
+define <code class="descname">config.interact_callbacks</code> = …<a class="headerlink" href="#var-config.interact_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个(不带入参的)回调函数列表，当互动行为开始或重新开始时调用列表中的函数。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.keep_running_transform">
+define <code class="descname">config.keep_running_transform</code> = True<a class="headerlink" href="#var-config.keep_running_transform" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，上一个图像使用的transform或ATL语句块(block)会沿用，前提是新图像使用相同的图像标签(tag)。若为False，transform会被停用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.keymap">
+define <code class="descname">config.keymap</code> = dict(…)<a class="headerlink" href="#var-config.keymap" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个配置项是一个字典，包含了键盘按键和鼠标按键跟每个操作之间的映射关系。详见Keyman章节内容。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.label_callback">
+define <code class="descname">config.label_callback</code> = None<a class="headerlink" href="#var-config.label_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是到达某个脚本标签(label)后会调用的函数。调用时使用两个参数。第一个参数是脚本标签(label)名。第二个参数在通过jump、call或创建新上下文(context)的情况下为True，其他情况下为False。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.label_overrides">
+define <code class="descname">config.label_overrides</code> = { }<a class="headerlink" href="#var-config.label_overrides" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项配置给出了在Ren’Py脚本中jump和call脚本标签(label)时，重定向到其他脚本标签(label)的方法。例如，如果你需要添加一个“start”到“mystart”的映射关系，所有jump和call到“start”标签最终都会转到“mystart”。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.layer_clipping">
+define <code class="descname">config.layer_clipping</code> = { }<a class="headerlink" href="#var-config.layer_clipping" title="Permalink to this definition"> link</a></dt>
+<dd><p>控制图层(layer)剪裁。这是一个从图层名称到(x, y, height, width)元组的映射关系，其中x和y的值是从图层左上角开始计算的坐标值，height和width是图层的高和宽。</p>
+<p>如果某个图层没有在config.layer_clipping中提及，则假设这个图层使用整个界面。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.layers">
+define <code class="descname">config.layers</code> = [ ‘master’, ‘transient’, ‘screens’, ‘overlay’ ]<a class="headerlink" href="#var-config.layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个配置项是一个所有Ren’Py已知图层(layer)的列表，按这些图层在界面的显示顺序排列。(列表中第一个元素就是最底部的图层。)Ren’Py内部会使用“master”、“transient”、“screens”和“overlay”图层，所以这些图层应该总是保存在这个列表中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.lint_hooks">
+define <code class="descname">config.lint_hooks</code> = …<a class="headerlink" href="#var-config.lint_hooks" title="Permalink to this definition"> link</a></dt>
+<dd><p>当lint工具运行时，不使用入参被调用的函数列表。这些函数用于检查脚本数据是否有错误，并在标准输出打印找到的错误(这种情况下使用Python的print语句就行)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.load_before_transition">
+define <code class="descname">config.load_before_transition</code> = True<a class="headerlink" href="#var-config.load_before_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，互动行为的启动会延迟到所用到的所有图像都加载完毕之后。(是的，这个名字很让人讨厌。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.loadable_callback">
+define <code class="descname">config.loadable_callback</code> = None<a class="headerlink" href="#var-config.loadable_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，该函数调用时带一个文件名。当文件可以加载时，函数返回True，否则返回False。这个函数可以跟
+<a class="reference internal" href="#var-config.file_open_callback"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.file_open_callback</span></code></a> 或 <a class="reference internal" href="#var-config.missing_image_callback"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.missing_image_callback</span></code></a> 协同生效。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.log_width">
+define <code class="descname">config.log_width</code> = 78<a class="headerlink" href="#var-config.log_width" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用 <a class="reference internal" href="#var-config.log"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.log</span></code></a>  时，每行日志的宽度。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.longpress_duration">
+define <code class="descname">config.longpress_duration</code> = 0.5<a class="headerlink" href="#var-config.longpress_duration" title="Permalink to this definition"> link</a></dt>
+<dd><p>在触控设备上，用户需要按住屏幕多少时间才会被认为是一次长按操作。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.longpress_radius">
+define <code class="descname">config.longpress_radius</code> = 15<a class="headerlink" href="#var-config.longpress_radius" title="Permalink to this definition"> link</a></dt>
+<dd><p>在触控设备上，用户长按需要维持的最小像素数量。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.longpress_vibrate">
+define <code class="descname">config.longpress_vibrate</code> = .1<a class="headerlink" href="#var-config.longpress_vibrate" title="Permalink to this definition"> link</a></dt>
+<dd><p>在触控设备上，用户长按操作后的震动时长。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.log">
+define <code class="descname">config.log</code> = None<a class="headerlink" href="#var-config.log" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应该是一个文件名。通过 <a class="reference internal" href="dialogue.html#say-statement"><span class="std std-ref">say</span></a> 或 <a class="reference internal" href="menus.html#menu-statement"><span class="std std-ref">menu</span></a> 语句展示给用户的文本都会记录在这个文件中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.missing_image_callback">
+define <code class="descname">config.missing_image_callback</code> = None<a class="headerlink" href="#var-config.missing_image_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，当加载图片失败时会调用这个函数。函数可能返回None，也可能返回一个图像操作器(manipulator)。如果返回的是图像操作器，可以使用图像操作器代替丢失的图片。</p>
+<p>创作者可能需要同时配置 <a class="reference internal" href="#var-config.loadable_callback"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.loadable_callback</span></code></a> 的值，特别是使用 <a class="reference internal" href="displayables.html#DynamicImage" title="DynamicImage"><code class="xref py py-func docutils literal notranslate"><span class="pre">DynamicImage()</span></code></a> 对象的情况。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.missing_label_callback">
+define <code class="descname">config.missing_label_callback</code> = None<a class="headerlink" href="#var-config.missing_label_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，当Ren’Py尝试转到某个不存在的脚本标签(label)时，配置的函数会被调用。该函数会返回一个脚本标签名称，用以代替那个丢失的脚本标签。若Ren’Py抛出异常(exception)时则返回None。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.mouse_hide_time">
+define <code class="descname">config.mouse_hide_time</code> = 30<a class="headerlink" href="#var-config.mouse_hide_time" title="Permalink to this definition"> link</a></dt>
+<dd><p>在配置的时间值内没有鼠标操作就隐藏鼠标指针，单位为秒。这项应该配置成比读取一个界面的期望时间长，这样鼠标用户就不会遇到鼠标消失的时间比鼠标显示时间更长的情况。</p>
+<p>若为None，鼠标指针永远不会隐藏。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.movie_mixer">
+define <code class="descname">config.movie_mixer</code> = “music”<a class="headerlink" href="#var-config.movie_mixer" title="Permalink to this definition"> link</a></dt>
+<dd><p>当某个 <a class="reference internal" href="movie.html#Movie" title="Movie"><code class="xref py py-func docutils literal notranslate"><span class="pre">Movie()</span></code></a> 对象自动定义的视频播放通道所使用的混合器(mixer)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.new_translate_order">
+define <code class="descname">config.new_translate_order</code> = True<a class="headerlink" href="#var-config.new_translate_order" title="Permalink to this definition"> link</a></dt>
+<dd><p>启用新的style和translate语句命令，详见 <span class="xref std std-ref">Ren’Py 6.99.11</span>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.new_substitutions">
+define <code class="descname">config.new_substitutions</code> = True<a class="headerlink" href="#var-config.new_substitutions" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会将应用新形式(圆括号)替换(substitution)所有显示的文本上。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.old_substitutions">
+define <code class="descname">config.old_substitutions</code> = False<a class="headerlink" href="#var-config.old_substitutions" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会将应用旧形式(百分号)替换(substitution) <a class="reference internal" href="dialogue.html#say-statement"><span class="std std-ref">say</span></a> 和 <a class="reference internal" href="menus.html#menu-statement"><span class="std std-ref">menu</span></a> 语句中显示的文本。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.overlay_during_with">
+define <code class="descname">config.overlay_during_with</code> = True<a class="headerlink" href="#var-config.overlay_during_with" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果我们想要在 <a class="reference internal" href="displaying_images.html#with-statement"><span class="std std-ref">with 语句</span></a> 覆盖已显示图像就设置为True，如果我们想要在with语句中隐藏重叠部分就设置为False。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.overlay_layers">
+define <code class="descname">config.overlay_layers</code> = [ ‘overlay’ ]<a class="headerlink" href="#var-config.overlay_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项是一个所有可覆盖图层(layer)的列表。可覆盖图层在overlay函数调用前会被清空。“overlay”图层应该总是放在这个列表中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.per_frame_screens">
+define <code class="descname">config.per_frame_screens</code> = [ … ]<a class="headerlink" href="#var-config.per_frame_screens" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项是一个界面名字符串的列表，列表内的界面会在每一帧都更新，而不是每次互动后更新。Ren’Py内部使用这个列表。所以创作者需要在这个列表中添加界面名，而不是整个替换原列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.periodic_callback">
+define <code class="descname">config.periodic_callback</code> = None<a class="headerlink" href="#var-config.periodic_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应该是一个函数。这个函数会以20Hz的频率被不断调用，不带任何入参。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.play_channel">
+define <code class="descname">config.play_channel</code> = “audio”<a class="headerlink" href="#var-config.play_channel" title="Permalink to this definition"> link</a></dt>
+<dd><p>被 <a class="reference internal" href="audio.html#renpy.play" title="renpy.play"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.play()</span></code></a> 、 <a class="reference internal" href="style_properties.html#style-property-hover_sound"><code class="xref std std-propref docutils literal notranslate"><span class="pre">hover_sound</span></code></a> 和 <a class="reference internal" href="style_properties.html#style-property-activate_sound"><code class="xref std std-propref docutils literal notranslate"><span class="pre">activate_sound</span></code></a> 使用的音频通道名称。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.predict_statements">
+define <code class="descname">config.predict_statements</code> = 10<a class="headerlink" href="#var-config.predict_statements" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个语句的数量值，包括当前语句，会被检查是否执行图像预加载。从当前语句开始执行广度优先搜索，直到包含配置数量的语句。在这个范围内的语句引用的图像都会在后台预先加载。将这项设置为0会禁用图像预加载功能。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.profile">
+define <code class="descname">config.profile</code> = False<a class="headerlink" href="#var-config.profile" title="Permalink to this definition"> link</a></dt>
+<dd><p>若设置为True，某些档案(profile)信息会输出到stdout标准输出。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.quit_on_mobile_background">
+define <code class="descname">config.quit_on_mobile_background</code> = False<a class="headerlink" href="#var-config.quit_on_mobile_background" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，当移动app退出时，就会失去焦点。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.rollback_enabled">
+define <code class="descname">config.rollback_enabled</code> = True<a class="headerlink" href="#var-config.rollback_enabled" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置是否允许用户在游戏中回滚(rollback)。若设置为False，用户不能主动回滚。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.rollback_length">
+define <code class="descname">config.rollback_length</code> = 128<a class="headerlink" href="#var-config.rollback_length" title="Permalink to this definition"> link</a></dt>
+<dd><p>当回滚(rollback)日志中存在超过这个配置项数量的语句时，Ren’Py会修剪日志。这也包括脚本改变导致的读取存档时，Ren’Py会回滚的最大步数。</p>
+<p>将这项设置得比默认值更低可能会导致Ren’Py运行不稳定。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.rollback_side_size">
+define <code class="descname">config.rollback_side_size</code> = .2<a class="headerlink" href="#var-config.rollback_side_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果侧回滚被启用，则侧回滚的屏幕部分被单击或触摸时会导致回滚。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_allow_dismiss">
+define <code class="descname">config.say_allow_dismiss</code> = None<a class="headerlink" href="#var-config.say_allow_dismiss" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这应是一个函数。当用户尝试dismiss某个 <a class="reference internal" href="dialogue.html#say-statement"><span class="std std-ref">say 语句</span></a> 时，该函数会被调用，不使用任何入参。如果该函数返回True就允许dismiss，否则就忽略。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_layer">
+define <code class="descname">config.say_layer</code> = “screens”<a class="headerlink" href="#var-config.say_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>显示say界面的图层(layer)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_menu_text_filter">
+define <code class="descname">config.say_menu_text_filter</code> = None<a class="headerlink" href="#var-config.say_menu_text_filter" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这是一个函数，返回 <a class="reference internal" href="dialogue.html#say-statement"><span class="std std-ref">say</span></a> 和 <a class="reference internal" href="menus.html#menu-statement"><span class="std std-ref">menu</span></a> 语句中的指定文本。这个函数用于返回新的(或者相同的)字符串替换原来的字符串。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.say_sustain_callbacks">
+define <code class="descname">config.say_sustain_callbacks</code> = …<a class="headerlink" href="#var-config.say_sustain_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>不使用入参调用的函数列表，在某行带pause分句的对话中，第二次或之后其他互动行为时被调用。该函数用于在暂停状态保持语音播放。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.save_dump">
+define <code class="descname">config.save_dump</code> = False<a class="headerlink" href="#var-config.save_dump" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果设置为True，存档时Ren’Py会创建文件save_dump.txt。生成的文件包含所有存档文件中的对象。每一行包含相关的占用空间估测，对象路径，某个对象是否别名的信息，以及对象的行为表现。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.save_on_mobile_background">
+define <code class="descname">config.save_on_mobile_background</code> = True<a class="headerlink" href="#var-config.save_on_mobile_background" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，移动app会在失去焦点时保存自身状态。保存状态的方式需要在app重新启动后能自动读档(并回复进度)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.save_physical_size">
+define <code class="descname">config.save_physical_size</code> = True<a class="headerlink" href="#var-config.save_physical_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，窗口的物理尺寸会保存在环境设定(preference)中，并在游戏挂起时保存。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.savedir">
+define <code class="descname">config.savedir</code> = …<a class="headerlink" href="#var-config.savedir" title="Permalink to this definition"> link</a></dt>
+<dd><p>存档目录的完整路径。这只能在前面的Python语句中配置。同样的情况也存在于config.save_directory。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.scene">
+define <code class="descname">config.scene</code> = renpy.scene<a class="headerlink" href="#var-config.scene" title="Permalink to this definition"> link</a></dt>
+<dd><p>在 <a class="reference internal" href="displaying_images.html#scene-statement"><span class="std std-ref">scene 语句</span></a> 用于代替renpy.scene的函数。需要注意，这个函数用于清空界面，config.show用于显示某个新图像。这个函数具有与renpy.scene相同的签名(signature)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.screenshot_callback">
+define <code class="descname">config.screenshot_callback</code> = …<a class="headerlink" href="#var-config.screenshot_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>发生截屏时调用的函数。调用该函数时带一个参数，即截屏保存的完整文件名。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.screenshot_crop">
+define <code class="descname">config.screenshot_crop</code> = None<a class="headerlink" href="#var-config.screenshot_crop" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应是一个(x, y, height, width)元组。截屏会在保存前剪裁为元组描述的矩形。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.screenshot_pattern">
+define <code class="descname">config.screenshot_pattern</code> = “screenshot%04d.png”<a class="headerlink" href="#var-config.screenshot_pattern" title="Permalink to this definition"> link</a></dt>
+<dd><p>用作创建截屏文件的正则表达式。这个(使用Python的格式规则)表达式应用自然数列生成一个文件名序列。生成的文件名是绝对路径，或与config.renpy_base关联。首个当前不存在的文件名会用作截屏的文件名。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.script_version">
+define <code class="descname">config.script_version</code> = None<a class="headerlink" href="#var-config.script_version" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这被解释为脚本的版本号。库(library)会根据脚本版本号启用适合的特性(feature)。若为None，我们假设脚本版本为最新。</p>
+<p>通常这项是项目构建时由Ren’Py启动器(launcher)自动添加在某个文件中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.searchpath">
+define <code class="descname">config.searchpath</code> = [ ‘common’, ‘game’ ]<a class="headerlink" href="#var-config.searchpath" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个目录列表，用于在这些目录下搜索图片、音乐、归档及其他媒体文件，但不包括脚本文件。这项会初始化为包含“common”和游戏目录的一个列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.search_prefixes">
+define <code class="descname">config.search_prefixes</code> = [ “”, “images/” ]<a class="headerlink" href="#var-config.search_prefixes" title="Permalink to this definition"> link</a></dt>
+<dd><p>搜索的文件名前添加的前缀列表。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.show">
+define <code class="descname">config.show</code> = renpy.show<a class="headerlink" href="#var-config.show" title="Permalink to this definition"> link</a></dt>
+<dd><p>在 <a class="reference internal" href="displaying_images.html#show-statement"><span class="std std-ref">show</span></a> 和 <a class="reference internal" href="displaying_images.html#scene-statement"><span class="std std-ref">scene</span></a> 语句中中用于代替renpy.show的函数。这个函数具有与renpy.show相同的签名(signature)。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.skip_delay">
+define <code class="descname">config.skip_delay</code> = 75<a class="headerlink" href="#var-config.skip_delay" title="Permalink to this definition"> link</a></dt>
+<dd><p>当使用ctrl键跳过语句时，每段对话显示的时间，单位为毫秒。(实际上只是接近配置的值。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.skip_indicator">
+define <code class="descname">config.skip_indicator</code> = True<a class="headerlink" href="#var-config.skip_indicator" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，当使用脚本跳过功能时，库(library)会显示一个跳过提醒标志。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.sound">
+define <code class="descname">config.sound</code> = True<a class="headerlink" href="#var-config.sound" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，使用声音。若为False，声音/混合器子系统完全禁用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.sound_sample_rate">
+define <code class="descname">config.sound_sample_rate</code> = 48000<a class="headerlink" href="#var-config.sound_sample_rate" title="Permalink to this definition"> link</a></dt>
+<dd><p>声卡运行的采样率。如果你的所有wav文件都使用更低的采样率，修改这项配置可能会改善播放效果。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.start_callbacks">
+define <code class="descname">config.start_callbacks</code> = [ … ]<a class="headerlink" href="#var-config.start_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个回调函数列表，列表内函数的调用时机在初始化环节之后，但在游戏开始之前，调用时不带参数。这主要通过framework用于初始化需要保存的变量。</p>
+<p>这个配置项的默认值包含了Ren’Py内部使用的回调函数，以支持nvl模式特性等。新的回调函数可以添加到这个列表，但已存在的回调函数不能删除。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.start_interact_callbacks">
+define <code class="descname">config.start_interact_callbacks</code> = …<a class="headerlink" href="#var-config.start_interact_callbacks" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个函数列表，当某个互动行为开始后(不带入参)被调用。某个互动行为重新开始的情况下，这些回调函数不会被调用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.top_layers">
+define <code class="descname">config.top_layers</code> = [ ]<a class="headerlink" href="#var-config.top_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个图层(layer)名的列表，该列表中的图层会显示在其他所有图层上面，并且不接受应用于所有图层上的转场(transition)。如果某个图层名位于这里列表中，它就不能再存在于列表config.layers中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.transient_layers">
+define <code class="descname">config.transient_layers</code> = [ ‘transient’ ]<a class="headerlink" href="#var-config.transient_layers" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项变量是一个所有临时(transient)图层的列表。临时图层会在每次互动行为后被清空。“transient”应该总是保留在这个列表中。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.transform_uses_child_position">
+define <code class="descname">config.transform_uses_child_position</code> = True<a class="headerlink" href="#var-config.transform_uses_child_position" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，transform会从他们的子类继承 <a class="reference internal" href="style_properties.html#position-style-properties"><span class="std std-ref">position properties</span></a> 若不是True，就不继承。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.transition_screens">
+define <code class="descname">config.transition_screens</code> = True<a class="headerlink" href="#var-config.transition_screens" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，界面会接受转场(transition)效果，使用溶解(dissolve)从旧的界面状态转为新的界面状态。若为False，只有界面的最新状态会被显示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.translate_clean_stores">
+define <code class="descname">config.translate_clean_stores</code> = [ “gui” ]<a class="headerlink" href="#var-config.translate_clean_stores" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个命名存储区的列表。当使用的语言改变时，列表内存储区的状态会清除并恢复为初始化阶段的值。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.variants">
+define <code class="descname">config.variants</code> = [ … ]<a class="headerlink" href="#var-config.variants" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个变换界面列表，用于搜索并选取向用户显示的界面。列表最后的元素总是None，确保能选到默认界面。详见 <a class="reference internal" href="screens.html#screen-variants"><span class="std std-ref">界面变种</span></a>。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.voice_filename_format">
+define <code class="descname">config.voice_filename_format</code> = “{filename}”<a class="headerlink" href="#var-config.voice_filename_format" title="Permalink to this definition"> link</a></dt>
+<dd><p>这项配置的字符串会自动用voice语句的入参字符串替换“filename”，并作为向用户播放的语音文件名使用。例如，如果这里配置的是“{filename}.ogg”，那么  <code class="docutils literal notranslate"><span class="pre">voice</span> <span class="pre">&quot;test&quot;</span></code> 语句就会播放“test.ogg”文件。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.with_callback">
+define <code class="descname">config.with_callback</code> = None<a class="headerlink" href="#var-config.with_callback" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，这项应该是一个函数，会在使用 <a class="reference internal" href="displaying_images.html#with-statement"><span class="std std-ref">with
+语句</span></a> 时被调用。这个函数可以在转场(transition)过程中对添加在界面上的临时元素做出响应。转场(transition)过程中，调用该函数时使用一个入参。该函数会返回一个转场(transition)，可能就是作为入参的那个转场，也可能不是。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="gc">
+<span id="garbage-collection"></span><h2>垃圾回收(GC)<a class="headerlink" href="#gc" title="Permalink to this headline"> link</a></h2>
+<p>这些配置项允许创作者调整Python的垃圾回收(GC)和Ren’Py对Python垃圾回收管理器。</p>
+<dl class="var">
+<dt id="var-config.manage_gc">
+define <code class="descname">config.manage_gc</code> = True<a class="headerlink" href="#var-config.manage_gc" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会自己管理GC。这意味着Ren’Py使用以下设置。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.gc_thresholds">
+define <code class="descname">config.gc_thresholds</code> = (25000, 10, 10)<a class="headerlink" href="#var-config.gc_thresholds" title="Permalink to this definition"> link</a></dt>
+<dd><p>非空闲(idle)状态下Ren’Py使用的GC阈值。这样设置会尝试确保GC不会发生。这三个数值分别表示：</p>
+<ul class="simple">
+<li>level-0回收的对象净数。</li>
+<li>触发level-1回收的level-0回收次数。</li>
+<li>触发level-2回收的level-1回收次数。</li>
+</ul>
+<p>(level-0回收应该足够快，不会引发掉帧。level-1回收速度可能会引发掉帧，level-2则不会引发掉帧。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.idle_gc_count">
+define <code class="descname">config.idle_gc_count</code> = 2500<a class="headerlink" href="#var-config.idle_gc_count" title="Permalink to this definition"> link</a></dt>
+<dd><p>当Ren’Py到达一个稳定状态时，触发GC的对象净数。(稳定状态是指界面更新第四帧之后)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-gc_print_unreachable">
+<code class="descname">gc_print_unreachable</code> = False<a class="headerlink" href="#var-gc_print_unreachable" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，Ren’Py会在控制台和日志中打印出触发GC的对象信息。</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

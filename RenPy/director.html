@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>交互式指导器(interactive director) &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NVL模式教程" href="nvl_mode.html" />
+    <link rel="prev" title="开发者工具" href="developer_tools.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">交互式指导器(interactive director)</a><ul>
+<li><a class="reference internal" href="#director">使用指导器(director)</a></li>
+<li><a class="reference internal" href="#variables">配置项</a><ul>
+<li><a class="reference internal" href="#sceneshowhide">scene、show和Hide</a></li>
+<li><a class="reference internal" href="#with">With</a></li>
+<li><a class="reference internal" href="#playqueuestopvoice">play、queue、stop和voice</a></li>
+<li><a class="reference internal" href="#access">Access</a></li>
+<li><a class="reference internal" href="#line-spacing">行间隔</a></li>
+<li><a class="reference internal" href="#viewport">视点</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#audio-filename-functions">音频文件函数</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="interactive-director">
+<span id="id1"></span><h1>交互式指导器(interactive director)<a class="headerlink" href="#interactive-director" title="Permalink to this headline"> link</a></h1>
+<p>交互式指导器(interactive director)是一个工具，允许你在Ren’Py中直接编辑游戏脚本，并能直接预览编辑的结果。指导器(director)并不意味着可能完全代替文本编辑器。我们依然需要文本编辑器来撰写视觉小说的对话、选项和逻辑。</p>
+<p>指导器(director)意在帮助你完成游戏脚本，比如添加：</p>
+<ul class="simple">
+<li>image(say、show、hide)语句。</li>
+<li>transition(with)语句。</li>
+<li>audio(play、queue、stop、voice)语句。</li>
+</ul>
+<div class="section" id="director">
+<span id="using-the-director"></span><h2>使用指导器(director)<a class="headerlink" href="#director" title="Permalink to this headline"> link</a></h2>
+<p>你可以在游戏开始后按下键盘的D键(不带shift)接入指导器(director)。如果这是你在某个会话中首次接入指导器，Ren’Py会重新加载整个游戏以确保可能会被编辑的数据无误。</p>
+<p>你会看到的第一个指导器界面是一个当前行之前运行过的行的列表。点击指导器窗口之外的部分让脚本继续前进或者回滚。点击各行之间的加号“+”能够添加一行，或者点击每行之前的 ✎ 符号能编辑对应的行。</p>
+<p>编辑某一行时，可以选择语句类型，以及何时的参数。选择“添加”添加新行，“更改”修改已存在的某行，“取消”取消编辑，“移除”移除存在的某行。</p>
+<p>当编辑完毕后点击“完成”。</p>
+</div>
+<div class="section" id="variables">
+<span id="id2"></span><h2>配置项<a class="headerlink" href="#variables" title="Permalink to this headline"> link</a></h2>
+<p>在命名空间 <code class="docutils literal notranslate"><span class="pre">director</span></code> 定义了一些配置项，用于控制交互式指导器(interactive director)的功能。这些配置项可以使用define语句设置，或者使用Python语句修改。</p>
+<div class="section" id="sceneshowhide">
+<span id="scene-show-and-hide"></span><h3>scene、show和Hide<a class="headerlink" href="#sceneshowhide" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.tag_blacklist">
+<code class="descname">director.tag_blacklist</code> = { “black”, “text”, “vtext” }<a class="headerlink" href="#var-director.tag_blacklist" title="Permalink to this definition"> link</a></dt>
+<dd><p>标签(tag)黑名单。黑名单内的标签(tag)不会通过show、scene和hide语句显示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.scene_tags">
+<code class="descname">director.scene_tags</code> = { “bg” }<a class="headerlink" href="#var-director.scene_tags" title="Permalink to this definition"> link</a></dt>
+<dd><p>标签(tag)的集合。集合内的标签(tag)会通过scene语句展示，并通过show语句隐藏。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.show_tags">
+<code class="descname">director.show_tags</code> = set()<a class="headerlink" href="#var-director.show_tags" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非空集，只有集合内标签才会通过show语句显示。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.transforms">
+<code class="descname">director.transforms</code> = [ “left”, “center”, “right” ]<a class="headerlink" href="#var-director.transforms" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个transform列表，显示为编辑器的一部分。除此之外，Ren’Py之外使用transform语句定义的transform都会添加到这个列表中，并排序。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="with">
+<span id="id3"></span><h3>With<a class="headerlink" href="#with" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.transitions">
+<code class="descname">director.transitions</code> = [ “dissolve”, “pixellate” ]<a class="headerlink" href="#var-director.transitions" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个转场(transition)列表，列表中的转场可以通过with语句使用。由于转场不能被自动检测到，这个列表内的转场必须手工添加。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="playqueuestopvoice">
+<span id="play-queue-stop-and-voice"></span><h3>play、queue、stop和voice<a class="headerlink" href="#playqueuestopvoice" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.audio_channels">
+<code class="descname">director.audio_channels</code> = [ “music”, “sound”, “audio” ]<a class="headerlink" href="#var-director.audio_channels" title="Permalink to this definition"> link</a></dt>
+<dd><p>可以被play、show和stop语句使用的音频通道名。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.voice_channel">
+<code class="descname">director.voice_channel</code> = “voice”<a class="headerlink" href="#var-director.voice_channel" title="Permalink to this definition"> link</a></dt>
+<dd><p>可以被voice语句使用的音频通道名。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.audio_patterns">
+<code class="descname">director.audio_patterns</code> = [ “*.opus”, “*.ogg”, “*.mp3” ]<a class="headerlink" href="#var-director.audio_patterns" title="Permalink to this definition"> link</a></dt>
+<dd><p>默认的音频文件名正则表达式列表，匹配正则表达式的文件都可以在音频通道中使用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.audio_channel_patterns">
+<code class="descname">director.audio_channel_patterns</code> = { }<a class="headerlink" href="#var-director.audio_channel_patterns" title="Permalink to this definition"> link</a></dt>
+<dd><p>从通道名到可用的音频文件名正则表达式的映射关系。例如，如果这项设置为 <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'sound'</span> <span class="pre">:</span> <span class="pre">[</span> <span class="pre">'sound/*.opus'</span> <span class="pre">],</span> <span class="pre">'music'</span> <span class="pre">:</span> <span class="pre">[</span> <span class="pre">'music/*.opus'</span> <span class="pre">]</span> <span class="pre">}</span></code> ，music和sound通道就使用各自可用文件的正则表达式。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="access">
+<span id="id4"></span><h3>Access<a class="headerlink" href="#access" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.button">
+<code class="descname">director.button</code> = True<a class="headerlink" href="#var-director.button" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，指导器(director)会显示一个带按钮的界面，用于接入指导器窗口。若为False，游戏提供自身的接入方式，通过执行可用的director.Start动作。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="line-spacing">
+<span id="id5"></span><h3>行间隔<a class="headerlink" href="#line-spacing" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.spacing">
+<code class="descname">director.spacing</code> = 1<a class="headerlink" href="#var-director.spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>指导器(director)行(包括scene、show、hide、with、play、queue和voice)，与非指导器行之间的间隔。间隔应该是0行或者1行，更大的间隔可能不会起效。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.director_spacing">
+<code class="descname">director.director_spacing</code> = 0<a class="headerlink" href="#var-director.director_spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>连续两个指导器行的间隔。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-director.other_spacing">
+<code class="descname">director.other_spacing</code> = 0<a class="headerlink" href="#var-director.other_spacing" title="Permalink to this definition"> link</a></dt>
+<dd><p>两虚两个非指导器行的间隔。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="viewport">
+<span id="id6"></span><h3>视点<a class="headerlink" href="#viewport" title="Permalink to this headline"> link</a></h3>
+<dl class="var">
+<dt id="var-director.viewport_height">
+<code class="descname">director.viewport_height</code> = 280<a class="headerlink" href="#var-director.viewport_height" title="Permalink to this definition"> link</a></dt>
+<dd><p>指导器使用的可滚动视点的最大高度。</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="audio-filename-functions">
+<span id="id7"></span><h2>音频文件函数<a class="headerlink" href="#audio-filename-functions" title="Permalink to this headline"> link</a></h2>
+<p>有一些音频文件函数可以用于把转换磁盘文件名转换为Python源代码的文件名。这些功能可以用于匹配Ren’Py的文件名映射。例如，我们有这样一段配置：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">voice_filename_format</span> <span class="o">=</span> <span class="s2">&quot;v/{filename}.ogg&quot;</span>
+</pre></div>
+</div>
+<p>我们就可以定义一个函数：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span> <span class="k">in</span> <span class="n">director</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">audio_code_to_filename</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        这将在代码中看到的音频文件名的名称转换为磁盘上的文件名。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="s2">&quot;voice&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;v/&quot;</span> <span class="o">+</span> <span class="n">code</span> <span class="o">+</span> <span class="s2">&quot;.ogg&quot;</span>
+
+        <span class="k">return</span> <span class="n">code</span>
+
+    <span class="k">def</span> <span class="nf">audio_filename_to_code</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        这将磁盘上的音频文件名的名称转换为文件名，如代码中所示。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="s2">&quot;voice&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;v/&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.ogg&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fn</span>
+
+    <span class="k">def</span> <span class="nf">audio_filename_to_display</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        这会转换音频文件名，如同在磁盘上看到的一样，因此它可以呈现给创作者。</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="s2">&quot;voice&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fn</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;v/&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.ogg&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fn</span>
+</pre></div>
+</div>
+<p>用于匹配音频文件名正则表达式。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

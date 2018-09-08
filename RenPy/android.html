@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>安卓(Android) &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chrome OS/Chrome浏览器" href="chromeos.html" />
+    <link rel="prev" title="web更新器" href="updater.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">安卓(Android)</a><ul>
+<li><a class="reference internal" href="#required-language">语言要求</a></li>
+<li><a class="reference internal" href="#user-instructions">用户指南</a></li>
+<li><a class="reference internal" href="#android-platform-differences">平台差异</a></li>
+<li><a class="reference internal" href="#testing-and-emulation">测试和模拟</a></li>
+<li><a class="reference internal" href="#building-android-applications">生成安卓应用程序</a><ul>
+<li><a class="reference internal" href="#step-1-installing-the-dependencies">步骤1：安装依赖组件</a></li>
+<li><a class="reference internal" href="#sdk">步骤2：配置安卓SDK和开发环境</a></li>
+<li><a class="reference internal" href="#step-3-configure-your-game">步骤3：配置游戏</a></li>
+<li><a class="reference internal" href="#step-4-build-and-install-the-package">步骤4：生成应用包并安装</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug">查看debug输出</a></li>
+<li><a class="reference internal" href="#presplash">图标和presplash图片</a></li>
+<li><a class="reference internal" href="#google-playapk">Google Play扩展APK</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="android">
+<span id="id1"></span><h1>安卓(Android)<a class="headerlink" href="#android" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持运行安卓操作系统的设备，比如智能手机和平板电脑。由于这些设备并不100%支持Ren’Py的所有函数，在那些设备运行的包会做最小化修改。</p>
+<p>与Ren’Py引擎分开下载的RAPT程序——Ren’Py安卓打包工具，可以创建安卓的测试版和正式版打包文件。</p>
+<div class="section" id="required-language">
+<span id="id2"></span><h2>语言要求<a class="headerlink" href="#required-language" title="Permalink to this headline"> link</a></h2>
+<p>部分Ren’Py在安卓平台使用的库需要通过GNU Lesser/Library General Public License的认证。你会需要遵守Ren’Py生成版的认证规则。我们相信下列包含在你app描述里的语言能够满足需求，不过最好能找个律师确认一遍。</p>
+<blockquote>
+<div>这个程序包括一些证书下的自由软件认证，包括GNU Lesser General Public License。完整的软件列表参见 <a class="reference external" href="https://www.renpy.org/l/license/">https://www.renpy.org/l/license/</a>.</div></blockquote>
+</div>
+<div class="section" id="user-instructions">
+<span id="id3"></span><h2>用户指南<a class="headerlink" href="#user-instructions" title="Permalink to this headline"> link</a></h2>
+<p>在安卓上启动一个Ren’Py游戏时，会执行下列按键绑定：</p>
+<dl class="docutils">
+<dt><cite>Home</cite></dt>
+<dd>返回到安卓home界面，Ren’Py游戏进程挂起。作为挂起过程的一部分，Ren’Py会自动存档。如果需要的话，用户回到游戏时还可以自动读档。</dd>
+<dt><cite>Menu</cite></dt>
+<dd>唤起一个游戏内菜单，并返回游戏。</dd>
+<dt><cite>Back</cite></dt>
+<dd>回滚。</dd>
+<dt><cite>Volume Up</cite>, <cite>Volume Down</cite></dt>
+<dd>控制安卓的媒体音量。</dd>
+</dl>
+</div>
+<div class="section" id="android-platform-differences">
+<span id="id4"></span><h2>平台差异<a class="headerlink" href="#android-platform-differences" title="Permalink to this headline"> link</a></h2>
+<p>在Ren’Py支持的，基于触屏的安卓平台和基于鼠标的平台之间还是有很多重要的差异。几个重要的安卓软硬件差别在于：</p>
+<ul class="simple">
+<li>触屏被看作是有一个鼠标的设备。只不过，只有在用户点击屏幕时才会产生鼠标事件消息。</li>
+<li>播放视频只支持全屏模式，并且只能使用安卓设备支持的媒体格式。请阅
+<a class="reference external" href="http://developer.android.com/guide/appendix/media-formats.html">这个页面</a>
+查看所有支持的视频格式列表。</li>
+<li>Ren’Py不能修改设备音量。不过，安卓的音量按键可以正常工作。</li>
+<li>Ren’Py不能处理按钮(button)和imagemap的透明度。(这是由于某些设备的现实模式决定透明像素的支持，所导致的性能问题。)</li>
+</ul>
+<p>除此之外，还有一些由于人为因素导致的差异。</p>
+<ul class="simple">
+<li>由于安卓智能手机可能比电脑显示器小，需要增大字体。</li>
+<li>由于触控输入不如鼠标输入精确，所以基于触屏的按钮需要比基于鼠标的按钮更大。</li>
+</ul>
+<p>为了帮助创作者适应这些差异，Ren’Py会给予设备屏幕尺寸和性能，针对安卓自动选择界面变化。详见 <a class="reference internal" href="screens.html#screen-variants"><span class="std std-ref">界面变种</span></a> 。</p>
+</div>
+<div class="section" id="testing-and-emulation">
+<span id="id6"></span><h2>测试和模拟<a class="headerlink" href="#testing-and-emulation" title="Permalink to this headline"> link</a></h2>
+<p>处于测试需求，Ren’Py支持三种安卓模拟模式。这些都通过启动器的安卓界面接入。</p>
+<dl class="docutils">
+<dt>Phone</dt>
+<dd>这个模式模拟一台安卓手机。触控模式通过鼠标实现，但是不过仅在鼠标左键按下的情况下有效。Esc键映射为menu按键，PageUp键映射为back按键。</dd>
+<dt>Tablet</dt>
+<dd>这个模式模拟一台安卓平板。触控模式通过鼠标实现，但是不过仅在鼠标左键按下的情况下有效。Esc键映射为menu按键，PageUp键映射为back按键。</dd>
+<dt>Television / OUYA</dt>
+<dd><p class="first">这个模式模拟一台基于电视的安卓设备，比如OUYA主机。按键映射为远程或控制器输入，方向键提供了导航功能。select键是回车，Esc键是菜单，PageUp键是back。</p>
+<p class="last">这个模式会在“电视机盲区”区域显示一个轮廓。所有“电视机盲区”区域的画面在所有电视上都不能显示。</p>
+</dd>
+</dl>
+<p>这些模拟器可以用于快速测试项目，当然最好能在真实的硬件上做测试。模拟器不处理那些人为因素导致的事件，比如用户的“胖手指”。</p>
+</div>
+<div class="section" id="building-android-applications">
+<span id="id7"></span><h2>生成安卓应用程序<a class="headerlink" href="#building-android-applications" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py包含一些工具能帮助创作者以包(package)为中心进行安卓游戏开发。在这个过程中，创作者会使用一台电脑生成一个安卓的包(package)并上传到创作者自己的设备上。创作者可以像其他安卓应用程序一样运行这个游戏。如果运行无误，就可以把这个包上传到Google Play等app商店了。</p>
+<p>生成一个安卓应用程序包含4个步骤：</p>
+<ol class="arabic simple">
+<li>下载和安装Java Development Kit和安卓USB驱动(下载链接在后面)。</li>
+<li>使用启动器(launcher)安装安卓SDK并创建密钥(key)。</li>
+<li>使用启动器(launcher)进行安卓生成配置。</li>
+<li>使用启动器(launcher)生成安卓应用程序。</li>
+</ol>
+<p>一旦你完成了这些步骤，就能得到一个可以运行的安卓包。当你修改了某个游戏的配置或者完整配置一个新游戏时，只需要执行步骤3；如果你要重新生成一个包，通常只需要执行步骤4。</p>
+<div class="section" id="step-1-installing-the-dependencies">
+<span id="id8"></span><h3>步骤1：安装依赖组件<a class="headerlink" href="#step-1-installing-the-dependencies" title="Permalink to this headline"> link</a></h3>
+<p>在你生成包(package)之前，总共有3种东西需要手工下载和安装</p>
+<p><strong>Java Development Kit.</strong>
+Java开发工具包（Java Development Kit （JDK）） 包含一些RAPT需要的工具。
+RAPT需要使用这些工具，包括用于生成密钥(key)和签名包的工具。JDK的下载地址为：</p>
+<blockquote>
+<div><a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></div></blockquote>
+<p>请注意，关注开发者的JDK与关注用户的JRE是不同的。而创作者需要JDK创建安卓包。</p>
+<p><strong>Android Device Drivers.</strong>
+在Windows平台上，为了接入设备你可能要安装一个设备驱动，尽管这不是必需的。安卓设备驱动的链接如下：</p>
+<blockquote>
+<div><a class="reference external" href="http://developer.android.com/sdk/oem-usb.html">http://developer.android.com/sdk/oem-usb.html</a></div></blockquote>
+<p>在Linux和OS X平台上，你就不需要设备驱动了。如果发现不能接入设备，请详细阅读：</p>
+<blockquote>
+<div><a class="reference external" href="http://developer.android.com/guide/developing/device.html#setting-up">http://developer.android.com/guide/developing/device.html#setting-up</a></div></blockquote>
+<p>不过，主流版本的Linux和OS X平台都可以正常工作。</p>
+</div>
+<div class="section" id="sdk">
+<span id="step-2-set-up-the-android-sdk-and-development-environment"></span><h3>步骤2：配置安卓SDK和开发环境<a class="headerlink" href="#sdk" title="Permalink to this headline"> link</a></h3>
+<p>下一步是配置安卓SDK和你开发环境的部分。这步包括：</p>
+<ul class="simple">
+<li>检查JDK是否正确安装。</li>
+<li>安装Apache Ant。</li>
+<li>安装安卓SDK。</li>
+<li>使用安卓SDK安装合适的开发工具包。</li>
+<li>创建一个签名密钥，使用这个密钥给包签名。签名后的包就可以发布在应用市场上了。(android.keystore：这个文件生成在RAPT目录下。)</li>
+</ul>
+<p>这步需要接入互联网。</p>
+<p>执行这个步骤时，选择Ren’Py启动器中安卓界面的“安装SDK并创建密钥”。</p>
+<p>RAPT会实时报告它正在做的工作。它还会将各类许可的警告信息，并询问你是否需要生成一个密钥。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>RAPT生成的密钥使用一个标准密码创建。你应该使用密钥工具生成自己的签名密钥。</p>
+<blockquote>
+<div><a class="reference external" href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html">http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html</a></div></blockquote>
+<p class="last">至少，你应该将android.keystore文件保存在一个安全的地方。你还应该将保存这个密钥的备份，因为没有这个密钥的话，你就不能上传生成的应用程序。</p>
+</div>
+</div>
+<div class="section" id="step-3-configure-your-game">
+<span id="id9"></span><h3>步骤3：配置游戏<a class="headerlink" href="#step-3-configure-your-game" title="Permalink to this headline"> link</a></h3>
+<p>生成一个包(package)之前，你必须向Ren’Py提供一些关于游戏安卓版本的信息。在Ren’Py启动器的安卓界面，选择“配置”。</p>
+<p>如果你需要修改这些信息——例如，你做了一个游戏的新版本——你可以重新运行配置命令。之前你配置的选项已经被记住了。</p>
+</div>
+<div class="section" id="step-4-build-and-install-the-package">
+<span id="id10"></span><h3>步骤4：生成应用包并安装<a class="headerlink" href="#step-4-build-and-install-the-package" title="Permalink to this headline"> link</a></h3>
+<p>最后，你可以生成应用包并安装了。将你的安卓设备连接到你的电脑，然后在Ren’Py启动器的安卓界面选择“生成应用包并安装”。(首次安装时，你的安卓设备可能会询问你是否允许你的电脑向安卓设备安装应用。)</p>
+<p>如果你需要将游戏的apk文件手工复制到安卓设备上的话，在Ren’Py启动器的安卓界面选择“生成应用包”。然后进入RAPT目录下的bin目录，将文件mygame-release.apk复制到安卓设备上。之后找到安卓的文件管理应用找到对应的apk文件，打开文件执行安装。</p>
+</div>
+</div>
+<div class="section" id="debug">
+<span id="viewing-debug-output"></span><h2>查看debug输出<a class="headerlink" href="#debug" title="Permalink to this headline"> link</a></h2>
+<p>通过在终端上手工执行adb命令，可以找到debug输出。安装SDK之后，adb命令可以在 <cite>rapt-dir</cite>/android-sdk/platform-tools/adb目录下找到。(Windows平台下是adb.exe。)</p>
+<p>想要查看Ren’Py的输出，可以使用这个命令：</p>
+<blockquote>
+<div>adb logcat -s python:*</div></blockquote>
+</div>
+<div class="section" id="presplash">
+<span id="icon-and-presplash-images"></span><h2>图标和presplash图片<a class="headerlink" href="#presplash" title="Permalink to this headline"> link</a></h2>
+<p>有多个特别的文件用于设置应用包(package)使用的图标和presplash图片。这些文件应该放在基目录中。</p>
+<dl class="docutils">
+<dt>android-icon.png</dt>
+<dd>在安卓启动器中的app图标。这个图标会自动缩小到合适的尺寸，最大不超过144×144。</dd>
+<dt>android-<cite>density</cite>-icon.png</dt>
+<dd><p class="first">若存在，这些图片用于不同屏幕密度(density)。这可以使得图标的像素完美(pixel-perfect)。可用屏幕密度和对应的icon尺寸如下：</p>
+<ul class="last simple">
+<li>ldpi (36x36)</li>
+<li>mdpi (48x48)</li>
+<li>hdpi (72x72)</li>
+<li>xhdpi (96x96)</li>
+<li>xxhdpi (144x144)</li>
+</ul>
+</dd>
+<dt>android-presplash.jpg</dt>
+<dd>当app在加载时使用的图像。它应该被单色边界包围。该边界扩展至填充满整个屏幕。</dd>
+<dt>ouya-icon.png</dt>
+<dd>用在OUYA主机上的732×412图标。</dd>
+</dl>
+</div>
+<div class="section" id="google-playapk">
+<span id="expansion-apk"></span><h2>Google Play扩展APK<a class="headerlink" href="#google-playapk" title="Permalink to this headline"> link</a></h2>
+<p>当设备支持Google Play时，Ren’Py可选择支持扩展APK的使用。扩展APK允许Google Play突破游戏不能大于50MB的限制。详见：</p>
+<blockquote>
+<div><a class="reference external" href="http://developer.android.com/google/play/expansion-files.html">http://developer.android.com/google/play/expansion-files.html</a></div></blockquote>
+<p>关于扩展APK工作机制的信息。
+迄今为止，只支持主扩展APK，文件限制为2GB。创建扩展APK时，所有的游戏文件都会放在这个APK包中。Ren’Py会显式使用这些文件。</p>
+<p>要将游戏配置为使用扩展APK，你需要设置两个变量：</p>
+<dl class="var">
+<dt id="var-build.google_play_key">
+<code class="descname">build.google_play_key</code> = “…”<a class="headerlink" href="#var-build.google_play_key" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是与你的应用关联的Google Play证书，这个证书在Google Play开发者终端上与你应用关联的“Services &amp; APIs”标签内可以找到。(确保在密钥中删除了所有的空格和换行。)</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-build.google_play_salt">
+<code class="descname">build.google_play_salt</code> = ( … )<a class="headerlink" href="#var-build.google_play_salt" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个20byte的元组，每个byte都是一个介于-128和127之间的整数。这个元组用于加密来自Google Play的信息。</p>
+<p>一个合法(但不安全)的元组值如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>当在设备上安装了APK包之后，RAPT会在设备上放置扩展APK。扩展APK会是在RAPT目录的bin子目录下的一个.obb文件。</p>
+<p>在通常操作中，用户安装应用程序时，Google Play会在设备上自动放置扩展APK。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

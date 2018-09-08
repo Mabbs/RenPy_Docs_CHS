@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>层叠式图像 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="样式(style)" href="style.html" />
+    <link rel="prev" title="动画和变换语言" href="atl.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">层叠式图像</a><ul>
+<li><a class="reference internal" href="#defining-layered-images">定义层叠式图像</a></li>
+<li><a class="reference internal" href="#using-an-layered-image">使用层叠式图像</a></li>
+<li><a class="reference internal" href="#automatic-attributes">自动化属性</a></li>
+<li><a class="reference internal" href="#statement-reference">语句参考</a><ul>
+<li><a class="reference internal" href="#layeredimage">layeredimage语句</a></li>
+<li><a class="reference internal" href="#attribute">Attribute语句</a></li>
+<li><a class="reference internal" href="#group">Group语句</a></li>
+<li><a class="reference internal" href="#always">Always语句</a></li>
+<li><a class="reference internal" href="#if">If语句</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poses">姿势</a></li>
+<li><a class="reference internal" href="#advice">几个建议</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#proxying-layered-images">层叠式图像生成代理对象</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="layered-images">
+<span id="id1"></span><h1>层叠式图像<a class="headerlink" href="#layered-images" title="Permalink to this headline"> link</a></h1>
+<p>当某个精灵(sprite)集的复杂度到达某个等级后，分别定义出每种可能的组合就会变得非常不便。
+例如，某个精灵有4套服装、4种发型和6种表情，就总共有96种组合方式。
+针对每种可能的组合创建静态图像会占用很多磁盘空间和编程时间。</p>
+<p>为了应对这种使用场景，Ren’Py提供了一种办法，可以定义多个图层(layer)组成的图像。
+(此处的图层跟Ren’Py中其他地方的“图层”不太一样，更类似于Photoshop或者GIMP等绘图程序中图层的概念。)
+图层可以无条件显示，也可以通过图像属性(attribute)或者实时计算的条件表达式选择是否显示。</p>
+<p>为了让定义层叠式图像更加方便，Ren’Py提供了layeredimage语句。以layeredimage开头的语句表示，允许传作者使用特定域的语言定义一个层叠式图像。
+还有 <a class="reference internal" href="#LayeredImage" title="LayeredImage"><code class="xref py py-func docutils literal notranslate"><span class="pre">LayeredImage()</span></code></a> 对象，虽然它不是一般的图像(image)对象，但可以使用image语句声明，也可以和一般图像一样使用。</p>
+<div class="section" id="defining-layered-images">
+<span id="id2"></span><h2>定义层叠式图像<a class="headerlink" href="#defining-layered-images" title="Permalink to this headline"> link</a></h2>
+<p>层叠式图像的特定域脚本语言由几种语句组成。其中一种语句就是一个引入图像的普通脚本语言语句，跟在它后面的语句则引入图层和图层组。</p>
+<p>为了介绍这种特殊的语言，这里的例子是一个使用了多种功能特性(feature)的层叠式图像，所有的隐式项全都使用显式标明。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">layeredimage</span> <span class="n">augustina</span><span class="p">:</span>
+
+    <span class="k">always</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_base&quot;</span>
+
+    <span class="k">group</span> <span class="n">outfit</span><span class="p">:</span>
+
+        <span class="k">attribute</span> <span class="n">dress</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_outfit_dress&quot;</span>
+
+        <span class="k">attribute</span> <span class="n">jeans</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_outfit_jeans&quot;</span>
+
+    <span class="k">group</span> <span class="n">eyes</span><span class="p">:</span>
+
+        <span class="k">attribute</span> <span class="nb">open</span> <span class="k">default</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_eyes_open&quot;</span>
+            <span class="k">default</span> <span class="bp">True</span>
+
+        <span class="k">attribute</span> <span class="n">wink</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_eyes_wink&quot;</span>
+
+    <span class="k">group</span> <span class="n">eyebrows</span><span class="p">:</span>
+
+        <span class="k">attribute</span> <span class="n">normal</span> <span class="k">default</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_eyebrows_normal&quot;</span>
+
+        <span class="k">attribute</span> <span class="n">oneup</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_eyebrows_oneup&quot;</span>
+
+    <span class="k">group</span> <span class="n">mouth</span><span class="p">:</span>
+
+        <span class="na">pos</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+        <span class="k">attribute</span> <span class="n">smile</span> <span class="k">default</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_mouth_smile&quot;</span>
+
+        <span class="k">attribute</span> <span class="n">happy</span><span class="p">:</span>
+            <span class="s2">&quot;augustina_mouth_happy&quot;</span>
+
+    <span class="k">if</span> <span class="n">evil</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses_evil&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses&quot;</span>
+</pre></div>
+</div>
+<p>这段脚本有点长，不过它很规整易读。下面我们将展示如何简化这段脚本。</p>
+<p>首先，layeredimage语句以精灵(sprite)的名字开头。这条语句属于Ren’Py脚本语言，运行在初始化阶段。</p>
+<p>层叠式图像的语句块(block)可能包含always、group和if语句。group语句可以包含属性(attribute)。always和if语句必须带可视组件(displayable)，而同个组内的attribute语句可以任何选择带一个。
+以上所有语句都可以带特性(property)。</p>
+<p>always语句定义的图层(layer)总是显示，就像是精灵(sprite)的背景。</p>
+<p>group语句引入一组属性(attribute)，同一时间内只显示某一项属性(attribute)。
+所以层叠式图像其实只显示角色的一套服装、一对眼睛、一对眉毛和一张嘴。指定的属性组特性(property)会传入对应的attribute，并让属性组自动定义各个属性。</p>
+<p>attribute语句引入的图层，是仅在图像需要对应属性(attribute)时才会显示。例如，“augustina_outfit_dress”仅在出现“dress”属性时才会显示。
+如果使用了关键词default，在没有其他有冲突的属性出现时，就会默认显示的属性；在这个样例中，只要不使用“wink”属性，就显示“augustina_eyes_open”属性的图像。</p>
+<p>最后，if语句添加了一个图层，该图层使用一条Python语句在不同的可视组件间选择显示的对象。Python语句总是重新计算，并显示第一个满足条件表达式为True的图像。</p>
+<p>特性(property)由特性名称和一个简单表达式构成，可以传给每一个图层。一些特性(property)会改变某些语句的功能。
+如果含有某一个或多个 <a class="reference internal" href="atl.html#transform-properties"><span class="std std-ref">变换特性</span></a> 会创建一个 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 对象并wrap出显示结果。
+at后面的某个变换(transform)或者变换列表也会让可视组件产生变化。例如，这里的pos特性(property)创建了一个变换(transform)，移动角色“mouth”图像的位置。</p>
+<p>最终图像的尺寸等于能包围所有图层的方框尺寸。所以最好直接让某一个图层就是最终图像的完整尺寸，这个尺寸能包含所有的图层。
+第一个图层在最终图像最后面，而最后的图层在最终图像最前面——在这个样例中，glass图层覆盖在所有其他图层上。</p>
+<p>group和attribute语句在某个层叠式图像中可以出现多次，所有指定属性(attribute)的图像都会显示。</p>
+</div>
+<div class="section" id="using-an-layered-image">
+<span id="id3"></span><h2>使用层叠式图像<a class="headerlink" href="#using-an-layered-image" title="Permalink to this headline"> link</a></h2>
+<p>要使用这个层叠式图像，而不是其他层叠式图像，变量evil必须给定一个值，比如：:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">default</span> <span class="n">evil</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>这样，层叠式图像就可以像其他图像(image)一样显示了。几乎可以肯定，至少需要给定角色的一套服装——虽然Ren’Py不强制要求，图像还是需要显示一套的：:</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">augustina</span> <span class="n">jeans</span>
+</pre></div>
+</div>
+<p>当精灵(sprite)显示时，额外属性(attribute)的要素只要不冲突就都会添加到图像上。
+(使用Ren’Py时广泛存在的，匹配不到已定义图像的情况，基本不会发生在层叠式图像上。)
+所以，</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">augustina</span> <span class="n">wink</span>
+</pre></div>
+</div>
+<p>会激活与wink属性(attribute)关联的图层。我们可以可以关闭wink属性，使用：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">augustina</span> <span class="nb">open</span>
+</pre></div>
+</div>
+<p>因为open状态的眼睛与wink状态的眼睛冲突。我们还可以直接移除wink属性，使用：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">show</span> <span class="n">augustina</span> <span class="o">-</span><span class="n">wink</span>
+</pre></div>
+</div>
+<p>这样也会显示open属性，因为它是默认项。</p>
+<p>层叠式图像还可以使用在scene语句中。</p>
+</div>
+<div class="section" id="automatic-attributes">
+<span id="id4"></span><h2>自动化属性<a class="headerlink" href="#automatic-attributes" title="Permalink to this headline"> link</a></h2>
+<p>我们的第一个样例中有不少重复，很多属性(attribute)的名称已经在可视组件中定义过。
+为了帮助创作者节约冗余的输入时间，Ren’Py可以根据图像名称、组名称和属性名称自动决定可视组件的名称。
+使用下划线连接上述名称就能实现这一点。</p>
+<p>这样做的时候，创作者还可以利用属性(attribute)的另一项功能特性——第一行可以添加任意特性(property)，并省略整个语句块(block)。</p>
+<p>之前的样例可以这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">layeredimage</span> <span class="n">augustina</span><span class="p">:</span>
+
+    <span class="k">always</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_base&quot;</span>
+
+    <span class="k">group</span> <span class="n">outfit</span><span class="p">:</span>
+        <span class="k">attribute</span> <span class="n">dress</span>
+        <span class="k">attribute</span> <span class="n">jeans</span>
+
+    <span class="k">group</span> <span class="n">eyes</span><span class="p">:</span>
+        <span class="k">attribute</span> <span class="nb">open</span> <span class="k">default</span>
+        <span class="k">attribute</span> <span class="n">wink</span>
+
+    <span class="k">group</span> <span class="n">eyebrows</span><span class="p">:</span>
+        <span class="k">attribute</span> <span class="n">normal</span> <span class="k">default</span>
+        <span class="k">attribute</span> <span class="n">oneup</span>
+
+    <span class="k">group</span> <span class="n">mouth</span><span class="p">:</span>
+        <span class="na">pos</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">attribute</span> <span class="n">smile</span> <span class="k">default</span>
+        <span class="k">attribute</span> <span class="n">happy</span>
+
+    <span class="k">if</span> <span class="n">evil</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses_evil&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses&quot;</span>
+</pre></div>
+</div>
+<p>这个样例跟之前那个是等价的(前提是使用的是相同名称的可视组件)。例如，在outfit组中的dress属性使用名为“augustina_outfit_dress”的可视组件。</p>
+<p>还可以更进一步，让一个组内自动定义属性(attribute)。在定义组时使用关键词auto，就能让这个组自动搜索正则表达式匹配到的图像，并在属性不存在的情况下自动定义组内图像属性。</p>
+<p>与属性(attribute)一样，特性(property)也可以放在组的第一行并省略语句块。always语句中的可视组件和特性(property)也可以采用同样的方式。</p>
+<p>样例的最终格式如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">layeredimage</span> <span class="n">augustina</span><span class="p">:</span>
+
+    <span class="k">always</span> <span class="s2">&quot;augustina_base&quot;</span>
+
+    <span class="k">group</span> <span class="n">outfit</span> <span class="k">auto</span>
+
+    <span class="k">group</span> <span class="n">eyes</span> <span class="k">auto</span><span class="p">:</span>
+        <span class="k">attribute</span> <span class="nb">open</span> <span class="k">default</span>
+
+    <span class="k">group</span> <span class="n">eyebrows</span> <span class="k">auto</span><span class="p">:</span>
+        <span class="k">attribute</span> <span class="n">normal</span> <span class="k">default</span>
+
+    <span class="k">group</span> <span class="n">mouth</span> <span class="k">auto</span><span class="p">:</span>
+        <span class="na">pos</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">attribute</span> <span class="n">smile</span> <span class="k">default</span>
+
+    <span class="k">if</span> <span class="n">evil</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses_evil&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="s2">&quot;augustina_glasses&quot;</span>
+</pre></div>
+</div>
+<p>这是定义同样的图像时，最精简的方法。当每个组中需要添加更多属性(attribute)时，自动定义功能节省的时间更多。</p>
+<p>如果我们不需要默认属性，还可以减少几行脚本。那样，每个组都只需要一行。</p>
+</div>
+<div class="section" id="statement-reference">
+<span id="id5"></span><h2>语句参考<a class="headerlink" href="#statement-reference" title="Permalink to this headline"> link</a></h2>
+<p>需要注意，当层叠式图像首次定义时，if语句中的所有条件表达式都在初始化阶段就会被计算。</p>
+<div class="section" id="layeredimage">
+<span id="id6"></span><h3>layeredimage语句<a class="headerlink" href="#layeredimage" title="Permalink to this headline"> link</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">layeredimage</span></code> 语句在Ren’Py用作某个层叠式图像定义的开头语句。layeredimage语句开始处是图像名称，后面的语句块内包含attribute、group和if语句。</p>
+<p>层叠式图像使用下列特性(property)：</p>
+<dl class="docutils">
+<dt><cite>image_format</cite></dt>
+<dd>如果给定的图像是一个字符串，并且提供了image_format特性，就将 <em>image_format</em> 插入到图像名，根据得到的名称找对应的图片文件例如，“sprites/eileen/{image}.png”会在sprites子目录下搜索所有png图片文件。(auto组不使用image_format特性，因为auto组自动搜索图像(image)而不是图片文件。)</dd>
+<dt><cite>format_function</cite></dt>
+<dd>这是一个函数，用于代替 <cite>layeredimage.format_function</cite> 函数，将图像信息格式化并传入某个可视组件。</dd>
+<dt><a class="reference internal" href="atl.html#transform-properties"><span class="std std-ref">transform properties</span></a></dt>
+<dd>如果存在变换特性，都会用于构建一个应用于可视组件的 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 。</dd>
+<dt><cite>at</cite></dt>
+<dd>应用于层叠式图像的一个变换(transform)或变换的列表。</dd>
+</dl>
+</div>
+<div class="section" id="attribute">
+<span id="id7"></span><h3>Attribute语句<a class="headerlink" href="#attribute" title="Permalink to this headline"> link</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">attribute</span></code> 语句添加了一个图层(layer)，当使用给定的属性(attribute)时显示对应的图像(image)。同一个属性可以用在多个图层中，并响应这个属性一齐显示(if_also和if_not特性可以更改这点)。</p>
+<p>attribute语句使用一个属性(attribute)名称。其可以使用两个关键词。 <code class="docutils literal notranslate"><span class="pre">default</span></code> 关键词表示，在没有同组冲突属性出现的情况下作为默认的属性。 <code class="docutils literal notranslate"><span class="pre">null</span></code> 关键词防止Ren’Py自动搜索对应属性的可视组件，对某些有使用条件 <cite>if_all</cite>， <cite>if_any</cite>， 或 <cite>if_not</cite> 的属性时很有用。</p>
+<p>如果没有直接给出可视组件(displayable)，Ren’Py会将图层(layer)、组(group)、组变种(group variant)和属性(attribute)用下划线连接，算出一个可视组件的名称。所以如果我们有一个名为“augustina”的图像，组名“eyes”，属性名“closed”，那么最终使用的图像名为“augustina_eyes_closed”。
+(层叠式图像的格式化函数就负责处理这个工作，默认的格式化函数是 <a class="reference internal" href="#layeredimage.format_function" title="layeredimage.format_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">layeredimage.format_function()</span></code></a>。)</p>
+<p>如果某个属性(attribute)不在某个组(group)里，就会使用相同的属性名放入那个组中，但那个组并不会用于计算可视组件的名称。(Ren’Py会搜索“image_attribute”，而不是“image_attribute_attribute”。)</p>
+<p>attribute语句使用下列特性(property)：</p>
+<dl class="docutils">
+<dt><cite>if_all</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只有所有特定的属性都出现时，才显示图层(layer)。</dd>
+<dt><cite>if_any</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只要有任意特定的属性出现时，就显示图层(layer)。</dd>
+<dt><cite>if_not</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只有所有特定的属性都不出现时，才显示图层(layer)。</dd>
+<dt><a class="reference internal" href="atl.html#transform-properties"><span class="std std-ref">transform properties</span></a></dt>
+<dd>如果存在变换特性，都会用于构建一个应用于可视组件的 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 。</dd>
+<dt><cite>at</cite></dt>
+<dd>应用于层叠式图像的一个变换(transform)或变换的列表。</dd>
+</dl>
+</div>
+<div class="section" id="group">
+<span id="id8"></span><h3>Group语句<a class="headerlink" href="#group" title="Permalink to this headline"> link</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">group</span></code> 语句将一些转换后的图层(layer)组成一个组。一个组(group)中不能包含不同的属性(attribute)。(不过一个组中可以包含同样的属性两次。)</p>
+<p>group语句使用一个名称(name)。该名称并不常用，但可以用于生成组内属性的默认名称。</p>
+<p>这个名称后面可能跟着关键词 <em>auto</em> 。如果在组内的任意属性后面的确存在auto，Ren’Py会扫描自己的图像列表以匹配组的正则表达式(详见下面内容)。找到的所有图像，如果匹配不到已定义的属性，就会自动在组内添加属性，就像使用attribute语句定义属性一样。</p>
+<p>特性(property)可以定义在组的第一行，后面带一个语句块，包含特性(property)和属性(attribute)。</p>
+<p>有两个特性是专门用于组的：</p>
+<dl class="docutils">
+<dt><cite>variant</cite></dt>
+<dd>这应该是一个字符串。如果存在这项特性，它会添加一个变种元素。这个变种元素最终会成为自动生成图像名的一部分，以及搜索自动定义属性的正则表达式的一部分。</dd>
+<dt><cite>prefix</cite></dt>
+<dd>给定的prefix前缀会加根下划线，并添加到手动或自动定义的属性名称前面。如果 <em>prefix</em> 为“leftarm”，遇到的属性名为“hip”，定义的最终属性名就是“leftarm_hip”。</dd>
+</dl>
+<p>group语句使用的特性(property)与 <code class="docutils literal notranslate"><span class="pre">attribute</span></code> 语句相同。应用于组(group)的特性会传给组内的属性(attribute)，除非某项属性自身重写了同名的属性。</p>
+<p><strong>正则表达式</strong> 使用的图像正则表达式由下列部分构成：</p>
+<ul class="simple">
+<li>图像名称，空格使用下划线替换。</li>
+<li>组(group)名称。</li>
+<li>变种(variant)名称。</li>
+<li>属性(attribute)名称。</li>
+</ul>
+<p>全部使用下划线组成。例如，我们有一个名为“augustina work”的图层图像，名为“eyes”的组，就会根据正则表达式 augustina_work_eyes_`attribute` 匹配图像。 如果带一个 <cite>blue</cite> 的 <cite>variant</cite> ，就会根据正则表达式 augustina_work_eyes_blue_`attribute` 进行匹配。</p>
+</div>
+<div class="section" id="always">
+<span id="id9"></span><h3>Always语句<a class="headerlink" href="#always" title="Permalink to this headline"> link</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">always</span></code> 语句定义一个保持显示的图层。always语句必须提供一个可视组件，当然也可以使用特性(property)。
+这两部分可以放在同一行，也可以放在一个语句块(block)中。</p>
+<p>always语句使用下列特性：</p>
+<dl class="docutils">
+<dt><cite>if_all</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只有所有特定的属性都出现时，才显示图层(layer)。</dd>
+<dt><cite>if_any</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只要有任意特定的属性出现时，就显示图层(layer)。</dd>
+<dt><cite>if_not</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，只有所有特定的属性都不出现时，才显示图层(layer)。</dd>
+<dt><a class="reference internal" href="atl.html#transform-properties"><span class="std std-ref">transform properties</span></a></dt>
+<dd>如果存在变换特性，都会用于构建一个应用于图层的 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 。</dd>
+<dt><cite>at</cite></dt>
+<dd>应用于图层的一个变换(transform)或变换的列表。</dd>
+</dl>
+</div>
+<div class="section" id="if">
+<span id="id10"></span><h3>If语句<a class="headerlink" href="#if" title="Permalink to this headline"> link</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> 语句(或者更完整的if-elif-else语句)允许创作者设置一个或多个条件表达式。这些条件表达式会运行时进行计算。
+每个条件表达式与某个图层(layer)关联，第一个结果为True的条件表达式对应的图像会被显示。如果没有条件表达式为True，else语句对应的图像就会显示。</p>
+<p>一个稍微复杂的if语句样例如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">glasses</span> <span class="o">==</span> <span class="s2">&quot;evil&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;augustina_glasses_evil&quot;</span>
+<span class="k">elif</span> <span class="n">glasses</span> <span class="o">==</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
+    <span class="s2">&quot;augustina_glasses&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="s2">&quot;augustina_nose_mark&quot;</span>
+</pre></div>
+</div>
+<p>每个图层必须给定一个可视组件。if语句还可以使用下列特性(property)：</p>
+<dl class="docutils">
+<dt><cite>if_all</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，条件表达式检查是否所有的命名属性(attribute)都出现了。</dd>
+<dt><cite>if_any</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，条件表达式检查是否任意的命名属性(attribute)出现了。</dd>
+<dt><cite>if_not</cite></dt>
+<dd>属性(attribute)名称的字符串或字符串列表。如果出现了这项特性，条件表达式检查是否所有的命名属性(attribute)都未出现。</dd>
+<dt><a class="reference internal" href="atl.html#transform-properties"><span class="std std-ref">transform properties</span></a></dt>
+<dd>如果存在变换特性，都会用于构建一个应用于图层的 <a class="reference internal" href="trans_trans_python.html#Transform" title="Transform"><code class="xref py py-func docutils literal notranslate"><span class="pre">Transform()</span></code></a> 。</dd>
+<dt><cite>at</cite></dt>
+<dd>应用于图层的一个变换(transform)或变换的列表。</dd>
+</dl>
+<p>当 <code class="docutils literal notranslate"><span class="pre">layeredimage</span></code> 语句运行时，if语句就会转换为 <a class="reference internal" href="displayables.html#ConditionSwitch" title="ConditionSwitch"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConditionSwitch()</span></code></a> 。</p>
+<p>predict_all不为True时，应该避免修改if语句的条件表达式。因为层叠式图像要么显示要么即将显示，修改if语句条件表达式会导致没有预加载的图像就被使用。
+这种设计主要用于很少变化的角色自定义选项。</p>
+</div>
+</div>
+<div class="section" id="poses">
+<span id="id11"></span><h2>姿势<a class="headerlink" href="#poses" title="Permalink to this headline"> link</a></h2>
+<p>一个角色对应的精灵(sprite)可能有多个姿势，不同姿势的所有内容——至少有趣的所有内容——都是不同的。
+例如，如果某个角色有站立和坐着两种姿势，所有的图像部件就都在不同的位置。</p>
+<p>在那种情况下，可以根据同一个图像标签(tag)定义多个层叠式图像。  <code class="docutils literal notranslate"><span class="pre">layeredimage</span></code> 语句可以允许创作者包含属性(attribute)作为图像名称的一部分。所以我们可以这样：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">layeredimage</span> <span class="n">augustina</span> <span class="n">sitting</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="k">layeredimage</span> <span class="n">augustina</span> <span class="n">standing</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>使用层叠式图像合成一个对话框头像(side image)特别好用。不同角色的对话框头像不会与其他角色的有任何关系。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">layeredimage</span> <span class="k">side</span> <span class="n">eileen</span><span class="p">:</span>
+    <span class="o">...</span>
+
+<span class="k">layeredimage</span> <span class="k">side</span> <span class="n">lucy</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="advice">
+<span id="id12"></span><h2>几个建议<a class="headerlink" href="#advice" title="Permalink to this headline"> link</a></h2>
+<p><strong>在图像名称中使用下划线。</strong>
+默认情况下，Ren’Py中的层叠式图像使用下划线作为图像名各段的分隔符。
+可以在图像中临时使用空格，不过后面很可能会导致问题和故障。</p>
+<p>Ren’Py的一条规则是，如果创作者想要显示一个图像，那个图像有一个同名图像正在显示，那么就显示那个同名图像。
+这个规则也贯彻在层叠式图像中。创作者可以直接定义并显示图层，不过也会导致奇怪的问题，比如一双眼睛悬浮在空中。</p>
+<p>每个图像使用的图像标签(tag)都与主图像不同的话，就不存在这个问题了。</p>
+<p><strong>不需要剪裁图层。</strong>
+Ren’Py读取图像并加载到RAM之前会进行优化，将所有图像剪裁到非透明像素的包围框(bounding box)。
+因此，在图像被正确预加载的前提下，创作者剪裁图像并不会提升性能或减少图像尺寸。</p>
+</div>
+<div class="section" id="python">
+<span id="layeredimage-python"></span><h2>Python<a class="headerlink" href="#python" title="Permalink to this headline"> link</a></h2>
+<p>当然， <code class="docutils literal notranslate"><span class="pre">layeredimage</span></code> 语句有一个Python等效语句。group语句则没有——group可以传入 <a class="reference internal" href="#Attribute" title="Attribute"><code class="xref py py-func docutils literal notranslate"><span class="pre">Attribute()</span></code></a> 和auto功能可以使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.list_images()</span></code> 来实现。</p>
+<dl class="function">
+<dt id="Attribute">
+<code class="descname">Attribute</code><span class="sig-paren">(</span><em>group</em>, <em>attribute</em>, <em>image=None</em>, <em>default=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Attribute" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数用于由某个属性(attribute)控制展现层叠式图像中的某个图层(layer)。单个的属性可以控制多个图层，在这种情况下那个属性的图层会同时响应并显示。</p>
+<dl class="docutils">
+<dt><strong>group</strong></dt>
+<dd>一个字符串，表示属性控制的组名称。可以是None，表示由属性名创建同名的组。</dd>
+<dt><strong>attribute</strong></dt>
+<dd>一个字符串，表示属性的名称。</dd>
+<dt><strong>image</strong></dt>
+<dd>如果不是None，这项应该是受属性控制显示的可视组件。</dd>
+<dt><strong>default</strong></dt>
+<dd>如果是True，并且组内其他属性没有设置为默认属性，就使用 <em>attribute</em> 作为默认属性。</dd>
+</dl>
+<p>还有下面几个关键词入参：</p>
+<dl class="docutils">
+<dt><strong>at</strong></dt>
+<dd>应用于图像的一个变换(transform)或者变换列表。</dd>
+<dt><strong>if_all</strong></dt>
+<dd>一项属性(attribute)或属性列表。只有所有属性都显示时，对应的可视组件才会显示。</dd>
+<dt><strong>if_any</strong></dt>
+<dd>一项属性(attribute)或属性列表。只要不是空列表，任意属性显示时，对应的可视组件都会显示。</dd>
+<dt><strong>if_not</strong></dt>
+<dd><p class="first">一项属性(attribute)或属性列表。所有属性都不显示的情况下，可视组件才显示。</p>
+<p>其他关键词入参都可以集成为变换(transform)的特性(property)。如果出现了这样的关键词入参，就会创建一个变换用于warp图像。
+(例如，pos=(100, 200)可以用于让图像在水平方向偏移100像素、在垂直方向偏移200像素。)</p>
+<p>如果 <em>image</em> 参数省略或者为None，并且 <a class="reference internal" href="#LayeredImage" title="LayeredImage"><code class="xref py py-func docutils literal notranslate"><span class="pre">LayeredImage()</span></code></a> 传入了 <em>image_format</em> 参数，image_format就用于生成图像文件名。</p>
+<dl class="function">
+<dt id="Condition">
+<code class="descname">Condition</code><span class="sig-paren">(</span><em>condition</em>, <em>image</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Condition" title="Permalink to this definition"> link</a></dt>
+<dd></dd></dl>
+
+<p>这个函数用于由某个条件表达式控制展现层叠式图像中的某个图层(layer)。当条件表达式为True时，显示图层。否则不显示。</p>
+<dl class="docutils">
+<dt><strong>condition</strong></dt>
+<dd>这是一个字符串，表示Python条件表达式，决定是否显示图层。</dd>
+<dt><strong>image</strong></dt>
+<dd>若不是None，这是一个可视组件，条件表达式condition为True时显示。</dd>
+<dt><strong>if_all</strong></dt>
+<dd>一项属性或属性列表。只有所有属性都显示时，才计算条件表达式的值。</dd>
+<dt><strong>if_any</strong></dt>
+<dd>一项属性或属性列表。只要列表不是空列表，任意属性显示时都计算条件表达式的值。</dd>
+<dt><strong>if_not</strong></dt>
+<dd>一项属性或属性列表。只有所有属性都不显示时，才计算条件表达式的值。</dd>
+<dt><strong>at</strong></dt>
+<dd>应用于图像的一个变换(transform)或者变换列表。</dd>
+</dl>
+<p>其他关键词入参都可以集成为变换(transform)的特性(property)。如果出现了这样的关键词入参，就会创建一个变换用于warp图像。
+(例如，pos=(100, 200)可以用于让图像在水平方向偏移100像素、在垂直方向偏移200像素。)</p>
+<dl class="function">
+<dt id="LayeredImage">
+<code class="descname">LayeredImage</code><span class="sig-paren">(</span><em>attributes</em>, <em>at=[]</em>, <em>name=None</em>, <em>image_format=None</em>, <em>format_function=None</em>, <em>attribute_function=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#LayeredImage" title="Permalink to this definition"> link</a></dt>
+<dd></dd></dl>
+
+<p>这是一个类图像对象，如果显示某个合适的属性(attribute)的集合，使用集合中那些属性对应的可视组件合成一个可视组件并显示。</p>
+<dl class="docutils">
+<dt><strong>attribute</strong></dt>
+<dd>这必须是一个Attribute对象列表。每个Attribute对象影响一个可视组件作为最终图像的一部分是否显示。列表中的元素是从后往前顺序排列，第一个元素距离观察者(viewer)最远，最后一个元素距离最近。</dd>
+<dt><strong>at</strong></dt>
+<dd>一个变换(transform)或变换列表，应用于可视组件。</dd>
+<dt><strong>name</strong></dt>
+<dd>属性名称。这项用作图像组成名称的一部分。</dd>
+<dt><strong>image_format</strong></dt>
+<dd>如果给定的图像是一个字符串，并且出现了image_format，就在图像名中插入image_format，用作图片文件。例如，“sprites/eileen/{image}.png”会搜索sprites子目录下的图像。
+(这项不用在auto组中，auto组只搜索图像而不搜索图片文件。)</dd>
+<dt><strong>format_function</strong></dt>
+<dd>一个函数，用于代替 <em>layeredimage.format_function</em> 函数，将图像信息格式化并传入某个可视组件。</dd>
+<dt><strong>attribute_function</strong></dt>
+<dd>如果不是None，这个函数使用应用于图像的属性(attribute)集作为参数，并返回选择的图层所使用的属性集。
+在属性自身被选中后，决定显示图层时，调用这个函数。它可以用于表示属性或随机选择的属性间复杂的依赖关系。</dd>
+</dl>
+<p>额外的关键词入参会传入一个固定布局(Fixed)，这个固定布局用于防止图层。除非显示重写，固定布局的xfit和yfit都设置为True，表示所有图层图像显示时固定布局会收缩为最小尺寸。</p>
+<p>层叠式图像不是可视组件(displayable)，能使用的范围比可视组件小。这是因为很多地方需要提供一个图像名(通常包含image属性)。
+比如，层叠式图像可以使用scene和show语句显示，也可以通过图像名字符串当作一个可视组件使用。</p>
+<p>layeredimage.format_function函数用作将属性(attribute)和可视组件格式化为图片文件。创作者可以查看这个函数的结构和使用的入参，在需要的情况下可以使用自己的 <em>format_function</em> 函数替换它。</p>
+<dl class="function">
+<dt id="layeredimage.format_function">
+<code class="descclassname">layeredimage.</code><code class="descname">format_function</code><span class="sig-paren">(</span><em>what</em>, <em>name</em>, <em>group</em>, <em>variant</em>, <em>attribute</em>, <em>image</em>, <em>image_format</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#layeredimage.format_function" title="Permalink to this definition"> link</a></dt>
+<dd></dd></dl>
+
+<p>调用这个函数可以将属性(attribute)或条件表达式的信息格式化并传入可视组件中。创作者可以用自定义函数替换这个函数，不过新的函数会忽略未知的关键词入参。</p>
+<dl class="docutils">
+<dt><strong>what</strong></dt>
+<dd>一个字符串，表示格式化内容的描述信息，常用于创建更详尽的错误信息。</dd>
+<dt><strong>name</strong></dt>
+<dd>图像属性(attribute)名称。</dd>
+<dt><strong>group</strong></dt>
+<dd>属性的组(group)名，如果不支持组或者其是条件表达式的一部分则为None。</dd>
+<dt><strong>variant</strong></dt>
+<dd>组(group)内的variant入参，如果没有则为None。</dd>
+<dt><strong>attribute</strong></dt>
+<dd>属性(attribute)本身。</dd>
+<dt><strong>image</strong></dt>
+<dd>一个可视组件或者字符串。</dd>
+<dt><strong>image_format</strong></dt>
+<dd>LayeredImage函数的image_format入参。</dd>
+</dl>
+<p>如果 <code class="docutils literal notranslate"><span class="pre">image</span></code> 的值是None，那么就用下划线连接 <code class="docutils literal notranslate"><span class="pre">name</span></code> 、 <code class="docutils literal notranslate"><span class="pre">group</span></code> (如果非None)、 <code class="docutils literal notranslate"><span class="pre">variant</span></code> (如果非None)和 <code class="docutils literal notranslate"><span class="pre">attribute</span></code> ，组合并创建出 <em>image</em> 。这个创建的 <em>image</em> 是一个字符串。</p>
+<p>如果 <em>image</em> 是一个字符串，并且 <em>image_format</em> 不是None， <em>image</em> 引用的对象经过函数格式化，得到最终使用的可视组件。</p>
+<p class="last">所以，如果 <em>name</em> 是“eileen”， <em>group</em> 是“expression”， <em>attribute</em> 是“happy”， <em>image</em> 就被设置为“eileen_expression_happy”。
+如果 <em>image_format</em> 是“mages/{image}.png”，Ren’Py找到的最终图像就是“images/eileen_expression_happy.png”。
+但是注意，Ren’Py还会找到不带format入参的同名图像。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="proxying-layered-images">
+<span id="id13"></span><h2>层叠式图像生成代理对象<a class="headerlink" href="#proxying-layered-images" title="Permalink to this headline"> link</a></h2>
+<p>有时候，为了在多个地方使用同一个层叠式图像，需要给层叠式图像生成一个代理对象(proxy)。这样设计的原因之一是，各处可能使用同一个精灵(sprite)的不同图像尺寸；另一个原因则是，可以使用层叠式图像作为对话框头像(side image)。</p>
+<p>LayeredImagePorxy对象实现了这个功能，为层叠式图像创建出可以在各处使用的副本。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="n">dupe</span> <span class="o">=</span> <span class="n">LayeredImageProxy</span><span class="p">(</span><span class="s2">&quot;augustina&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>这行脚本创建了一个可以独立显示的图像副本。这个副本能搭配上某个变换(transform)入参，并用于设定对话框头像(side image)的位置，像这样：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">image</span> <span class="k">side</span> <span class="n">augustina</span> <span class="o">=</span> <span class="n">LayeredImageProxy</span><span class="p">(</span><span class="s2">&quot;augustina&quot;</span><span class="p">,</span> <span class="n">Transform</span><span class="p">(</span><span class="na">crop</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">362</span><span class="p">,</span> <span class="mi">362</span><span class="p">),</span> <span class="na">xoffset</span><span class="o">=-</span><span class="mi">80</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="LayeredImageProxy">
+<code class="descname">LayeredImageProxy</code><span class="sig-paren">(</span><em>name</em>, <em>transform=None</em><span class="sig-paren">)</span><a class="headerlink" href="#LayeredImageProxy" title="Permalink to this definition"> link</a></dt>
+<dd><p>这是一个类图像对象。可以将某个层叠式图像的属性(attribute)传给另一个层叠式图像。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>一个字符串，表示需要生成代理对象的层叠式图像名。</dd>
+<dt><cite>transform</cite></dt>
+<dd>若给定了这个入参，表示生成代理对象后，会应用于图像上的某个变换(transform)或变换列表。</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>其他函数和配置变量 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="生成分发版" href="build.html" />
+    <link rel="prev" title="Color类" href="color_class.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">其他函数和配置变量</a><ul>
+<li><a class="reference internal" href="#ren-py">Ren’Py版本相关</a></li>
+<li><a class="reference internal" href="#id2">平台检测</a></li>
+<li><a class="reference internal" href="#id3">内存分析</a></li>
+<li><a class="reference internal" href="#context">上下文(context)</a></li>
+<li><a class="reference internal" href="#renpy-random">renpy.random</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="other-functions-and-variables">
+<span id="id1"></span><h1>其他函数和配置变量<a class="headerlink" href="#other-functions-and-variables" title="Permalink to this headline"> link</a></h1>
+<p>我们正在将文档迁移到一个新的工具上。由于并非每一个页面都迁移完毕，一些没有明显归类的新功能都放着这里了。</p>
+<dl class="function">
+<dt id="renpy.add_layer">
+<code class="descclassname">renpy.</code><code class="descname">add_layer</code><span class="sig-paren">(</span><em>layer</em>, <em>above=None</em>, <em>below=None</em>, <em>menu_clear=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.add_layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>向界面添加一个新图层。如果图层已经存在，则不做任何事。</p>
+<p><em>below</em> 和 <em>above</em> 必须提供至少一项。</p>
+<dl class="docutils">
+<dt><cite>layer</cite></dt>
+<dd>表示添加的新图层名称的字符串。</dd>
+<dt><cite>above</cite></dt>
+<dd>如果不是None，表示被新图层覆盖的图层的名称字符串。</dd>
+<dt><cite>below</cite></dt>
+<dd>如果不是None，表示覆盖在新图层上的图层的名称字符串。</dd>
+<dt><cite>menu_clear</cite></dt>
+<dd>若为True，进入游戏菜单上下文(context)时会清空这个图层，并在离开××××时恢复。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.add_python_directory">
+<code class="descclassname">renpy.</code><code class="descname">add_python_directory</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.add_python_directory" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>path</em> 添加在Python模块(module)和包(package)的路径列表中。这个路劲应该是一个游戏目录相对路劲的字符串。必须在import语句之前调用这个函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.call_stack_depth">
+<code class="descclassname">renpy.</code><code class="descname">call_stack_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.call_stack_depth" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回当前上下文(context)调用栈(stack)的深度——这个数表示调用栈中还没有返回或弹出，但依然在运行的调用数量。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.choice_for_skipping">
+<code class="descclassname">renpy.</code><code class="descname">choice_for_skipping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.choice_for_skipping" title="Permalink to this definition"> link</a></dt>
+<dd><p>告诉Ren’Py即将出现一个选项。这个函数当前有两种影响：</p>
+<ul class="simple">
+<li>如果Ren’Py正在跳过(skip)，并且“跳过后面选项”设置为停止跳过，那么跳过就会终止。</li>
+<li>触发自动保存。</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.clear_game_runtime">
+<code class="descclassname">renpy.</code><code class="descname">clear_game_runtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.clear_game_runtime" title="Permalink to this definition"> link</a></dt>
+<dd><p>重置游戏运行时间计数器。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.clear_keymap_cache">
+<code class="descclassname">renpy.</code><code class="descname">clear_keymap_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.clear_keymap_cache" title="Permalink to this definition"> link</a></dt>
+<dd><p>清空快捷键缓存。这个函数允许对 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.keymap()</span></code> 的修改立刻生效，而不需要重启Ren’Py。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.context_dynamic">
+<code class="descclassname">renpy.</code><code class="descname">context_dynamic</code><span class="sig-paren">(</span><em>*vars</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.context_dynamic" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数可以将一个或多个变量作为入参。函数让变量根据当前上下文(context)动态调整。当调用返回后，变量会重置为原来的值。</p>
+<p>一个调用的样例如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">$</span> <span class="n">renpy</span><span class="o">.</span><span class="n">context_dynamic</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.focus_coordinates">
+<code class="descclassname">renpy.</code><code class="descname">focus_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.focus_coordinates" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数会尝试找到当前获得焦点可视组件的坐标。如果成功找到，返回一个(x, y, w, h)元组。如果没有找到，返回一个(None, None, None, None)元组。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.force_autosave">
+<code class="descclassname">renpy.</code><code class="descname">force_autosave</code><span class="sig-paren">(</span><em>take_screenshot=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.force_autosave" title="Permalink to this definition"> link</a></dt>
+<dd><p>强制自动存档。</p>
+<dl class="docutils">
+<dt><cite>take_screenshot</cite></dt>
+<dd>若为True，进行新的截屏。若为False，使用已存在的截屏。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.force_full_redraw">
+<code class="descclassname">renpy.</code><code class="descname">force_full_redraw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.force_full_redraw" title="Permalink to this definition"> link</a></dt>
+<dd><p>强制界面完全重绘。直接使用pygame重绘界面之后需要调用这个函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.free_memory">
+<code class="descclassname">renpy.</code><code class="descname">free_memory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.free_memory" title="Permalink to this definition"> link</a></dt>
+<dd><p>尝试释放一些内存。在运行基于renpy的minigame前很有用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.full_restart">
+<code class="descclassname">renpy.</code><code class="descname">full_restart</code><span class="sig-paren">(</span><em>transition=False</em>, <em>label='_invoke_main_menu'</em>, <em>target='_main_menu'</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.full_restart" title="Permalink to this definition"> link</a></dt>
+<dd><p>让Ren’Py重启，将用户带会到主菜单。</p>
+<dl class="docutils">
+<dt><cite>transition</cite></dt>
+<dd>如果给定了转场，就运行转场；如果这项是None则不运行转场；如果这项是False，就用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.end_game_transition()</span></code> 。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_adjustment">
+<code class="descclassname">renpy.</code><code class="descname">get_adjustment</code><span class="sig-paren">(</span><em>bar_value</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_adjustment" title="Permalink to this definition"> link</a></dt>
+<dd><p>传入一个 <a class="reference internal" href="screen_python.html#BarValue" title="BarValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">BarValue</span></code></a> 对象 <em>bar_value</em> ， 返回 <code class="xref py py-func docutils literal notranslate"><span class="pre">ui.adjustment()</span></code> 。adjustment对象定义了下列属性(attribute)：</p>
+<dl class="attribute">
+<dt id="renpy.value">
+<code class="descname">value</code><a class="headerlink" href="#renpy.value" title="Permalink to this definition"> link</a></dt>
+<dd><p>条(bar)的当前值。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="range">
+<code class="descname">range</code><a class="headerlink" href="#range" title="Permalink to this definition"> link</a></dt>
+<dd><p>条(bar)的当前值域。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_autoreload">
+<code class="descclassname">renpy.</code><code class="descname">get_autoreload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_autoreload" title="Permalink to this definition"> link</a></dt>
+<dd><p>获得自动加载标识(flag)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_game_runtime">
+<code class="descclassname">renpy.</code><code class="descname">get_game_runtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_game_runtime" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回游戏运行时间计数器。</p>
+<p>游戏运行时间计数器返回用户从顶层上下文(context)等待用户输入经过的秒数。(在主菜单和游戏菜单消耗的时间不计入。)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_image_load_log">
+<code class="descclassname">renpy.</code><code class="descname">get_image_load_log</code><span class="sig-paren">(</span><em>age=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_image_load_log" title="Permalink to this definition"> link</a></dt>
+<dd><p>图像加载激活日志生成器。对最后100项图像加载来说，这个函数返回：</p>
+<ul class="simple">
+<li>图像加载的时间(1970-01-01 00:00:00 UTC开始计算的秒数)。</li>
+<li>加载图像文件名。</li>
+<li>如果图像预加载返回True，如果延迟加载返回False。</li>
+</ul>
+<p>输出结果按从新到旧排序。</p>
+<dl class="docutils">
+<dt><cite>age</cite></dt>
+<dd>如果不是None，只统计经过 <em>age</em> 秒之后加载的图像。</dd>
+</dl>
+<p>在config.developer = True的情况下，才保存图像加载日志。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_mouse_pos">
+<code class="descclassname">renpy.</code><code class="descname">get_mouse_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_mouse_pos" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个(x, y)元组，表示鼠标指针或当前触摸位置的坐标。如果设备不支持鼠标并且当前没有被触摸，x和y值无意义。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_physical_size">
+<code class="descclassname">renpy.</code><code class="descname">get_physical_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_physical_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回物理窗口的尺寸。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_refresh_rate">
+<code class="descclassname">renpy.</code><code class="descname">get_refresh_rate</code><span class="sig-paren">(</span><em>precision=5</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_refresh_rate" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回当前屏幕的刷新率，这是一个fps浮点数。</p>
+<dl class="docutils">
+<dt><cite>precision</cite></dt>
+<dd><p class="first">Ren’Py能获得的裸数据，fps向下取整。就是说，如果显示器运行在59.95fps，那么函数返回的就是59fps。
+precision参数进一步降低了实际显示的帧数，只能能pricision的整倍数。</p>
+<p class="last">由于所有显示器帧率都是5的整倍数(25、30、60、75和120)，这个函数可能会提高准确性。将precision设置为1表示禁用这个功能。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_renderer_info">
+<code class="descclassname">renpy.</code><code class="descname">get_renderer_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_renderer_info" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个字典，表示Ren’Py当前使用的渲染器信息。自定中包含下列键(key)：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;renderer&quot;</span></code></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">&quot;gl&quot;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&quot;sw&quot;</span></code> ，分别对应OpenGL和软件渲染。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;resizable&quot;</span></code></dt>
+<dd>仅当窗口可重新调整尺寸的情况下为True。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;additive&quot;</span></code></dt>
+<dd>仅当那个渲染器支持额外混合(blend)的情况下为True。</dd>
+</dl>
+<p>另外，键值也可能存在特定渲染器。这个字典应该被认为是不能修改的。可视组件启动后(也就是初始化段落已经结束)，这个函数应该只被调用一次。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_say_attributes">
+<code class="descclassname">renpy.</code><code class="descname">get_say_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_say_attributes" title="Permalink to this definition"> link</a></dt>
+<dd><p>获得与当前say语句相关的属性(attribute)，如果没有相关属性(attribute)则返回None。</p>
+<p>只有执行或预加载一条say语句时，这个函数才可用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_side_image">
+<code class="descclassname">renpy.</code><code class="descname">get_side_image</code><span class="sig-paren">(</span><em>prefix_tag</em>, <em>image_tag=None</em>, <em>not_showing=True</em>, <em>layer='master'</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_side_image" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数尝试找到图像显示为头像。</p>
+<p>由某个图像属性(attribute)的集合决定启用哪个头像。如果给出了 <em>image_tag</em> ，函数从这个图像标签(tag)得到图像属性(attribute)。否则的话，函数从当前显示的角色获取图像属性。</p>
+<p>然后函数会根据标签 <em>prefix_tag</em> 和其他一些属性寻找合适的图像，并返回找到的图像。</p>
+<p>如果 <em>not_showing</em> 的值为True，这个函数将只返回一个头像，前提是图像使用的属性(attribute)不存在于当前界面上。</p>
+<p>如果 <em>layer</em> 的值是None，当前显示的图像标签使用默认图层。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_skipping">
+<code class="descclassname">renpy.</code><code class="descname">get_skipping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_skipping" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果Ren’Py跳过中则返回True，如果Ren’Py快速跳过中则返回“fast”，如果Ren’Py不在跳过状态则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_transition">
+<code class="descclassname">renpy.</code><code class="descname">get_transition</code><span class="sig-paren">(</span><em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>获取 <em>lay</em> 的转场(transition)，如果 <em>layer</em> 为None则获取整个场景(scene)的转场。这个函数返回了在下次交互动作中，队列上层的转场(transition)。如果不存在符合条件的转场则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.iconify">
+<code class="descclassname">renpy.</code><code class="descname">iconify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.iconify" title="Permalink to this definition"> link</a></dt>
+<dd><p>游戏窗口最小化。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.invoke_in_thread">
+<code class="descclassname">renpy.</code><code class="descname">invoke_in_thread</code><span class="sig-paren">(</span><em>fn</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.invoke_in_thread" title="Permalink to this definition"> link</a></dt>
+<dd><p>在背景线程调用函数 <em>fn</em> ，传入这个函数收到的所有入参。线程返回后重新启动交互动作。</p>
+<p>这个函数创建一个守护线程(daemon thread)，当Ren’Py关闭后这个线程也会自动停止。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.is_seen">
+<code class="descclassname">renpy.</code><code class="descname">is_seen</code><span class="sig-paren">(</span><em>ever=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.is_seen" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果用户已经看过当前的行，则返回True。</p>
+<p>如果 <em>ever</em> 为True，我们检查用户是否看过该行。如果 <em>ever</em> 为False，我们检查改行是否在当前游戏过程中被看过。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.is_start_interact">
+<code class="descclassname">renpy.</code><code class="descname">is_start_interact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.is_start_interact" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果在当前交互动作中调用了restart_interaction，就返回True。这个函数可以用于确定是否某个交互动作已经开始，或者已重新开始。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.load_module">
+<code class="descclassname">renpy.</code><code class="descname">load_module</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.load_module" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数加载名为 <em>name</em> 的Ren’Py模块(module)。Ren’Py模块包含的Ren’Py脚本会加载进通用(存储)命名空间。Ren’Py脚本包含在名为name.rpym或name.rpymc的文件中。如果某个.rpym文件存在，并且比对应的.rpymc文件更新，就加载.rpym文件并创建新的.rpymc文件。</p>
+<p>模块中所有的初始化语句块(block)(以及其他初始化代码)都在函数返回前运行。模块名未找到或有歧义的情况下会报错。</p>
+<p>应该仅在初始化语句块(init block)中加载模块。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.load_string">
+<code class="descclassname">renpy.</code><code class="descname">load_string</code><span class="sig-paren">(</span><em>s</em>, <em>filename='&lt;string&gt;'</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.load_string" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>s</em> 作为Ren’Py脚本加载。</p>
+<p>返回 <em>s</em> 中第一个语句块的名称。</p>
+<p><em>filename</em> is the name of the filename that statements in the string will appear to be from.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.maximum_framerate">
+<code class="descclassname">renpy.</code><code class="descname">maximum_framerate</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.maximum_framerate" title="Permalink to this definition"> link</a></dt>
+<dd><p>强制Ren’Py在 <em>t</em> 秒内以最大帧率重绘界面。如果 <em>t</em> 是None，则不要求使用最大帧率。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.munge">
+<code class="descclassname">renpy.</code><code class="descname">munge</code><span class="sig-paren">(</span><em>name</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.munge" title="Permalink to this definition"> link</a></dt>
+<dd><p>munge式命名 <em>name</em> ，开头必须是双下划线“__”。</p>
+<dl class="docutils">
+<dt><cite>filename</cite></dt>
+<dd>需要使用munge处理的文件名。若为None，就使用调用此次munge的文件名。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.not_infinite_loop">
+<code class="descclassname">renpy.</code><code class="descname">not_infinite_loop</code><span class="sig-paren">(</span><em>delay</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.not_infinite_loop" title="Permalink to this definition"> link</a></dt>
+<dd><p>将无限循环探测计时器重置为 <em>delay</em> 秒。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.notify">
+<code class="descclassname">renpy.</code><code class="descname">notify</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.notify" title="Permalink to this definition"> link</a></dt>
+<dd><p>让Ren’Py使用notify界面显示 <em>message</em> 。默认情况下，显示的 <em>message</em> 消息会以dissolve方式出现，显示2秒，最后以dissolve方式消失。</p>
+<p>对一些不会产生回调函数的动作(action)，比如截屏和快速保存，这个函数很有效。</p>
+<p>一次只能显示一条通知。显示第二条通知时，会直接替换第一条通知。。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.pause">
+<code class="descclassname">renpy.</code><code class="descname">pause</code><span class="sig-paren">(</span><em>delay=None</em>, <em>music=None</em>, <em>with_none=None</em>, <em>hard=False</em>, <em>checkpoint=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.pause" title="Permalink to this definition"> link</a></dt>
+<dd><p>让Ren’Py暂停。如果用户点击并结束了这个暂停，暂停超时或被跳过，这个函数会返回True。</p>
+<dl class="docutils">
+<dt><cite>delay</cite></dt>
+<dd>Ren’Py暂停的时间，单位为秒。</dd>
+<dt><cite>music</cite></dt>
+<dd>出于兼容性考量而保留的参数。</dd>
+<dt><cite>with_none</cite></dt>
+<dd>决定暂停的结尾是否执行一个“with None”分句。</dd>
+<dt><cite>hard</cite></dt>
+<dd>若为True，点击就不会打断暂停。谨慎使用，因为很难区分硬性暂停和程序卡死。</dd>
+<dt><cite>checkpoint</cite></dt>
+<dd>若为True，会设置一个检查点(checkpoint)，用户可以回滚到这个语句。若为False，不会设置检查点(checkpoint)。若为None，仅当设置了 <em>delay</em> 后才会设置检查点(checkpoint)。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.pop_call">
+<code class="descclassname">renpy.</code><code class="descname">pop_call</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.pop_call" title="Permalink to this definition"> link</a></dt>
+<dd><p>从调用栈(stack)弹出当前调用，并不再返回那个位置。</p>
+<p>如果调用方决定不需要返回到那个脚本标签(label)的情况下，可以使用这个函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.queue_event">
+<code class="descclassname">renpy.</code><code class="descname">queue_event</code><span class="sig-paren">(</span><em>name</em>, <em>up=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.queue_event" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用给定的 <em>name</em> 将某个事件放入消息队列。 <em>name</em> 应该是在 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.keymap()</span></code> 中列出的事件名称之一，或者是这些事件组成的列表。</p>
+<dl class="docutils">
+<dt><cite>up</cite></dt>
+<dd>当事件开始阶段(例如，键盘按键被按下)时，这项应该是False。当事件结束(比如按键被松开)是，这项才会变成True。</dd>
+</dl>
+<p>当调用这个函数时，事件会被同时放入消息队列。这个函数不能替换事件——替换会修改事件的顺序。(替换事件可以使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">config.keymap()</span></code> 。)</p>
+<p>这个函数是线程安全的(threadsafe)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.quit">
+<code class="descclassname">renpy.</code><code class="descname">quit</code><span class="sig-paren">(</span><em>relaunch=False</em>, <em>status=0</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.quit" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数让Ren’Py完全退出。</p>
+<dl class="docutils">
+<dt><cite>relaunch</cite></dt>
+<dd>若为True，Ren’Py会在退出前运行自身的一个副本。</dd>
+<dt><cite>status</cite></dt>
+<dd>Ren’Py返回给操作系统的状态代码。大体来说，0表示成功，负数表示失败。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.quit_event">
+<code class="descclassname">renpy.</code><code class="descname">quit_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.quit_event" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发一个退出(quit)事件，比如用户点击了窗口的退出按钮。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.reload_script">
+<code class="descclassname">renpy.</code><code class="descname">reload_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.reload_script" title="Permalink to this definition"> link</a></dt>
+<dd><p>让Ren’Py保存游戏，重新加载脚本，并加载存档。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.reset_physical_size">
+<code class="descclassname">renpy.</code><code class="descname">reset_physical_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.reset_physical_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>尝试将物理窗口尺寸设置为renpy.config配置的指定值。(就是配置的screen_width和screen_height。)这在全屏模式下超出屏幕的情况有副作用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.restart_interaction">
+<code class="descclassname">renpy.</code><code class="descname">restart_interaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.restart_interaction" title="Permalink to this definition"> link</a></dt>
+<dd><p>重新启动当前交互动作。包括以下内容，将显示的图像添加到场景(scene)，重新规划界面(screen)，并启动所有队列中的转场(transition)。</p>
+<p>仅在某个交互动作中，这个函数才会执行所有工作。交互动作之外，这个函数不产生任何效果。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.screenshot">
+<code class="descclassname">renpy.</code><code class="descname">screenshot</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.screenshot" title="Permalink to this definition"> link</a></dt>
+<dd><p>将截屏保存为 <em>filename</em> 。</p>
+<p>如果截屏保存成功就返回True。如果由于某些原因保存失败就返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.scry">
+<code class="descclassname">renpy.</code><code class="descname">scry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.scry" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回当前语句的scry对象。</p>
+<p>scry对象告知Ren’Py当前语句哪些部分未来必定会是True。目前的版本中，scry对象只有一个字段(field)：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">nvl_clear</span></code></dt>
+<dd>如果在下一个交互动作之前会执行一个 <code class="docutils literal notranslate"><span class="pre">nvl</span> <span class="pre">clear</span></code> 则为True。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.set_autoreload">
+<code class="descclassname">renpy.</code><code class="descname">set_autoreload</code><span class="sig-paren">(</span><em>autoreload</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.set_autoreload" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置自动重新加载标识(flag)。这个标识决定在文件发生变化后游戏是否会自动重新加载。自动重新加载不是完全启用，直到游戏使用 <code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.utter_restart()</span></code> 重新加载之后。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.set_mouse_pos">
+<code class="descclassname">renpy.</code><code class="descname">set_mouse_pos</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>duration=0</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.set_mouse_pos" title="Permalink to this definition"> link</a></dt>
+<dd><p>让鼠标指针跳到入参x和y指定的位置。如果设备没有鼠标指针，则没有效果。</p>
+<dl class="docutils">
+<dt><cite>duration</cite></dt>
+<dd>执行鼠标指针移动的时间，单位为秒。这段时间内，鼠标可能不响应用户操作。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.set_physical_size">
+<code class="descclassname">renpy.</code><code class="descname">set_physical_size</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.set_physical_size" title="Permalink to this definition"> link</a></dt>
+<dd><p>尝试将物理窗口的尺寸设置为 <em>size</em> 。这对全屏模式下的有显示超出屏幕的副作用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.shown_window">
+<code class="descclassname">renpy.</code><code class="descname">shown_window</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.shown_window" title="Permalink to this definition"> link</a></dt>
+<dd><p>调用这个函数确认窗口已经显示。使用“window show”语句的交互动作，会显示一个空窗口，无论这个函数是否被调用。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.split_properties">
+<code class="descclassname">renpy.</code><code class="descname">split_properties</code><span class="sig-paren">(</span><em>properties</em>, <em>*prefixes</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.split_properties" title="Permalink to this definition"> link</a></dt>
+<dd><p>将 <em>properties</em> 切割为多个字典，每一个都带上前缀 <em>prefix</em> 。
+这个函数轮流使用每一个 <em>prefix</em> 检查 <em>properties</em> 中每一个键(key)。
+如果匹配到某个前缀，将就键(key)的前缀部分去掉作为最终字典的键(key)。</p>
+<p>如果没有匹配到前缀，会抛出异常。(空字符串，”“，可以用作最后一个前缀，创建一个全匹配字典。)</p>
+<p>例如，下面的语句将“text”开头的properties分割：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">text_properties</span><span class="p">,</span> <span class="n">button_properties</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">split_properties</span><span class="p">(</span><span class="s2">&quot;text_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.substitute">
+<code class="descclassname">renpy.</code><code class="descname">substitute</code><span class="sig-paren">(</span><em>s</em>, <em>scope=None</em>, <em>translate=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.substitute" title="Permalink to this definition"> link</a></dt>
+<dd><p>对字符串 <em>s</em> 应用多语言支持(translation)和新样式格式。</p>
+<dl class="docutils">
+<dt><cite>scope</cite></dt>
+<dd>若不是None，格式中使用的scope，添加到默认存储区。</dd>
+<dt><cite>translate</cite></dt>
+<dd>决定是否启用何种语言支持。</dd>
+</dl>
+<p>返回多语言支持和格式的字符串。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.transition">
+<code class="descclassname">renpy.</code><code class="descname">transition</code><span class="sig-paren">(</span><em>trans</em>, <em>layer=None</em>, <em>always=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.transition" title="Permalink to this definition"> link</a></dt>
+<dd><p>设置下次交互动作使用的转场(transition)。</p>
+<dl class="docutils">
+<dt><cite>layer</cite></dt>
+<dd>转场应用于这个参数表示的图层(layer)。若为None，转场应用于整个场景(scene)。</dd>
+<dt><cite>always</cite></dt>
+<dd>若为False，函数遵循定义的转场环境设定设置。若为True，使用运行转场。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.vibrate">
+<code class="descclassname">renpy.</code><code class="descname">vibrate</code><span class="sig-paren">(</span><em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.vibrate" title="Permalink to this definition"> link</a></dt>
+<dd><p>让设备震动 <em>duration</em> 秒。现在只支持安卓。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="layout.yesno_screen">
+<code class="descclassname">layout.</code><code class="descname">yesno_screen</code><span class="sig-paren">(</span><em>message</em>, <em>yes=None</em>, <em>no=None</em><span class="sig-paren">)</span><a class="headerlink" href="#layout.yesno_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数产生一个yes/no提示界面，并显示给定的提示信息。当用于选择了yes或者no之后，就隐藏界面。</p>
+<dl class="docutils">
+<dt><cite>message</cite></dt>
+<dd>显示的提示消息。</dd>
+<dt><cite>yes</cite></dt>
+<dd>用户选择yes后运行的动作(action)。</dd>
+<dt><cite>no</cite></dt>
+<dd>用户选择no后运行的动作(action)。</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="ren-py">
+<h2>Ren’Py版本相关<a class="headerlink" href="#ren-py" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.version">
+<code class="descclassname">renpy.</code><code class="descname">version</code><span class="sig-paren">(</span><em>tuple=False</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.version" title="Permalink to this definition"> link</a></dt>
+<dd><p>若 <em>tuple</em> 为False，返回一个带有“Ren’Py”的字符串，字符串后半部分是Ren’Py的当前版本信息。</p>
+<p>若 <em>tuple</em> 为True，返回一个元组。元组内每个元素分别表示版本信息的一个整数部分。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.version_string">
+<code class="descname">renpy.version_string</code><a class="headerlink" href="#var-renpy.version_string" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py的版本号，类似于字符串“Ren’Py 1.2.3.456”的格式。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.version_only">
+<code class="descname">renpy.version_only</code><a class="headerlink" href="#var-renpy.version_only" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py的版本号，不带Ren’Py前缀，类似于字符串“1.2.3.456”的格式。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.version_tuple">
+<code class="descname">renpy.version_tuple</code><a class="headerlink" href="#var-renpy.version_tuple" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py的版本号，类似于元组(1, 2, 3, 456)的格式。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.version_name">
+<code class="descname">renpy.version_name</code><a class="headerlink" href="#var-renpy.version_name" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个人类可能的版本名称，类似“Example Version”的格式。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.license">
+<code class="descname">renpy.license</code><a class="headerlink" href="#var-renpy.license" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个表示许可证文本的字符串，这个字符串应该在游戏的“关于”界面中显示。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>平台检测<a class="headerlink" href="#id2" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py包含许多变量需要基于运行的平台进行设置。</p>
+<dl class="var">
+<dt id="var-renpy.windows">
+<code class="descname">renpy.windows</code><a class="headerlink" href="#var-renpy.windows" title="Permalink to this definition"> link</a></dt>
+<dd><p>在Windows平台运行时为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.macintosh">
+<code class="descname">renpy.macintosh</code><a class="headerlink" href="#var-renpy.macintosh" title="Permalink to this definition"> link</a></dt>
+<dd><p>在macOS平台运行时为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.linux">
+<code class="descname">renpy.linux</code><a class="headerlink" href="#var-renpy.linux" title="Permalink to this definition"> link</a></dt>
+<dd><p>在Linux或者POSIX类操作系统运行时为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.android">
+<code class="descname">renpy.android</code><a class="headerlink" href="#var-renpy.android" title="Permalink to this definition"> link</a></dt>
+<dd><p>在安卓平台运行时为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.ios">
+<code class="descname">renpy.ios</code><a class="headerlink" href="#var-renpy.ios" title="Permalink to this definition"> link</a></dt>
+<dd><p>在iOS平台运行时为True。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-renpy.mobile">
+<code class="descname">renpy.mobile</code><a class="headerlink" href="#var-renpy.mobile" title="Permalink to this definition"> link</a></dt>
+<dd><p>在安卓或iOS平台运行时为True。</p>
+</dd></dl>
+
+<p>只有在实际设备运行而非模拟器上运行时，才会设置这些配置项。 这些配置项对平台敏感的Python是有用的。对显示布局(layout)的问题，详见 <a class="reference internal" href="screens.html#screen-variants"><span class="std std-ref">界面变种</span></a>.</p>
+</div>
+<div class="section" id="id3">
+<h2>内存分析<a class="headerlink" href="#id3" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.diff_memory">
+<code class="descclassname">renpy.</code><code class="descname">diff_memory</code><span class="sig-paren">(</span><em>update=True</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.diff_memory" title="Permalink to this definition"> link</a></dt>
+<dd><p>分析Ren’Py和游戏使用的对象(object)、贴图(surface)和纹理(texture)内存。将上次调用这个函数时和这次调用这个函数的内容使用差异，并(在memory.txt和stdout)记录下。</p>
+<p>计算方式是，按照存储区的名称和Ren’Py实现中所有可达的内存。
+如果某个对象通过多个名称可达，就声明为最短可达路径。</p>
+<p>由于通过这个函数可以扫描所有Ren’Py使用的内存，所以执行完毕相当耗时。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.profile_memory">
+<code class="descclassname">renpy.</code><code class="descname">profile_memory</code><span class="sig-paren">(</span><em>fraction=1.0</em>, <em>minimum=0</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.profile_memory" title="Permalink to this definition"> link</a></dt>
+<dd><p>分析Ren’Py和游戏使用的对象(object)、贴图(surface)和纹理(texture)内存。将使用的内存总数写入memory.txt和stdout。</p>
+<p>计算方式是，按照存储区的名称和Ren’Py实现中所有可达的内存。
+如果某个对象通过多个名称可达，就声明为最短可达路径。</p>
+<dl class="docutils">
+<dt><cite>fraction</cite></dt>
+<dd>显示使用内存总数的比例。1.0会显示所有使用的内存，.9显示最高的90%。</dd>
+<dt><cite>minimum</cite></dt>
+<dd>如果某个名称的内存使用小于 <em>minimum</em> 字长，就不会显示。</dd>
+</dl>
+<p>由于通过这个函数会扫描所有Ren’Py使用的内存，所以执行完毕相当耗时。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.profile_rollback">
+<code class="descclassname">renpy.</code><code class="descname">profile_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.profile_rollback" title="Permalink to this definition"> link</a></dt>
+<dd><p>分析回滚系统使用的内存。将回滚系统使用的内存写入到memory.txt和stdout。这个函数尝试计算各种存储变量用于回滚的内存量，以及回滚系统内部使用的内存量。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="context">
+<h2>上下文(context)<a class="headerlink" href="#context" title="Permalink to this headline"> link</a></h2>
+<dl class="function">
+<dt id="renpy.context">
+<code class="descclassname">renpy.</code><code class="descname">context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.context" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个对象，这个对象对当前上下文(context)唯一。进入一个新的上下文时，这个对象会复制一个副本。但对副本的修改不会影响原来的对象。</p>
+<p>这个对象在回滚中会被保存和恢复。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.context_nesting_level">
+<code class="descclassname">renpy.</code><code class="descname">context_nesting_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.context_nesting_level" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回当前上下文的嵌套等级。最外层的上下文的等级是0(例如保存、读取和回滚)，非0等级其他上下文有菜单和回放等。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="renpy-random">
+<h2>renpy.random<a class="headerlink" href="#renpy-random" title="Permalink to this headline"> link</a></h2>
+<p>这个对象是一个随机数生成器，实现了 <a class="reference external" href="http://docs.python.org/release/2.3.4/lib/module-random.html">Python随机数生成接口</a> 。调用这个对象衍生的各种方法可以生成需要的随机数。详见Python中的完整列表。最常用的几个如下：</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">renpy.random.random()</span></code></p>
+<p>返回一个位于(0.0, 1.0)开区间的随机浮点数。</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">renpy.random.randint(a,</span> <span class="pre">b)</span></code></p>
+<p>返回一个整数N，a &lt;= N &lt;= b。</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">renpy.random.choice(seq)</span></code></p>
+<p>从非空序列 <em>seq</em> 随机返回一个元素。</p>
+</li>
+</ul>
+<p>与标准的Python随机数生成器不同，这个对象可以与回滚兼容，无论回滚多少次都生成相同的随机数。所以可以使用这个对象代替标准Python随机模块。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 返回一个介于0到1之间的随机浮点数。</span>
+<span class="k">$</span> <span class="n">randfloat</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+
+<span class="c1"># 返回一个介于1到20之间的随机整数。</span>
+<span class="k">$</span> <span class="n">d20roll</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># 返回列表中的一个随机元素。</span>
+<span class="k">$</span> <span class="n">randfruit</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="k">choice</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;plum&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">renpy.random.Random(seed=None)</span></code></p>
+<p>返回一个新的随机数生成器对象。与主随机数生成器不同，新的对象使用指定的值作为种子。</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

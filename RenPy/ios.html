@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iOS &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="程序内购" href="iap.html" />
+    <link rel="prev" title="Chrome OS/Chrome浏览器" href="chromeos.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">iOS</a><ul>
+<li><a class="reference internal" href="#ios-required-language">语言要求</a></li>
+<li><a class="reference internal" href="#work-in-progress">半成品</a></li>
+<li><a class="reference internal" href="#ios-platform-differences">平台差异</a></li>
+<li><a class="reference internal" href="#ios-testing-and-emulation">测试和模拟</a></li>
+<li><a class="reference internal" href="#packaging">Packaging</a><ul>
+<li><a class="reference internal" href="#ios-getting-started">起步</a></li>
+<li><a class="reference internal" href="#xcode">创建Xcode项目</a></li>
+<li><a class="reference internal" href="#building-the-project">建立项目</a></li>
+<li><a class="reference internal" href="#updating-the-project">更新项目</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customization">定制化</a><ul>
+<li><a class="reference internal" href="#id12">启动图片</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="ios">
+<span id="id1"></span><h1>iOS<a class="headerlink" href="#ios" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持运行在iPhone和iPad设备上的iOS应用。由于创建一个iOS应用要求苹果开发程序(比如Xcode IDE)，iOS应用只能在Mac电脑上创建。</p>
+<div class="section" id="ios-required-language">
+<span id="id2"></span><h2>语言要求<a class="headerlink" href="#ios-required-language" title="Permalink to this headline"> link</a></h2>
+<p>部分Ren’Py在iOS平台使用的库需要通过GNU Lesser/Library General Public License的认证。你会需要遵守Ren’Py生成版的认证规则。我们相信下列包含在你app描述里的语言能够满足需求，不过最好能找个律师确认一遍。</p>
+<blockquote>
+<div>这个程序包括一些证书下的自由软件认证，包括GNU Lesser General Public License。完整的软件列表参见 <a class="reference external" href="https://www.renpy.org/l/license/">https://www.renpy.org/l/license/</a>.</div></blockquote>
+</div>
+<div class="section" id="work-in-progress">
+<span id="id3"></span><h2>半成品<a class="headerlink" href="#work-in-progress" title="Permalink to this headline"> link</a></h2>
+<p>当前Ren’Py对iOS的支持还是个半成品。尽管已经可以用来向苹果的AppStore申请发布程序，默认的Ren’Py接口不遵循苹果的规范，将来会修改。</p>
+<p>如果你的游戏通过了苹果的AppStore认证流程，请告诉我们。</p>
+</div>
+<div class="section" id="ios-platform-differences">
+<span id="id4"></span><h2>平台差异<a class="headerlink" href="#ios-platform-differences" title="Permalink to this headline"> link</a></h2>
+<p>iOS与安卓类似，与Ren’Py支持的基于鼠标的平台不同。所有关于 <a class="reference internal" href="android.html#android-platform-differences"><span class="std std-ref">安卓平台差异</span></a>
+的内容都适用于iOS。</p>
+<p>iOS不支持MultiPersistent。</p>
+<p>iOS支持的视频格式列表可以在
+<a class="reference external" href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/MediaLayer/MediaLayer.html#//apple_ref/doc/uid/TP40007898-CH9-SW6">这里</a> 找到。</p>
+</div>
+<div class="section" id="ios-testing-and-emulation">
+<span id="id6"></span><h2>测试和模拟<a class="headerlink" href="#ios-testing-and-emulation" title="Permalink to this headline"> link</a></h2>
+<p>处于测试需求，Ren’Py支持两种iOS模拟模式。这些都通过启动器的iOS界面接入。两种模式都模拟了触控屏，只有在鼠标按键被按下的情况下才会触发事件消息。</p>
+<dl class="docutils">
+<dt>iPhone</dt>
+<dd>这个模式模拟一台iPhone。</dd>
+<dt>Tablet</dt>
+<dd>这个模式模拟一台iPad。</dd>
+</dl>
+<p>这些模拟器可以用于快速测试项目，当然最好能在真实的硬件上做测试。模拟器不处理那些人为因素导致的事件，比如用户的“胖手指”。</p>
+</div>
+<div class="section" id="packaging">
+<span id="id7"></span><h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline"> link</a></h2>
+<p>为iOS打包Ren’Py游戏现在相比其他平台依然是件麻烦的事。我们假设创作者有一些创建iOS应用的经验，或者能遵守苹果的规则。</p>
+<div class="section" id="ios-getting-started">
+<span id="id8"></span><h3>起步<a class="headerlink" href="#ios-getting-started" title="Permalink to this headline"> link</a></h3>
+<p>在你打包Ren’Py游戏之前，你会需要设置你的Mac电脑，用于创建iOS应用程序。这表示在你Mac电脑上安装Xcode，注册iOS开发者，并创建让你的应用能在iOS设备上运行的自动配置文件(provisioning profile)。</p>
+<p>由苹果官方编写的 <a class="reference external" href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Introduction/Introduction.html">App Distribution Quick Start</a>
+指导，解释了如何配置上述内容。我们建议根据官方说明处理，甚至先打包一个模板应用，然后再打包Ren’Py游戏。</p>
+</div>
+<div class="section" id="xcode">
+<span id="creating-the-xcode-project"></span><h3>创建Xcode项目<a class="headerlink" href="#xcode" title="Permalink to this headline"> link</a></h3>
+<p>创建iOS应用程序的第一步是创建Xcode项目。在Ren’Py启动器的iOS菜单中选择“Create Xcode Project”。</p>
+<p>Xcode的项目名会自动选用启动器中显示的项目名称。项目可以基于这个名称进行定制，但是那些定制化可以在Xcode中编辑。</p>
+<p>这种方式创建的Xcode项目与特定版本的Ren’Py关联。在升级Ren’Py后，你必须为游戏创建一个新的Xcode项目，并重复项目定制化工作。</p>
+</div>
+<div class="section" id="building-the-project">
+<span id="id9"></span><h3>建立项目<a class="headerlink" href="#building-the-project" title="Permalink to this headline"> link</a></h3>
+<p>在Ren’Py中创建项目之后，在启动器中选择“Launch Xcode”就能在Xcode中打开了。Xcode打开过的项目，可以生成并安装在iOS设备上。</p>
+</div>
+<div class="section" id="updating-the-project">
+<span id="id10"></span><h3>更新项目<a class="headerlink" href="#updating-the-project" title="Permalink to this headline"> link</a></h3>
+<p>选择“Update Xcode Project”，会将你最新版本的Ren’Py项目复制到Xcode项目中。这只适合你的项目文件发生变化的情况，Ren’Py本身的更新并不适用。</p>
+</div>
+</div>
+<div class="section" id="customization">
+<span id="id11"></span><h2>定制化<a class="headerlink" href="#customization" title="Permalink to this headline"> link</a></h2>
+<p>大多数定制化都在Xcode项目中实现。例如，图标、启动图片和横竖屏选项等。</p>
+<div class="section" id="id12">
+<h3>启动图片<a class="headerlink" href="#id12" title="Permalink to this headline"> link</a></h3>
+<p>当应用程序运行时，会显示启动图片(不是在Ren’Py而是在Xcode项目中配置)，直到Ren’Py准备好显示游戏UI。</p>
+<p>当Ren’Py完成初始化后，它会恢复当前游戏，或者运行splash界面和主菜单。</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

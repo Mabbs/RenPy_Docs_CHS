@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>头像 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="画廊、音乐空间和场景回放" href="rooms.html" />
+    <link rel="prev" title="文本输入" href="input.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">头像</a><ul>
+<li><a class="reference internal" href="#invisible-characters">不可视角色</a></li>
+<li><a class="reference internal" href="#variations">变种</a></li>
+<li><a class="reference internal" href="#transforms-and-transitions">变换和转场</a></li>
+<li><a class="reference internal" href="#leaving-room-customization">预留空间 / 定制化</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="side-images">
+<span id="id1"></span><h1>头像<a class="headerlink" href="#side-images" title="Permalink to this headline"> link</a></h1>
+<p>许多视觉小说会在角色发言时，在对话内容旁边显示一张该角色的头像。Ren’Py把这个头像称作头像(side image)，并支持自动选择和显示对话的头像。</p>
+<p>使用头像的前提是，定义 <a class="reference internal" href="dialogue.html#Character" title="Character"><code class="xref py py-func docutils literal notranslate"><span class="pre">Character()</span></code></a> 时使用一个关联的图像标签(tag)：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;艾琳&quot;</span><span class="p">,</span> <span class="k">image</span><span class="o">=</span><span class="s2">&quot;eileen&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当某个带有关联图像标签的角色发言时，Ren’Py会创建一个图像属性(attribute)池。关联图像标签会被添加到这个池，当前图像属性与那个图像标签关联。</p>
+<p>根据图像标签选择关联的头像时，Ren’Py会尝试在图像属性池中找到带有标签“side”且带有尽可能大的属性值的图片。如果没有找到符合条件的图片，或者找到多个带有相同属性值的图像，就显示 <a class="reference internal" href="displayables.html#Null" title="Null"><code class="xref py py-class docutils literal notranslate"><span class="pre">Null</span></code></a> 。</p>
+<p>例如，假设我们有如下脚本：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;艾琳&quot;</span><span class="p">,</span> <span class="k">image</span><span class="o">=</span><span class="s2">&quot;eileen&quot;</span><span class="p">)</span>
+
+<span class="k">image</span> <span class="n">eileen</span> <span class="n">happy</span> <span class="o">=</span> <span class="s2">&quot;eileen_happy.png&quot;</span>
+<span class="k">image</span> <span class="n">eileen</span> <span class="n">concerned</span> <span class="o">=</span> <span class="s2">&quot;eileen_concerned.png&quot;</span>
+
+<span class="k">image</span> <span class="k">side</span> <span class="n">eileen</span> <span class="n">happy</span> <span class="o">=</span> <span class="s2">&quot;side_eileen_happy.png&quot;</span>
+<span class="k">image</span> <span class="k">side</span> <span class="n">eileen</span> <span class="o">=</span> <span class="s2">&quot;side_eileen.png&quot;</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="k">show</span> <span class="n">eileen</span> <span class="n">happy</span>
+
+    <span class="n">e</span> <span class="s2">&quot;我们把线段的这端称作点A。&quot;</span>
+
+    <span class="n">e</span> <span class="n">concerned</span> <span class="s2">&quot;线段的另一端称作点B。&quot;</span>
+</pre></div>
+</div>
+<p>在point A，角色 <code class="docutils literal notranslate"><span class="pre">e</span></code> 正在发言，关联的图像标签是“eileen”。当“eileen happy”图像显示时，图像属性池的标签里有“eileen”和“happy”。我们寻找带有“side”图像标签的图像，以及尽可能多的属性——我们就能匹配到“side eileen happy”，最终显示为头像。</p>
+<p>在point B，显示的图像是“eileen concerned”。当前属性池里是“eileen”和“concerned”。唯一匹配的图像是“side eileen”，这也是Ren’Py最终选用的图像。如果存在一个“side concerned”图像，由于其命名不清晰，Ren’Py不会显示它。</p>
+<div class="section" id="invisible-characters">
+<span id="id2"></span><h2>不可视角色<a class="headerlink" href="#invisible-characters" title="Permalink to this headline"> link</a></h2>
+<p>另一个头像的用处，是当用户角色的对话内容，显示一个头像。做法是将某个图像与角色关联，然后使用带图形结构的say语句选择显示的头像。</p>
+<p>举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="k">image</span><span class="o">=</span><span class="s2">&quot;player&quot;</span><span class="p">)</span>
+
+<span class="k">image</span> <span class="k">side</span> <span class="n">player</span> <span class="n">happy</span> <span class="o">=</span> <span class="s2">&quot;side_player_happy.png&quot;</span>
+<span class="k">image</span> <span class="k">side</span> <span class="n">player</span> <span class="n">concerned</span> <span class="o">=</span> <span class="s2">&quot;side_player_concerned.png&quot;</span>
+
+<span class="k">label</span> <span class="n">start</span><span class="p">:</span>
+
+    <span class="n">p</span> <span class="n">happy</span> <span class="s2">&quot;这里会显示 &#39;side player happy&#39; 图像。&quot;</span>
+
+    <span class="n">p</span> <span class="s2">&quot;这里会显示 &#39;side player happy&#39; 。&quot;</span>
+
+    <span class="n">p</span> <span class="n">concerned</span> <span class="s2">&quot;这里会显示 &#39;side player concerned&#39; 。&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variations">
+<span id="id3"></span><h2>变种<a class="headerlink" href="#variations" title="Permalink to this headline"> link</a></h2>
+<p>头像有一些变换，分别由一些配置项控制。</p>
+<dl class="var">
+<dt id="var-config.side_image_tag">
+define <code class="descname">config.side_image_tag</code> = None<a class="headerlink" href="#var-config.side_image_tag" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，头像会追踪给定的图像标签(tag)，而不是追踪当前发言角色的关联图像。例如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="s2">&quot;艾琳&quot;</span><span class="p">,</span> <span class="k">image</span><span class="o">=</span><span class="s2">&quot;eileen&quot;</span><span class="p">)</span>
+
+<span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+     <span class="n">config</span><span class="o">.</span><span class="n">side_image_tag</span> <span class="o">=</span> <span class="s2">&quot;eileen&quot;</span>
+</pre></div>
+</div>
+<p>会让头像追踪图像标签“eileen”。这个标签与角色 <code class="docutils literal notranslate"><span class="pre">e</span></code> 关联。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.side_image_only_not_showing">
+define <code class="descname">config.side_image_only_not_showing</code> = False<a class="headerlink" href="#var-config.side_image_only_not_showing" title="Permalink to this definition"> link</a></dt>
+<dd><p>当设置为True时，只在带这个标签的某个图像还没有显示在界面上，才会显示头像。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.side_image_prefix_tag">
+define <code class="descname">config.side_image_prefix_tag</code> = ‘side’<a class="headerlink" href="#var-config.side_image_prefix_tag" title="Permalink to this definition"> link</a></dt>
+<dd><p>搜索头像使用的前缀。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.side_image_null">
+define <code class="descname">config.side_image_null</code> = Null()<a class="headerlink" href="#var-config.side_image_null" title="Permalink to this definition"> link</a></dt>
+<dd><p>不显示头像时，显示空的可视组件。空的头像也可以改变，只不过变为其他的空可视组件。一个这样做的原因是，设置了空组件的边界后(例如，Null(width=200, height=150))，能够防止dissolve效果被中途割裂。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.side_image_same_transform">
+define <code class="descname">config.side_image_same_transform</code> = None<a class="headerlink" href="#var-config.side_image_same_transform" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，当新的头像与前一个头像共享同一个图像标签时，这个transform就会使用。</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="var-config.side_image_change_transform">
+define <code class="descname">config.side_image_change_transform</code> = None<a class="headerlink" href="#var-config.side_image_change_transform" title="Permalink to this definition"> link</a></dt>
+<dd><p>若非None，当新的头像与前一个头像不共享图像标签(或新旧头像之一不存在)时，这个transform就会使用。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="transforms-and-transitions">
+<span id="id4"></span><h2>变换和转场<a class="headerlink" href="#transforms-and-transitions" title="Permalink to this headline"> link</a></h2>
+<p><a class="reference internal" href="#var-config.side_image_same_transform"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.side_image_same_transform</span></code></a> 和
+<a class="reference internal" href="#var-config.side_image_change_transform"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.side_image_change_transform</span></code></a> 使用两个参数——新旧两个头像可视组件——调用时，每次显示的图像。可以是让头像运行或者使用转场效果。</p>
+<p>下面是一个例子，当关联图像改变时，让头像滑入和滑出：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">transform</span> <span class="n">change_transform</span><span class="p">(</span><span class="k">old</span><span class="p">,</span> <span class="k">new</span><span class="p">):</span>
+    <span class="k">contains</span><span class="p">:</span>
+        <span class="k">old</span>
+        <span class="na">yalign</span> <span class="mf">1.0</span>
+        <span class="na">xpos</span> <span class="mf">0.0</span> <span class="na">xanchor</span> <span class="mf">0.0</span>
+        <span class="n">linear</span> <span class="mf">0.2</span> <span class="na">xanchor</span> <span class="mf">1.0</span>
+    <span class="k">contains</span><span class="p">:</span>
+        <span class="k">new</span>
+        <span class="na">yalign</span> <span class="mf">1.0</span>
+        <span class="na">xpos</span> <span class="mf">0.0</span> <span class="na">xanchor</span> <span class="mf">1.0</span>
+        <span class="n">linear</span> <span class="mf">0.2</span> <span class="na">xanchor</span> <span class="mf">0.0</span>
+
+<span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">side_image_change_transform</span> <span class="o">=</span> <span class="n">change_transform</span>
+</pre></div>
+</div>
+<p>角色不变的情况下，新旧头像的转场使用dissolve效果。(例如，角色改变情绪时。)为了让Dissolve效果正常工作，两个头像必须有相同的尺寸。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">transform</span> <span class="n">same_transform</span><span class="p">(</span><span class="k">old</span><span class="p">,</span> <span class="k">new</span><span class="p">):</span>
+    <span class="k">old</span>
+    <span class="k">new</span> <span class="k">with</span> <span class="n">Dissolve</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="na">alpha</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">define</span> <span class="n">config</span><span class="o">.</span><span class="n">side_image_same_transform</span> <span class="o">=</span> <span class="n">same_transform</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leaving-room-customization">
+<span id="id5"></span><h2>预留空间 / 定制化<a class="headerlink" href="#leaving-room-customization" title="Permalink to this headline"> link</a></h2>
+<p>默认情况下，对话文本区域的宽度与整个界面宽度相同。如果尝试直接显示头像，图像会覆盖在文本上面。要修复这个问题的话，我们需要在文本窗口内划出一块合适的区域使用头像。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">style</span> <span class="k">window</span><span class="p">:</span>
+    <span class="na">left_padding</span> <span class="mi">150</span>
+</pre></div>
+</div>
+<p>通过定制 <code class="docutils literal notranslate"><span class="pre">say</span></code> 和 <code class="docutils literal notranslate"><span class="pre">nvl</span></code> 界面可以改变头像的位置。两种界面都需要包含这样一行：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">add</span> <span class="n">SideImage</span><span class="p">()</span> <span class="na">xalign</span> <span class="mf">0.0</span> <span class="na">yalign</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>通过修改xalign和yalign特性(property)，我们可以控制界面上头像的显示位置。</p>
+<p>最后， <a class="reference internal" href="screen_actions.html#SideImage" title="SideImage"><code class="xref py py-func docutils literal notranslate"><span class="pre">SideImage()</span></code></a> 会返回一个可视组件，也就是当前的头像。这可以用在高级界面定制化中。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

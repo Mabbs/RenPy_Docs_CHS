@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Color类 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="其他函数和配置变量" href="other.html" />
+    <link rel="prev" title="文件读写" href="file_python.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Color类</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="color">
+<span id="color-class"></span><h1>Color类<a class="headerlink" href="#color" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py有一个Color类，可以用于各色彩空间之间的转换，或者进行各种调色操作。Color对象不能改变，可以用在任何色彩元组出现的地方。</p>
+<p>色彩元组处于下列三种色彩空间之一：</p>
+<ul class="simple">
+<li>RGB - 红(Red)、绿(Green)、蓝(Blue)</li>
+<li>HLS - 色相(Hue)、亮度(Lightness)、饱和度(Saturation)</li>
+<li>HSV - 色相(Hue)、饱和度(Saturation)、明度(Value)</li>
+</ul>
+<p>下面的例子中，不同的色彩空间的计算方式，表示了同一种亮绿色：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="c1"># 标准Ren&#39;Py色彩。</span>
+<span class="n">Color</span><span class="p">(</span><span class="s2">&quot;#0f0&quot;</span><span class="p">)</span>
+<span class="n">Color</span><span class="p">(</span><span class="s2">&quot;#00ff00&quot;</span><span class="p">)</span>
+<span class="n">Color</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+
+<span class="c1"># 从其他色彩空间转换</span>
+<span class="n">Color</span><span class="p">(</span><span class="n">hls</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">333</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="n">Color</span><span class="p">(</span><span class="n">hsv</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">333</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+<span class="c1"># 将红色通过某个方法转为绿色，并返回一个新的色彩。</span>
+<span class="n">Color</span><span class="p">(</span><span class="s2">&quot;#f00&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rotate_hue</span><span class="p">(</span><span class="o">.</span><span class="mi">333</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="Color">
+<em class="property">class </em><code class="descname">Color</code><span class="sig-paren">(</span><em>color=None</em>, <em>hls=None</em>, <em>hsv=None</em>, <em>rgb=None</em>, <em>alpha=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#Color" title="Permalink to this definition"> link</a></dt>
+<dd><p>Color类用于表现和操作色彩以及各个色彩空间之间转换。它也使用一个alpha值表现透明度。</p>
+<p>创建一个Color对象时，至少需要提供一个 <em>color</em> 、 <em>hls</em> 、 <em>hsv</em> 或 <em>rgb</em> 入参。(如果每一项入参都是None，那么返回None。)</p>
+<dl class="docutils">
+<dt><cite>color</cite></dt>
+<dd><p class="first">Ren’Py能理解的标准格式色彩之一。标准格式色彩包括：</p>
+<ul class="last simple">
+<li>一个Color对象。</li>
+<li>一个(r, g, b)或(r, g, b, a)元组，每一项数值都位于0到255的闭区间。</li>
+<li>十六进制色彩字符串，格式为”#rgb”、”#rgba”、”#rrggbb”或”#rrggbbaa”。</li>
+</ul>
+</dd>
+<dt><cite>hls</cite></dt>
+<dd>HLS色彩空间的某个色彩。这是一个三元元组，每个元素的值位于0.0到1.0的闭区间。</dd>
+<dt><cite>hsv</cite></dt>
+<dd>HSV色彩空间的某个色彩。这是一个三元元组，每个元素的值位于0.0到1.0的闭区间。</dd>
+<dt><cite>rgb</cite></dt>
+<dd>RGB色彩空间的某个色彩。这是一个三元元组，每个元素的值位于0.0到1.0的闭区间。</dd>
+</dl>
+<p>如果提供的色彩不包含alpha值，就需要使用 <em>alpha</em> 。 <em>alpha</em> 的值必须位于0.0到1.0的闭区间。</p>
+<p>Color对象可以当作一个4元元组使用，各个元素分别为红、绿、蓝和alpha。被当作元组使用时，元组内每个元素的值位于0到255的闭区间。</p>
+<p>Color对象支持+、-和*操作符，分别表示加法、减法和乘法。
+有时候对色彩的这些操作会导致色彩中某个元素的值超过支持的范围。
+这样的色彩不能被直接传给Ren’Py的其他部分。
+(可以调用normalize方法将元素值限制在合适的范围内，并返回一个新的色彩。)</p>
+<dl class="attribute">
+<dt id="Color.hls">
+<code class="descname">hls</code><a class="headerlink" href="#Color.hls" title="Permalink to this definition"> link</a></dt>
+<dd><p>将色彩以HLS色彩空间三元元组形式返回。每个元素的值位于0.0到1.0的闭区间。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Color.hsv">
+<code class="descname">hsv</code><a class="headerlink" href="#Color.hsv" title="Permalink to this definition"> link</a></dt>
+<dd><p>将色彩以HSV色彩空间三元元组形式返回。每个元素的值位于0.0到1.0的闭区间。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Color.rgb">
+<code class="descname">rgb</code><a class="headerlink" href="#Color.rgb" title="Permalink to this definition"> link</a></dt>
+<dd><p>将色彩以RGB色彩空间三元元组形式返回。每个元素的值位于0.0到1.0的闭区间。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Color.alpha">
+<code class="descname">alpha</code><a class="headerlink" href="#Color.alpha" title="Permalink to this definition"> link</a></dt>
+<dd><p>将色彩的alpha(透明度)值返回。alpha的值位于0.0到1.0的闭区间，0.0表示完全透明，1.0表示完全不透明。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Color.hexcode">
+<code class="descname">hexcode</code><a class="headerlink" href="#Color.hexcode" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个字符串，字符串为#rrggbbaa或#rrggbb格式的十六进制颜色代码。</p>
+<p>Color对象有下列方法。由于Color对象本身不能改变，这些方法会返回一个新的Color对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>other</em>, <em>fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.interpolate" title="Permalink to this definition"> link</a></dt>
+<dd><p>该Color对象和RGB色彩空间中的 <em>other</em> 间的插值(interpolate)，将结果返回为一个新的Color对象。如果 <em>fraction</em> 的值是0.0，结果为原Color对象；如果 <em>fraction</em> 的值是1.0，结果与 <em>other</em> 相同。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.interpolate_hls">
+<code class="descname">interpolate_hls</code><span class="sig-paren">(</span><em>other</em>, <em>fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.interpolate_hls" title="Permalink to this definition"> link</a></dt>
+<dd><p>该Color对象和HLS色彩空间中的 <em>other</em> 间的插值(interpolate)，将结果返回为一个新的Color对象。如果 <em>fraction</em> 的值是0.0，结果为原Color对象；如果 <em>fraction</em> 的值是1.0，结果与 <em>other</em> 相同。</p>
+<p><em>other</em> 可以是一个字符串、Color对象或HLS元组。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.interpolate_hsv">
+<code class="descname">interpolate_hsv</code><span class="sig-paren">(</span><em>other</em>, <em>fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.interpolate_hsv" title="Permalink to this definition"> link</a></dt>
+<dd><p>该Color对象和HLV色彩空间中的 <em>other</em> 间的插值(interpolate)，将结果返回为一个新的Color对象。如果 <em>fraction</em> 的值是0.0，结果为原Color对象；如果 <em>fraction</em> 的值是1.0，结果与 <em>other</em> 相同。</p>
+<p><em>other</em> 可以是一个字符串、Color对象或HSV元组。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.multiply_hls_saturation">
+<code class="descname">multiply_hls_saturation</code><span class="sig-paren">(</span><em>saturation</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.multiply_hls_saturation" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的饱和度乘以 <em>saturation</em> ，将结果返回为一个新的Color对象。在这HLS色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.multiply_hsv_saturation">
+<code class="descname">multiply_hsv_saturation</code><span class="sig-paren">(</span><em>saturation</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.multiply_hsv_saturation" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的饱和度乘以 <em>saturation</em> ，将结果返回为一个新的Color对象。在这HSV色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.multiply_value">
+<code class="descname">multiply_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.multiply_value" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的明度乘以 <em>value</em> ，将结果返回为一个新的Color对象。在这HSV色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.normalize" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回了这个Color对象的归一化版本，所有色彩值都位于0到255的闭合区间。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.opacity">
+<code class="descname">opacity</code><span class="sig-paren">(</span><em>opacity</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.opacity" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的alpha值乘以 <em>opacity</em> ，将结果返回为一个新的Color对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_hls_saturation">
+<code class="descname">replace_hls_saturation</code><span class="sig-paren">(</span><em>saturation</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_hls_saturation" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的饱和度替换为 <em>saturation</em> ，将结果返回为一个新的Color对象。在这HLS色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_hsv_saturation">
+<code class="descname">replace_hsv_saturation</code><span class="sig-paren">(</span><em>saturation</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_hsv_saturation" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的饱和度替换为 <em>saturation</em> ，将结果返回为一个新的Color对象。在这HSV色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_hue">
+<code class="descname">replace_hue</code><span class="sig-paren">(</span><em>hue</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_hue" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的色相替换为位于0.0到1.0闭区间内的 <em>hue</em> ，将结果返回为一个新的Color对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_lightness">
+<code class="descname">replace_lightness</code><span class="sig-paren">(</span><em>lightness</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_lightness" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的亮度替换为 <em>lightneww</em> ，将结果返回为一个新的Color对象。在这HLS色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_opacity">
+<code class="descname">replace_opacity</code><span class="sig-paren">(</span><em>opacity</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_opacity" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的饱和度替换为 <em>saturation</em> ，将结果返回为一个新的Color对象。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.replace_value">
+<code class="descname">replace_value</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.replace_value" title="Permalink to this definition"> link</a></dt>
+<dd><p>把该Color对象的明度替换为 <em>value</em> ，将结果返回为一个新的Color对象。在这HSV色彩空间内完成。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.rotate_hue">
+<code class="descname">rotate_hue</code><span class="sig-paren">(</span><em>rotation</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.rotate_hue" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用 <em>rotation</em> 调整该Color对象的色相，将结果返回为一个新的Color对象。 <em>rotation</em> 是色相环旋转角度。色相环旋转一周360度。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.shade">
+<code class="descname">shade</code><span class="sig-paren">(</span><em>fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.shade" title="Permalink to this definition"> link</a></dt>
+<dd><p>将该Color对象与黑色混合，创建色彩的低调(shade)。 <em>fraction</em> 是新色彩相对原色彩的比值。如果 <em>fraction</em> 为1.0，色彩不发生变化；如果为0.0，返回黑色。</p>
+<p>alpha值不会被这个方法改变。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Color.tint">
+<code class="descname">tint</code><span class="sig-paren">(</span><em>fraction</em><span class="sig-paren">)</span><a class="headerlink" href="#Color.tint" title="Permalink to this definition"> link</a></dt>
+<dd><p>将该Color对象与白色混合，创建色彩的高调(tint)。<em>fraction</em> 是新色彩相对原色彩的比值。如果 <em>fraction</em> 为1.0，色彩不发生变化；如果为0.0，返回白色。</p>
+<p>alpha值不会被这个方法改变。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

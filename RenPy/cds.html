@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>创作者定义的语句 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="定制文本标签" href="custom_text_tags.html" />
+    <link rel="prev" title="创作者定义的可视组件" href="udd.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">创作者定义的语句</a><ul>
+<li><a class="reference internal" href="#lint">lint功能函数</a></li>
+<li><a class="reference internal" href="#example">样例</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="creator-defined-statements">
+<span id="id1"></span><h1>创作者定义的语句<a class="headerlink" href="#creator-defined-statements" title="Permalink to this headline"> link</a></h1>
+<p>创作者定义的语句允许创作者在Ren’Py中添加自己的语句。这个机制允许添加当前Ren’Py不支持的语法。</p>
+<p>创作者定义的语句必须在python early语句块(block)中定义。还有，包含创作者定义的语句的文件必须在使用这个语句的文件之前加载。由于Ren’Py按照unicode顺序加载文件，通常合理的做法是，在注册创作者自定义语句的文件加上前缀“01”之类一个不大的数字。</p>
+<p>创作者定义的语句不能在定义语句的文件中使用。</p>
+<p>创作者定义的语句使用renpy.register_statement函数注册。</p>
+<dl class="function">
+<dt id="renpy.register_statement">
+<code class="descclassname">renpy.</code><code class="descname">register_statement</code><span class="sig-paren">(</span><em>name</em>, <em>parse=None</em>, <em>lint=None</em>, <em>execute=None</em>, <em>predict=None</em>, <em>next=None</em>, <em>scry=None</em>, <em>block=False</em>, <em>init=False</em>, <em>translatable=False</em>, <em>execute_init=None</em>, <em>label=None</em>, <em>warp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_statement" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个函数注册了一条创作者定义的语句。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>一个空格分隔的名称列表作为语句的开头，或者空字符串定义一个新的默认语句(默认语句会替换say语句)。</dd>
+<dt><cite>block</cite></dt>
+<dd>当这项是False时，语句后面没有语句块(block)。当这项是True时，语句后面需要有语句块(block)，但是最终取决于语法分析器(lexer)如何处理。如果这项是字符串“script”，语句块(block)被认为包含一个或多个Ren’Py脚本语言语句。</dd>
+<dt><cite>parse</cite></dt>
+<dd>这是函数使用的Lexer对象。这个函数应该处理处理语句并返回一个对系那个。返回的对象作为一个参数传给所有其他函数。后面的入参都是Lexer对象的方法：</dd>
+<dt><cite>lint</cite></dt>
+<dd>调用这个函数检查语句。入参只有一个，即 <em>parse</em> 返回的对象。它调用renpy.error报错。</dd>
+<dt><cite>execute</cite></dt>
+<dd>当语句执行时，调用这个函数。入参只有一个，即 <em>parse</em> 返回的对象。</dd>
+<dt><cite>execute_init</cite></dt>
+<dd>在初始化阶段调用的函数，运行在优先级priority 0级别。</dd>
+<dt><cite>predict</cite></dt>
+<dd>预加载语句使用的图像时调用的函数。入参只有一个，即 <em>parse</em> 返回的对象。它会返回一个语句使用的可视组件列表。</dd>
+<dt><cite>next</cite></dt>
+<dd><p class="first">判断下一个语句时调用的函数。</p>
+<p>如果 <em>block</em> 的值不是字符串“script”，这个函数的入参只有一个，即 <em>parse</em> 返回的对象。如果 <em>block</em> 的值是字符串“script”，就会多一个入参，即语句块(block)第一条语句名对应的对象。</p>
+<p class="last">这个函数应该返回一个字符串，表示跳转的脚本标签(label)名，第二个入参将主控流程切换到标签对应的语句块；这个函数也可以返回None，表示继续执行下一条语句。</p>
+</dd>
+<dt><cite>label</cite></dt>
+<dd>调用这个函数决定使用语句的脚本标签(label)名。如果函数返回的是字符串，字符串对应的语句标签可以被call或jump。</dd>
+<dt><cite>warp</cite></dt>
+<dd>调用这个函数决定在warp时是否执行这个语句。如果函数存在并返回True，warp时就运行这个函数，否则在warp时不执行语句。</dd>
+<dt><cite>scry</cite></dt>
+<dd>Ren’Py内部使用。</dd>
+<dt><cite>init</cite></dt>
+<dd>如果这个语句应该在初始化阶段运行，这项就是True。(如果语句没有在某个init语句块中，会被自动放置到init 0语句块里。)这项会调用execute函数，还有execute_init函数。</dd>
+</dl>
+</dd></dl>
+
+<p>parse方法使用一个Lexer对象：</p>
+<dl class="class">
+<dt id="Lexer">
+<em class="property">class </em><code class="descname">Lexer</code><a class="headerlink" href="#Lexer" title="Permalink to this definition"> link</a></dt>
+<dd><dl class="method">
+<dt id="Lexer.eol">
+<code class="descname">eol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.eol" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果Lexer对象处于这行结尾则返回True。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.match">
+<code class="descname">match</code><span class="sig-paren">(</span><em>re</em><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.match" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个任意的正则表达式(regexp)字符串。</p>
+<p>Lexer对象中的所有语句都会使用这个方法。首先跳过空白，尝试在一行中匹配。如果匹配成功，返回匹配到的文本。否则，返回None。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.keyword">
+<code class="descname">keyword</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.keyword" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配关键词 <cite>s</cite> 。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.name" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个名称。名称不会是内建的关键词。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.word">
+<code class="descname">word</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.word" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配任何词，包括关键词。返回匹配目标词所在的整段文本。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.string">
+<code class="descname">string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.string" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个Ren’Py字符串。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.integer">
+<code class="descname">integer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.integer" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个整数，返回包含这个整数的字符串。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.float">
+<code class="descname">float</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.float" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个浮点数，返回包含这个浮点数的字符串。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.simple_expression">
+<code class="descname">simple_expression</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.simple_expression" title="Permalink to this definition"> link</a></dt>
+<dd><p>匹配一个简单Python表达式，并将其作为字符串返回。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.rest">
+<code class="descname">rest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.rest" title="Permalink to this definition"> link</a></dt>
+<dd><p>跳过空白，返回一行的其他内容。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.checkpoint">
+<code class="descname">checkpoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.checkpoint" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个不透明对象，这个对方表现出Lexer当前状态。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.revert">
+<code class="descname">revert</code><span class="sig-paren">(</span><em>o</em><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.revert" title="Permalink to this definition"> link</a></dt>
+<dd><p>当 <cite>o</cite> 是一个checkpoint()返回的对象时，将Lexer恢复为调用checkpoint()时的状态。(用于回溯。)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.subblock_lexer">
+<code class="descname">subblock_lexer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.subblock_lexer" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个Lexer对象，用于当前行相关联的语句块(block)。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Lexer.advance">
+<code class="descname">advance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Lexer.advance" title="Permalink to this definition"> link</a></dt>
+<dd><p>在一个子块(subblock)Lexer中，前进到下一行。在第一行之前必须调用这个方法，这样第一行才会被处理。</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="lint">
+<span id="lint-utility-functions"></span><h2>lint功能函数<a class="headerlink" href="#lint" title="Permalink to this headline"> link</a></h2>
+<p>在编写lint函数时，下列函数很有用。</p>
+<dl class="function">
+<dt id="renpy.check_text_tags">
+<code class="descclassname">renpy.</code><code class="descname">check_text_tags</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.check_text_tags" title="Permalink to this definition"> link</a></dt>
+<dd><p>检查文本标签 <cite>s</cite> 的正确性。如果存在错误则返回错误字符串，没有错误则返回None。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="example">
+<span id="id2"></span><h2>样例<a class="headerlink" href="#example" title="Permalink to this headline"> link</a></h2>
+<p>这里创建了一种新的语句“line”。“line”语句允许不带引号的文本行。</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">python</span> <span class="n">early</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">parse_smartline</span><span class="p">(</span><span class="n">lex</span><span class="p">):</span>
+        <span class="n">who</span> <span class="o">=</span> <span class="n">lex</span><span class="o">.</span><span class="n">simple_expression</span><span class="p">()</span>
+        <span class="n">what</span> <span class="o">=</span> <span class="n">lex</span><span class="o">.</span><span class="n">rest</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">what</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">execute_smartline</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+        <span class="n">who</span><span class="p">,</span> <span class="n">what</span> <span class="o">=</span> <span class="n">o</span>
+        <span class="n">renpy</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">who</span><span class="p">),</span> <span class="n">what</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">lint_smartline</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+        <span class="n">who</span><span class="p">,</span> <span class="n">what</span> <span class="o">=</span> <span class="n">o</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">eval</span><span class="p">(</span><span class="n">who</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">renpy</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Character not defined: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">who</span><span class="p">)</span>
+
+        <span class="n">tte</span> <span class="o">=</span> <span class="n">renpy</span><span class="o">.</span><span class="n">check_text_tags</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tte</span><span class="p">:</span>
+            <span class="n">renpy</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">tte</span><span class="p">)</span>
+
+    <span class="n">renpy</span><span class="o">.</span><span class="n">register_statement</span><span class="p">(</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">parse</span><span class="o">=</span><span class="n">parse_smartline</span><span class="p">,</span> <span class="n">execute</span><span class="o">=</span><span class="n">execute_smartline</span><span class="p">,</span> <span class="n">lint</span><span class="o">=</span><span class="n">lint_smartline</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>使用时这样写：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="n">e</span> <span class="s2">&quot;这里的引号不会显示&quot;</span> <span class="err">艾琳说</span><span class="p">,</span> <span class="s2">&quot;也不需要反斜杠转义符。&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>界面与Python &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="模式" href="modes.html" />
+    <link rel="prev" title="高级GUI" href="gui_advanced.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="self_voicing.html">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">界面与Python</a><ul>
+<li><a class="reference internal" href="#id1">界面函数</a></li>
+<li><a class="reference internal" href="#ui-functions">UI Functions</a></li>
+<li><a class="reference internal" href="#action">动作(action)</a></li>
+<li><a class="reference internal" href="#barvalue">条值(barvalue)</a></li>
+<li><a class="reference internal" href="#inputvalue">输入值(inputvalue)</a></li>
+<li><a class="reference internal" href="#creator-defined-sl">创作者定义的界面语言语句</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="python">
+<span id="screens-and-python"></span><h1>界面与Python<a class="headerlink" href="#python" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持使用Python定义界面(screen)，与使用Ren’Py界面语言能实现一样的效果。将一个界面函数传入函数 <a class="reference internal" href="#renpy.define_screen" title="renpy.define_screen"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.define_screen()</span></code></a> ，就可以创建一个Python界面。创建的Python界面可以跟其他任何界面一样使用。</p>
+<p>这个界面函数应该包含需求变量的对应参数，并忽略额外的关键词入参(也就是，函数的入参列表结尾是 <cite>**kwargs</cite> 。)。然后需要调用UI函数在界面上添加可视组件。界面函数需要能在任何互动行为开始后都能被调用。</p>
+<p>为了确保函数重新运行时无缝的用户体验(并不导致某些东西重置)，每次调用UI函数都提供 <cite>id</cite> 入参就很重要。如果重新创建了某个界面，Ren’Py会使用原可视组件内容的id更新每一个新的可视组件。id通过界面语言自动生成，但是手工处理界面时也许需要人工指定id。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">不赞成也不推荐使用UI函数作为界面函数。</p>
+</div>
+<p>这是一个Python界面的样例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">say_screen</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="n">what</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">ui</span><span class="o">.</span><span class="k">window</span><span class="p">(</span><span class="na">id</span><span class="o">=</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
+        <span class="n">ui</span><span class="o">.</span><span class="k">vbox</span><span class="p">(</span><span class="na">id</span><span class="o">=</span><span class="s2">&quot;say_vbox&quot;</span><span class="p">)</span>
+
+        <span class="n">ui</span><span class="o">.</span><span class="k">text</span><span class="p">(</span><span class="n">who</span><span class="p">,</span> <span class="na">id</span><span class="o">=</span><span class="s2">&quot;who&quot;</span><span class="p">)</span>
+        <span class="n">ui</span><span class="o">.</span><span class="k">text</span><span class="p">(</span><span class="n">what</span><span class="p">,</span> <span class="na">id</span><span class="o">=</span><span class="s2">&quot;what&quot;</span><span class="p">)</span>
+
+        <span class="n">ui</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">renpy</span><span class="o">.</span><span class="n">define_screen</span><span class="p">(</span><span class="s2">&quot;say&quot;</span><span class="p">,</span> <span class="n">say_screen</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2>界面函数<a class="headerlink" href="#id1" title="Permalink to this headline"> link</a></h2>
+<p>下定函数支持定义、显示和隐藏界面。</p>
+<dl class="function">
+<dt id="renpy.call_screen">
+<code class="descclassname">renpy.</code><code class="descname">call_screen</code><span class="sig-paren">(</span><em>_screen_name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.call_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>在程序上等效于call screen语句。</p>
+<p>该函数将 <em>_screen_name</em> 做为一个界面显示，并触发某个互动行为。互动结束后界面隐藏，并返回互动结果。</p>
+<p>不以下划线“_”开头的关键词入参都会传入界面的作用域。</p>
+<p>如果关键词入参 <em>_with_none</em> 的值是False，互动结束后结尾的“with None”分句不会运行。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.define_screen">
+<code class="descclassname">renpy.</code><code class="descname">define_screen</code><span class="sig-paren">(</span><em>name</em>, <em>function</em>, <em>modal=&quot;False&quot;</em>, <em>zorder=&quot;0&quot;</em>, <em>tag=None</em>, <em>variant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.define_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>定义一个名为 <em>name</em> 的界面。</p>
+<dl class="docutils">
+<dt><cite>function</cite></dt>
+<dd><p class="first">调用该函数可以显示界面。调用该函数时，使用界面作用域(scope)作为需要的关键词入参。它会忽略其他的关键词入参。</p>
+<p class="last">这个函数需要调用ui函数将组件添加到界面上。</p>
+</dd>
+<dt><cite>modal</cite></dt>
+<dd>一个字符串，根据计算后的值决定创建的界面是否模态(modal)。一个模态(modal)界面会防止它的子界面接受输入事件消息。</dd>
+<dt><cite>zorder</cite></dt>
+<dd>一个字符串，最终计算后的值应该是一个整数。这个证书控制界面显示顺序。zorder值大的界面显示在zorder值小的界面上方。</dd>
+<dt><cite>tag</cite></dt>
+<dd>界面关联的图像标签(tag)。显示界面时，所有带有同样标签的其他界面都会被替换。标签默认与界面名相同。</dd>
+<dt><cite>predict</cite></dt>
+<dd>若为True，界面启用图像预加载。若为False，不使用预加载。默认值是Trues,</dd>
+<dt><cite>variant</cite></dt>
+<dd>字符串。表示使用的界面变种(variant)。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_screen">
+<code class="descclassname">renpy.</code><code class="descname">get_screen</code><span class="sig-paren">(</span><em>name</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回在图层(layer)上名为 <em>name</em> 的界面可视组件。<em>name</em> 首先被看作是一个图像标签(tag)名，其次是一个界面名。如果那个界面不被显示，就返回None。</p>
+<p>根据 <em>name</em> 可能得到一个界面名的列表，第一正在显示的界面作为最终结果返回。</p>
+<p>该函数可以用于检查某个界面是否正在显示：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">renpy</span><span class="o">.</span><span class="n">get_screen</span><span class="p">(</span><span class="s2">&quot;say&quot;</span><span class="p">):</span>
+    <span class="k">text</span> <span class="s2">&quot;The say screen is showing.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">text</span> <span class="s2">&quot;The say screen is hidden.&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_widget">
+<code class="descclassname">renpy.</code><code class="descname">get_widget</code><span class="sig-paren">(</span><em>screen</em>, <em>id</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_widget" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回图层 <em>layer</em> 上的界面 <em>screen</em> 中带有 <em>id</em> 的组件(widget)。如果界面不存在或界面中不存在带有那个id的组件，则返回None。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.get_widget_properties">
+<code class="descclassname">renpy.</code><code class="descname">get_widget_properties</code><span class="sig-paren">(</span><em>id</em>, <em>screen=None</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.get_widget_properties" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回图层 <em>layer</em> 上界面 <em>screen</em> 中带有 <em>id</em> 的组件(widget)的特性(property)。如果 <em>screen</em> 为None，返回当前界面的特性(property)。该函数可以用在某个界面的Python或特性(property)代码中。</p>
+<p>需要注意的是，这个函数返回结果是组件特性的字典。想要得到单个特性的值，就要进入字典取值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.hide_screen">
+<code class="descclassname">renpy.</code><code class="descname">hide_screen</code><span class="sig-paren">(</span><em>tag</em>, <em>layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.hide_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于“hide screen”语句。</p>
+<p>隐藏图层 <em>layer</em> 上带图像标签 <em>tag</em> 的界面。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.predicting">
+<code class="descclassname">renpy.</code><code class="descname">predicting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#renpy.predicting" title="Permalink to this definition"> link</a></dt>
+<dd><p>Ren’Py正在预加载界面的情况下返回True。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.show_screen">
+<code class="descclassname">renpy.</code><code class="descname">show_screen</code><span class="sig-paren">(</span><em>_screen_name</em>, <em>*_args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.show_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>等效于show screen语句。</p>
+<p>这个函数使用下列关键词入参：</p>
+<dl class="docutils">
+<dt><cite>_screen_name</cite></dt>
+<dd>想要显示的界面的名称。</dd>
+<dt><cite>_layer</cite></dt>
+<dd>界面显示使用的图层名。</dd>
+<dt><cite>_tag</cite></dt>
+<dd>界面显示使用的图像标签(tag)。如果没有指定，就使用界面的图像标签关联的默认标签。如果那也没有指定，默认使用界面的名称做为标签名。</dd>
+<dt><cite>_widget_properties</cite></dt>
+<dd>从组件(widget)的id到某个“特性名-&gt;特性值”映射的映射关系。当带那个id的组件(widget)在界面上显示时，就能为其添加指定的特性(property)。</dd>
+<dt><cite>_transient</cite></dt>
+<dd>若为True，界面会在当前互动结束后自动隐藏。</dd>
+</dl>
+<p>不以下划线(_)开头的关键词入参用于初始化界面的作用域。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.start_predict_screen">
+<code class="descclassname">renpy.</code><code class="descname">start_predict_screen</code><span class="sig-paren">(</span><em>_screen_name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.start_predict_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发Ren’Py开始缓存名为 <em>_screen_name</em> 的界面，那个界面之后会使用给定的入参显示。这个函数会替换之前 <em>_screen_name</em> 的缓存。需要停止缓存某个界面的话，调用 <a class="reference internal" href="#renpy.stop_predict_screen" title="renpy.stop_predict_screen"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.stop_predict_screen()</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.stop_predict_screen">
+<code class="descclassname">renpy.</code><code class="descname">stop_predict_screen</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.stop_predict_screen" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发Ren’Py停止缓存名为 <em>name</em> 的界面。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.variant">
+<code class="descclassname">renpy.</code><code class="descname">variant</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.variant" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果 <em>name</em> 是Ren’Py中可用的某个界面变种(variant)，就返回True。详见:ref:<cite>界面变种 &lt;screen-variants&gt;</cite>。这个函数可以用做条件表达式，在Python的if语句中根据界面变种选择使用对应的样式(style)。</p>
+<p><em>name</em> 也可以是一个界面变种列表，只要列表中任何变种被选择就返回True。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ui-functions">
+<h2>UI Functions<a class="headerlink" href="#ui-functions" title="Permalink to this headline"> link</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ren’Py的执行机制已经改变过，创建可视组件的UI函数现在可能比它们的等效界面语言效率要慢得多。</p>
+</div>
+<p>UI函数是界面语言语句的等效Python语句。每条界面语言语言都有一个同名的UI函数。例如，ui.text函数对应text语句，而ui.add函数对应add语句。</p>
+<p>这里有一个界面语言的参数与Python入参之间的简单映射关系。界面语言参数变成固定位置入参，特性(property)变成关键词入参。举例，界面语言语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">text</span> <span class="s2">&quot;Hello, World&quot;</span> <span class="na">size</span> <span class="mi">40</span> <span class="na">xalign</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>变成了：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">ui</span><span class="o">.</span><span class="k">text</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">,</span> <span class="na">size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="na">xalign</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(实际上要加一个 <cite>id</cite> 参数。)</p>
+<p>根据使用的子组件数量分，总共有三组UI函数。</p>
+<p>下列UI函数不使用任何子组件。</p>
+<ul class="simple">
+<li>ui.add</li>
+<li>ui.bar</li>
+<li>ui.imagebutton</li>
+<li>ui.input</li>
+<li>ui.key</li>
+<li>ui.label</li>
+<li>ui.null</li>
+<li>ui.text</li>
+<li>ui.textbutton</li>
+<li>ui.timer</li>
+<li>ui.vbar</li>
+<li>ui.hotspot</li>
+<li>ui.hotbar</li>
+<li>ui.spritemanager</li>
+</ul>
+<p>下列UI函数只使用一个子组件。子组件必须给定——如果不存在则使用ui.null()空对象。</p>
+<ul class="simple">
+<li>ui.button</li>
+<li>ui.frame</li>
+<li>ui.transform</li>
+<li>ui.window</li>
+<li>ui.drag</li>
+</ul>
+<p>下列UI函数使用多个子组件。它们持续使用这些子组件，直到调用  <a class="reference internal" href="#ui.close" title="ui.close"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.close()</span></code></a> 。</p>
+<ul class="simple">
+<li>ui.fixed</li>
+<li>ui.grid</li>
+<li>ui.hbox</li>
+<li>ui.side</li>
+<li>ui.vbox</li>
+<li>ui.imagemap</li>
+<li>ui.draggroup</li>
+</ul>
+<p>有几个UI函数没有对应的界面语言语句，因为他们对应界面语言中没有的概念。</p>
+<dl class="function">
+<dt id="adjustment">
+<code class="descname">adjustment</code><span class="sig-paren">(</span><em>range=1</em>, <em>value=0</em>, <em>step=None</em>, <em>page=None</em>, <em>changed=None</em>, <em>adjustable=None</em>, <em>ranged=None</em><span class="sig-paren">)</span><a class="headerlink" href="#adjustment" title="Permalink to this definition"> link</a></dt>
+<dd><p>Adjustment对象表示可以通过某个条(bar)或视口(viewport)调整的值。Adjustment对象包括值的信息，值的范围，以及修改这个对象使用的最小步长和最大页面(page)。</p>
+<p>下列参数分别对应Adjustment对象的字段(field)或者特性(property)。</p>
+<dl class="docutils">
+<dt><cite>range</cite></dt>
+<dd>调整范围，一个数值。</dd>
+<dt><cite>value</cite></dt>
+<dd>调整为这个值，一个数值。</dd>
+<dt><cite>step</cite></dt>
+<dd><p class="first">调整的步长，一个数值。若为None，默认值是一个页面(page)的1/10大小，前提是设置了页面大小。否则默认为 <em>range</em> 大小的1/20。</p>
+<p class="last">使用鼠标滚轮滚动一个视口(viewport)时会用到这个值。</p>
+</dd>
+<dt><cite>page</cite></dt>
+<dd><p class="first">Adjustment对象的页面(page)大小。若为None，会通过视口(viewport)自动设置。如果没有设置，默认值是 <em>range</em> 大小的1/10。</p>
+<p class="last">当点击一个滚动条(scrollbar)时，这项值会被用到。</p>
+</dd>
+</dl>
+<p>下列参数控制Adjustment对象的行为。</p>
+<dl class="docutils">
+<dt><cite>adjustable</cite></dt>
+<dd><p class="first">若为True，条(bar)可以修改Adjustment对象。若为False，则不能修改。</p>
+<p class="last">如果给定了 <em>changed</em> 函数或者Adjustment对象有一个关联的视口(viewport)，那这项的默认值是True。否则默认值是False。</p>
+</dd>
+<dt><cite>changed</cite></dt>
+<dd>当Adjustment的值发生改变时，会用新的值调用这个函数。</dd>
+<dt><cite>ranged</cite></dt>
+<dd>当通过一个视口(viewport)设置了Adjustment的范围时，会用Adjustment对象调用这个函数。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.change">
+<code class="descclassname">ui.</code><code class="descname">change</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.change" title="Permalink to this definition"> link</a></dt>
+<dd><p>将Adjustment的值修改为 <em>value</em> ，并更新所有使用该Adjustment对象的条(bar)和视口(viewport)。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.at">
+<code class="descclassname">ui.</code><code class="descname">at</code><span class="sig-paren">(</span><em>transform</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.at" title="Permalink to this definition"> link</a></dt>
+<dd><p>指定创建的下一个可视组件使用的变换(transform)。这个做法已经淘汰，现在所有UI函数都会使用一个at入参。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.close">
+<code class="descclassname">ui.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ui.close" title="Permalink to this definition"> link</a></dt>
+<dd><p>关闭一个通过UI函数创建的可视组件。当可视组件关闭后，我们可以给它的父组件添加新的可视组件，如果没有可用的父组件则为其所在图层添加新的可视组件。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.detached">
+<code class="descclassname">ui.</code><code class="descname">detached</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ui.detached" title="Permalink to this definition"> link</a></dt>
+<dd><p>不在任何图层或容器内添加下一个可视组件。如果你想要将某个UI函数的结果赋值给某个变量的话，就使用这个函数。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.interact">
+<code class="descclassname">ui.</code><code class="descname">interact</code><span class="sig-paren">(</span><em>roll_forward=None</em>, <em>mouse='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.interact" title="Permalink to this definition"> link</a></dt>
+<dd><p>触发某个与用户的交互动作，并返回交互的结果。这个函数让Ren’Py重绘界面并开始处理输入事件。当某个可视组件对应某个事件返回了一个值，那个值会从ui.interact返回，然后互动结束。</p>
+<p>这个函数极少被直接调用。通常会被Ren’Py的其他部分调用，包括say语句、menu语句、with语句、pause语句、call screen语句、 <a class="reference internal" href="input.html#renpy.input" title="renpy.input"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.input()</span></code></a> 等等。不过，必要的时候也可以直接调用。</p>
+<p>当某个互动结束，transient图层和所有“transient=True”的界面都会从场景(scene)列表中清除。</p>
+<p>下列入参有文档说明。其他没有文档说明的入参属于Ren’Py内部使用。请都用关键词入参。</p>
+<dl class="docutils">
+<dt><cite>roll_forward</cite></dt>
+<dd>当前向滚动发生时，这个函数会返回相应的信息。(若为None，前向滚动会被忽略。)这项应该总是传入 <a class="reference internal" href="save_load_rollback.html#renpy.roll_forward_info" title="renpy.roll_forward_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.roll_forward_info()</span></code></a> 函数的结果。</dd>
+<dt><cite>mouse</cite></dt>
+<dd>这个函数中鼠标指针使用的样式。</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.layer">
+<code class="descclassname">ui.</code><code class="descname">layer</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.layer" title="Permalink to this definition"> link</a></dt>
+<dd><p>为名为 <em>name</em> 的图层添加可视组件。图层的关闭必须使用  <a class="reference internal" href="#ui.close" title="ui.close"><code class="xref py py-func docutils literal notranslate"><span class="pre">ui.close()</span></code></a> 。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.screen_id">
+<code class="descclassname">ui.</code><code class="descname">screen_id</code><span class="sig-paren">(</span><em>id_</em>, <em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.screen_id" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果使用了 <em>id</em> 和一个screen语句创建了界面组件(widget)，则将可视组件 <em>d</em> 声明为界面组件 <em>id</em> 。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="action">
+<h2>动作(action)<a class="headerlink" href="#action" title="Permalink to this headline"> link</a></h2>
+<p>界面语言创建的许多可视组件都使用动作(action)作为入参。一个动作(action)是以下三种情况之一：</p>
+<ul class="simple">
+<li>一个可以被调用的Python对象(比如函数或绑定方法)，不使用入参。</li>
+<li>父类为Action类的某个类的一个对象。</li>
+<li>Action对象列表。</li>
+</ul>
+<p>继承Action类对象的好处是，允许你重写类的方法(method)，比如确认某个按钮什么情况下被选中的方法，以及判断按钮何时可用。</p>
+<dl class="class">
+<dt id="Action">
+<em class="property">class </em><code class="descname">Action</code><a class="headerlink" href="#Action" title="Permalink to this definition"> link</a></dt>
+<dd><p>要定义一个新的action，需要从这个类继承。 重写此类中的方法以更改action的行为。</p>
+<dl class="method">
+<dt id="Action.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Action.__call__" title="Permalink to this definition"> link</a></dt>
+<dd><p>当动作激活状态下，这个方法会被调用。在很多情况下，动作会返回一个非None值，并让当前的互动结束。</p>
+<p>继承后的类必须重写这个方法，使用默认方法会出现“未实现(NotImplemented)”错误(并被Ren’Py阻止直接报出这个错误)。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Action.get_sensitive">
+<code class="descname">get_sensitive</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Action.get_sensitive" title="Permalink to this definition"> link</a></dt>
+<dd><p>调用这个方法判断使用这个动作的按钮是否可用。如果按钮可用，则返回True。</p>
+<p>注意，在这个方法返回False的情况下， __call__ 依然会被调用。</p>
+<p>默认的实现会返回True。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Action.get_selected">
+<code class="descname">get_selected</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#Action.get_selected" title="Permalink to this definition"> link</a></dt>
+<dd><p>如果按钮渲染为被选中的按钮就返回True，否则返回False。</p>
+<p>默认的实现会返回False。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Action.periodic">
+<code class="descname">periodic</code><span class="sig-paren">(</span><em>self</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#Action.periodic" title="Permalink to this definition"> link</a></dt>
+<dd><p>在每次互动的开头这个方法都会被调用一次，之后周期性调用。如果方法返回一个数值，就会在这个数值(单位为秒)的时间后再次调用，但其间也可以被很快直接调用。</p>
+<p>这个方法的主要用途是调用
+<a class="reference internal" href="other.html#renpy.restart_interaction" title="renpy.restart_interaction"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.restart_interaction()</span></code></a> ，前提是需要改变get_selected或get_sensitive的值。</p>
+<p>方法使用一个入参：</p>
+<dl class="docutils">
+<dt><cite>st</cite></dt>
+<dd>这个动作关联的界面或可视组件首次显示后经过的时间(单位为秒)。</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">unhovered(self):</code></dt>
+<dd><p>如果某个按钮(或类似对象)处于鼠标悬垂(hovered)状态下，当对象失去焦点时会调用这个方法。</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>想要在Python环境下运行某个动作(action)，需要使用renpy.run。</p>
+<dl class="function">
+<dt id="renpy.is_selected">
+<code class="descclassname">renpy.</code><code class="descname">is_selected</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.is_selected" title="Permalink to this definition"> link</a></dt>
+<dd><p><em>action</em> 表示selected时返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.is_sensitive">
+<code class="descclassname">renpy.</code><code class="descname">is_sensitive</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.is_sensitive" title="Permalink to this definition"> link</a></dt>
+<dd><p><em>action</em> 表示sensitive时返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="renpy.run">
+<code class="descclassname">renpy.</code><code class="descname">run</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.run" title="Permalink to this definition"> link</a></dt>
+<dd><p>运行一个动作或者动作列表。单个动作调用时不带入参，动作列表按顺序执行，None则忽略。</p>
+<p>动作列表中第一个动作执行结果作为函数的返回值。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.is_selected">
+<code class="descclassname">ui.</code><code class="descname">is_selected</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.is_selected" title="Permalink to this definition"> link</a></dt>
+<dd><p><em>action</em> 表示selected时返回True，否则返回False。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ui.is_sensitive">
+<code class="descclassname">ui.</code><code class="descname">is_sensitive</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.is_sensitive" title="Permalink to this definition"> link</a></dt>
+<dd><p><em>action</em> 表示sensitive时返回True，否则返回False。</p>
+</dd></dl>
+
+</div>
+<div class="section" id="barvalue">
+<h2>条值(barvalue)<a class="headerlink" href="#barvalue" title="Permalink to this headline"> link</a></h2>
+<p>当创建一个bar、vbar或hotbar时，可以使用一个BarValue对象作为条(bar)的值特性(property)。调用BarValue对象的方法可以调整数值和样式。</p>
+<dl class="class">
+<dt id="BarValue">
+<em class="property">class </em><code class="descname">BarValue</code><a class="headerlink" href="#BarValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>定义一个新的BarValue时，可以继承这个类并重写一些方法。</p>
+<dl class="method">
+<dt id="BarValue.get_adjustment">
+<code class="descname">get_adjustment</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#BarValue.get_adjustment" title="Permalink to this definition"> link</a></dt>
+<dd><p>调用这个方法可以获得一个针对条(bar)的adjustment对象。这个方法使用
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ui.adjustment()</span></code> 创建Adjustment对象，并返回创建的对象。</p>
+<p>继承后的类必须重写这个方法，使用默认方法会出现“未实现(NotImplemented)”错误(并被Ren’Py阻止直接报出这个错误)。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BarValue.get_style">
+<code class="descname">get_style</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#BarValue.get_style" title="Permalink to this definition"> link</a></dt>
+<dd><p>这个方法用于判断条(bar)使用的样式。返回的是一个二元的元组，元素类型为样式名称或Style对象。第一个元素用于bar，第二个元素用于vbar。</p>
+<p>默认值是(“bar”, “vbar”)。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BarValue.replaces">
+<code class="descname">replaces</code><span class="sig-paren">(</span><em>self</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#BarValue.replaces" title="Permalink to this definition"> link</a></dt>
+<dd><p>当某个界面更新，需要更换一个BarValue时，调用这个方法。它可以用于更新BarValue。调用顺序在get_adjustment之前。</p>
+<p>注意， <cite>other</cite> 不需要与 <cite>self</cite> 的类型相同。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BarValue.periodic">
+<code class="descname">periodic</code><span class="sig-paren">(</span><em>self</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#BarValue.periodic" title="Permalink to this definition"> link</a></dt>
+<dd><p>在每次互动的开头这个方法都会被调用一次，之后周期性调用。如果方法返回一个数值，就会在这个数值(单位为秒)的时间后再次调用，但其间也可以被很快直接调用。调用顺序在get_adjustment之后。</p>
+<p>它可以用于在某段时间内更新条(bar)的值，就像
+<a class="reference internal" href="screen_actions.html#AnimatedValue" title="AnimatedValue"><code class="xref py py-func docutils literal notranslate"><span class="pre">AnimatedValue()</span></code></a> 一样。为了实现这点，get_adjustment应该存储Adjustment对象，并周期性调用Adjustment的修改方法。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="inputvalue">
+<h2>输入值(inputvalue)<a class="headerlink" href="#inputvalue" title="Permalink to this headline"> link</a></h2>
+<p>当创建一项输入时，一个InputValue对象可以用作输入的
+<cite>value</cite> 特性(property)。调用InputValue对象的方法可以实现：获取和设置文本，判断输入是否可编辑，以及回车键按下后的处理。</p>
+<dl class="class">
+<dt id="InputValue">
+<em class="property">class </em><code class="descname">InputValue</code><a class="headerlink" href="#InputValue" title="Permalink to this definition"> link</a></dt>
+<dd><p>继承这个类，并定义一个新的InputValue，需要重写部分或全部方法，并设置默认字段(field)的值。</p>
+<dl class="attribute">
+<dt id="InputValue.default">
+<code class="descname">default</code><a class="headerlink" href="#InputValue.default" title="Permalink to this definition"> link</a></dt>
+<dd><p>若为True，默认输入是可以编辑的。(当其在界面上显示时，可能会带有插入记号。)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InputValue.get_text">
+<code class="descname">get_text</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.get_text" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回输入的默认文本。这个方法必须实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InputValue.set_text">
+<code class="descname">set_text</code><span class="sig-paren">(</span><em>self</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.set_text" title="Permalink to this definition"> link</a></dt>
+<dd><p>当输入文本改变时，调用这个方法修改为新的文本。这个方法必须实现。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InputValue.enter">
+<code class="descname">enter</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.enter" title="Permalink to this definition"> link</a></dt>
+<dd><p>当用户按下回车键时调用。如果其返回一个非None值，那个值会返回给交互行为。其也可以使用renpy.IgnoreEvent()忽略回车键的按下。否则，回车键按下的消息会广播给其他可视组件。</p>
+</dd></dl>
+
+<p>下列动作也是InputValue对象的可用方法：</p>
+<dl class="method">
+<dt id="InputValue.Enable">
+<code class="descname">Enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.Enable" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个动作，启用输入的文本编辑。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InputValue.Disable">
+<code class="descname">Disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.Disable" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个动作，禁用输入的文本编辑。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InputValue.Toggle">
+<code class="descname">Toggle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InputValue.Toggle" title="Permalink to this definition"> link</a></dt>
+<dd><p>返回一个动作，切换文本的可编辑状态。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="creator-defined-sl">
+<span id="id2"></span><h2>创作者定义的界面语言语句<a class="headerlink" href="#creator-defined-sl" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py支持定义定制化界面语言语句。创作者定义的界面语言语句本质上是变相使用了界面语言中的 <a class="reference internal" href="screens.html#sl-use"><span class="std std-ref">use语句</span></a> 。固定位置入参不变，特性(property)变成了关键词参数。如果自定义的语句后面有一个语句块(block)，use语句也支持。例如，下面的定制化界面语言语句：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">titledwindow</span> <span class="s2">&quot;Test Window&quot;</span><span class="p">:</span>
+    <span class="n">icon</span> <span class="s2">&quot;icon.png&quot;</span>
+
+    <span class="k">text</span> <span class="s2">&quot;This is a test.&quot;</span>
+</pre></div>
+</div>
+<p>可以变成：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="n">titledwindow</span><span class="p">(</span><span class="s2">&quot;Test Window&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;icon.png&quot;</span><span class="p">):</span>
+    <span class="k">text</span> <span class="s2">&quot;This is a test.&quot;</span>
+</pre></div>
+</div>
+<p>创作者定义的界面语言语句必须在python early语句块(block)中注册。还有，包含创作者定义的界面语言语句的文件必须在使用这个语句的文件之前加载。由于Ren’Py按照unicode顺序加载文件，通常合理的做法是，在注册创作者自定义语句的文件加上前缀“01”之类一个不大的数字。</p>
+<p>创作者定义的界面语言语句使用renpy.register_sl_statement函数进行注册：</p>
+<dl class="class">
+<dt id="renpy.register_sl_displayable">
+<em class="property">class </em><code class="descclassname">renpy.</code><code class="descname">register_sl_displayable</code><span class="sig-paren">(</span><em>name</em>, <em>displayable</em>, <em>style</em>, <em>nchildren=0</em>, <em>scope=False</em>, <em>replaces=False</em>, <em>default_keywords={}</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable" title="Permalink to this definition"> link</a></dt>
+<dd><p>注册一个界面语言语句，用于创建一个可视组件。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>注册的界面语言语句名称，一个包含自定义Ren’Py关键词的字符串。这个关键词用于标识进入了新的语句。</dd>
+<dt><cite>displayable</cite></dt>
+<dd><p class="first">这是一个函数，被调用后返回一个可视组件对象。所有固定位置入参、特性(property)和样式特性都可以作为入参传入这个函数。其他关键词入参请看后面部分。</p>
+<p class="last">这个函数的返回值必须是一个可视组件。如果它返回了多个可视组件，最外层可视组件的“_main”属性(attribute)应该被设置成那个“主”可视组件——子组件添加在“主”组件上。</p>
+</dd>
+<dt><cite>style</cite></dt>
+<dd>可视组件样式的基础名称。如果风格特性(property)没有指定，这项会添加风格前缀。处理后的样式名会以 <code class="docutils literal notranslate"><span class="pre">style</span></code> 关键词传入可视组件的处理函数。</dd>
+<dt><cite>nchildren</cite></dt>
+<dd><p class="first">可视组件的子组件数量。可能是：</p>
+<p><strong>0</strong></p>
+<blockquote>
+<div>没有子组件。</div></blockquote>
+<p><strong>1</strong></p>
+<blockquote>
+<div>有1个子组件。如果多于1个，则所有子组件放在一个固定布局(Fixed)中。</div></blockquote>
+<p><strong>“many”</strong></p>
+<blockquote class="last">
+<div>有多个子组件。</div></blockquote>
+</dd>
+</dl>
+<p>下列入参应该使用作为关键词入参传入：</p>
+<dl class="docutils">
+<dt><cite>replaces</cite></dt>
+<dd>若为True，且需要该可视组件替换之前的可视组件，就把新的可视组件作为参数传入。</dd>
+<dt><cite>default_keywords</cite></dt>
+<dd>可视组件的关键词入参默认集合。</dd>
+</dl>
+<p>返回一个对象，并可以通过调用下列方法为这个对象添加固定位置入参和特性(property)。每个方法都会返回调用方法的对象自身，并允许方法链接起来用。</p>
+<dl class="method">
+<dt id="renpy.register_sl_displayable.add_positional">
+<code class="descname">add_positional</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable.add_positional" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加一个名为 <em>name</em> 的固定位置入参。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.register_sl_displayable.add_property">
+<code class="descname">add_property</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable.add_property" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加一个名为 <em>name</em> 的特性(property)。特性会作为关键词入参传入。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.register_sl_displayable.add_style_property">
+<code class="descname">add_style_property</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable.add_style_property" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加一个特性的族(family)，以 <em>name</em> 结尾，沿用样式特性的前缀。例如，调用时使用(“size”)，这个方法就定了size、idle_size、hover_size等。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.register_sl_displayable.add_prefix_style_property">
+<code class="descname">add_prefix_style_property</code><span class="sig-paren">(</span><em>prefix</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable.add_prefix_style_property" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加一个特性的族(family)，名字由 <em>prefix</em> (样式特性前缀)和 <em>name</em> 构成。例如，调用时使用了前缀 <em>text_</em> 和名称 <em>size</em> ，这个方法就创建了text_size、text_idle_size、text_hover_size等。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="renpy.register_sl_displayable.add_property_group">
+<code class="descname">add_property_group</code><span class="sig-paren">(</span><em>group</em>, <em>prefix=''</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_displayable.add_property_group" title="Permalink to this definition"> link</a></dt>
+<dd><p>添加一组特性，前缀为 <em>prefix</em> 。 <em>group</em> 可能是下列字符串之一：</p>
+<ul class="simple">
+<li>“bar”</li>
+<li>“box”</li>
+<li>“button”</li>
+<li>“position”</li>
+<li>“text”</li>
+<li>“window”</li>
+</ul>
+<p>这些分别对应 <a class="reference internal" href="style_properties.html#style-properties"><span class="std std-ref">样式特性</span></a> 中的各个组。组名也可以是”ui”，添加的就是 <a class="reference internal" href="screens.html#common-properties"><span class="std std-ref">通用UI特性</span></a> 。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="renpy.register_sl_statement">
+<em class="property">class </em><code class="descclassname">renpy.</code><code class="descname">register_sl_statement</code><span class="sig-paren">(</span><em>name</em>, <em>positional=0</em>, <em>children='many'</em>, <em>screen=None</em><span class="sig-paren">)</span><a class="headerlink" href="#renpy.register_sl_statement" title="Permalink to this definition"> link</a></dt>
+<dd><p>使用Ren’Py注册一个定制化界面语言语句。</p>
+<dl class="docutils">
+<dt><cite>name</cite></dt>
+<dd>这项必须是一个word型数据。它是定制化界面语言语句的名称。</dd>
+<dt><cite>positional</cite></dt>
+<dd>语句使用的固定位置参数的个数。</dd>
+<dt><cite>children</cite></dt>
+<dd>界面使用的子组件。如果没有指定，默认为 <em>name</em> 。</dd>
+<dt><cite>screen</cite></dt>
+<dd>使用的界面名。如果没有指定，默认是 <em>name</em> 。</dd>
+</dl>
+<p>返回的对象可以被添加固定位置入参和特性(property)。这个对象有一个与 <a class="reference internal" href="#renpy.register_sl_displayable" title="renpy.register_sl_displayable"><code class="xref py py-func docutils literal notranslate"><span class="pre">renpy.register_sl_displayable()</span></code></a> 返回对象相同的“.add_”方法。</p>
+</dd></dl>
+
+<p>做一个创作者定义界面语言语句的例子，这里是 <code class="docutils literal notranslate"><span class="pre">titledwindow</span></code> 语句的实现。首先，在早期加载的文件——像名为“01custom.rpy”就加载足够早——中 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">early</span></code> 语句块中注册定制化语句。注册的脚本如下：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">python</span> <span class="n">early</span><span class="p">:</span>
+    <span class="n">renpy</span><span class="o">.</span><span class="n">register_sl_statement</span><span class="p">(</span><span class="s2">&quot;titledwindow&quot;</span><span class="p">,</span> <span class="n">positional</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_property</span><span class="p">(</span><span class="s2">&quot;icon&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">add_property</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>然后，我们定义一个实现了定制化语句的界面。这个界面可以在任何文件中定义。比如：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">screen</span> <span class="n">titledwindow</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="na">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+    <span class="k">drag</span><span class="p">:</span>
+        <span class="na">pos</span> <span class="na">pos</span>
+
+        <span class="k">frame</span><span class="p">:</span>
+            <span class="na">background</span> <span class="s2">&quot;#00000080&quot;</span>
+
+            <span class="k">has</span> <span class="k">vbox</span>
+
+            <span class="k">hbox</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">icon</span> <span class="k">is</span> <span class="k">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">add</span> <span class="n">icon</span>
+
+                <span class="k">text</span> <span class="n">title</span>
+
+            <span class="k">null</span> <span class="na">height</span> <span class="mi">15</span>
+
+            <span class="k">transclude</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

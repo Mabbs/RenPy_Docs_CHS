@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>自动语音 &#8212; Ren&#39;Py 中文文档</title>
+    <link rel="stylesheet" href="_static/renpydoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="集成文本编辑器" href="editor.html" />
+    <link rel="prev" title="环境变量" href="environment_variables.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Ren&#39;Py 中文文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>7.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://www.renpy.org">官方主页</a></li>
+                <li><a href="https://www.renpy.cn/forum.php/">Ren&#39;Py中文空间</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI(图形用户接口)定制化指导</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="language_basics.html">编程语言基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">脚本标签(label)和主控流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogue.html">对话(dialogue)和旁白(narration)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displaying_images.html">显示图像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menus.html">游戏内菜单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditional.html">条件语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie.html">影片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text.html">文本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">多语言支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="displayables.html">可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforms.html">变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atl.html">动画和变换语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layeredimage.html">层叠式图像</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style.html">样式(style)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_properties.html">样式特性(property)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screens.html">界面和界面语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_actions.html">界面动作(action)、值(value)和函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_special.html">特殊界面名称</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_optimization.html">界面语言优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">配置项变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences.html">环境设定配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_variables.html">存储区配置项</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer_tools.html">开发者工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="director.html">交互式指导器(interactive director)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nvl_mode.html">NVL模式教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">文本输入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_image.html">头像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rooms.html">画廊、音乐空间和场景回放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drag_drop.html">拖放组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sprites.html">精灵(sprite)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap.html">定制按键映射</a></li>
+<li class="toctree-l1"><a class="reference internal" href="achievement.html">成就</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">对话历史</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple.html">多角色对话</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="statement_equivalents.html">等效语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load_rollback.html">存档、读档和回滚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent.html">持久化数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trans_trans_python.html">Python中的变换(transform)和转场(transition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui_advanced.html">高级GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screen_python.html">界面与Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="udd.html">创作者定义的可视组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cds.html">创作者定义的语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_text_tags.html">定制文本标签</a></li>
+<li class="toctree-l1"><a class="reference internal" href="character_callbacks.html">角色回调函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_python.html">文件读写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color_class.html">Color类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">其他函数和配置变量</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">生成分发版</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updater.html">web更新器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">安卓(Android)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chromeos.html">Chrome OS/Chrome浏览器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iap.html">程序内购</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gesture.html">手势</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspi.html">树莓派</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="problems.html">处理故障</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_variables.html">环境变量</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">自动语音</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">集成文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skins.html">皮肤</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translating_renpy.html">Ren’Py多语言支持</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">完整变更日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incompatible.html">Incompatible Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributor.html">Distributor Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsors.html">Ren’Py Development Sponsors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thequestion.html">Script of The Question</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thequestion_nvl.html">NVL-模式 “The Question” 脚本</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="搜索" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">自动语音</a><ul>
+<li><a class="reference internal" href="#speech-synthesis">语音合成</a></li>
+<li><a class="reference internal" href="#creator-concerns">创作者关注点</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="self-voicing">
+<span id="id1"></span><h1>自动语音<a class="headerlink" href="#self-voicing" title="Permalink to this headline"> link</a></h1>
+<p>Ren’Py支持自动语音模式。在自动语音模式下使用一个语音合成器朗读出文本和其他接口元素。这个功能能让有视力缺陷的人也能使用Ren’Py游戏。</p>
+<p>自动语音模式可以按 <code class="docutils literal notranslate"><span class="pre">v</span></code> 键切换开关。</p>
+<p>处于自动语音模式时，键盘导航会发生变化，上下方向键会让循环经过界面上所有可获得焦点的可视组件。</p>
+<p>当某个可视组件获得焦点时，Ren’Py会大声朗读出与那个可视组件关联的文本。如果没有可视组件获得焦点，Ren’Py会读出界面上无法获得焦点的文本内容。自动语音通过这种方式大体上覆盖了构成游戏的所有对话和文本。</p>
+<div class="section" id="speech-synthesis">
+<span id="id2"></span><h2>语音合成<a class="headerlink" href="#speech-synthesis" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py针对不同的操作系统提供不同的语音合成服务。要调整语音合成的速度和使用的声音，就需要调整对应平台的语音设置。</p>
+<dl class="docutils">
+<dt>Windows</dt>
+<dd>在Windows平台上，Ren’Py使用微软语音API。在控制面板“语音识别”中“文本到语音转换”标签可以修改语音合成的设置。</dd>
+<dt>Mac OS X</dt>
+<dd>在Mac OS X平台，Ren’Py使用 <code class="docutils literal notranslate"><span class="pre">say</span></code> 命令。在“Dictation &amp; Speech”控制面板的“Text to Speech”标签可以修改语音合成设置。</dd>
+<dt>Linux</dt>
+<dd>在Linux平台上，Ren’Py使用 <code class="docutils literal notranslate"><span class="pre">espeak</span></code> 命令。在自动语音模式运行之前，需要先使用package管理器安装espeak。</dd>
+<dt>Android, iOS, Chrome OS</dt>
+<dd>在安卓、iOS和Chrome OS上不支持自动语音模式。</dd>
+</dl>
+<p>默认声音可以在对应平台的基本设置中选择，使用
+<a class="reference internal" href="config.html#var-config.tts_voice"><code class="xref std std-var docutils literal notranslate"><span class="pre">config.tts_voice</span></code></a> 配置项。举例：</p>
+<div class="highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">init</span> <span class="k">python</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">renpy</span><span class="o">.</span><span class="n">windows</span><span class="p">:</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">tts_voice</span> <span class="o">=</span> <span class="s2">&quot;Mark&quot;</span>
+    <span class="k">elif</span> <span class="n">renpy</span><span class="o">.</span><span class="n">macintosh</span><span class="p">:</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">tts_voice</span> <span class="o">=</span> <span class="s2">&quot;Alex&quot;</span>
+    <span class="k">elif</span> <span class="n">renpy</span><span class="o">.</span><span class="n">linux</span><span class="p">:</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">tts_voice</span> <span class="o">=</span> <span class="s2">&quot;english_rp&quot;</span>
+</pre></div>
+</div>
+<p>可用的声音与平台有关。</p>
+</div>
+<div class="section" id="creator-concerns">
+<span id="id3"></span><h2>创作者关注点<a class="headerlink" href="#creator-concerns" title="Permalink to this headline"> link</a></h2>
+<p>Ren’Py的自动语音会从可视组件中剥离文本并向阅读给用户。Ren’Py从两个地方剥离文本。</p>
+<dl class="docutils">
+<dt>Text displayables</dt>
+<dd>Ren’Py会从文本组件剥离文本，并让文本可以向用户阅读。</dd>
+<dt>Alternative text</dt>
+<dd><p class="first">转换文本是通过可视组件的 <a class="reference internal" href="style_properties.html#style-property-alt"><code class="xref std std-propref docutils literal notranslate"><span class="pre">alt</span></code></a> 样式特性提供。还可以通过按钮(button)上的动作和条(bar)的值来获取。显示提供的转换文本优先于动作和值的文本，从文本组件剥离文本的优先级最低。</p>
+<p>转换文本会使用Ren’Py的字符串多语言支持机制进行翻译。转换文本的优先级高于从可视组件及其子组件剥离出的文本，不过从文本组件剥离出的问题可以使用“[text]”型字符串替换。其他文本都不允许使用字符串替换。</p>
+<p>传入Character对象的 <cite>who_alt</cite> 和 <cite>what_alt</cite> 参数将alt样式特性分别设置为角色的名字文本和身体文本。举个例子，我们定义了一个角色使用斜体表示其内心想法，但通过自动语音显示表现其想法：</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="k">define</span> <span class="n">thought</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">what_italic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">what_alt</span><span class="o">=</span><span class="s2">&quot;I think, [text]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Descriptive Text</dt>
+<dd><p class="first">描述文本是通过旁白显示(或表述)的文本内容。如果禁用自动语音则文本不显示。自动语音文本使用变量 <code class="docutils literal notranslate"><span class="pre">sv</span></code> ，与角色的定义过程类似。</p>
+<dl class="var">
+<dt id="var-sv">
+<code class="descname">sv</code> = …<a class="headerlink" href="#var-sv" title="Permalink to this definition"> link</a></dt>
+<dd><p>一个类角色的对象，启动自动语音的情况下会念出旁白的文本。</p>
+</dd></dl>
+
+<p>举例：</p>
+<div class="last highlight-renpy notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="s2">&quot;Hang on, this is gonna be a bumpy ride!&quot;</span>
+
+<span class="n">sv</span> <span class="s2">&quot;And then the sun exploded...&quot;</span>
+
+<span class="c1"># 一个复杂而且亦可赛艇的特写场景。</span>
+<span class="k">show</span> <span class="k">event</span> <span class="n">sun_exploding</span>
+<span class="k">pause</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>使用快捷键shift+alt+V可以启用自动语音的debug模式。debug模式下会显示界面中会播放语音的文本，用于开发需求。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">返回顶部</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2012-2018, Tom Rothamel.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
